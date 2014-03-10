@@ -1,0 +1,3 @@
+@interface CardTableView : UITableView
+
+@end

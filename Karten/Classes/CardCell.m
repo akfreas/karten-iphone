@@ -1,0 +1,87 @@
+#import "CardCell.h"
+#import "InfoDisplayView.h"
+
+@interface CardCell ()
+
+@property (nonatomic, retain) InfoDisplayView *definitionView;
+@property (nonatomic, retain) InfoDisplayView *termView;
+@property (nonatomic, weak) InfoDisplayView *currentView;
+@property (nonatomic, retain) NSMutableArray *constraintArray;
+
+@end
+
+@implementation CardCell
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self addDisplayViews];
+        self.mode = CardCellModeTerm;
+        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.contentView addSubview:self.currentView];
+        [self configureLayoutConstraints];
+        [self setNeedsLayout];
+        self.constraintArray = [NSMutableArray array];
+
+    }
+    return self;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+-(void)addDisplayViews {
+    self.definitionView = [[InfoDisplayView alloc] initForAutoLayout];
+    self.termView = [[InfoDisplayView alloc] initForAutoLayout];
+}
+
+-(void)setMode:(CardCellMode)mode {
+    if (mode == CardCellModeDefinition) {
+        self.currentView = self.definitionView;
+    } else if (mode == CardCellModeTerm) {
+        self.currentView = self.termView;
+    }
+    _mode = mode;
+}
+
+-(void)flipMode {
+    InfoDisplayView *newView;
+    CardCellMode newMode;
+    if (self.mode == CardCellModeTerm) {
+        newView = self.definitionView;
+        newMode = CardCellModeDefinition;
+    } else {
+        newView = self.termView;
+        newMode = CardCellModeTerm;
+    }
+    [UIView transitionFromView:self.currentView toView:newView duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
+        self.mode = newMode;
+    }];
+}
+
+-(void)configureLayoutConstraints {
+    UIBind(self.currentView);
+    if ([self.constraintArray count] > 0) {
+        [self removeConstraints:self.constraintArray];
+    }
+    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"H:|-[currentView]-|" bindings:BBindings]];
+    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"V:|[currentView]|" bindings:BBindings]];
+}
+
+#pragma mark Accessors
+
+-(void)setCard:(Card *)card {
+    if (self.definitionView == nil || self.termView == nil) {
+        [self addDisplayViews];
+    }
+    self.definitionView.displayText = card.definition;
+    self.termView.displayText = card.term;
+    _card = card;
+}
+
+@end

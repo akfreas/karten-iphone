@@ -22,6 +22,16 @@
 		198C098318CC3F5F000C00E2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
 		198C098B18CC3F5F000C00E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198C098918CC3F5F000C00E2 /* InfoPlist.strings */; };
 		198C098D18CC3F5F000C00E2 /* KartenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C098C18CC3F5F000C00E2 /* KartenTests.m */; };
+		198C099918CC493E000C00E2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099818CC493E000C00E2 /* Card.m */; };
+		198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099C18CC4976000C00E2 /* Card+Helpers.m */; };
+		198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* MainViewController.m */; };
+		198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A218CC4A3A000C00E2 /* CardTableView.m */; };
+		198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A518CC4A4A000C00E2 /* CardCell.m */; };
+		198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A818CC4A89000C00E2 /* AddCardHeader.m */; };
+		198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */; };
+		198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */; };
+		198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */; };
+		7715A2A1E6804E7E9BE72BDA /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA388A941074F25BA2B035A /* libPods-Karten.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +63,27 @@
 		198C098818CC3F5F000C00E2 /* KartenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KartenTests-Info.plist"; sourceTree = "<group>"; };
 		198C098A18CC3F5F000C00E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		198C098C18CC3F5F000C00E2 /* KartenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenTests.m; sourceTree = "<group>"; };
+		198C099718CC493E000C00E2 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
+		198C099818CC493E000C00E2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
+		198C099B18CC4976000C00E2 /* Card+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Card+Helpers.h"; path = "Classes/Card+Helpers.h"; sourceTree = "<group>"; };
+		198C099C18CC4976000C00E2 /* Card+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Card+Helpers.m"; path = "Classes/Card+Helpers.m"; sourceTree = "<group>"; };
+		198C099E18CC49E1000C00E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		198C099F18CC49E1000C00E2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		198C09A118CC4A3A000C00E2 /* CardTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardTableView.h; path = Classes/CardTableView.h; sourceTree = "<group>"; };
+		198C09A218CC4A3A000C00E2 /* CardTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTableView.m; path = Classes/CardTableView.m; sourceTree = "<group>"; };
+		198C09A418CC4A4A000C00E2 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardCell.h; path = Classes/CardCell.h; sourceTree = "<group>"; };
+		198C09A518CC4A4A000C00E2 /* CardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardCell.m; path = Classes/CardCell.m; sourceTree = "<group>"; };
+		198C09A718CC4A89000C00E2 /* AddCardHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCardHeader.h; path = Classes/AddCardHeader.h; sourceTree = "<group>"; };
+		198C09A818CC4A89000C00E2 /* AddCardHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCardHeader.m; path = Classes/AddCardHeader.m; sourceTree = "<group>"; };
+		198C09AA18CC4F10000C00E2 /* UIView+LayoutHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelpers.h"; sourceTree = "<group>"; };
+		198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelpers.m"; sourceTree = "<group>"; };
+		198C09AD18CC60A5000C00E2 /* KartenModelHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KartenModelHelpers.h; sourceTree = "<group>"; };
+		198C09B218CC6796000C00E2 /* UITextField+Valdiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+Valdiation.h"; path = "Classes/UITextField+Valdiation.h"; sourceTree = "<group>"; };
+		198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Valdiation.m"; path = "Classes/UITextField+Valdiation.m"; sourceTree = "<group>"; };
+		198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDisplayView.h; path = Classes/InfoDisplayView.h; sourceTree = "<group>"; };
+		198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDisplayView.m; path = Classes/InfoDisplayView.m; sourceTree = "<group>"; };
+		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
+		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +95,7 @@
 				198C096818CC3F5F000C00E2 /* CoreData.framework in Frameworks */,
 				198C096618CC3F5F000C00E2 /* UIKit.framework in Frameworks */,
 				198C096218CC3F5F000C00E2 /* Foundation.framework in Frameworks */,
+				7715A2A1E6804E7E9BE72BDA /* libPods-Karten.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +120,7 @@
 				198C098618CC3F5F000C00E2 /* KartenTests */,
 				198C096018CC3F5F000C00E2 /* Frameworks */,
 				198C095F18CC3F5F000C00E2 /* Products */,
+				6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +141,7 @@
 				198C096518CC3F5F000C00E2 /* UIKit.framework */,
 				198C096718CC3F5F000C00E2 /* CoreData.framework */,
 				198C097F18CC3F5F000C00E2 /* XCTest.framework */,
+				BEA388A941074F25BA2B035A /* libPods-Karten.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,8 +149,20 @@
 		198C096918CC3F5F000C00E2 /* Karten */ = {
 			isa = PBXGroup;
 			children = (
+				198C09AE18CC674C000C00E2 /* Helpers */,
+				198C099618CC48E8000C00E2 /* Models */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
+				198C099E18CC49E1000C00E2 /* MainViewController.h */,
+				198C099F18CC49E1000C00E2 /* MainViewController.m */,
+				198C09A118CC4A3A000C00E2 /* CardTableView.h */,
+				198C09A218CC4A3A000C00E2 /* CardTableView.m */,
+				198C09A418CC4A4A000C00E2 /* CardCell.h */,
+				198C09A518CC4A4A000C00E2 /* CardCell.m */,
+				198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */,
+				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
+				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
+				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
 				198C097818CC3F5F000C00E2 /* Images.xcassets */,
 				198C097518CC3F5F000C00E2 /* Karten.xcdatamodeld */,
 				198C096A18CC3F5F000C00E2 /* Supporting Files */,
@@ -131,6 +177,7 @@
 				198C096C18CC3F5F000C00E2 /* InfoPlist.strings */,
 				198C096F18CC3F5F000C00E2 /* main.m */,
 				198C097118CC3F5F000C00E2 /* Karten-Prefix.pch */,
+				198C09AD18CC60A5000C00E2 /* KartenModelHelpers.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +200,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		198C099618CC48E8000C00E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				198C099A18CC4957000C00E2 /* Helpers */,
+				198C099718CC493E000C00E2 /* Card.h */,
+				198C099818CC493E000C00E2 /* Card.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		198C099A18CC4957000C00E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				198C099B18CC4976000C00E2 /* Card+Helpers.h */,
+				198C099C18CC4976000C00E2 /* Card+Helpers.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		198C09AE18CC674C000C00E2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				198C09AA18CC4F10000C00E2 /* UIView+LayoutHelpers.h */,
+				198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */,
+				198C09B218CC6796000C00E2 /* UITextField+Valdiation.h */,
+				198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 198C099018CC3F5F000C00E2 /* Build configuration list for PBXNativeTarget "Karten" */;
 			buildPhases = (
+				856598AB8CB14485950C186A /* Check Pods Manifest.lock */,
 				198C095A18CC3F5F000C00E2 /* Sources */,
 				198C095B18CC3F5F000C00E2 /* Frameworks */,
 				198C095C18CC3F5F000C00E2 /* Resources */,
+				0E292E6B4BA64EF9B9F5B221 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,14 +322,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E292E6B4BA64EF9B9F5B221 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Karten-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		856598AB8CB14485950C186A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		198C095A18CC3F5F000C00E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
+				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
 				198C097718CC3F5F000C00E2 /* Karten.xcdatamodeld in Sources */,
+				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
+				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
+				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
+				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
+				198C099918CC493E000C00E2 /* Card.m in Sources */,
+				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
+				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,12 +489,15 @@
 		};
 		198C099118CC3F5F000C00E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -381,12 +505,15 @@
 		};
 		198C099218CC3F5F000C00E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,6 +580,7 @@
 				198C099218CC3F5F000C00E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		198C099318CC3F5F000C00E2 /* Build configuration list for PBXNativeTarget "KartenTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +589,7 @@
 				198C099518CC3F5F000C00E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
