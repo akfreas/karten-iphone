@@ -27,7 +27,6 @@ static NSString *kHeaderReuseID = @"HeaderCell";
     return self;
 }
 
-
 #pragma mark NSFetchedResultsController Delegate Methods
 
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -64,6 +63,8 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+
     CardCell *cell = (CardCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell flipMode];
 }
@@ -99,6 +100,19 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     AddCardHeader *header = [self dequeueReusableHeaderFooterViewWithIdentifier:kHeaderReuseID];
     return header;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Card *cardToDelete = [self.fetchController objectAtIndexPath:indexPath];
+        [cardToDelete MR_deleteEntity];
+    }
+}
+
+#pragma mark UIScrollView Delegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
 @end

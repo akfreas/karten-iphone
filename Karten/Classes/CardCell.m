@@ -18,10 +18,7 @@
     if (self) {
         [self addDisplayViews];
         self.mode = CardCellModeTerm;
-        self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.contentView addSubview:self.currentView];
-        [self configureLayoutConstraints];
-        [self setNeedsLayout];
         self.constraintArray = [NSMutableArray array];
 
     }
@@ -49,6 +46,10 @@
     _mode = mode;
 }
 
+-(void)layoutSubviews {
+    [super layoutSubviews];
+}
+
 -(void)flipMode {
     InfoDisplayView *newView;
     CardCellMode newMode;
@@ -59,18 +60,32 @@
         newView = self.termView;
         newMode = CardCellModeTerm;
     }
+    if (newView.superview == nil) {
+        [self.contentView addSubview:newView];
+    }
+    [self configureLayoutConstraintsForView:newView];
     [UIView transitionFromView:self.currentView toView:newView duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
         self.mode = newMode;
+//        [self removeConstraintFromArray];
     }];
 }
 
--(void)configureLayoutConstraints {
-    UIBind(self.currentView);
+-(void)updateConstraints {
+    [self removeConstraintFromArray];
+    [self configureLayoutConstraintsForView:self.currentView];
+    [super updateConstraints];
+}
+
+-(void)removeConstraintFromArray {
     if ([self.constraintArray count] > 0) {
         [self removeConstraints:self.constraintArray];
     }
-    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"H:|-[currentView]-|" bindings:BBindings]];
-    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"V:|[currentView]|" bindings:BBindings]];
+}
+
+-(void)configureLayoutConstraintsForView:(UIView *)view {
+    UIBind(view);
+    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"H:|-[view]-|" bindings:BBindings]];
+    [self.constraintArray addObjectsFromArray:[self.contentView addConstraintWithVisualFormat:@"V:|[view]|" bindings:BBindings]];
 }
 
 #pragma mark Accessors
@@ -79,6 +94,7 @@
     if (self.definitionView == nil || self.termView == nil) {
         [self addDisplayViews];
     }
+
     self.definitionView.displayText = card.definition;
     self.termView.displayText = card.term;
     _card = card;
