@@ -2,11 +2,13 @@
 #import "CardCell.h"
 #import "AddCardHeader.h"
 #import "Card.h"
+#import "Database.h"
 
-@interface CardTableView () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate>
 
 @property (retain, nonatomic) NSFetchedResultsController *fetchController;
-
+@property (strong) CBLDatabase *database;
+@property (strong) CBLUITableSource *cbDatasource;
 @end
 
 @implementation CardTableView
@@ -18,14 +20,28 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self registerClass:[CardCell class] forCellReuseIdentifier:kCellReuseID];
+        
+        
+        [self registerClass:[CardCell class] forCellReuseIdentifier:@"CBLUITableDelegate"];
         [self registerClass:[AddCardHeader class] forHeaderFooterViewReuseIdentifier:kHeaderReuseID];
-        self.fetchController = [Card MR_fetchAllSortedBy:@"timestamp" ascending:NO withPredicate:nil groupBy:nil delegate:self];
-        self.dataSource = self;
+               self.cbDatasource = [[CBLUITableSource alloc] init];
+        CBLLiveQuery *query = [[[[Database sharedDB] viewNamed:@"byDate"] createQuery] asLiveQuery];
+        self.cbDatasource.query = query;
+        self.cbDatasource.tableView = self;
+        self.cbDatasource.labelProperty = nil;
         self.delegate = self;
+        self.dataSource = self.cbDatasource;
     }
     return self;
 }
+
+#pragma mark CBUITableSource
+
+-(void)couchTableSource:(CBLUITableSource *)source willUseCell:(UITableViewCell *)cell forRow:(CBLQueryRow *)row {
+    cell.textLabel.text = nil;
+    [(CardCell *)cell setCardData:row.value];
+}
+
 
 #pragma mark NSFetchedResultsController Delegate Methods
 
@@ -36,30 +52,8 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self endUpdates];
 }
-
--(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    
-        switch (type) {
-            case NSFetchedResultsChangeInsert:
-                [self insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                break;
-            case NSFetchedResultsChangeUpdate:
-                [self configureCell:(CardCell *)[self cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-                break;
-            case NSFetchedResultsChangeDelete:
-                [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
-                break;
-            default:
-                break;
-        }
-    
-}
-
 #pragma mark UITableView Helpers
 
--(void)configureCell:(CardCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    cell.card = [self.fetchController objectAtIndexPath:indexPath];
-}
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,12 +64,6 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 }
 
 #pragma mark UITableView Datasource
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CardCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReuseID];
-    [self configureCell:cell atIndexPath:indexPath];
-    return cell;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[self.fetchController sections] objectAtIndex:section] numberOfObjects];
@@ -100,13 +88,6 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     AddCardHeader *header = [self dequeueReusableHeaderFooterViewWithIdentifier:kHeaderReuseID];
     return header;
-}
-
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Card *cardToDelete = [self.fetchController objectAtIndexPath:indexPath];
-        [cardToDelete MR_deleteEntity];
-    }
 }
 
 #pragma mark UIScrollView Delegate

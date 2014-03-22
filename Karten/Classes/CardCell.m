@@ -90,14 +90,13 @@
 
 #pragma mark Accessors
 
--(void)setCard:(Card *)card {
+-(void)setCardData:(NSDictionary *)cardData {
     if (self.definitionView == nil || self.termView == nil) {
         [self addDisplayViews];
     }
 
-    self.definitionView.displayText = card.definition;
-    self.termView.displayText = card.term;
-    _card = card;
+    self.definitionView.displayText = cardData[@"definition"];
+    self.termView.displayText = cardData[@"term"];
 }
 
 @end

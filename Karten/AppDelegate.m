@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "Database.h"
 
 @implementation AppDelegate
 
@@ -9,7 +10,7 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
+    [Database setupDB];
     self.mainViewController = [[MainViewController alloc] init];
     self.window.rootViewController = self.mainViewController;
     return YES;

@@ -6,7 +6,7 @@ target "Karten" do
     pod "HexColors"
     pod "AFNetworking"
     pod "GoogleAnalytics-iOS-SDK"
-    pod "BlocksKit", '~> 2.0.0'
+    pod "BlocksKit", '~> 2.2.0'
     pod "UIView+AutoLayout"
     pod "RNBlurModalView"
     pod "MagicalRecord"

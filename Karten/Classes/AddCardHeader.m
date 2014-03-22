@@ -1,6 +1,7 @@
 #import "AddCardHeader.h"
 #import "Card.h"
 #import "KartenModelHelpers.h"
+#import "Database.h"
 
 @interface AddCardHeader ()
 
@@ -70,13 +71,19 @@
     [self.contentView addSubview:self.submitButton];
     [self.submitButton bk_addEventHandler:^(id sender) {
         if ([self.definitionTextField isValid] && [self.termTextField isValid]) {
-            NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
-            [ctx performBlock:^{
-                Card *newCard = [Card MR_createEntity];
-                newCard.term = self.termTextField.text;
-                newCard.definition = self.definitionTextField.text;
-                [ctx MR_saveOnlySelfAndWait];
-            }];
+            NSDictionary *cardDocument = @{@"term": self.termTextField.text,
+                                           @"definition" : self.definitionTextField.text,
+                                           @"created_at" : [CBLJSON JSONObjectWithDate:[NSDate date]]};
+            CBLDocument *newDoc = [[Database sharedDB] createDocument];
+            NSError *err = nil;
+            if (![newDoc putProperties:cardDocument error:&err]) {
+                NSLog(@"Couldn't put doc %@. %@", cardDocument, err);
+            } else {
+                self.definitionTextField.text = nil;
+                self.termTextField.text = nil;
+                [self.termTextField resignFirstResponder];
+                [self.definitionTextField resignFirstResponder];
+            }
         }
     } forControlEvents:UIControlEventTouchUpInside];
 }

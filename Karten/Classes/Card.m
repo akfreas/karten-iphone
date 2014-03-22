@@ -3,7 +3,4 @@
 
 @implementation Card
 
-@dynamic term;
-@dynamic definition;
-
 @end

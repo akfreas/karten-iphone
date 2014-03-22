@@ -7,7 +7,7 @@ typedef enum CardCellMode {
 
 @interface CardCell : UITableViewCell
 
-@property (nonatomic, retain) Card *card;
+@property (nonatomic, retain) NSDictionary *cardData;
 @property (assign, nonatomic) CardCellMode mode;
 
 -(void)flipMode;

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */; };
+		1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2618DDE9D700E85CDE /* CFNetwork.framework */; };
+		1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2818DDE9DE00E85CDE /* Security.framework */; };
+		1966CD2B18DDE9EC00E85CDE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2A18DDE9EC00E85CDE /* SystemConfiguration.framework */; };
+		1966CD2D18DDE9F300E85CDE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */; };
+		1966CD2F18DDE9FA00E85CDE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2E18DDE9FA00E85CDE /* libz.dylib */; };
+		1966CD3218DDF29A00E85CDE /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966CD3118DDF29A00E85CDE /* Database.m */; };
 		198C096218CC3F5F000C00E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
 		198C096418CC3F5F000C00E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096318CC3F5F000C00E2 /* CoreGraphics.framework */; };
 		198C096618CC3F5F000C00E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
@@ -14,7 +21,6 @@
 		198C096E18CC3F5F000C00E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198C096C18CC3F5F000C00E2 /* InfoPlist.strings */; };
 		198C097018CC3F5F000C00E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C096F18CC3F5F000C00E2 /* main.m */; };
 		198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C097318CC3F5F000C00E2 /* AppDelegate.m */; };
-		198C097718CC3F5F000C00E2 /* Karten.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 198C097518CC3F5F000C00E2 /* Karten.xcdatamodeld */; };
 		198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198C097818CC3F5F000C00E2 /* Images.xcassets */; };
 		198C098018CC3F5F000C00E2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C097F18CC3F5F000C00E2 /* XCTest.framework */; };
 		198C098118CC3F5F000C00E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
@@ -45,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
+		1966CD2618DDE9D700E85CDE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1966CD2818DDE9DE00E85CDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1966CD2A18DDE9EC00E85CDE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1966CD2E18DDE9FA00E85CDE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1966CD3018DDF29A00E85CDE /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = Classes/Database.h; sourceTree = "<group>"; };
+		1966CD3118DDF29A00E85CDE /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Database.m; path = Classes/Database.m; sourceTree = "<group>"; };
 		198C095E18CC3F5F000C00E2 /* Karten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Karten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198C096118CC3F5F000C00E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		198C096318CC3F5F000C00E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,7 +70,6 @@
 		198C097118CC3F5F000C00E2 /* Karten-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Karten-Prefix.pch"; sourceTree = "<group>"; };
 		198C097218CC3F5F000C00E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		198C097318CC3F5F000C00E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		198C097618CC3F5F000C00E2 /* Karten.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Karten.xcdatamodel; sourceTree = "<group>"; };
 		198C097818CC3F5F000C00E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		198C097E18CC3F5F000C00E2 /* KartenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		198C097F18CC3F5F000C00E2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -91,6 +104,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1966CD2F18DDE9FA00E85CDE /* libz.dylib in Frameworks */,
+				1966CD2D18DDE9F300E85CDE /* libsqlite3.dylib in Frameworks */,
+				1966CD2B18DDE9EC00E85CDE /* SystemConfiguration.framework in Frameworks */,
+				1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */,
+				1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */,
+				1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */,
 				198C096418CC3F5F000C00E2 /* CoreGraphics.framework in Frameworks */,
 				198C096818CC3F5F000C00E2 /* CoreData.framework in Frameworks */,
 				198C096618CC3F5F000C00E2 /* UIKit.framework in Frameworks */,
@@ -136,6 +155,12 @@
 		198C096018CC3F5F000C00E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1966CD2E18DDE9FA00E85CDE /* libz.dylib */,
+				1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */,
+				1966CD2A18DDE9EC00E85CDE /* SystemConfiguration.framework */,
+				1966CD2818DDE9DE00E85CDE /* Security.framework */,
+				1966CD2618DDE9D700E85CDE /* CFNetwork.framework */,
+				1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */,
 				198C096118CC3F5F000C00E2 /* Foundation.framework */,
 				198C096318CC3F5F000C00E2 /* CoreGraphics.framework */,
 				198C096518CC3F5F000C00E2 /* UIKit.framework */,
@@ -157,6 +182,8 @@
 				198C099F18CC49E1000C00E2 /* MainViewController.m */,
 				198C09A118CC4A3A000C00E2 /* CardTableView.h */,
 				198C09A218CC4A3A000C00E2 /* CardTableView.m */,
+				1966CD3018DDF29A00E85CDE /* Database.h */,
+				1966CD3118DDF29A00E85CDE /* Database.m */,
 				198C09A418CC4A4A000C00E2 /* CardCell.h */,
 				198C09A518CC4A4A000C00E2 /* CardCell.m */,
 				198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */,
@@ -164,7 +191,6 @@
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
 				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
 				198C097818CC3F5F000C00E2 /* Images.xcassets */,
-				198C097518CC3F5F000C00E2 /* Karten.xcdatamodeld */,
 				198C096A18CC3F5F000C00E2 /* Supporting Files */,
 			);
 			path = Karten;
@@ -361,9 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
+				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
 				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
-				198C097718CC3F5F000C00E2 /* Karten.xcdatamodeld in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
@@ -491,14 +517,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -507,14 +538,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -592,19 +628,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		198C097518CC3F5F000C00E2 /* Karten.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				198C097618CC3F5F000C00E2 /* Karten.xcdatamodel */,
-			);
-			currentVersion = 198C097618CC3F5F000C00E2 /* Karten.xcdatamodel */;
-			path = Karten.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 198C095618CC3F5F000C00E2 /* Project object */;
 }

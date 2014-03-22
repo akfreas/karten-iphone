@@ -13,6 +13,7 @@ profile
 *.moved-aside
 AcceptanceTest/Run*
 AcceptanceTest/test-results
+*.xcworkspace
 *.trace
 Frameworks
 .DS_Store
