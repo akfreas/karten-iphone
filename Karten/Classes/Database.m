@@ -41,6 +41,11 @@
             emit(date, doc);
         }
     }) reduceBlock:nil version:@"1.0"];
+    
+//    [[self.database viewNamed:@"search"] setMapBlock:MAPBLOCK({
+//        id
+//    }) reduceBlock:REDUCEBLOCK({}) version:@"1.0"];
+//    
     [self.database createPullReplication:[NSURL URLWithString:pushAndPullURLString]];
     [self.database createPushReplication:[NSURL URLWithString:pushAndPullURLString]];
 }

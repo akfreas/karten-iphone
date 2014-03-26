@@ -6,9 +6,9 @@
 
 @interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate>
 
-@property (retain, nonatomic) NSFetchedResultsController *fetchController;
 @property (strong) CBLDatabase *database;
 @property (strong) CBLUITableSource *cbDatasource;
+@property (strong) NSIndexPath *flippedIndexPath;
 @end
 
 @implementation CardTableView
@@ -26,6 +26,7 @@ static NSString *kHeaderReuseID = @"HeaderCell";
         [self registerClass:[AddCardHeader class] forHeaderFooterViewReuseIdentifier:kHeaderReuseID];
                self.cbDatasource = [[CBLUITableSource alloc] init];
         CBLLiveQuery *query = [[[[Database sharedDB] viewNamed:@"byDate"] createQuery] asLiveQuery];
+        query.descending    = YES;
         self.cbDatasource.query = query;
         self.cbDatasource.tableView = self;
         self.cbDatasource.labelProperty = nil;
@@ -58,20 +59,16 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-
+    if (self.flippedIndexPath != nil) {
+        CardCell *lastCell = (CardCell *)[tableView cellForRowAtIndexPath:self.flippedIndexPath];
+        [lastCell flipMode];
+    }
+    self.flippedIndexPath = indexPath;
     CardCell *cell = (CardCell *)[tableView cellForRowAtIndexPath:indexPath];
     [cell flipMode];
 }
 
 #pragma mark UITableView Datasource
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self.fetchController sections] objectAtIndex:section] numberOfObjects];
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchController sections] count];
-}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 65.0f;
