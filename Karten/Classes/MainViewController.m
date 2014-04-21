@@ -19,6 +19,9 @@
     self = [super init];
     if (self) {
         self.tableView = [[CardTableView alloc] initForAutoLayout];
+        self.title = @"Words";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Words" image:[UIImage imageNamed:@"33-cabinet"] tag:0];
+        self.tabBarItem.title = @"Words";
     }
     
     return self;
@@ -42,20 +45,17 @@
     
     // Tell the database to use this URL for bidirectional sync.
     // This call returns an array of the pull and push replication objects:
-    NSArray* repls = [[Database sharedDB] replicationsWithURL: newRemoteURL exclusively: YES];
-    if (repls) {
-        _pull = repls[0];
-        _push = repls[1];
-        _pull.continuous = _push.continuous = YES;
-        // Observe replication progress changes, in both directions:
-        NSNotificationCenter* nctr = [NSNotificationCenter defaultCenter];
-        [nctr addObserver: self selector: @selector(replicationProgress:)
-                     name: kCBLReplicationChangeNotification object: _pull];
-        [nctr addObserver: self selector: @selector(replicationProgress:)
-                     name: kCBLReplicationChangeNotification object: _push];
-        [_push start];
-        [_pull start];
-    }
+    _pull = [[Database sharedDB] createPullReplication:newRemoteURL];
+    _push = [[Database sharedDB] createPushReplication:newRemoteURL];
+    _pull.continuous = _push.continuous = YES;
+    // Observe replication progress changes, in both directions:
+    NSNotificationCenter* nctr = [NSNotificationCenter defaultCenter];
+    [nctr addObserver: self selector: @selector(replicationProgress:)
+                 name: kCBLReplicationChangeNotification object: _pull];
+    [nctr addObserver: self selector: @selector(replicationProgress:)
+                 name: kCBLReplicationChangeNotification object: _push];
+    [_push start];
+    [_pull start];
 }
 
 // Called in response to replication-change notifications. Updates the progress UI.
@@ -66,7 +66,7 @@
         unsigned total = _pull.changesCount+ _push.changesCount;
         NSLog(@"SYNC progress: %u / %u", completed, total);
         // Update the progress bar, avoiding divide-by-zero exceptions:
-//        progress.progress = (completed / (float)MAX(total, 1u));
+        //        progress.progress = (completed / (float)MAX(total, 1u));
     } else {
         // Sync is idle -- hide the progress bar and show the config button:
     }

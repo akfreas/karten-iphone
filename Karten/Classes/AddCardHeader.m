@@ -8,6 +8,7 @@
 @property (nonatomic, retain) UITextField *termTextField;
 @property (nonatomic, retain) UITextField *definitionTextField;
 @property (nonatomic, retain) UIButton *submitButton;
+@property (nonatomic) UISearchBar *wordSearchBar;
 
 @end
 
@@ -24,11 +25,13 @@
 }
 
 -(void)configureLayoutConstraints {
-    UIBind(self.termTextField, self.definitionTextField, self.submitButton);
+    UIBind(self.termTextField, self.definitionTextField, self.submitButton, self.wordSearchBar);
     [self.contentView addConstraintWithVisualFormat:@"H:|-[termTextField]-[definitionTextField]-[submitButton(64)]|" bindings:BBindings];
-    [self.contentView addConstraintWithVisualFormat:@"V:|-[definitionTextField]-|" bindings:BBindings];
-    [self.contentView addConstraintWithVisualFormat:@"V:|-[termTextField]-|" bindings:BBindings];
-    [self.contentView addConstraintWithVisualFormat:@"V:|-[submitButton]-|" bindings:BBindings];
+    [self.contentView addConstraintWithVisualFormat:@"V:|-[definitionTextField]" bindings:BBindings];
+    [self.contentView addConstraintWithVisualFormat:@"V:|-[termTextField]" bindings:BBindings];
+    [self.contentView addConstraintWithVisualFormat:@"V:|-[submitButton]" bindings:BBindings];
+    [self.contentView addConstraintWithVisualFormat:@"V:[termTextField][wordSearchBar(>=30)]|" bindings:BBindings];
+    [self.contentView addConstraintWithVisualFormat:@"H:|[wordSearchBar]|" bindings:BBindings];
 }
 
 -(void)addUIComponents {
@@ -36,6 +39,7 @@
     [self addTermTextField];
     [self addDefinitionTextField];
     [self addSubmitButton];
+    [self addSearchBar];
 }
 
 -(void)addTermTextField {
@@ -64,6 +68,12 @@
     [self.contentView addSubview:self.definitionTextField];
 }
 
+- (void)addSearchBar {
+    self.wordSearchBar = [[UISearchBar alloc] initForAutoLayout];
+    self.wordSearchBar.placeholder = @"Search";
+    [self.contentView addSubview:self.wordSearchBar];
+}
+
 -(void)addSubmitButton {
     self.submitButton = [[UIButton alloc] initForAutoLayout];
     [self.submitButton setTitle:@"+" forState:UIControlStateNormal];
@@ -86,6 +96,13 @@
             }
         }
     } forControlEvents:UIControlEventTouchUpInside];
+}
+
+
+#pragma mark Accessors
+
+- (void)setDelegate:(id<UISearchBarDelegate>)delegate {
+    self.wordSearchBar.delegate = delegate;
 }
 
 @end

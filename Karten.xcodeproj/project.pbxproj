@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
+		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
 		1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */; };
 		1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2618DDE9D700E85CDE /* CFNetwork.framework */; };
 		1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2818DDE9DE00E85CDE /* Security.framework */; };
@@ -37,6 +39,10 @@
 		198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */; };
 		198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */; };
 		198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */; };
+		19C93317190316EC0075FA49 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C93316190316EC0075FA49 /* QuizViewController.m */; };
+		19C9331A1903173F0075FA49 /* 64-zap.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933181903173F0075FA49 /* 64-zap.png */; };
+		19C9331B1903173F0075FA49 /* 64-zap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933191903173F0075FA49 /* 64-zap@2x.png */; };
+		19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9331D190321DD0075FA49 /* FlashCardView.m */; };
 		7715A2A1E6804E7E9BE72BDA /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA388A941074F25BA2B035A /* libPods-Karten.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
+		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
 		1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
 		1966CD2618DDE9D700E85CDE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1966CD2818DDE9DE00E85CDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -95,6 +103,12 @@
 		198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Valdiation.m"; path = "Classes/UITextField+Valdiation.m"; sourceTree = "<group>"; };
 		198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDisplayView.h; path = Classes/InfoDisplayView.h; sourceTree = "<group>"; };
 		198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDisplayView.m; path = Classes/InfoDisplayView.m; sourceTree = "<group>"; };
+		19C93315190316EC0075FA49 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = Classes/QuizViewController.h; sourceTree = "<group>"; };
+		19C93316190316EC0075FA49 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = Classes/QuizViewController.m; sourceTree = "<group>"; };
+		19C933181903173F0075FA49 /* 64-zap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap.png"; path = "../../../../../../../../Users/akfreas/Documents/GlyphishPro/icons/icons-white/64-zap.png"; sourceTree = "<group>"; };
+		19C933191903173F0075FA49 /* 64-zap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap@2x.png"; path = "../../../../../../../../Users/akfreas/Documents/GlyphishPro/icons/icons-white/64-zap@2x.png"; sourceTree = "<group>"; };
+		19C9331C190321DD0075FA49 /* FlashCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardView.h; path = Classes/FlashCardView.h; sourceTree = "<group>"; };
+		19C9331D190321DD0075FA49 /* FlashCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardView.m; path = Classes/FlashCardView.m; sourceTree = "<group>"; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,6 +194,8 @@
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
 				198C099E18CC49E1000C00E2 /* MainViewController.h */,
 				198C099F18CC49E1000C00E2 /* MainViewController.m */,
+				19C93315190316EC0075FA49 /* QuizViewController.h */,
+				19C93316190316EC0075FA49 /* QuizViewController.m */,
 				198C09A118CC4A3A000C00E2 /* CardTableView.h */,
 				198C09A218CC4A3A000C00E2 /* CardTableView.m */,
 				1966CD3018DDF29A00E85CDE /* Database.h */,
@@ -188,8 +204,14 @@
 				198C09A518CC4A4A000C00E2 /* CardCell.m */,
 				198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */,
 				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
+				19C9331C190321DD0075FA49 /* FlashCardView.h */,
+				19C9331D190321DD0075FA49 /* FlashCardView.m */,
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
 				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
+				19169F4119005B3600F822C6 /* 33-cabinet.png */,
+				19169F4219005B3600F822C6 /* 33-cabinet@2x.png */,
+				19C933181903173F0075FA49 /* 64-zap.png */,
+				19C933191903173F0075FA49 /* 64-zap@2x.png */,
 				198C097818CC3F5F000C00E2 /* Images.xcassets */,
 				198C096A18CC3F5F000C00E2 /* Supporting Files */,
 			);
@@ -334,7 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				198C096E18CC3F5F000C00E2 /* InfoPlist.strings in Resources */,
+				19C9331A1903173F0075FA49 /* 64-zap.png in Resources */,
+				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
+				19C9331B1903173F0075FA49 /* 64-zap@2x.png in Resources */,
+				19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,10 +415,12 @@
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
+				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
 				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
+				19C93317190316EC0075FA49 /* QuizViewController.m in Sources */,
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
 				198C099918CC493E000C00E2 /* Card.m in Sources */,

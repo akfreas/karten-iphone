@@ -24,4 +24,6 @@
     #import <HexColors/HexColor.h>
     #import "CouchbaseLite/CouchbaseLite.h"
     #import "CouchbaseLite/CBLDocument.h"
+#import "Card.h"
+#import "Card+Helpers.h"
 #endif

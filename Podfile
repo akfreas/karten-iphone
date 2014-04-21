@@ -10,6 +10,7 @@ target "Karten" do
     pod "UIView+AutoLayout"
     pod "RNBlurModalView"
     pod "MagicalRecord"
+    pod 'MDCSwipeToChoose', '~> 0.2.0'
     pod "BugSense"
 end
 

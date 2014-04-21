@@ -4,7 +4,7 @@
 #import "Card.h"
 #import "Database.h"
 
-@interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate>
+@interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate, UISearchBarDelegate>
 
 @property (strong) CBLDatabase *database;
 @property (strong) CBLUITableSource *cbDatasource;
@@ -26,7 +26,8 @@ static NSString *kHeaderReuseID = @"HeaderCell";
         [self registerClass:[AddCardHeader class] forHeaderFooterViewReuseIdentifier:kHeaderReuseID];
                self.cbDatasource = [[CBLUITableSource alloc] init];
         CBLLiveQuery *query = [[[[Database sharedDB] viewNamed:@"byDate"] createQuery] asLiveQuery];
-        query.descending    = YES;
+        query.descending = YES;
+//        query.keys = @[@"Die"];
         self.cbDatasource.query = query;
         self.cbDatasource.tableView = self;
         self.cbDatasource.labelProperty = nil;
@@ -58,33 +59,46 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-    if (self.flippedIndexPath != nil) {
-        CardCell *lastCell = (CardCell *)[tableView cellForRowAtIndexPath:self.flippedIndexPath];
-        [lastCell flipMode];
-    }
-    self.flippedIndexPath = indexPath;
-    CardCell *cell = (CardCell *)[tableView cellForRowAtIndexPath:indexPath];
-    [cell flipMode];
+//    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+//    if (self.flippedIndexPath != nil) {
+//        CardCell *lastCell = (CardCell *)[tableView cellForRowAtIndexPath:self.flippedIndexPath];
+//        [lastCell flipMode];
+//    }
+//    self.flippedIndexPath = indexPath;
+//    CardCell *cell = (CardCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    [cell flipMode];
 }
 
 #pragma mark UITableView Datasource
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 65.0f;
+    return 95.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 44.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0f;
+    return 44.0f;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     AddCardHeader *header = [self dequeueReusableHeaderFooterViewWithIdentifier:kHeaderReuseID];
+    if (header.delegate == nil) {
+        header.delegate = self;
+    }
     return header;
+}
+
+#pragma mark UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    
+    self.cbDatasource.query.keys = @[@"a"];
+//    [self.cbDatasource reloadFromQuery];
+//    [self reloadData];
 }
 
 #pragma mark UIScrollView Delegate

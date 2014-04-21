@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "QuizViewController.h"
 #import "Database.h"
 
 @implementation AppDelegate
@@ -11,7 +12,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [Database setupDB];
-    self.mainViewController = [[MainViewController alloc] init];
+    UITabBarController *mainTabBar = [[UITabBarController alloc] init];
+    mainTabBar.viewControllers = @[[[MainViewController alloc] init], [[QuizViewController alloc] init]];
+    self.mainViewController = mainTabBar;
     self.window.rootViewController = self.mainViewController;
     return YES;
 }

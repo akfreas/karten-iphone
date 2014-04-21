@@ -1,5 +1,6 @@
 @interface InfoDisplayView : UIView
 
-@property (nonatomic, retain) NSString *displayText;
+
+-(void)setDisplayTextLeft:(NSString *)left right:(NSString *)right;
 
 @end

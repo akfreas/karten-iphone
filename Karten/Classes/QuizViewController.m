@@ -1,0 +1,125 @@
+#import "QuizViewController.h"
+#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import "FlashCardView.h"
+#import "Database.h"
+#import <CouchbaseLite/CBLQuery.h>
+
+@interface QuizViewController () <MDCSwipeToChooseDelegate>
+
+@property (nonatomic) FlashCardView *frontCardView;
+@property (nonatomic) FlashCardView *backCardView;
+@property (nonatomic) NSMutableArray *wordArray;
+@property (nonatomic) CBLLiveQuery *query;
+@end
+
+@implementation QuizViewController
+
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.title = @"Quiz";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title image:[UIImage imageNamed:@"64-zap"] tag:1];
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    CBLView *view = [[Database sharedDB] viewNamed:@"byDate"];
+    self.query = [[view createQuery] asLiveQuery];
+    [self.query start];
+    [self.query addObserver:self forKeyPath:@"rows" options:0 context:nil];
+    self.wordArray = [NSMutableArray array];
+}
+
+// This is called when a user didn't fully swipe left or right.
+- (void)viewDidCancelSwipe:(UIView *)view {
+
+}
+
+// This is called then a user swipes the view fully left or right.
+- (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
+    // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
+    // and "LIKED" on swipes to the right.
+    
+    // MDCSwipeToChooseView removes the view from the view hierarchy
+    // after it is swiped (this behavior can be customized via the
+    // MDCSwipeOptions class). Since the front card view is gone, we
+    // move the back card to the front, and create a new back card.
+    self.frontCardView = self.backCardView;
+    if ((self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]])) {
+        // Fade the back card into view.
+        self.backCardView.alpha = 0.f;
+        [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+        [UIView animateWithDuration:0.5
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.backCardView.alpha = 1.f;
+                         } completion:nil];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if (object == self.query) {
+        for (CBLQueryRow *row in self.query.rows) {
+            Card *card = [[Card alloc] init];
+            card.definition = row.document[@"definition"];
+            card.term = row.document[@"term"];
+            [self.wordArray addObject:card];
+        }
+        self.frontCardView = [self popFlashCardViewWithFrame:[self frontCardViewFrame]];
+        [self.view addSubview:self.frontCardView];
+        self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]];
+        [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+    }
+}
+
+- (FlashCardView *)popFlashCardViewWithFrame:(CGRect)frame
+{
+    MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
+    options.delegate = self;
+    options.threshold = 160.0f;
+    options.onPan = ^(MDCPanState *state) {
+        CGRect frame = [self backCardViewFrame];
+        self.backCardView.frame = CGRectMake(frame.origin.x,
+                                             frame.origin.y - (state.thresholdRatio * 10.f),
+                                             CGRectGetWidth(frame),
+                                             CGRectGetHeight(frame));
+    };
+    
+    FlashCardView *currentView = [[FlashCardView alloc] initWithFrame:frame card:self.wordArray[0] options:options];
+    [self.wordArray removeObjectAtIndex:0];
+    return currentView;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+- (CGRect)frontCardViewFrame {
+    CGFloat horizontalPadding = 20.f;
+    CGFloat topPadding = 60.f;
+    CGFloat bottomPadding = 200.f;
+    return CGRectMake(horizontalPadding,
+                      topPadding,
+                      CGRectGetWidth(self.view.frame) - (horizontalPadding * 2),
+                      CGRectGetHeight(self.view.frame) - bottomPadding);
+}
+
+- (CGRect)backCardViewFrame {
+    CGRect frontFrame = [self frontCardViewFrame];
+    return CGRectMake(frontFrame.origin.x,
+                      frontFrame.origin.y + 10.f,
+                      CGRectGetWidth(frontFrame),
+                      CGRectGetHeight(frontFrame));
+}
+
+
+@end

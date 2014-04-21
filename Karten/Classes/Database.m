@@ -26,7 +26,7 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *pushAndPullURLString = @"http://sync.couchbasecloud.com/karten/";
+    NSString *pushAndPullURLString = @"http://sync.couchbasecloud.com/krtncb2/";
     NSDictionary *appDefaults = @{@"syncpoint": pushAndPullURLString};
     [defaults registerDefaults:appDefaults];
     [defaults synchronize];

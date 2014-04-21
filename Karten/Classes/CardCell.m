@@ -3,9 +3,7 @@
 
 @interface CardCell ()
 
-@property (nonatomic, retain) InfoDisplayView *definitionView;
 @property (nonatomic, retain) InfoDisplayView *termView;
-@property (nonatomic, weak) InfoDisplayView *currentView;
 @property (nonatomic, retain) NSMutableArray *constraintArray;
 
 @end
@@ -17,8 +15,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self addDisplayViews];
-        self.mode = CardCellModeTerm;
-        [self.contentView addSubview:self.currentView];
         self.constraintArray = [NSMutableArray array];
 
     }
@@ -33,46 +29,20 @@
 }
 
 -(void)addDisplayViews {
-    self.definitionView = [[InfoDisplayView alloc] initForAutoLayout];
     self.termView = [[InfoDisplayView alloc] initForAutoLayout];
+    [self.contentView addSubview:self.termView];
+
 }
 
--(void)setMode:(CardCellMode)mode {
-    if (mode == CardCellModeDefinition) {
-        self.currentView = self.definitionView;
-    } else if (mode == CardCellModeTerm) {
-        self.currentView = self.termView;
-    }
-    _mode = mode;
-}
 
 -(void)layoutSubviews {
     [super layoutSubviews];
 }
 
--(void)flipMode {
-    InfoDisplayView *newView;
-    CardCellMode newMode;
-    if (self.mode == CardCellModeTerm) {
-        newView = self.definitionView;
-        newMode = CardCellModeDefinition;
-    } else {
-        newView = self.termView;
-        newMode = CardCellModeTerm;
-    }
-    if (newView.superview == nil) {
-        [self.contentView addSubview:newView];
-    }
-    [self configureLayoutConstraintsForView:newView];
-    [UIView transitionFromView:self.currentView toView:newView duration:0.2f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
-        self.mode = newMode;
-//        [self removeConstraintFromArray];
-    }];
-}
 
 -(void)updateConstraints {
     [self removeConstraintFromArray];
-    [self configureLayoutConstraintsForView:self.currentView];
+    [self configureLayoutConstraintsForView:self.termView];
     [super updateConstraints];
 }
 
@@ -91,12 +61,10 @@
 #pragma mark Accessors
 
 -(void)setCardData:(NSDictionary *)cardData {
-    if (self.definitionView == nil || self.termView == nil) {
+    if (self.termView == nil) {
         [self addDisplayViews];
     }
-
-    self.definitionView.displayText = cardData[@"definition"];
-    self.termView.displayText = cardData[@"term"];
+    [self.termView setDisplayTextLeft:cardData[@"term"] right:cardData[@"definition"]];
 }
 
 @end
