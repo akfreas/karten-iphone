@@ -2,14 +2,13 @@
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "FlashCardView.h"
 #import "Database.h"
-#import <CouchbaseLite/CBLQuery.h>
 
 @interface QuizViewController () <MDCSwipeToChooseDelegate>
 
 @property (nonatomic) FlashCardView *frontCardView;
 @property (nonatomic) FlashCardView *backCardView;
 @property (nonatomic) NSMutableArray *wordArray;
-@property (nonatomic) CBLLiveQuery *query;
+
 @end
 
 @implementation QuizViewController
@@ -27,11 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    CBLView *view = [[Database sharedDB] viewNamed:@"byDate"];
-    self.query = [[view createQuery] asLiveQuery];
-    [self.query start];
-    [self.query addObserver:self forKeyPath:@"rows" options:0 context:nil];
-    self.wordArray = [NSMutableArray array];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.wordArray = [NSMutableArray arrayWithArray:[Card MR_findAllSortedBy:@"knowledgeScore" ascending:YES withPredicate:nil]];
+    self.frontCardView = [self popFlashCardViewWithFrame:[self frontCardViewFrame]];
+    [self.view addSubview:self.frontCardView];
+    self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]];
+    [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
+
 }
 
 // This is called when a user didn't fully swipe left or right.
@@ -40,7 +44,7 @@
 }
 
 // This is called then a user swipes the view fully left or right.
-- (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
+- (void)view:(FlashCardView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
     // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
     // and "LIKED" on swipes to the right.
     
@@ -48,6 +52,14 @@
     // after it is swiped (this behavior can be customized via the
     // MDCSwipeOptions class). Since the front card view is gone, we
     // move the back card to the front, and create a new back card.
+    
+    if (direction == MDCSwipeDirectionLeft) {
+        view.card.knowledgeScore = @([view.card.knowledgeScore integerValue] - 1);
+    } else if (direction == MDCSwipeDirectionRight) {
+        view.card.knowledgeScore = @([view.card.knowledgeScore integerValue] + 1);
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
+    
     self.frontCardView = self.backCardView;
     if ((self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]])) {
         // Fade the back card into view.
@@ -62,27 +74,13 @@
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if (object == self.query) {
-        for (CBLQueryRow *row in self.query.rows) {
-            Card *card = [[Card alloc] init];
-            card.definition = row.document[@"definition"];
-            card.term = row.document[@"term"];
-            [self.wordArray addObject:card];
-        }
-        self.frontCardView = [self popFlashCardViewWithFrame:[self frontCardViewFrame]];
-        [self.view addSubview:self.frontCardView];
-        self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]];
-        [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
-    }
-}
-
 - (FlashCardView *)popFlashCardViewWithFrame:(CGRect)frame
 {
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
     options.delegate = self;
-    options.threshold = 160.0f;
+    options.threshold = 120.0f;
+    options.likedText = @"KNOW";
+    options.nopeText = @"NOPE";
     options.onPan = ^(MDCPanState *state) {
         CGRect frame = [self backCardViewFrame];
         self.backCardView.frame = CGRectMake(frame.origin.x,
