@@ -30,7 +30,6 @@
 		198C098318CC3F5F000C00E2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
 		198C098B18CC3F5F000C00E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198C098918CC3F5F000C00E2 /* InfoPlist.strings */; };
 		198C098D18CC3F5F000C00E2 /* KartenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C098C18CC3F5F000C00E2 /* KartenTests.m */; };
-		198C099918CC493E000C00E2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099818CC493E000C00E2 /* Card.m */; };
 		198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099C18CC4976000C00E2 /* Card+Helpers.m */; };
 		198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* MainViewController.m */; };
 		198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A218CC4A3A000C00E2 /* CardTableView.m */; };
@@ -43,6 +42,9 @@
 		19C9331A1903173F0075FA49 /* 64-zap.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933181903173F0075FA49 /* 64-zap.png */; };
 		19C9331B1903173F0075FA49 /* 64-zap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933191903173F0075FA49 /* 64-zap@2x.png */; };
 		19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9331D190321DD0075FA49 /* FlashCardView.m */; };
+		19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */; };
+		19C933271905CE8D0075FA49 /* CouchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C933261905CE8D0075FA49 /* CouchManager.m */; };
+		19C9332A19064BE90075FA49 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9332919064BE90075FA49 /* Card.m */; };
 		7715A2A1E6804E7E9BE72BDA /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA388A941074F25BA2B035A /* libPods-Karten.a */; };
 /* End PBXBuildFile section */
 
@@ -84,8 +86,6 @@
 		198C098818CC3F5F000C00E2 /* KartenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KartenTests-Info.plist"; sourceTree = "<group>"; };
 		198C098A18CC3F5F000C00E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		198C098C18CC3F5F000C00E2 /* KartenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenTests.m; sourceTree = "<group>"; };
-		198C099718CC493E000C00E2 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
-		198C099818CC493E000C00E2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
 		198C099B18CC4976000C00E2 /* Card+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Card+Helpers.h"; path = "Classes/Card+Helpers.h"; sourceTree = "<group>"; };
 		198C099C18CC4976000C00E2 /* Card+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Card+Helpers.m"; path = "Classes/Card+Helpers.m"; sourceTree = "<group>"; };
 		198C099E18CC49E1000C00E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
@@ -109,6 +109,11 @@
 		19C933191903173F0075FA49 /* 64-zap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap@2x.png"; path = "../../../../../../../../Users/akfreas/Documents/GlyphishPro/icons/icons-white/64-zap@2x.png"; sourceTree = "<group>"; };
 		19C9331C190321DD0075FA49 /* FlashCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardView.h; path = Classes/FlashCardView.h; sourceTree = "<group>"; };
 		19C9331D190321DD0075FA49 /* FlashCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardView.m; path = Classes/FlashCardView.m; sourceTree = "<group>"; };
+		19C933201905BFF10075FA49 /* KartenModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KartenModel.xcdatamodel; sourceTree = "<group>"; };
+		19C933251905CE8D0075FA49 /* CouchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouchManager.h; path = Classes/CouchManager.h; sourceTree = "<group>"; };
+		19C933261905CE8D0075FA49 /* CouchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouchManager.m; path = Classes/CouchManager.m; sourceTree = "<group>"; };
+		19C9332819064BE90075FA49 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
+		19C9332919064BE90075FA49 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				198C09AE18CC674C000C00E2 /* Helpers */,
-				198C099618CC48E8000C00E2 /* Models */,
+				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
 				198C099E18CC49E1000C00E2 /* MainViewController.h */,
@@ -248,14 +253,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		198C099618CC48E8000C00E2 /* Models */ = {
+		198C099618CC48E8000C00E2 /* DB */ = {
 			isa = PBXGroup;
 			children = (
 				198C099A18CC4957000C00E2 /* Helpers */,
-				198C099718CC493E000C00E2 /* Card.h */,
-				198C099818CC493E000C00E2 /* Card.m */,
+				19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */,
+				19C9332819064BE90075FA49 /* Card.h */,
+				19C9332919064BE90075FA49 /* Card.m */,
+				19C933251905CE8D0075FA49 /* CouchManager.h */,
+				19C933261905CE8D0075FA49 /* CouchManager.m */,
 			);
-			name = Models;
+			name = DB;
 			sourceTree = "<group>";
 		};
 		198C099A18CC4957000C00E2 /* Helpers */ = {
@@ -415,15 +423,17 @@
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
+				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
+				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
 				19C93317190316EC0075FA49 /* QuizViewController.m in Sources */,
+				19C9332A19064BE90075FA49 /* Card.m in Sources */,
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
-				198C099918CC493E000C00E2 /* Card.m in Sources */,
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
 			);
@@ -656,6 +666,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				19C933201905BFF10075FA49 /* KartenModel.xcdatamodel */,
+			);
+			currentVersion = 19C933201905BFF10075FA49 /* KartenModel.xcdatamodel */;
+			name = KartenModel.xcdatamodeld;
+			path = Resources/KartenModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 198C095618CC3F5F000C00E2 /* Project object */;
 }
