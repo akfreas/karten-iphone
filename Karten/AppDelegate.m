@@ -2,6 +2,7 @@
 #import "MainViewController.h"
 #import "QuizViewController.h"
 #import "Database.h"
+#import "CouchManager.h"
 
 @implementation AppDelegate
 
@@ -12,6 +13,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [Database setupDB];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
+    [CouchManager startSync:NULL];
     UITabBarController *mainTabBar = [[UITabBarController alloc] init];
     mainTabBar.viewControllers = @[[[MainViewController alloc] init], [[QuizViewController alloc] init]];
     self.mainViewController = mainTabBar;
