@@ -82,7 +82,7 @@ typedef enum {
 - (void)addCardLabel
 {
     self.termLabel = [[UILabel alloc] initForAutoLayout];
-    self.termLabel.text = self.card.term;
+    self.termLabel.text = [NSString stringWithFormat:@"%@ (%@)", self.card.term, self.card.knowledgeScore];
     self.termLabel.font = [UIFont systemFontOfSize:26.0f];
     self.termLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.termLabel];
