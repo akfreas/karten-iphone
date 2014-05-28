@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
+		196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
+		196021C919329569000234A3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C819329569000234A3 /* User.m */; };
+		196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
+		196021D5193295F1000234A3 /* User+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D4193295F1000234A3 /* User+Helpers.m */; };
 		1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */; };
 		1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2618DDE9D700E85CDE /* CFNetwork.framework */; };
 		1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2818DDE9DE00E85CDE /* Security.framework */; };
@@ -16,6 +20,11 @@
 		1966CD2D18DDE9F300E85CDE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */; };
 		1966CD2F18DDE9FA00E85CDE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1966CD2E18DDE9FA00E85CDE /* libz.dylib */; };
 		1966CD3218DDF29A00E85CDE /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966CD3118DDF29A00E85CDE /* Database.m */; };
+		1972491A19326FE600030E5E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972491919326FE600030E5E /* Card.m */; };
+		198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC361935275A00ABD428 /* NetworkSyncUtil.m */; };
+		198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC391935288A00ABD428 /* KartenNetworkClient.m */; };
+		198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */; };
+		198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC421935505300ABD428 /* NSManagedObject+JSONSerializable.m */; };
 		198C096218CC3F5F000C00E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
 		198C096418CC3F5F000C00E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096318CC3F5F000C00E2 /* CoreGraphics.framework */; };
 		198C096618CC3F5F000C00E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
@@ -24,12 +33,6 @@
 		198C097018CC3F5F000C00E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C096F18CC3F5F000C00E2 /* main.m */; };
 		198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C097318CC3F5F000C00E2 /* AppDelegate.m */; };
 		198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198C097818CC3F5F000C00E2 /* Images.xcassets */; };
-		198C098018CC3F5F000C00E2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C097F18CC3F5F000C00E2 /* XCTest.framework */; };
-		198C098118CC3F5F000C00E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
-		198C098218CC3F5F000C00E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
-		198C098318CC3F5F000C00E2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
-		198C098B18CC3F5F000C00E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 198C098918CC3F5F000C00E2 /* InfoPlist.strings */; };
-		198C098D18CC3F5F000C00E2 /* KartenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C098C18CC3F5F000C00E2 /* KartenTests.m */; };
 		198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099C18CC4976000C00E2 /* Card+Helpers.m */; };
 		198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* MainViewController.m */; };
 		198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A218CC4A3A000C00E2 /* CardTableView.m */; };
@@ -38,18 +41,37 @@
 		198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */; };
 		198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */; };
 		198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */; };
+		19BC93B01935CD2900CC8725 /* TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC471935C61A00ABD428 /* TestUtils.m */; };
+		19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021EF1932A88D000234A3 /* CreateDatabaseData.json */; };
+		19BC93B21935CD4E00CC8725 /* UserListFetch.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021F01932A88D000234A3 /* UserListFetch.json */; };
+		19BC93B31935CDF600CC8725 /* CreateDatabaseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021EF1932A88D000234A3 /* CreateDatabaseData.json */; };
+		19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021F01932A88D000234A3 /* UserListFetch.json */; };
+		19C5000419369413002AABBD /* StackServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000319369413002AABBD /* StackServer.m */; };
+		19C5000519369413002AABBD /* StackServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000319369413002AABBD /* StackServer.m */; };
+		19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000F1936A16E002AABBD /* StackServer+Helpers.m */; };
+		19C500111936A16E002AABBD /* StackServer+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000F1936A16E002AABBD /* StackServer+Helpers.m */; };
+		19C500141936A31D002AABBD /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C500131936A31D002AABBD /* Stack.m */; };
+		19C500151936A31D002AABBD /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C500131936A31D002AABBD /* Stack.m */; };
+		19C5FFF11936360A002AABBD /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
+		19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
+		19C5FFF519368584002AABBD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5FFF419368584002AABBD /* User.m */; };
+		19C5FFF619368D24002AABBD /* User+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D4193295F1000234A3 /* User+Helpers.m */; };
+		19C5FFF819368EF5002AABBD /* KarenStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5FFF719368EF5002AABBD /* KarenStackTests.m */; };
+		19C5FFF919368F64002AABBD /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
 		19C93317190316EC0075FA49 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C93316190316EC0075FA49 /* QuizViewController.m */; };
-		19C9331A1903173F0075FA49 /* 64-zap.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933181903173F0075FA49 /* 64-zap.png */; };
-		19C9331B1903173F0075FA49 /* 64-zap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19C933191903173F0075FA49 /* 64-zap@2x.png */; };
 		19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9331D190321DD0075FA49 /* FlashCardView.m */; };
 		19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */; };
 		19C933271905CE8D0075FA49 /* CouchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C933261905CE8D0075FA49 /* CouchManager.m */; };
-		19C9332A19064BE90075FA49 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C9332919064BE90075FA49 /* Card.m */; };
+		19D120DF1935CA5D00EECE71 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C097F18CC3F5F000C00E2 /* XCTest.framework */; };
+		19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
+		19D120E11935CA5D00EECE71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
+		19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC441935545A00ABD428 /* KartenUserTests.m */; };
+		53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */; };
 		7715A2A1E6804E7E9BE72BDA /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA388A941074F25BA2B035A /* libPods-Karten.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		198C098418CC3F5F000C00E2 /* PBXContainerItemProxy */ = {
+		19D120EB1935CA5D00EECE71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 198C095618CC3F5F000C00E2 /* Project object */;
 			proxyType = 1;
@@ -61,6 +83,22 @@
 /* Begin PBXFileReference section */
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
+		196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONParsable.h"; path = "Classes/NSManagedObject+JSONParsable.h"; sourceTree = "<group>"; };
+		196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONParsable.m"; path = "Classes/NSManagedObject+JSONParsable.m"; sourceTree = "<group>"; };
+		196021C61932953F000234A3 /* JSONParsable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONParsable.h; path = Classes/JSONParsable.h; sourceTree = "<group>"; };
+		196021C719329569000234A3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Classes/User.h; sourceTree = "<group>"; };
+		196021C819329569000234A3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
+		196021D0193295DE000234A3 /* Stack+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Stack+Helpers.h"; path = "Classes/Stack+Helpers.h"; sourceTree = "<group>"; };
+		196021D1193295DE000234A3 /* Stack+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Stack+Helpers.m"; path = "Classes/Stack+Helpers.m"; sourceTree = "<group>"; };
+		196021D3193295F1000234A3 /* User+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helpers.h"; path = "Classes/User+Helpers.h"; sourceTree = "<group>"; };
+		196021D4193295F1000234A3 /* User+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Helpers.m"; path = "Classes/User+Helpers.m"; sourceTree = "<group>"; };
+		196021E019329CDF000234A3 /* KartenUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KartenUnitTests-Info.plist"; sourceTree = "<group>"; };
+		196021E219329CDF000234A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		196021E419329CDF000234A3 /* KartenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenUnitTests.m; sourceTree = "<group>"; };
+		196021E619329CDF000234A3 /* KartenUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KartenUnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		196021EC19329DE3000234A3 /* TestJSONParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJSONParsing.m; sourceTree = "<group>"; };
+		196021EF1932A88D000234A3 /* CreateDatabaseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CreateDatabaseData.json; sourceTree = "<group>"; };
+		196021F01932A88D000234A3 /* UserListFetch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserListFetch.json; sourceTree = "<group>"; };
 		1966CD2418DDE9C000E85CDE /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
 		1966CD2618DDE9D700E85CDE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1966CD2818DDE9DE00E85CDE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -69,6 +107,21 @@
 		1966CD2E18DDE9FA00E85CDE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1966CD3018DDF29A00E85CDE /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = Classes/Database.h; sourceTree = "<group>"; };
 		1966CD3118DDF29A00E85CDE /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Database.m; path = Classes/Database.m; sourceTree = "<group>"; };
+		1972491819326FE600030E5E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
+		1972491919326FE600030E5E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
+		198AFC351935275A00ABD428 /* NetworkSyncUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkSyncUtil.h; path = Classes/NetworkSyncUtil.h; sourceTree = "<group>"; };
+		198AFC361935275A00ABD428 /* NetworkSyncUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkSyncUtil.m; path = Classes/NetworkSyncUtil.m; sourceTree = "<group>"; };
+		198AFC381935288A00ABD428 /* KartenNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KartenNetworkClient.h; path = Classes/KartenNetworkClient.h; sourceTree = "<group>"; };
+		198AFC391935288A00ABD428 /* KartenNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KartenNetworkClient.m; path = Classes/KartenNetworkClient.m; sourceTree = "<group>"; };
+		198AFC3C1935292800ABD428 /* KartenAPICall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KartenAPICall.h; path = Classes/KartenAPICall.h; sourceTree = "<group>"; };
+		198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPICreateUser.h; path = Classes/KTAPICreateUser.h; sourceTree = "<group>"; };
+		198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPICreateUser.m; path = Classes/KTAPICreateUser.m; sourceTree = "<group>"; };
+		198AFC401935501B00ABD428 /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONSerializable.h; path = Classes/JSONSerializable.h; sourceTree = "<group>"; };
+		198AFC411935505300ABD428 /* NSManagedObject+JSONSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONSerializable.h"; path = "Classes/NSManagedObject+JSONSerializable.h"; sourceTree = "<group>"; };
+		198AFC421935505300ABD428 /* NSManagedObject+JSONSerializable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONSerializable.m"; path = "Classes/NSManagedObject+JSONSerializable.m"; sourceTree = "<group>"; };
+		198AFC441935545A00ABD428 /* KartenUserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KartenUserTests.m; sourceTree = "<group>"; };
+		198AFC461935C61A00ABD428 /* TestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtils.h; sourceTree = "<group>"; };
+		198AFC471935C61A00ABD428 /* TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtils.m; sourceTree = "<group>"; };
 		198C095E18CC3F5F000C00E2 /* Karten.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Karten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		198C096118CC3F5F000C00E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		198C096318CC3F5F000C00E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,11 +134,7 @@
 		198C097218CC3F5F000C00E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		198C097318CC3F5F000C00E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		198C097818CC3F5F000C00E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		198C097E18CC3F5F000C00E2 /* KartenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		198C097F18CC3F5F000C00E2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		198C098818CC3F5F000C00E2 /* KartenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KartenTests-Info.plist"; sourceTree = "<group>"; };
-		198C098A18CC3F5F000C00E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		198C098C18CC3F5F000C00E2 /* KartenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenTests.m; sourceTree = "<group>"; };
 		198C099B18CC4976000C00E2 /* Card+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Card+Helpers.h"; path = "Classes/Card+Helpers.h"; sourceTree = "<group>"; };
 		198C099C18CC4976000C00E2 /* Card+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Card+Helpers.m"; path = "Classes/Card+Helpers.m"; sourceTree = "<group>"; };
 		198C099E18CC49E1000C00E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
@@ -103,19 +152,27 @@
 		198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Valdiation.m"; path = "Classes/UITextField+Valdiation.m"; sourceTree = "<group>"; };
 		198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDisplayView.h; path = Classes/InfoDisplayView.h; sourceTree = "<group>"; };
 		198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDisplayView.m; path = Classes/InfoDisplayView.m; sourceTree = "<group>"; };
+		19C5000219369413002AABBD /* StackServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackServer.h; path = Classes/StackServer.h; sourceTree = "<group>"; };
+		19C5000319369413002AABBD /* StackServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackServer.m; path = Classes/StackServer.m; sourceTree = "<group>"; };
+		19C5000E1936A16E002AABBD /* StackServer+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StackServer+Helpers.h"; path = "Classes/StackServer+Helpers.h"; sourceTree = "<group>"; };
+		19C5000F1936A16E002AABBD /* StackServer+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "StackServer+Helpers.m"; path = "Classes/StackServer+Helpers.m"; sourceTree = "<group>"; };
+		19C500121936A31D002AABBD /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Classes/Stack.h; sourceTree = "<group>"; };
+		19C500131936A31D002AABBD /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Classes/Stack.m; sourceTree = "<group>"; };
+		19C5FFF319368584002AABBD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Karten/Classes/User.h; sourceTree = SOURCE_ROOT; };
+		19C5FFF419368584002AABBD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Karten/Classes/User.m; sourceTree = SOURCE_ROOT; };
+		19C5FFF719368EF5002AABBD /* KarenStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarenStackTests.m; sourceTree = "<group>"; };
 		19C93315190316EC0075FA49 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = Classes/QuizViewController.h; sourceTree = "<group>"; };
 		19C93316190316EC0075FA49 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = Classes/QuizViewController.m; sourceTree = "<group>"; };
-		19C933181903173F0075FA49 /* 64-zap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap.png"; path = "../../../../../../../../Users/akfreas/Documents/GlyphishPro/icons/icons-white/64-zap.png"; sourceTree = "<group>"; };
-		19C933191903173F0075FA49 /* 64-zap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "64-zap@2x.png"; path = "../../../../../../../../Users/akfreas/Documents/GlyphishPro/icons/icons-white/64-zap@2x.png"; sourceTree = "<group>"; };
 		19C9331C190321DD0075FA49 /* FlashCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardView.h; path = Classes/FlashCardView.h; sourceTree = "<group>"; };
 		19C9331D190321DD0075FA49 /* FlashCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardView.m; path = Classes/FlashCardView.m; sourceTree = "<group>"; };
 		19C933201905BFF10075FA49 /* KartenModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KartenModel.xcdatamodel; sourceTree = "<group>"; };
 		19C933251905CE8D0075FA49 /* CouchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouchManager.h; path = Classes/CouchManager.h; sourceTree = "<group>"; };
 		19C933261905CE8D0075FA49 /* CouchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouchManager.m; path = Classes/CouchManager.m; sourceTree = "<group>"; };
-		19C9332819064BE90075FA49 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
-		19C9332919064BE90075FA49 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
+		19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
+		924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KartenUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3856CC703A84A97816E6A96 /* Pods-KartenUnitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KartenUnitTests.xcconfig"; path = "Pods/Pods-KartenUnitTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,28 +194,88 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		198C097B18CC3F5F000C00E2 /* Frameworks */ = {
+		19D120DB1935CA5D00EECE71 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198C098018CC3F5F000C00E2 /* XCTest.framework in Frameworks */,
-				198C098318CC3F5F000C00E2 /* CoreData.framework in Frameworks */,
-				198C098218CC3F5F000C00E2 /* UIKit.framework in Frameworks */,
-				198C098118CC3F5F000C00E2 /* Foundation.framework in Frameworks */,
+				19D120DF1935CA5D00EECE71 /* XCTest.framework in Frameworks */,
+				19D120E11935CA5D00EECE71 /* UIKit.framework in Frameworks */,
+				19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */,
+				19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */,
+				53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		196021DE19329CDF000234A3 /* KartenUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				196021EE1932A854000234A3 /* Test Data */,
+				196021E419329CDF000234A3 /* KartenUnitTests.m */,
+				198AFC441935545A00ABD428 /* KartenUserTests.m */,
+				19C5FFF719368EF5002AABBD /* KarenStackTests.m */,
+				19C5FFF319368584002AABBD /* User.h */,
+				19C5FFF419368584002AABBD /* User.m */,
+				198AFC461935C61A00ABD428 /* TestUtils.h */,
+				198AFC471935C61A00ABD428 /* TestUtils.m */,
+				196021EC19329DE3000234A3 /* TestJSONParsing.m */,
+				196021DF19329CDF000234A3 /* Supporting Files */,
+			);
+			path = KartenUnitTests;
+			sourceTree = "<group>";
+		};
+		196021DF19329CDF000234A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				196021E019329CDF000234A3 /* KartenUnitTests-Info.plist */,
+				196021E119329CDF000234A3 /* InfoPlist.strings */,
+				196021E619329CDF000234A3 /* KartenUnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		196021EE1932A854000234A3 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				196021EF1932A88D000234A3 /* CreateDatabaseData.json */,
+				196021F01932A88D000234A3 /* UserListFetch.json */,
+			);
+			name = "Test Data";
+			sourceTree = "<group>";
+		};
+		198AFC341935273600ABD428 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				198AFC3B193528F800ABD428 /* API Calls */,
+				198AFC351935275A00ABD428 /* NetworkSyncUtil.h */,
+				198AFC361935275A00ABD428 /* NetworkSyncUtil.m */,
+				198AFC381935288A00ABD428 /* KartenNetworkClient.h */,
+				198AFC391935288A00ABD428 /* KartenNetworkClient.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		198AFC3B193528F800ABD428 /* API Calls */ = {
+			isa = PBXGroup;
+			children = (
+				198AFC3C1935292800ABD428 /* KartenAPICall.h */,
+				198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */,
+				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
+			);
+			name = "API Calls";
+			sourceTree = "<group>";
+		};
 		198C095518CC3F5F000C00E2 = {
 			isa = PBXGroup;
 			children = (
 				198C096918CC3F5F000C00E2 /* Karten */,
-				198C098618CC3F5F000C00E2 /* KartenTests */,
+				196021DE19329CDF000234A3 /* KartenUnitTests */,
 				198C096018CC3F5F000C00E2 /* Frameworks */,
 				198C095F18CC3F5F000C00E2 /* Products */,
 				6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */,
+				E3856CC703A84A97816E6A96 /* Pods-KartenUnitTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,7 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				198C095E18CC3F5F000C00E2 /* Karten.app */,
-				198C097E18CC3F5F000C00E2 /* KartenTests.xctest */,
+				19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +303,7 @@
 				198C096718CC3F5F000C00E2 /* CoreData.framework */,
 				198C097F18CC3F5F000C00E2 /* XCTest.framework */,
 				BEA388A941074F25BA2B035A /* libPods-Karten.a */,
+				924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,6 +311,7 @@
 		198C096918CC3F5F000C00E2 /* Karten */ = {
 			isa = PBXGroup;
 			children = (
+				198AFC341935273600ABD428 /* Network */,
 				198C09AE18CC674C000C00E2 /* Helpers */,
 				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
@@ -215,8 +334,6 @@
 				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
 				19169F4119005B3600F822C6 /* 33-cabinet.png */,
 				19169F4219005B3600F822C6 /* 33-cabinet@2x.png */,
-				19C933181903173F0075FA49 /* 64-zap.png */,
-				19C933191903173F0075FA49 /* 64-zap@2x.png */,
 				198C097818CC3F5F000C00E2 /* Images.xcassets */,
 				198C096A18CC3F5F000C00E2 /* Supporting Files */,
 			);
@@ -235,31 +352,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		198C098618CC3F5F000C00E2 /* KartenTests */ = {
-			isa = PBXGroup;
-			children = (
-				198C098C18CC3F5F000C00E2 /* KartenTests.m */,
-				198C098718CC3F5F000C00E2 /* Supporting Files */,
-			);
-			path = KartenTests;
-			sourceTree = "<group>";
-		};
-		198C098718CC3F5F000C00E2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				198C098818CC3F5F000C00E2 /* KartenTests-Info.plist */,
-				198C098918CC3F5F000C00E2 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		198C099618CC48E8000C00E2 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				19C5000219369413002AABBD /* StackServer.h */,
+				19C5000319369413002AABBD /* StackServer.m */,
+				19C5000E1936A16E002AABBD /* StackServer+Helpers.h */,
+				19C5000F1936A16E002AABBD /* StackServer+Helpers.m */,
 				198C099A18CC4957000C00E2 /* Helpers */,
+				19C500121936A31D002AABBD /* Stack.h */,
+				19C500131936A31D002AABBD /* Stack.m */,
 				19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */,
-				19C9332819064BE90075FA49 /* Card.h */,
-				19C9332919064BE90075FA49 /* Card.m */,
+				196021D0193295DE000234A3 /* Stack+Helpers.h */,
+				196021D1193295DE000234A3 /* Stack+Helpers.m */,
+				196021C719329569000234A3 /* User.h */,
+				196021C819329569000234A3 /* User.m */,
+				196021D3193295F1000234A3 /* User+Helpers.h */,
+				196021D4193295F1000234A3 /* User+Helpers.m */,
+				196021C61932953F000234A3 /* JSONParsable.h */,
+				198AFC401935501B00ABD428 /* JSONSerializable.h */,
+				198AFC411935505300ABD428 /* NSManagedObject+JSONSerializable.h */,
+				198AFC421935505300ABD428 /* NSManagedObject+JSONSerializable.m */,
+				196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */,
+				196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */,
+				1972491819326FE600030E5E /* Card.h */,
+				1972491919326FE600030E5E /* Card.m */,
 				19C933251905CE8D0075FA49 /* CouchManager.h */,
 				19C933261905CE8D0075FA49 /* CouchManager.m */,
 			);
@@ -308,22 +425,24 @@
 			productReference = 198C095E18CC3F5F000C00E2 /* Karten.app */;
 			productType = "com.apple.product-type.application";
 		};
-		198C097D18CC3F5F000C00E2 /* KartenTests */ = {
+		19D120DD1935CA5D00EECE71 /* KartenUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 198C099318CC3F5F000C00E2 /* Build configuration list for PBXNativeTarget "KartenTests" */;
+			buildConfigurationList = 19D120ED1935CA5D00EECE71 /* Build configuration list for PBXNativeTarget "KartenUnitTests" */;
 			buildPhases = (
-				198C097A18CC3F5F000C00E2 /* Sources */,
-				198C097B18CC3F5F000C00E2 /* Frameworks */,
-				198C097C18CC3F5F000C00E2 /* Resources */,
+				91DEC940E00D481CAE64C270 /* Check Pods Manifest.lock */,
+				19D120DA1935CA5D00EECE71 /* Sources */,
+				19D120DB1935CA5D00EECE71 /* Frameworks */,
+				19D120DC1935CA5D00EECE71 /* Resources */,
+				091C4738AAF94AE192A8A36A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				198C098518CC3F5F000C00E2 /* PBXTargetDependency */,
+				19D120EC1935CA5D00EECE71 /* PBXTargetDependency */,
 			);
-			name = KartenTests;
-			productName = KartenTests;
-			productReference = 198C097E18CC3F5F000C00E2 /* KartenTests.xctest */;
+			name = KartenUnitTests;
+			productName = KartenUnitTests;
+			productReference = 19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +454,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Sashimiblade;
 				TargetAttributes = {
-					198C097D18CC3F5F000C00E2 = {
+					19D120DD1935CA5D00EECE71 = {
 						TestTargetID = 198C095D18CC3F5F000C00E2;
 					};
 				};
@@ -353,7 +472,7 @@
 			projectRoot = "";
 			targets = (
 				198C095D18CC3F5F000C00E2 /* Karten */,
-				198C097D18CC3F5F000C00E2 /* KartenTests */,
+				19D120DD1935CA5D00EECE71 /* KartenUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -363,26 +482,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19BC93B31935CDF600CC8725 /* CreateDatabaseData.json in Resources */,
 				198C096E18CC3F5F000C00E2 /* InfoPlist.strings in Resources */,
-				19C9331A1903173F0075FA49 /* 64-zap.png in Resources */,
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
+				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
-				19C9331B1903173F0075FA49 /* 64-zap@2x.png in Resources */,
 				19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		198C097C18CC3F5F000C00E2 /* Resources */ = {
+		19D120DC1935CA5D00EECE71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198C098B18CC3F5F000C00E2 /* InfoPlist.strings in Resources */,
+				19BC93B21935CD4E00CC8725 /* UserListFetch.json in Resources */,
+				19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		091C4738AAF94AE192A8A36A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-KartenUnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0E292E6B4BA64EF9B9F5B221 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +548,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		91DEC940E00D481CAE64C270 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -420,56 +570,76 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C500141936A31D002AABBD /* Stack.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
+				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
+				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
+				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
+				198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */,
+				196021D5193295F1000234A3 /* User+Helpers.m in Sources */,
 				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
+				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
+				19C5000419369413002AABBD /* StackServer.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
 				19C93317190316EC0075FA49 /* QuizViewController.m in Sources */,
-				19C9332A19064BE90075FA49 /* Card.m in Sources */,
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
+				1972491A19326FE600030E5E /* Card.m in Sources */,
+				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
+				196021C919329569000234A3 /* User.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
+				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		198C097A18CC3F5F000C00E2 /* Sources */ = {
+		19D120DA1935CA5D00EECE71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198C098D18CC3F5F000C00E2 /* KartenTests.m in Sources */,
+				19C5FFF819368EF5002AABBD /* KarenStackTests.m in Sources */,
+				19C5FFF619368D24002AABBD /* User+Helpers.m in Sources */,
+				19C5FFF519368584002AABBD /* User.m in Sources */,
+				19C5FFF11936360A002AABBD /* NSManagedObject+JSONParsable.m in Sources */,
+				19C5FFF919368F64002AABBD /* Stack+Helpers.m in Sources */,
+				19C5000519369413002AABBD /* StackServer.m in Sources */,
+				19C500111936A16E002AABBD /* StackServer+Helpers.m in Sources */,
+				19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */,
+				19C500151936A31D002AABBD /* Stack.m in Sources */,
+				19BC93B01935CD2900CC8725 /* TestUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		198C098518CC3F5F000C00E2 /* PBXTargetDependency */ = {
+		19D120EC1935CA5D00EECE71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 198C095D18CC3F5F000C00E2 /* Karten */;
-			targetProxy = 198C098418CC3F5F000C00E2 /* PBXContainerItemProxy */;
+			targetProxy = 19D120EB1935CA5D00EECE71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		198C096C18CC3F5F000C00E2 /* InfoPlist.strings */ = {
+		196021E119329CDF000234A3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				198C096D18CC3F5F000C00E2 /* en */,
+				196021E219329CDF000234A3 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		198C098918CC3F5F000C00E2 /* InfoPlist.strings */ = {
+		198C096C18CC3F5F000C00E2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				198C098A18CC3F5F000C00E2 /* en */,
+				198C096D18CC3F5F000C00E2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -593,10 +763,10 @@
 			};
 			name = Release;
 		};
-		198C099418CC3F5F000C00E2 /* Debug */ = {
+		19D120EE1935CA5D00EECE71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3856CC703A84A97816E6A96 /* Pods-KartenUnitTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Karten.app/Karten";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -604,22 +774,26 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
+				GCC_PREFIX_HEADER = "KartenUnitTests/KartenUnitTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "KartenTests/KartenTests-Info.plist";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "KartenUnitTests/KartenUnitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		198C099518CC3F5F000C00E2 /* Release */ = {
+		19D120EF1935CA5D00EECE71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3856CC703A84A97816E6A96 /* Pods-KartenUnitTests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Karten.app/Karten";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -627,10 +801,14 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
-				INFOPLIST_FILE = "KartenTests/KartenTests-Info.plist";
+				GCC_PREFIX_HEADER = "KartenUnitTests/KartenUnitTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "KartenUnitTests/KartenUnitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -656,11 +834,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		198C099318CC3F5F000C00E2 /* Build configuration list for PBXNativeTarget "KartenTests" */ = {
+		19D120ED1935CA5D00EECE71 /* Build configuration list for PBXNativeTarget "KartenUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				198C099418CC3F5F000C00E2 /* Debug */,
-				198C099518CC3F5F000C00E2 /* Release */,
+				19D120EE1935CA5D00EECE71 /* Debug */,
+				19D120EF1935CA5D00EECE71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

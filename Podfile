@@ -4,13 +4,18 @@
 target "Karten" do
 
     pod "HexColors"
-    pod "AFNetworking"
     pod "GoogleAnalytics-iOS-SDK"
-    pod "BlocksKit", '~> 2.2.0'
+    pod "BlocksKit", :head
     pod "UIView+AutoLayout"
     pod "RNBlurModalView"
-    pod "MagicalRecord"
     pod 'MDCSwipeToChoose', '~> 0.2.0'
     pod "BugSense"
+    pod "MagicalRecord"
+    pod "AFNetworking"
+end
+
+target "KartenUnitTests" do
+    pod "MagicalRecord"
+    pod "AFNetworking"
 end
 

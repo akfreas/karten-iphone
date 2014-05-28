@@ -1,0 +1,1 @@
+id JSONFromFile(NSString *file);

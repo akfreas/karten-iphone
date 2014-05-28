@@ -1,18 +1,18 @@
 //
-//  KartenTests.m
-//  KartenTests
+//  TestJSONParsing.m
+//  Karten
 //
-//  Created by Alexander Freas on 3/9/14.
+//  Created by Alexander Freas on 25/05/14.
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface KartenTests : XCTestCase
+@interface TestJSONParsing : XCTestCase
 
 @end
 
-@implementation KartenTests
+@implementation TestJSONParsing
 
 - (void)setUp
 {
@@ -26,9 +26,5 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
 
 @end

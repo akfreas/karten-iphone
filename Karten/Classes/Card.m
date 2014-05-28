@@ -2,7 +2,7 @@
 //  Card.m
 //  Karten
 //
-//  Created by Alexander Freas on 4/22/14.
+//  Created by Alexander Freas on 25/05/14.
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
@@ -11,10 +11,10 @@
 
 @implementation Card
 
-@dynamic term;
-@dynamic definition;
-@dynamic knowledgeScore;
 @dynamic couchID;
 @dynamic couchRev;
+@dynamic definition;
+@dynamic knowledgeScore;
+@dynamic term;
 
 @end

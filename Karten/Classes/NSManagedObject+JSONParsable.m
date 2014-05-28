@@ -1,0 +1,64 @@
+#import "NSManagedObject+JSONParsable.h"
+#import "JSONParsable.h"
+
+@implementation NSManagedObject (JSONParsable)
+
+static NSString *kLocalServerID = @"serverID";
+static NSString *kRemoteServerID = @"id";
+
++ (id)objectWithJSONDictionary:(NSDictionary *)dictionary
+{
+    return [self objectWithJSONDictionary:dictionary context:[NSManagedObjectContext MR_defaultContext]];
+}
+
++ (NSManagedObject *)objectWithJSONDictionary:(NSDictionary *)dictionary context:(NSManagedObjectContext *)ctx
+{
+    
+    if ([self conformsToProtocol:@protocol(JSONParsable)] == NO) {
+        return nil;
+    }
+    
+    NSManagedObject *object = [self MR_findFirstByAttribute:kLocalServerID withValue:dictionary[kRemoteServerID]];
+    if (object == nil) {
+        object = [self MR_createInContext:ctx];
+    }
+    [object updateWithJSONDictionary:dictionary];
+    
+    return object;
+}
+
+- (void)updateWithJSONDictionary:(NSDictionary *)dictionary
+{
+    NSDictionary *attributes = self.entity.attributesByName;
+    for (NSString *attribute in attributes) {
+        NSAttributeDescription *description = attributes[attribute];
+        NSString *serverKey = description.userInfo[@"server_key"];
+        if (serverKey != nil) {
+            id value = dictionary[serverKey];
+            [self setValue:value forKey:attribute];
+        }
+    }
+    
+    NSDictionary *relationships = self.entity.relationshipsByName;
+    for (NSString *relationship in relationships) {
+        NSRelationshipDescription *relationshipDescription = relationships[relationship];
+        id relatedObjectData = dictionary[relationshipDescription.userInfo[@"server_key"]];
+        if (relatedObjectData == nil) {
+            continue;
+        }
+        Class parseClass = NSClassFromString(relationshipDescription.destinationEntity.managedObjectClassName);
+        if (relationshipDescription.maxCount == 1) {
+            NSManagedObject *relatedObject = [parseClass objectWithJSONDictionary:relatedObjectData];
+            [self setValue:relatedObject forKey:relationshipDescription.name];
+        } else if ([relatedObjectData conformsToProtocol:@protocol(NSFastEnumeration)]) {
+            NSMutableSet *newSet = [NSMutableSet set];
+            for (id object in relatedObjectData) {
+                id newObject = [parseClass objectWithJSONDictionary:object];
+                [newSet addObject:newObject];
+            }
+            [self setValue:newSet forKey:relationshipDescription.name];
+        }
+    }
+}
+
+@end
