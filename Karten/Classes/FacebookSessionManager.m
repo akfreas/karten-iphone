@@ -71,7 +71,7 @@ static FacebookSessionManager *sharedInstance;
 {
     NSLog(@"updateBasicInformation...");
     [self checkPermissions];
-    [self getUserInfo];
+    [self createUserFromFacebookSession:NULL];
     [self getFacebookFriends];
 }
 
@@ -239,7 +239,7 @@ static FacebookSessionManager *sharedInstance;
                           }];
 }
 
--(void)getUserInfo
+- (void)createUserFromFacebookSession:(void(^)(User *user, NSError *error))userCreationCompletion
 {
     NSLog(@"getUserInfo...");
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -261,8 +261,13 @@ static FacebookSessionManager *sharedInstance;
                                       completion:^{
                                           
                                       } success:^(AFHTTPRequestOperation *operation, User *responseObject) {
-                                          responseObject.mainUser = @YES;
-                                          [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
+                                          NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
+                                          User *savedUser = (User *)[ctx objectWithID:currentUser.objectID];
+                                          savedUser.serverID = responseObject.serverID;
+                                          [ctx MR_saveOnlySelfAndWait];
+                                          if (userCreationCompletion) {
+                                              userCreationCompletion(savedUser, nil);
+                                          }
                                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                           
                                       }];

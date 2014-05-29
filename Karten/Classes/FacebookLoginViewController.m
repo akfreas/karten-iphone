@@ -49,7 +49,11 @@
 {
     FBSession *session = [FBSession activeSession];
     [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:session.state error:nil];
-    [[FacebookSessionManager sharedInstance] updateBasicInformation];
+    [[FacebookSessionManager sharedInstance] createUserFromFacebookSession:^(User *user, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:NULL];
+        });
+    }];
 }
 
 @end

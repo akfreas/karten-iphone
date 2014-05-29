@@ -1,0 +1,1 @@
+static NSString *kKartenDBErrorMultipleUsersMarkedAsMainUser = @"kKartenDBErrorMultipleUsersMarkedAsMainUser";

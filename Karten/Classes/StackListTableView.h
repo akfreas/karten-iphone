@@ -1,0 +1,3 @@
+@interface StackListTableView : UITableView
+
+@end

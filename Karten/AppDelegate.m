@@ -1,9 +1,5 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "FacebookLoginViewController.h"
-#import "QuizViewController.h"
-#import "Database.h"
-#import "CouchManager.h"
 
 @implementation AppDelegate
 
@@ -13,12 +9,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    [Database setupDB];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
-    [CouchManager startSync:NULL];
-    UITabBarController *mainTabBar = [[UITabBarController alloc] init];
-//    mainTabBar.viewControllers = @[[, [[QuizViewController alloc] init]];
-    self.mainViewController = [[MainViewController alloc] init];
+    self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     self.window.rootViewController = self.mainViewController;
     return YES;
 }

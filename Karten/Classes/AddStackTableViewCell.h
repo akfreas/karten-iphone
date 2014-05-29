@@ -1,0 +1,3 @@
+@interface AddStackTableViewCell : UITableViewCell
+
+@end

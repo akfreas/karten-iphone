@@ -3,6 +3,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (retain, nonatomic) MainViewController *mainViewController;
+@property (retain, nonatomic) UIViewController *mainViewController;
 
 @end

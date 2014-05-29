@@ -5,4 +5,6 @@
 
 @interface User (Helpers) <JSONParsable, JSONSerializable>
 
++ (User *)mainUser;
+
 @end

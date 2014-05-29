@@ -14,6 +14,13 @@
 		195CEA5419371FE40044C52B /* _MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* _MainViewController.m */; };
 		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
 		195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5C193731C00044C52B /* FacebookSessionManager.m */; };
+		195CEA6019376E030044C52B /* StackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5F19376E030044C52B /* StackListViewController.m */; };
+		195CEA6319376E1E0044C52B /* StackListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6219376E1E0044C52B /* StackListTableView.m */; };
+		195CEA6619376E790044C52B /* StackListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6519376E790044C52B /* StackListTableViewCell.m */; };
+		195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA68193781CE0044C52B /* KTAPIGetUserStacks.m */; };
+		195CEA6D19378A260044C52B /* Stack+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6C19378A260044C52B /* Stack+Network.m */; };
+		195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */; };
+		195CEA731937A8450044C52B /* AddStackFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA721937A8450044C52B /* AddStackFormView.m */; };
 		196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
 		196021C919329569000234A3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C819329569000234A3 /* User.m */; };
 		196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
@@ -94,6 +101,21 @@
 		195CEA56193720130044C52B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
 		195CEA5B193731C00044C52B /* FacebookSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookSessionManager.h; path = Classes/FacebookSessionManager.h; sourceTree = "<group>"; };
 		195CEA5C193731C00044C52B /* FacebookSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookSessionManager.m; path = Classes/FacebookSessionManager.m; sourceTree = "<group>"; };
+		195CEA5E19376E030044C52B /* StackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackListViewController.h; path = Classes/StackListViewController.h; sourceTree = "<group>"; };
+		195CEA5F19376E030044C52B /* StackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackListViewController.m; path = Classes/StackListViewController.m; sourceTree = "<group>"; };
+		195CEA6119376E1E0044C52B /* StackListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackListTableView.h; path = Classes/StackListTableView.h; sourceTree = "<group>"; };
+		195CEA6219376E1E0044C52B /* StackListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackListTableView.m; path = Classes/StackListTableView.m; sourceTree = "<group>"; };
+		195CEA6419376E790044C52B /* StackListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackListTableViewCell.h; path = Classes/StackListTableViewCell.h; sourceTree = "<group>"; };
+		195CEA6519376E790044C52B /* StackListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackListTableViewCell.m; path = Classes/StackListTableViewCell.m; sourceTree = "<group>"; };
+		195CEA67193781CE0044C52B /* KTAPIGetUserStacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPIGetUserStacks.h; path = Classes/KTAPIGetUserStacks.h; sourceTree = "<group>"; };
+		195CEA68193781CE0044C52B /* KTAPIGetUserStacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPIGetUserStacks.m; path = Classes/KTAPIGetUserStacks.m; sourceTree = "<group>"; };
+		195CEA6A193784560044C52B /* KartenDBExceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KartenDBExceptions.h; path = Classes/KartenDBExceptions.h; sourceTree = "<group>"; };
+		195CEA6B19378A260044C52B /* Stack+Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Stack+Network.h"; path = "Classes/Stack+Network.h"; sourceTree = "<group>"; };
+		195CEA6C19378A260044C52B /* Stack+Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Stack+Network.m"; path = "Classes/Stack+Network.m"; sourceTree = "<group>"; };
+		195CEA6E1937A0D20044C52B /* AddStackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddStackTableViewCell.h; path = Classes/AddStackTableViewCell.h; sourceTree = "<group>"; };
+		195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddStackTableViewCell.m; path = Classes/AddStackTableViewCell.m; sourceTree = "<group>"; };
+		195CEA711937A8450044C52B /* AddStackFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddStackFormView.h; path = Classes/AddStackFormView.h; sourceTree = "<group>"; };
+		195CEA721937A8450044C52B /* AddStackFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddStackFormView.m; path = Classes/AddStackFormView.m; sourceTree = "<group>"; };
 		196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONParsable.h"; path = "Classes/NSManagedObject+JSONParsable.h"; sourceTree = "<group>"; };
 		196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONParsable.m"; path = "Classes/NSManagedObject+JSONParsable.m"; sourceTree = "<group>"; };
 		196021C61932953F000234A3 /* JSONParsable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONParsable.h; path = Classes/JSONParsable.h; sourceTree = "<group>"; };
@@ -275,6 +297,8 @@
 				198AFC3C1935292800ABD428 /* KartenAPICall.h */,
 				198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */,
 				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
+				195CEA67193781CE0044C52B /* KTAPIGetUserStacks.h */,
+				195CEA68193781CE0044C52B /* KTAPIGetUserStacks.m */,
 			);
 			name = "API Calls";
 			sourceTree = "<group>";
@@ -335,6 +359,16 @@
 				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
 				195CEA55193720130044C52B /* MainViewController.h */,
 				195CEA56193720130044C52B /* MainViewController.m */,
+				195CEA5E19376E030044C52B /* StackListViewController.h */,
+				195CEA5F19376E030044C52B /* StackListViewController.m */,
+				195CEA711937A8450044C52B /* AddStackFormView.h */,
+				195CEA721937A8450044C52B /* AddStackFormView.m */,
+				195CEA6119376E1E0044C52B /* StackListTableView.h */,
+				195CEA6219376E1E0044C52B /* StackListTableView.m */,
+				195CEA6E1937A0D20044C52B /* AddStackTableViewCell.h */,
+				195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */,
+				195CEA6419376E790044C52B /* StackListTableViewCell.h */,
+				195CEA6519376E790044C52B /* StackListTableViewCell.m */,
 				198C099E18CC49E1000C00E2 /* _MainViewController.h */,
 				198C099F18CC49E1000C00E2 /* _MainViewController.m */,
 				19C93315190316EC0075FA49 /* QuizViewController.h */,
@@ -388,6 +422,8 @@
 				196021C819329569000234A3 /* User.m */,
 				196021D3193295F1000234A3 /* User+Helpers.h */,
 				196021D4193295F1000234A3 /* User+Helpers.m */,
+				195CEA6B19378A260044C52B /* Stack+Network.h */,
+				195CEA6C19378A260044C52B /* Stack+Network.m */,
 				196021C61932953F000234A3 /* JSONParsable.h */,
 				198AFC401935501B00ABD428 /* JSONSerializable.h */,
 				198AFC411935505300ABD428 /* NSManagedObject+JSONSerializable.h */,
@@ -398,6 +434,7 @@
 				1972491919326FE600030E5E /* Card.m */,
 				19C933251905CE8D0075FA49 /* CouchManager.h */,
 				19C933261905CE8D0075FA49 /* CouchManager.m */,
+				195CEA6A193784560044C52B /* KartenDBExceptions.h */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -589,13 +626,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
 				19C500141936A31D002AABBD /* Stack.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
+				195CEA6319376E1E0044C52B /* StackListTableView.m in Sources */,
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
+				195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */,
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
@@ -605,6 +645,8 @@
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
+				195CEA731937A8450044C52B /* AddStackFormView.m in Sources */,
+				195CEA6D19378A260044C52B /* Stack+Network.m in Sources */,
 				19C5000419369413002AABBD /* StackServer.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
@@ -618,7 +660,9 @@
 				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
 				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
+				195CEA6019376E030044C52B /* StackListViewController.m in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
+				195CEA6619376E790044C52B /* StackListTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
