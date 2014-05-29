@@ -21,6 +21,8 @@
 		195CEA6D19378A260044C52B /* Stack+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6C19378A260044C52B /* Stack+Network.m */; };
 		195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */; };
 		195CEA731937A8450044C52B /* AddStackFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA721937A8450044C52B /* AddStackFormView.m */; };
+		195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA751937E7260044C52B /* GraphicsUtils.m */; };
+		195CEA791937EA480044C52B /* KTAPICreateStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA781937EA480044C52B /* KTAPICreateStack.m */; };
 		196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
 		196021C919329569000234A3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C819329569000234A3 /* User.m */; };
 		196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
@@ -116,6 +118,10 @@
 		195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddStackTableViewCell.m; path = Classes/AddStackTableViewCell.m; sourceTree = "<group>"; };
 		195CEA711937A8450044C52B /* AddStackFormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddStackFormView.h; path = Classes/AddStackFormView.h; sourceTree = "<group>"; };
 		195CEA721937A8450044C52B /* AddStackFormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddStackFormView.m; path = Classes/AddStackFormView.m; sourceTree = "<group>"; };
+		195CEA741937E7260044C52B /* GraphicsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphicsUtils.h; path = Classes/GraphicsUtils.h; sourceTree = "<group>"; };
+		195CEA751937E7260044C52B /* GraphicsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GraphicsUtils.m; path = Classes/GraphicsUtils.m; sourceTree = "<group>"; };
+		195CEA771937EA480044C52B /* KTAPICreateStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPICreateStack.h; path = Classes/KTAPICreateStack.h; sourceTree = "<group>"; };
+		195CEA781937EA480044C52B /* KTAPICreateStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPICreateStack.m; path = Classes/KTAPICreateStack.m; sourceTree = "<group>"; };
 		196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONParsable.h"; path = "Classes/NSManagedObject+JSONParsable.h"; sourceTree = "<group>"; };
 		196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONParsable.m"; path = "Classes/NSManagedObject+JSONParsable.m"; sourceTree = "<group>"; };
 		196021C61932953F000234A3 /* JSONParsable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONParsable.h; path = Classes/JSONParsable.h; sourceTree = "<group>"; };
@@ -297,6 +303,8 @@
 				198AFC3C1935292800ABD428 /* KartenAPICall.h */,
 				198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */,
 				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
+				195CEA771937EA480044C52B /* KTAPICreateStack.h */,
+				195CEA781937EA480044C52B /* KTAPICreateStack.m */,
 				195CEA67193781CE0044C52B /* KTAPIGetUserStacks.h */,
 				195CEA68193781CE0044C52B /* KTAPIGetUserStacks.m */,
 			);
@@ -385,6 +393,8 @@
 				19C9331D190321DD0075FA49 /* FlashCardView.m */,
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
 				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
+				195CEA741937E7260044C52B /* GraphicsUtils.h */,
+				195CEA751937E7260044C52B /* GraphicsUtils.m */,
 				19169F4119005B3600F822C6 /* 33-cabinet.png */,
 				19169F4219005B3600F822C6 /* 33-cabinet@2x.png */,
 				198C097818CC3F5F000C00E2 /* Images.xcassets */,
@@ -628,6 +638,7 @@
 			files = (
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
 				19C500141936A31D002AABBD /* Stack.m in Sources */,
+				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
@@ -637,6 +648,7 @@
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
 				195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */,
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
+				195CEA791937EA480044C52B /* KTAPICreateStack.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
 				198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */,

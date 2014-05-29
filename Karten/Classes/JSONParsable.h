@@ -4,4 +4,5 @@
 @protocol JSONParsable <NSObject>
 
 + (id)objectWithJSONDictionary:(NSDictionary *)dictionary;
+- (void)updateWithJSONDictionary:(NSDictionary *)dictionary;
 @end

@@ -8,5 +8,6 @@
 
 @property (nonatomic, readonly) Class classToParse;
 @property (nonatomic, readonly) NSDictionary *params;
-
+@property (nonatomic, readonly) BOOL updateOriginalObjectOnReturn;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
 @end

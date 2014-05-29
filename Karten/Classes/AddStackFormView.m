@@ -1,4 +1,8 @@
 #import "AddStackFormView.h"
+#import "GraphicsUtils.h"
+#import "Stack+Helpers.h"
+#import "Stack+Helpers.h"
+#import "User+Helpers.h"
 
 @interface AddStackFormView ()
 @property (nonatomic) UITextField *nameTextField;
@@ -12,6 +16,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = rgb(181, 186, 199);
+        self.layer.cornerRadius = 5.0f;
         [self createNameTextField];
         [self createAddButton];
         [self createCancelButton];
@@ -20,10 +26,65 @@
     return self;
 }
 
+- (void)setCancelButtonAction:(void (^)(id))cancelButtonAction
+{
+    _cancelButtonAction = cancelButtonAction;
+    [self.cancelButton bk_addEventHandler:self.cancelButtonAction forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setSaveButtonAction:(void (^)(id, Stack *))saveButtonAction
+{
+    _saveButtonAction = saveButtonAction;
+    [self.addButton bk_addEventHandler:^(id sender) {
+        if ([self formValid] == NO)
+            return;
+        [self.nameTextField resignFirstResponder];
+        if (self.saveButtonAction) {
+            self.saveButtonAction(sender, [self buildStackFromForm]);
+            self.nameTextField.text = @"";
+        }
+        
+    } forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (BOOL)formValid
+{
+    BOOL isValid = YES;
+    if ([self.nameTextField.text isEqualToString:@""]){
+        UIAlertView *alertView = [UIAlertView bk_alertViewWithTitle:@"Missing Info" message:@"Please enter a name!"];
+        [alertView bk_addButtonWithTitle:@"OK" handler:^{
+            [self.nameTextField becomeFirstResponder];
+        }];
+        [alertView show];
+        isValid = NO;
+    }
+    return isValid;
+}
+
+- (Stack *)buildStackFromForm
+{
+    Stack *newStack = [Stack MR_createEntity];
+    newStack.name = self.nameTextField.text;
+//    newStack.description =
+    newStack.owner = [User mainUser];
+    return newStack;
+}
+
+- (CGSize)intrinsicContentSize
+{
+    return CGSizeMake(300.0f, 150.0f);
+}
 
 - (void)createNameTextField
 {
     self.nameTextField = [[UITextField alloc] initForAutoLayout];
+    self.nameTextField.placeholder = @"Stack Name";
+    [self.nameTextField setTextColor:[UIColor whiteColor]];
+    [self.nameTextField setTintColor:[UIColor whiteColor]];
+    [self.nameTextField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [textField resignFirstResponder];
+        return YES;
+    }];
     [self addSubview:self.nameTextField];
 }
 

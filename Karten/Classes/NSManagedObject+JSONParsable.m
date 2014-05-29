@@ -35,7 +35,9 @@ static NSString *kRemoteServerID = @"id";
         NSString *serverKey = description.userInfo[@"server_key"];
         if (serverKey != nil) {
             id value = dictionary[serverKey];
-            [self setValue:value forKey:attribute];
+            if (value != nil && [value class] != [NSNull class]) {
+                [self setValue:value forKey:attribute];
+            }
         }
     }
     

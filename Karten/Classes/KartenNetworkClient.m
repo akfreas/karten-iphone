@@ -1,7 +1,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "KartenNetworkClient.h"
 #import "JSONParsable.h"
-
 @interface KartenNetworkClient ()
 
 @property (nonatomic) AFHTTPRequestOperationManager *manager;
@@ -50,7 +49,6 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
     }
     [self.manager GET:request.path parameters:params success:
         ^(AFHTTPRequestOperation *operation, id responseObject) {
-
             if ([self responseHasError:responseObject]) {
                 failure(responseObject, [self errorFromResponse:responseObject]);
                 return;
@@ -59,7 +57,7 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
         if (responseObject != nil) {
             id returnObject = nil;
             if ([request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
-                if ([responseObject conformsToProtocol:@protocol(NSFastEnumeration)]) {
+                if ([responseObject conformsToProtocol:@protocol(NSFastEnumeration)] && [responseObject isKindOfClass:[NSDictionary class]] == NO) {
                     NSMutableArray *responseArray = [NSMutableArray array];
                     for (id objectData in responseObject) {
                         id<JSONParsable> newObj = [request.classToParse objectWithJSONDictionary:objectData];
@@ -67,8 +65,17 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
                     }
                     returnObject = responseArray;
                 } else {
+
+                    if ([request respondsToSelector:@selector(updateOriginalObjectOnReturn)] && request.updateOriginalObjectOnReturn == YES) {
+                        NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
+                        NSManagedObject <JSONParsable> *originalObject = (NSManagedObject <JSONParsable> *)[ctx objectWithID:request.objectID];
+                        [originalObject updateWithJSONDictionary:responseObject];
+                        returnObject = originalObject;
+                } else {
                     id<JSONParsable> newObject = [request.classToParse objectWithJSONDictionary:responseObject];
                     returnObject = newObject;
+                    }
+                    
                 }
             } else {
                 returnObject = responseObject;
@@ -86,6 +93,9 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
         if (completion) {
             completion();
         }
+          if (failure) {
+              failure(operation, error);
+          }
     }];
 }
 

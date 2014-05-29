@@ -5,12 +5,15 @@
 #import "User+Helpers.h"
 #import <RNBlurModalView/RNBlurModalView.h>
 #import "AddStackFormView.h"
+#import "Stack.h"
+#import "Stack+Network.h"
 
 @interface MainViewController ()
 @property (nonatomic) UITabBarController *tabBarController;
 @property (nonatomic) FacebookLoginViewController *loginViewController;
 @property (nonatomic) StackListViewController *stackListController;
 @property (nonatomic) RNBlurModalView *blurView;
+@property (nonatomic) AddStackFormView *addStackForm;
 @end
 
 @implementation MainViewController
@@ -31,7 +34,31 @@
 - (void)setupBarButton
 {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
-        
+        AddStackFormView *addStackView;
+        if (self.addStackForm == nil) {
+            addStackView = [[AddStackFormView alloc] initForAutoLayout];
+            self.addStackForm = addStackView;
+        } else {
+            addStackView = self.addStackForm;
+        }
+        self.blurView = [[RNBlurModalView alloc] initWithParentView:self.view view:self.addStackForm];
+        [self.blurView hideCloseButton:YES];
+        [addStackView setCancelButtonAction:^(id sender) {
+            [self.blurView hide];
+        }];
+        [addStackView setSaveButtonAction:^(id sender, Stack *newStack) {
+            [newStack createStackOnServerWithCompletion:^{
+                [self.blurView hide];
+            } success:^(AFHTTPRequestOperation *operation, Stack *responseObject) {
+                [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
+                Stack *ourStack = (Stack *)[ctx objectWithID:newStack.objectID];
+                [ourStack MR_deleteInContext:ctx];
+                [ctx MR_saveOnlySelfAndWait];
+            }];
+        }];
+        [self.blurView show];
     }];
 }
 
