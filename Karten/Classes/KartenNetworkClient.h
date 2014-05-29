@@ -5,7 +5,7 @@
 
 + (void)makeRequest:(id<KartenAPICall>)request
          completion:(void(^)())completion
-            success:(void(^)(AFHTTPRequestOperation *, id responseObject))success
-            failure:(void(^)(AFHTTPRequestOperation *, NSError *error))failure;
+            success:(void(^)(AFHTTPRequestOperation *operation, id responseObject))success
+            failure:(void(^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 
 @end

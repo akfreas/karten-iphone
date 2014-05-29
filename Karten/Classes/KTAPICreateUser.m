@@ -27,4 +27,9 @@
     return [self.user JSONDictionarySerialization];
 }
 
+- (Class)classToParse
+{
+    return [User class];
+}
+
 @end

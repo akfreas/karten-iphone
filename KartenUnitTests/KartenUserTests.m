@@ -31,6 +31,12 @@
     XCTAssertTrue([newUser.lastName isEqualToString:userDict[@"last_name"]], @"Last name is not correct!");
     XCTAssertTrue([newUser.externalService isEqualToString:userDict[@"external_service"]]);
     XCTAssertTrue([newUser.externalUserID isEqualToString:userDict[@"external_user_id"]]);
+    
+    NSDictionary *serialized = [newUser JSONDictionarySerialization];
+    NSArray *serializedKeys = [serialized allKeys];
+    for (NSString *key in serializedKeys) {
+        XCTAssertTrue([serialized[key] isEqual:userDict[key]], @"");
+    }
 }
 
 - (void)testAddUserFriendFromJSON

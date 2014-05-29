@@ -83,15 +83,16 @@
                 <entry key="server_key" value="id"/>
             </userInfo>
         </attribute>
-        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
-        <userInfo>
-            <entry key="server_key" value="friends"/>
-        </userInfo>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="friends"/>
+            </userInfo>
+        </relationship>
     </entity>
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="Stack" positionX="-63" positionY="18" width="128" height="148"/>
-        <element name="User" positionX="-54" positionY="36" width="128" height="148"/>
         <element name="StackServer" positionX="-45" positionY="72" width="128" height="73"/>
+        <element name="User" positionX="-54" positionY="36" width="128" height="150"/>
     </elements>
 </model>

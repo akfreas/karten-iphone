@@ -44,17 +44,23 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
     NSMutableURLRequest *URLrequest = [NSMutableURLRequest new];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
     [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [_manager GET:request.path parameters:request.params success:
+    [self.manager GET:request.path parameters:request.params success:
         ^(AFHTTPRequestOperation *operation, id responseObject) {
+
+            if ([self responseHasError:responseObject]) {
+                failure(responseObject, [self errorFromResponse:responseObject]);
+                return;
+            }
+        
         if (responseObject != nil) {
             id returnObject = nil;
             if ([request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
-                id<JSONParsable> newObject = [[request.classToParse alloc] initWithJSON:responseObject];
+                id<JSONParsable> newObject = [request.classToParse objectWithJSONDictionary:responseObject];
                 returnObject = newObject;
             } else if ([responseObject isKindOfClass:[NSArray class]] && [request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
                 NSMutableArray *responseArray = [NSMutableArray array];
-                for (id obj in responseObject) {
-                    id<JSONParsable> newObj = [[request.classToParse alloc] initWithJSON:obj];
+                for (id objectData in responseObject) {
+                    id<JSONParsable> newObj = [request.classToParse objectWithJSONDictionary:objectData];
                     [responseArray addObject:newObj];
                 }
                 returnObject = responseArray;
@@ -77,11 +83,26 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
 
 - (AFHTTPRequestOperationManager *)manager
 {
-    if (_manager) {
+    if (_manager == nil) {
         _manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://0.0.0.0:8000/"]];
         [_manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     }
     return _manager;
+}
+
+- (BOOL)responseHasError:(NSDictionary *)responseObject
+{
+    BOOL retval = NO;
+    if ([responseObject objectForKey:@"error_code"]) {
+        retval = YES;
+    }
+    return retval;
+}
+
+- (NSError *)errorFromResponse:(NSDictionary *)responseObject
+{
+    NSError *error = [NSError errorWithDomain:@"KartenServerErrorDomain" code:1 userInfo:responseObject];
+    return error;
 }
 
 @end

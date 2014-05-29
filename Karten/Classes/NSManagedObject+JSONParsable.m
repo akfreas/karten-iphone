@@ -8,7 +8,7 @@ static NSString *kRemoteServerID = @"id";
 
 + (id)objectWithJSONDictionary:(NSDictionary *)dictionary
 {
-    return [self objectWithJSONDictionary:dictionary context:[NSManagedObjectContext MR_defaultContext]];
+    return [self objectWithJSONDictionary:dictionary context:[NSManagedObjectContext MR_contextForCurrentThread]];
 }
 
 + (NSManagedObject *)objectWithJSONDictionary:(NSDictionary *)dictionary context:(NSManagedObjectContext *)ctx

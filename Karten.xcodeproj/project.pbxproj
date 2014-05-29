@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
+		195CEA501936AE470044C52B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195CEA4F1936AE470044C52B /* FacebookSDK.framework */; };
+		195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA521936B2650044C52B /* FacebookLoginViewController.m */; };
+		195CEA5419371FE40044C52B /* _MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* _MainViewController.m */; };
+		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
+		195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5C193731C00044C52B /* FacebookSessionManager.m */; };
 		196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
 		196021C919329569000234A3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C819329569000234A3 /* User.m */; };
 		196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
@@ -34,7 +39,6 @@
 		198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C097318CC3F5F000C00E2 /* AppDelegate.m */; };
 		198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 198C097818CC3F5F000C00E2 /* Images.xcassets */; };
 		198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099C18CC4976000C00E2 /* Card+Helpers.m */; };
-		198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C099F18CC49E1000C00E2 /* MainViewController.m */; };
 		198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A218CC4A3A000C00E2 /* CardTableView.m */; };
 		198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A518CC4A4A000C00E2 /* CardCell.m */; };
 		198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09A818CC4A89000C00E2 /* AddCardHeader.m */; };
@@ -83,6 +87,13 @@
 /* Begin PBXFileReference section */
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
+		195CEA4F1936AE470044C52B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		195CEA511936B2650044C52B /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = Classes/FacebookLoginViewController.h; sourceTree = "<group>"; };
+		195CEA521936B2650044C52B /* FacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookLoginViewController.m; path = Classes/FacebookLoginViewController.m; sourceTree = "<group>"; };
+		195CEA55193720130044C52B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		195CEA56193720130044C52B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		195CEA5B193731C00044C52B /* FacebookSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookSessionManager.h; path = Classes/FacebookSessionManager.h; sourceTree = "<group>"; };
+		195CEA5C193731C00044C52B /* FacebookSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookSessionManager.m; path = Classes/FacebookSessionManager.m; sourceTree = "<group>"; };
 		196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONParsable.h"; path = "Classes/NSManagedObject+JSONParsable.h"; sourceTree = "<group>"; };
 		196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONParsable.m"; path = "Classes/NSManagedObject+JSONParsable.m"; sourceTree = "<group>"; };
 		196021C61932953F000234A3 /* JSONParsable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONParsable.h; path = Classes/JSONParsable.h; sourceTree = "<group>"; };
@@ -137,8 +148,8 @@
 		198C097F18CC3F5F000C00E2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		198C099B18CC4976000C00E2 /* Card+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Card+Helpers.h"; path = "Classes/Card+Helpers.h"; sourceTree = "<group>"; };
 		198C099C18CC4976000C00E2 /* Card+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Card+Helpers.m"; path = "Classes/Card+Helpers.m"; sourceTree = "<group>"; };
-		198C099E18CC49E1000C00E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
-		198C099F18CC49E1000C00E2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		198C099E18CC49E1000C00E2 /* _MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MainViewController.h; path = Classes/_MainViewController.h; sourceTree = "<group>"; };
+		198C099F18CC49E1000C00E2 /* _MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _MainViewController.m; path = Classes/_MainViewController.m; sourceTree = "<group>"; };
 		198C09A118CC4A3A000C00E2 /* CardTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardTableView.h; path = Classes/CardTableView.h; sourceTree = "<group>"; };
 		198C09A218CC4A3A000C00E2 /* CardTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardTableView.m; path = Classes/CardTableView.m; sourceTree = "<group>"; };
 		198C09A418CC4A4A000C00E2 /* CardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardCell.h; path = Classes/CardCell.h; sourceTree = "<group>"; };
@@ -185,6 +196,7 @@
 				1966CD2B18DDE9EC00E85CDE /* SystemConfiguration.framework in Frameworks */,
 				1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */,
 				1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */,
+				195CEA501936AE470044C52B /* FacebookSDK.framework in Frameworks */,
 				1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */,
 				198C096418CC3F5F000C00E2 /* CoreGraphics.framework in Frameworks */,
 				198C096818CC3F5F000C00E2 /* CoreData.framework in Frameworks */,
@@ -291,6 +303,7 @@
 		198C096018CC3F5F000C00E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				195CEA4F1936AE470044C52B /* FacebookSDK.framework */,
 				1966CD2E18DDE9FA00E85CDE /* libz.dylib */,
 				1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */,
 				1966CD2A18DDE9EC00E85CDE /* SystemConfiguration.framework */,
@@ -316,8 +329,14 @@
 				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
-				198C099E18CC49E1000C00E2 /* MainViewController.h */,
-				198C099F18CC49E1000C00E2 /* MainViewController.m */,
+				195CEA511936B2650044C52B /* FacebookLoginViewController.h */,
+				195CEA521936B2650044C52B /* FacebookLoginViewController.m */,
+				195CEA5B193731C00044C52B /* FacebookSessionManager.h */,
+				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
+				195CEA55193720130044C52B /* MainViewController.h */,
+				195CEA56193720130044C52B /* MainViewController.m */,
+				198C099E18CC49E1000C00E2 /* _MainViewController.h */,
+				198C099F18CC49E1000C00E2 /* _MainViewController.m */,
 				19C93315190316EC0075FA49 /* QuizViewController.h */,
 				19C93316190316EC0075FA49 /* QuizViewController.m */,
 				198C09A118CC4A3A000C00E2 /* CardTableView.h */,
@@ -581,9 +600,10 @@
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
 				198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */,
+				195CEA5419371FE40044C52B /* _MainViewController.m in Sources */,
 				196021D5193295F1000234A3 /* User+Helpers.m in Sources */,
-				198C09A018CC49E1000C00E2 /* MainViewController.m in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
+				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
 				19C5000419369413002AABBD /* StackServer.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
@@ -592,8 +612,10 @@
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
 				1972491A19326FE600030E5E /* Card.m in Sources */,
 				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
+				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				196021C919329569000234A3 /* User.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
+				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
 				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
@@ -731,6 +753,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					/Users/akfreas/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
@@ -752,6 +775,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					/Users/akfreas/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";

@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "FacebookLoginViewController.h"
 #import "QuizViewController.h"
 #import "Database.h"
 #import "CouchManager.h"
@@ -16,8 +17,8 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
     [CouchManager startSync:NULL];
     UITabBarController *mainTabBar = [[UITabBarController alloc] init];
-    mainTabBar.viewControllers = @[[[MainViewController alloc] init], [[QuizViewController alloc] init]];
-    self.mainViewController = mainTabBar;
+//    mainTabBar.viewControllers = @[[, [[QuizViewController alloc] init]];
+    self.mainViewController = [[MainViewController alloc] init];
     self.window.rootViewController = self.mainViewController;
     return YES;
 }
