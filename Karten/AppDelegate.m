@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "NetworkSyncUtil.h"
 
 @implementation AppDelegate
 
@@ -10,6 +11,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
+    [NetworkSyncUtil syncAllDataWithCompletion:NULL];
     self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     self.window.rootViewController = self.mainViewController;
     return YES;

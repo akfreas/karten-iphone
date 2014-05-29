@@ -1,5 +1,5 @@
 @interface NetworkSyncUtil : NSObject
 
-//- (void)syncUserStacks:
++ (void)syncAllDataWithCompletion:(void(^)())completion;
 
 @end
