@@ -27,3 +27,9 @@
 #import "Card.h"
 #import "Card+Helpers.h"
 #endif
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((fmt @" %s [Line %d]"), ##__VA_ARGS__, __PRETTY_FUNCTION__, __LINE__);
+#else
+#define DLog(...)
+#endif
