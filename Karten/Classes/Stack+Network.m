@@ -11,9 +11,15 @@
 {
     KTAPIGetUserStacks *userStackCall = [[KTAPIGetUserStacks alloc] initWithUser:user];
     [KartenNetworkClient makeRequest:userStackCall completion:completion success:^(AFHTTPRequestOperation *operation, NSArray *stacks) {
+        NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
+        NSMutableArray *allStacks = [NSMutableArray arrayWithArray:[Stack MR_findAllInContext:ctx]];
         for (Stack *stack in stacks) {
-            [stack.managedObjectContext MR_saveOnlySelfAndWait];
+            [allStacks removeObject:stack];
         }
+        for (Stack *deletedStack in allStacks) {
+            [deletedStack MR_deleteInContext:ctx];
+        }
+        [ctx MR_saveOnlySelfAndWait];
         if (success) {
             success(operation, stacks);
         }
