@@ -4,4 +4,6 @@
 
 @interface Stack (Helpers) <JSONParsable, JSONSerializable>
 
+- (NSString *)fullServerURL;
+
 @end
