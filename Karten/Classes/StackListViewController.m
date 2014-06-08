@@ -4,9 +4,12 @@
 #import "KartenNetworkClient.h"
 #import "Stack.h"
 #import "Stack+Network.h"
+#import "CardListViewController.h"
+
 
 @interface StackListViewController () <UITableViewDelegate>
 @property (nonatomic) StackListTableView *stackTableView;
+@property (nonatomic) CardListViewController *cardView;
 @end
 
 @implementation StackListViewController
@@ -57,5 +60,15 @@
 
 
 #pragma mark UITableViewDelegate Methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Stack *stack = [self.stackTableView.fetchController objectAtIndexPath:indexPath];
+    if (self.cardView == nil) {
+        self.cardView = [[CardListViewController alloc] init];
+    }
+    self.cardView.stack = stack;
+    [self.navigationController pushViewController:self.cardView animated:YES];
+}
 
 @end
