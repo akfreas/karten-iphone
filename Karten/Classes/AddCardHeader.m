@@ -2,6 +2,7 @@
 #import "Card.h"
 #import "KartenModelHelpers.h"
 #import "Database.h"
+#import "CouchManager.h"
 
 @interface AddCardHeader ()
 
@@ -84,7 +85,7 @@
             NSDictionary *cardDocument = @{@"term": self.termTextField.text,
                                            @"definition" : self.definitionTextField.text,
                                            @"created_at" : [CBLJSON JSONObjectWithDate:[NSDate date]]};
-            CBLDocument *newDoc = [[Database sharedDB] createDocument];
+            CBLDocument *newDoc = [[[CouchManager databaseForStack:self.stack] couchDatabase] createDocument];
             NSError *err = nil;
             if (![newDoc putProperties:cardDocument error:&err]) {
                 NSLog(@"Couldn't put doc %@. %@", cardDocument, err);
