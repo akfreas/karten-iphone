@@ -1,8 +1,8 @@
 #import "CardTableView.h"
 #import "CardCell.h"
-#import "AddCardHeader.h"
 #import "Card.h"
 #import "Database.h"
+#import "CouchManager.h"
 
 @interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate, UISearchBarDelegate>
 
@@ -20,21 +20,24 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        
         [self registerClass:[CardCell class] forCellReuseIdentifier:@"CBLUITableDelegate"];
-        [self registerClass:[AddCardHeader class] forHeaderFooterViewReuseIdentifier:kHeaderReuseID];
-               self.cbDatasource = [[CBLUITableSource alloc] init];
-        CBLLiveQuery *query = [[[[Database sharedDB] viewNamed:@"byDate"] createQuery] asLiveQuery];
-        query.descending = YES;
-//        query.keys = @[@"Die"];
-        self.cbDatasource.query = query;
-        self.cbDatasource.tableView = self;
-        self.cbDatasource.labelProperty = nil;
         self.delegate = self;
-        self.dataSource = self.cbDatasource;
     }
     return self;
+}
+
+- (void)setStack:(Stack *)stack
+{
+    self.cbDatasource = [[CBLUITableSource alloc] init];
+    _stack = stack;
+    Database *db = [CouchManager databaseForStack:stack];
+    [db startSyncing];
+    CBLLiveQuery *query = [[[db.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
+    query.descending = YES;
+    self.cbDatasource.query = query;
+    self.cbDatasource.tableView = self;
+    self.cbDatasource.labelProperty = nil;
+    self.dataSource = self.cbDatasource;
 }
 
 #pragma mark CBUITableSource
@@ -71,24 +74,12 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 
 #pragma mark UITableView Datasource
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 95.0f;
-}
-
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44.0f;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    AddCardHeader *header = [self dequeueReusableHeaderFooterViewWithIdentifier:kHeaderReuseID];
-    if (header.delegate == nil) {
-        header.delegate = self;
-    }
-    return header;
 }
 
 #pragma mark UISearchBarDelegate
