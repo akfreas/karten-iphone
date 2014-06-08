@@ -7,6 +7,7 @@
 #import "AddStackFormView.h"
 #import "Stack.h"
 #import "Stack+Network.h"
+#import "NetworkSyncUtil.h"
 
 @interface MainViewController ()
 @property (nonatomic) UITabBarController *tabBarController;
@@ -98,6 +99,8 @@
                     self.loginViewController = [FacebookLoginViewController new];
                     [self presentViewController:self.loginViewController animated:NO completion:NULL];
                 } else {
+                    [NetworkSyncUtil syncAllDataWithCompletion:^{
+                    }];
                     self.stackListController.userForStacks = [User mainUser];
                 }
             }];
