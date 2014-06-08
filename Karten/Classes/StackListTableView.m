@@ -19,7 +19,6 @@ static NSInteger kRowOffset = 1;
 @end
 
 @interface StackListTableView () <UITableViewDataSource, NSFetchedResultsControllerDelegate>
-@property (nonatomic) NSFetchedResultsController *fetchController;
 @end
 
 @implementation StackListTableView
