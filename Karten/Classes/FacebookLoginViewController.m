@@ -1,6 +1,6 @@
 #import "FacebookLoginViewController.h"
 #import "FacebookSessionManager.h"
-
+#import "NetworkSyncUtil.h"
 
 @interface FacebookLoginViewController () <FBLoginViewDelegate>
 @property (nonatomic) FBLoginView *loginButton;
@@ -51,6 +51,7 @@
     [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:session.state error:nil];
     [[FacebookSessionManager sharedInstance] createUserFromFacebookSession:^(User *user, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [NetworkSyncUtil syncAllDataWithCompletion:NULL];
             [self dismissViewControllerAnimated:YES completion:NULL];
         });
     }];
