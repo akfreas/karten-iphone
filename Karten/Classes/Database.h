@@ -1,8 +1,12 @@
+@class Stack;
+
 @interface Database : NSObject
 
-+(instancetype)sharedInstance;
-+(CBLDatabase *)sharedDB;
-+(void)setupDB;
-@property (strong) CBLDatabase *database;
+- (id)initWithStack:(Stack *)stack;
+- (void)startSyncing;
+@property (nonatomic) CBLReplication *pullReplication;
+@property (nonatomic) CBLReplication *pushReplication;
+@property (nonatomic) Stack *stack;
+@property (nonatomic) CBLDatabase *couchDatabase;
 
 @end

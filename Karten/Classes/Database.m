@@ -1,41 +1,39 @@
 #import "Database.h"
+#import "Stack.h"
+#import "Stack+Helpers.h"
+#import "StackServer.h"
 
+
+@interface Database ()
+@end
 
 @implementation Database
 
-+(CBLDatabase *)sharedDB {
-    return [[self sharedInstance] database];
-}
-
-+(instancetype)sharedInstance {
-    static id sharedInstance;
-    static dispatch_once_t onceToken;
-    if (sharedInstance == nil) {
-        dispatch_once(&onceToken, ^{
-                sharedInstance = [[self alloc] init];
-        });
+- (id)initWithStack:(Stack *)stack
+{
+    self = [super init];
+    if (self) {
+        self.stack = stack;
+        [self setup];
     }
-    return sharedInstance;
+    return self;
 }
 
-+(void)setupDB {
-    [[self sharedInstance] setup];
+- (NSUInteger)hash
+{
+    return [self.stack.objectID hash];
 }
 
 -(void)setup {
     
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *pushAndPullURLString = @"http://sync.couchbasecloud.com/krtncb2/";
-    NSDictionary *appDefaults = @{@"syncpoint": pushAndPullURLString};
-    [defaults registerDefaults:appDefaults];
-    [defaults synchronize];
+    NSString *pushAndPullURLString = [self.stack fullServerURL] ;
     NSError *err = nil;
-    self.database = [[CBLManager sharedInstance] databaseNamed:@"karten" error:&err];
+    self.couchDatabase = [[CBLManager sharedInstance] databaseNamed:self.stack.serverStackName error:&err];
     if (err != nil) {
         NSLog(@"Couldn't connect to DB! %@", err);
     }
-    [[self.database viewNamed:@"byDate"] setMapBlock:MAPBLOCK({
+    [[self.couchDatabase viewNamed:@"byDate"] setMapBlock:MAPBLOCK({
         id date = doc[@"created_at"];
         if (date) {
             emit(date, doc);
@@ -46,8 +44,15 @@
 //        id
 //    }) reduceBlock:REDUCEBLOCK({}) version:@"1.0"];
 //    
-    [self.database createPullReplication:[NSURL URLWithString:pushAndPullURLString]];
-    [self.database createPushReplication:[NSURL URLWithString:pushAndPullURLString]];
+    self.pullReplication = [self.couchDatabase createPullReplication:[NSURL URLWithString:pushAndPullURLString]];
+    self.pushReplication = [self.couchDatabase createPushReplication:[NSURL URLWithString:pushAndPullURLString]];
+    self.pushReplication.continuous = self.pullReplication.continuous = YES;
+}
+
+- (void)startSyncing
+{
+    [self.pullReplication start];
+    [self.pushReplication start];
 }
 
 @end
