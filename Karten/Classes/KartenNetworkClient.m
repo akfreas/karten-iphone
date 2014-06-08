@@ -43,17 +43,21 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
     NSMutableURLRequest *URLrequest = [NSMutableURLRequest new];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
     [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    
     NSDictionary *params = nil;
     if ([request respondsToSelector:@selector(params)]) {
         params = request.params;
     }
+    DLog(@"Fetching from %@/%@. Params: %@", self.manager.baseURL, request.path, params);
     [self.manager GET:request.path parameters:params success:
         ^(AFHTTPRequestOperation *operation, id responseObject) {
             if ([self responseHasError:responseObject]) {
-                failure(responseObject, [self errorFromResponse:responseObject]);
+                if (failure) {
+                    failure(responseObject, [self errorFromResponse:responseObject]);
+                }
                 return;
             }
-        
+            DLog(@"Finished fetch from %@%@. Response: %@", self.manager.baseURL, request.path, responseObject);
         if (responseObject != nil) {
             id returnObject = nil;
             if ([request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
@@ -93,6 +97,8 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
         if (completion) {
             completion();
         }
+          DLog(@"Finished fetch from %@%@. Error: %@", self.manager.baseURL, request.path, error);
+
           if (failure) {
               failure(operation, error);
           }
@@ -102,7 +108,7 @@ static NSString *BaseUrl = @"http://0.0.0.0:8000/";
 - (AFHTTPRequestOperationManager *)manager
 {
     if (_manager == nil) {
-        _manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://0.0.0.0:8000/"]];
+        _manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]];
         [_manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     }
     return _manager;
