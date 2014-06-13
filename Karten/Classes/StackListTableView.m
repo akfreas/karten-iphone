@@ -1,11 +1,20 @@
 #import "StackListTableView.h"
 #import "StackListTableViewCell.h"
+#import "StackActionTableViewCell.h"
 #import "Stack+Helpers.h"
 #import "Stack.h"
 
 static NSString *kStackTableViewCellID = @"kStackTableViewCellID";
-
+static NSString *kQuizActionTableViewCellID = @"kQuizActionTableViewCellID";
 static NSInteger kRowOffset = 1;
+static NSInteger kNumberOfActions = 1;
+
+static NSInteger kStackSection = 0;
+static NSInteger kActionSection = 1;
+
+static NSInteger kNumberOfAdditionalSections = 1;
+
+
 
 @interface NSIndexPath (Offset)
 - (NSIndexPath *)offsetPathByRow;
@@ -19,9 +28,11 @@ static NSInteger kRowOffset = 1;
 @end
 
 @interface StackListTableView () <UITableViewDataSource, NSFetchedResultsControllerDelegate>
+@property (nonatomic) NSMutableArray *actionTableViewCells;
 @end
 
 @implementation StackListTableView
+
 
 #pragma mark - Public Methods
 
@@ -38,21 +49,38 @@ static NSInteger kRowOffset = 1;
 
 #pragma mark - Private Methods
 
+- (void)createActionCells
+{
+    self.actionTableViewCells = [NSMutableArray array];
+    StackActionTableViewCell *quizAction = [[StackActionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kQuizActionTableViewCellID];
+    quizAction.displayName = @"Quiz";
+    [quizAction setTappedAction:^{
+        [MainViewController showQuizViewForStack:nil];
+    }];
+}
+
 - (void)createFetchController
 {
     self.fetchController = [Stack MR_fetchAllSortedBy:@"serverID" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
 }
 
-- (UITableViewCell *)configureCell:(StackListTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+#pragma mark UITableView Datasource
+
+- (UITableViewCell *)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Stack *stackForCell = [self.fetchController objectAtIndexPath:indexPath];
-    cell.stack = stackForCell;
+    if (indexPath.section == kStackSection) {
+        StackListTableViewCell *ourCell = (StackListTableViewCell *)cell;
+        Stack *stackForCell = [self.fetchController objectAtIndexPath:indexPath];
+        ourCell.stack = stackForCell;
+    } else if (indexPath.section == kActionSection) {
+        
+    }
     return cell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    StackListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackTableViewCellID];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackTableViewCellID];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -100,15 +128,21 @@ static NSInteger kRowOffset = 1;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[self.fetchController sections] objectAtIndex:section] numberOfObjects];
+    NSInteger numberOfSections = 0;
+    if (section == kStackSection) {
+        [[[self.fetchController sections] objectAtIndex:section] numberOfObjects];
+    } else if (section == kActionSection) {
+        
+    }
+    return numberOfSections;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchController sections] count];
+    return [[self.fetchController sections] count] + kNumberOfAdditionalSections;
 }
 
-#pragma mark UITableView Datasource
+
 
 
 @end

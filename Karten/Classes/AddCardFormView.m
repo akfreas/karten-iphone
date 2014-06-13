@@ -17,8 +17,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = rgb(181, 186, 199);
-        self.layer.cornerRadius = 5.0f;
+        self.backgroundColor = [UIColor whiteColor];
+//        self.layer.cornerRadius = 5.0f;
         [self createTermTextField];
         [self createAddButton];
         [self createDefinitionTextField];
@@ -43,6 +43,7 @@
         [self.termTextField resignFirstResponder];
         if (self.saveButtonAction) {
             self.saveButtonAction(sender, [self buildCardFromForm]);
+            self.definitionTextField.text = @"";
             self.termTextField.text = @"";
         }
         
@@ -73,15 +74,15 @@
 
 - (CGSize)intrinsicContentSize
 {
-    return CGSizeMake(300.0f, 150.0f);
+    return CGSizeMake(300.0f, 120.0f);
 }
 
 - (void)createTermTextField
 {
     UITextField *termTextField = [[UITextField alloc] initForAutoLayout];
-    termTextField.placeholder = @"Stack Name";
-    [termTextField setTextColor:[UIColor whiteColor]];
-    [termTextField setTintColor:[UIColor whiteColor]];
+    termTextField.placeholder = @"Term";
+    [termTextField setTextColor:[UIColor blackColor]];
+    [termTextField setTintColor:[UIColor blackColor]];
     [termTextField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
         [self.definitionTextField becomeFirstResponder];
         return YES;
@@ -94,8 +95,8 @@
 {
     UITextField *definitionTextField = [[UITextField alloc] initForAutoLayout];
     definitionTextField.placeholder = @"Definition";
-    [definitionTextField setTextColor:[UIColor whiteColor]];
-    [definitionTextField setTintColor:[UIColor whiteColor]];
+    [definitionTextField setTextColor:[UIColor blackColor]];
+    [definitionTextField setTintColor:[UIColor blackColor]];
     [definitionTextField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
         [textField resignFirstResponder];
         return YES;
@@ -107,14 +108,16 @@
 - (void)createAddButton
 {
     self.addButton = [[UIButton alloc] initForAutoLayout];
-    [self.addButton setTitle:@"Save" forState:UIControlStateNormal];
+    [self.addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.addButton setTitle:@"Add Another" forState:UIControlStateNormal];
     [self addSubview:self.addButton];
 }
 
 - (void)createCancelButton
 {
     self.cancelButton = [[UIButton alloc] initForAutoLayout];
-    [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    [self.cancelButton setTitle:@"Done" forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:self.cancelButton];
 }
 
@@ -122,10 +125,13 @@
 {
     UIBind(self.termTextField, self.cancelButton, self.addButton, self.definitionTextField);
     [self addConstraintWithVisualFormat:@"H:|-[termTextField]-|" bindings:BBindings];
-    [self addConstraintWithVisualFormat:@"H:|-[addButton]-|" bindings:BBindings];
-    [self addConstraintWithVisualFormat:@"H:|-[cancelButton]-|" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"H:|[cancelButton][addButton(==cancelButton)]|" bindings:BBindings];
+//    [self addConstraintWithVisualFormat:@"H:|-[cancelButton]-|" bindings:BBindings];
     [self addConstraintWithVisualFormat:@"H:|-[definitionTextField]-|" bindings:BBindings];
-    [self addConstraintWithVisualFormat:@"V:|-[termTextField]-[definitionTextField]-[addButton]-[cancelButton]-|" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"V:|[termTextField][definitionTextField(==termTextField)]" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"V:[definitionTextField][addButton]|" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"V:[definitionTextField][cancelButton]|" bindings:BBindings];
+//    [self addConstraintWithVisualFormat:@"H:|-[addButton]-[cancelButton(]-|" bindings:BBindings];
 }
 
 @end

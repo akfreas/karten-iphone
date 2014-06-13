@@ -8,6 +8,7 @@
 #import "Stack.h"
 #import "Stack+Network.h"
 #import "NetworkSyncUtil.h"
+#import "QuizListViewController.h"
 
 @interface MainViewController ()
 @property (nonatomic) UITabBarController *tabBarController;
@@ -17,7 +18,35 @@
 @property (nonatomic) AddStackFormView *addStackForm;
 @end
 
+static MainViewController *sharedInstance;
+
 @implementation MainViewController
+
+
++ (void)goToMainView
+{
+    [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:YES];
+}
+
++ (void)showQuizViewForStack:(Stack *)stack
+{
+    QuizListViewController *quizListView = [[QuizListViewController alloc] init];
+    [self pushViewController:quizListView];
+}
+
++ (void)pushViewController:(UIViewController *)viewController
+{
+    [[[self sharedInstance] navigationController] pushViewController:viewController animated:YES];
+}
+
++ (instancetype)sharedInstance
+{
+    static dispatch_once_t executesOnlyOnce;
+    dispatch_once (&executesOnlyOnce, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
 
 - (id)init
 {

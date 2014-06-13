@@ -3,6 +3,8 @@
 #import "Card.h"
 #import "Database.h"
 #import "CouchManager.h"
+#import "Stack.h"
+#import "Stack+CouchBase.h"
 
 @interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate, UISearchBarDelegate>
 
@@ -26,12 +28,25 @@ static NSString *kHeaderReuseID = @"HeaderCell";
     return self;
 }
 
+- (CGSize)intrinsicContentSize
+{
+    return CGSizeMake(320.0f, 100.0f);
+}
+
+- (void)startUpdating
+{
+    [self.cbDatasource reloadFromQuery];
+    [self reloadData];
+}
+
 - (void)setStack:(Stack *)stack
 {
     self.cbDatasource = [[CBLUITableSource alloc] init];
     _stack = stack;
+    [self.stack enqueueDatabaseForSyncing];
+    [self.stack beginCouchDBSync];
+
     Database *db = [CouchManager databaseForStack:stack];
-    [db startSyncing];
     CBLLiveQuery *query = [[[db.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
     query.descending = YES;
     self.cbDatasource.query = query;

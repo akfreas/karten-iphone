@@ -12,7 +12,7 @@
     [self.window makeKeyAndVisible];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
     [NetworkSyncUtil syncAllDataWithCompletion:NULL];
-    self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[MainViewController sharedInstance]];
     self.window.rootViewController = self.mainViewController;
     return YES;
 }

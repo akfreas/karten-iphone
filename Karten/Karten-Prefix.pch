@@ -26,6 +26,7 @@
     #import "CouchbaseLite/CBLDocument.h"
 #import "Card.h"
 #import "Card+Helpers.h"
+#import "MainViewController.h"
 #endif
 
 #ifdef DEBUG

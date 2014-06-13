@@ -3,6 +3,6 @@
 
 
 @interface Card (Network)
-- (void)addCardToStackOnServer:(Stack *)stack error:(NSError *)error;
+- (void)addCardToStackOnServer:(Stack *)stack error:(NSError **)error;
 
 @end
