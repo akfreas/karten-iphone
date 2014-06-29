@@ -29,7 +29,7 @@ static FacebookSessionManager *sharedInstance;
 -(void)checkToken
 {
     if([FBSession activeSession].state == FBSessionStateCreatedTokenLoaded){
-        BOOL cachedTokenExists = [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
+        BOOL cachedTokenExists = [FBSession openActiveSessionWithReadPermissions:@[@"basic_info", @"user_friends"]
                                                                     allowLoginUI:NO
                                                                completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                                                                    [self sessionStateChanged:session state:status error:error];
@@ -52,6 +52,7 @@ static FacebookSessionManager *sharedInstance;
         [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
                                            allowLoginUI:YES
                                       completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                          [FBSession setActiveSession:session];
                                           if(status == FBSessionStateOpen || status == FBSessionStateOpenTokenExtended){
                                               [self updateBasicInformation];
                                               completion(YES);
@@ -78,6 +79,7 @@ static FacebookSessionManager *sharedInstance;
 -(void)sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error
 {
     // Called EVERY time the session state changes
+    self.session = session;
     [self handleStateChange:state];
     if(error){
         [self handleError:error];
@@ -239,6 +241,14 @@ static FacebookSessionManager *sharedInstance;
                           }];
 }
 
+- (FBSession *)session
+{
+    if (_session == nil) {
+        _session = [[FBSession alloc] initWithPermissions:@[@"public_profile", @"user_friends"]];
+    }
+    return _session;
+}
+
 - (void)createUserFromFacebookSession:(void(^)(User *user, NSError *error))userCreationCompletion
 {
     NSLog(@"getUserInfo...");
@@ -253,7 +263,7 @@ static FacebookSessionManager *sharedInstance;
                 [graphObject setObject:@"facebook" forKey:@"external_service"];
                 [graphObject removeObjectForKey:@"id"];
                 [graphObject setObject:@YES forKey:@"registered"];
-                User *currentUser = [User objectWithJSONDictionary:graphObject];
+                User *currentUser = [User getOrCreateUserWithJSONDict:graphObject];
                 currentUser.mainUser = @YES;
                 [currentUser.managedObjectContext MR_saveOnlySelfAndWait];
                 KTAPICreateUser *createUserCall = [[KTAPICreateUser alloc] initWithUser:currentUser];

@@ -18,16 +18,21 @@ static NSString *kRemoteServerID = @"id";
         return nil;
     }
     
-    NSManagedObject *object = [self MR_findFirstByAttribute:kLocalServerID withValue:dictionary[kRemoteServerID]];
+    NSManagedObject *object = [self MR_findFirstByAttribute:kLocalServerID withValue:dictionary[kRemoteServerID] inContext:ctx];
     if (object == nil) {
         object = [self MR_createInContext:ctx];
     }
-    [object updateWithJSONDictionary:dictionary];
+    [object updateWithJSONDictionary:dictionary inContext:ctx];
     
     return object;
 }
 
 - (void)updateWithJSONDictionary:(NSDictionary *)dictionary
+{
+    [self updateWithJSONDictionary:dictionary inContext:[NSManagedObjectContext MR_defaultContext]];
+}
+
+- (void)updateWithJSONDictionary:(NSDictionary *)dictionary inContext:(NSManagedObjectContext *)ctx
 {
     NSDictionary *attributes = self.entity.attributesByName;
     for (NSString *attribute in attributes) {
@@ -50,7 +55,7 @@ static NSString *kRemoteServerID = @"id";
         }
         Class parseClass = NSClassFromString(relationshipDescription.destinationEntity.managedObjectClassName);
         if (relationshipDescription.maxCount == 1) {
-            NSManagedObject *relatedObject = [parseClass objectWithJSONDictionary:relatedObjectData];
+            NSManagedObject *relatedObject = [parseClass objectWithJSONDictionary:relatedObjectData context:ctx];
             [self setValue:relatedObject forKey:relationshipDescription.name];
         } else if ([relatedObjectData conformsToProtocol:@protocol(NSFastEnumeration)]) {
             NSMutableSet *newSet = [NSMutableSet set];

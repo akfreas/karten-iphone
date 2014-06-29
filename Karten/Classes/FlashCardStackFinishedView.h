@@ -1,0 +1,4 @@
+@interface FlashCardStackFinishedView : UIView
+
+
+@end

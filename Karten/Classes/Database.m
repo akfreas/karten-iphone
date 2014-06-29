@@ -5,6 +5,10 @@
 
 
 @interface Database ()
+@property (nonatomic) BOOL waitForSyncCompletion;
+@property (nonatomic) CBLLiveQuery *activeQuery;
+@property (nonatomic) NSError* syncError;
+
 @end
 
 @implementation Database
@@ -49,10 +53,68 @@
     self.pushReplication.continuous = self.pullReplication.continuous = YES;
 }
 
+- (void) replicationProgress: (NSNotification*)n {
+    if (self.pullReplication.status == kCBLReplicationActive || self.pushReplication.status == kCBLReplicationActive) {
+        // Sync is active -- aggregate the progress of both replications and compute a fraction:
+        unsigned completed = self.pullReplication.completedChangesCount + self.pushReplication.completedChangesCount;
+        unsigned total = self.pullReplication.changesCount+ self.pushReplication.changesCount;
+        NSLog(@"SYNC progress: %u / %u", completed, total);
+        // Update the progress bar, avoiding divide-by-zero exceptions:
+        //        progress.progress = (completed / (float)MAX(total, 1u));
+        self.waitForSyncCompletion = YES;
+    } else if (self.waitForSyncCompletion && self.pushReplication.status != kCBLReplicationActive && self.pullReplication.status != kCBLReplicationActive) {
+        self.waitForSyncCompletion = NO;
+        [self copyDataToAppDB];
+    }
+    
+    // Check for any change in error status and display new errors:
+    NSError* error = self.pullReplication.lastError ? self.pullReplication.lastError : self.pushReplication.lastError;
+    if (error != _syncError) {
+        _syncError = error;
+        if (error)
+            NSLog(@"Error syncing %@",error);
+    }
+}
+
+
+- (void)copyDataToAppDB
+{
+    self.activeQuery = [[[self.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
+    [self.activeQuery addObserver:self forKeyPath:@"rows" options:0 context:nil];
+    [self.activeQuery start];
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == self.activeQuery) {
+        [self.stack.managedObjectContext performBlock:^{
+            
+            for (CBLQueryRow *row in self.activeQuery.rows) {
+                Card *aCard = [Card getOrCreateCardWithCouchDBQueryRow:row inContext:self.stack.managedObjectContext];
+                aCard.stack = self.stack;
+                if (aCard == nil) {
+                    NSLog(@"Could not create card with doc %@", row);
+                }
+            }
+            [self.stack.managedObjectContext MR_saveOnlySelfAndWait];
+        }];
+    }
+}
+
 - (void)startSyncing
 {
+    NSNotificationCenter* nctr = [NSNotificationCenter defaultCenter];
+    [nctr addObserver: self selector: @selector(replicationProgress:)
+                 name: kCBLReplicationChangeNotification object: self.pullReplication];
+    [nctr addObserver: self selector: @selector(replicationProgress:)
+                 name: kCBLReplicationChangeNotification object: self.pushReplication];
     [self.pullReplication start];
     [self.pushReplication start];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

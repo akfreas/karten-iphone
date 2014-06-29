@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */; };
+		190A8F851960BE5300586435 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F841960BE5300586435 /* Stack.m */; };
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
-		195CEA501936AE470044C52B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195CEA4F1936AE470044C52B /* FacebookSDK.framework */; };
+		194F97301954225300B184D6 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 194F971A19541F6300B184D6 /* libfacebook_ios_sdk.a */; };
+		194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */; };
 		195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA521936B2650044C52B /* FacebookLoginViewController.m */; };
 		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
 		195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5C193731C00044C52B /* FacebookSessionManager.m */; };
@@ -60,6 +63,11 @@
 		198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */; };
 		19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */; };
 		19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C4194B00C0007B0365 /* QuizListViewController.m */; };
+		19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C7194B0736007B0365 /* StackCollectionViewCell.m */; };
+		19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547CA194B0A33007B0365 /* StackCollectionView.m */; };
+		19A547CE194B16F4007B0365 /* StackActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547CD194B16F4007B0365 /* StackActionViewController.m */; };
+		19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */; };
+		19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547D9194B2E26007B0365 /* FacebookShareController.m */; };
 		19BC93B01935CD2900CC8725 /* TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC471935C61A00ABD428 /* TestUtils.m */; };
 		19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021EF1932A88D000234A3 /* CreateDatabaseData.json */; };
 		19BC93B21935CD4E00CC8725 /* UserListFetch.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021F01932A88D000234A3 /* UserListFetch.json */; };
@@ -69,8 +77,6 @@
 		19C5000519369413002AABBD /* StackServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000319369413002AABBD /* StackServer.m */; };
 		19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000F1936A16E002AABBD /* StackServer+Helpers.m */; };
 		19C500111936A16E002AABBD /* StackServer+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000F1936A16E002AABBD /* StackServer+Helpers.m */; };
-		19C500141936A31D002AABBD /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C500131936A31D002AABBD /* Stack.m */; };
-		19C500151936A31D002AABBD /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C500131936A31D002AABBD /* Stack.m */; };
 		19C5FFF11936360A002AABBD /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
 		19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
 		19C5FFF519368584002AABBD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5FFF419368584002AABBD /* User.m */; };
@@ -89,6 +95,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		194F971919541F6300B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
+		194F971B19541F6300B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B9CBC519152537270036AA71;
+			remoteInfo = FacebookSDKTests;
+		};
+		194F971D19541F6300B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 85A44B9F16A8CE05007BE80E;
+			remoteInfo = FacebookSDKIntegrationTests;
+		};
+		194F971F19541F6300B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 89263C1B1926CBA500A44711;
+			remoteInfo = FacebookSDKApplicationTests;
+		};
+		194F972119541F6300B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 89263C051926CBA500A44711;
+			remoteInfo = FacebookSDKTestHost;
+		};
+		194F972319541FD200B184D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = "facebook-ios-sdk";
+		};
 		19D120EB1935CA5D00EECE71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 198C095618CC3F5F000C00E2 /* Project object */;
@@ -99,9 +147,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190A8F7C1960ADC700586435 /* FriendPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerDelegate.h; sourceTree = "<group>"; };
+		190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPickerDelegate.m; sourceTree = "<group>"; };
+		190A8F831960BE5300586435 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Classes/Stack.h; sourceTree = "<group>"; };
+		190A8F841960BE5300586435 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Classes/Stack.m; sourceTree = "<group>"; };
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
-		195CEA4F1936AE470044C52B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "facebook-ios-sdk.xcodeproj"; path = "Frameworks/facebook-ios-sdk/src/facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
+		194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionaryRepresentation.m"; sourceTree = "<group>"; };
+		194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionaryRepresentation.h"; sourceTree = "<group>"; };
 		195CEA511936B2650044C52B /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = Classes/FacebookLoginViewController.h; sourceTree = "<group>"; };
 		195CEA521936B2650044C52B /* FacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookLoginViewController.m; path = Classes/FacebookLoginViewController.m; sourceTree = "<group>"; };
 		195CEA55193720130044C52B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
@@ -207,12 +261,20 @@
 		19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackActionTableViewCell.m; path = Classes/StackActionTableViewCell.m; sourceTree = "<group>"; };
 		19A547C3194B00C0007B0365 /* QuizListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizListViewController.h; path = Classes/QuizListViewController.h; sourceTree = "<group>"; };
 		19A547C4194B00C0007B0365 /* QuizListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizListViewController.m; path = Classes/QuizListViewController.m; sourceTree = "<group>"; };
+		19A547C6194B0736007B0365 /* StackCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackCollectionViewCell.h; path = Classes/StackCollectionViewCell.h; sourceTree = "<group>"; };
+		19A547C7194B0736007B0365 /* StackCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackCollectionViewCell.m; path = Classes/StackCollectionViewCell.m; sourceTree = "<group>"; };
+		19A547C9194B0A33007B0365 /* StackCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackCollectionView.h; path = Classes/StackCollectionView.h; sourceTree = "<group>"; };
+		19A547CA194B0A33007B0365 /* StackCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackCollectionView.m; path = Classes/StackCollectionView.m; sourceTree = "<group>"; };
+		19A547CC194B16F4007B0365 /* StackActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackActionViewController.h; path = Classes/StackActionViewController.h; sourceTree = "<group>"; };
+		19A547CD194B16F4007B0365 /* StackActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackActionViewController.m; path = Classes/StackActionViewController.m; sourceTree = "<group>"; };
+		19A547D5194B29FC007B0365 /* FlashCardStackFinishedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardStackFinishedView.h; path = Classes/FlashCardStackFinishedView.h; sourceTree = "<group>"; };
+		19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardStackFinishedView.m; path = Classes/FlashCardStackFinishedView.m; sourceTree = "<group>"; };
+		19A547D8194B2E26007B0365 /* FacebookShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookShareController.h; path = Classes/FacebookShareController.h; sourceTree = "<group>"; };
+		19A547D9194B2E26007B0365 /* FacebookShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookShareController.m; path = Classes/FacebookShareController.m; sourceTree = "<group>"; };
 		19C5000219369413002AABBD /* StackServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackServer.h; path = Classes/StackServer.h; sourceTree = "<group>"; };
 		19C5000319369413002AABBD /* StackServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackServer.m; path = Classes/StackServer.m; sourceTree = "<group>"; };
 		19C5000E1936A16E002AABBD /* StackServer+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StackServer+Helpers.h"; path = "Classes/StackServer+Helpers.h"; sourceTree = "<group>"; };
 		19C5000F1936A16E002AABBD /* StackServer+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "StackServer+Helpers.m"; path = "Classes/StackServer+Helpers.m"; sourceTree = "<group>"; };
-		19C500121936A31D002AABBD /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Classes/Stack.h; sourceTree = "<group>"; };
-		19C500131936A31D002AABBD /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Classes/Stack.m; sourceTree = "<group>"; };
 		19C5FFF319368584002AABBD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Karten/Classes/User.h; sourceTree = SOURCE_ROOT; };
 		19C5FFF419368584002AABBD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Karten/Classes/User.m; sourceTree = SOURCE_ROOT; };
 		19C5FFF719368EF5002AABBD /* KarenStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarenStackTests.m; sourceTree = "<group>"; };
@@ -235,13 +297,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194F97301954225300B184D6 /* libfacebook_ios_sdk.a in Frameworks */,
 				1972581819448A39002AD689 /* libPods-Karten.a in Frameworks */,
 				1966CD2F18DDE9FA00E85CDE /* libz.dylib in Frameworks */,
 				1966CD2D18DDE9F300E85CDE /* libsqlite3.dylib in Frameworks */,
 				1966CD2B18DDE9EC00E85CDE /* SystemConfiguration.framework in Frameworks */,
 				1966CD2918DDE9DE00E85CDE /* Security.framework in Frameworks */,
 				1966CD2718DDE9D700E85CDE /* CFNetwork.framework in Frameworks */,
-				195CEA501936AE470044C52B /* FacebookSDK.framework in Frameworks */,
 				1966CD2518DDE9C000E85CDE /* CouchbaseLite.framework in Frameworks */,
 				198C096418CC3F5F000C00E2 /* CoreGraphics.framework in Frameworks */,
 				198C096818CC3F5F000C00E2 /* CoreData.framework in Frameworks */,
@@ -265,11 +327,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194F970F19541F6200B184D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				194F971A19541F6300B184D6 /* libfacebook_ios_sdk.a */,
+				194F971C19541F6300B184D6 /* FacebookSDKTests.xctest */,
+				194F971E19541F6300B184D6 /* FacebookSDKIntegrationTests.xctest */,
+				194F972019541F6300B184D6 /* FacebookSDKApplicationTests.xctest */,
+				194F972219541F6300B184D6 /* FacebookSDKTestHost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		195CEA7A193809680044C52B /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				19C500121936A31D002AABBD /* Stack.h */,
-				19C500131936A31D002AABBD /* Stack.m */,
+				190A8F831960BE5300586435 /* Stack.h */,
+				190A8F841960BE5300586435 /* Stack.m */,
 				195CEA6B19378A260044C52B /* Stack+Network.h */,
 				195CEA6C19378A260044C52B /* Stack+Network.m */,
 				196021D0193295DE000234A3 /* Stack+Helpers.h */,
@@ -356,6 +430,9 @@
 		198C095518CC3F5F000C00E2 = {
 			isa = PBXGroup;
 			children = (
+				194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */,
+				194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */,
+				194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */,
 				198C096918CC3F5F000C00E2 /* Karten */,
 				196021DE19329CDF000234A3 /* KartenUnitTests */,
 				198C096018CC3F5F000C00E2 /* Frameworks */,
@@ -378,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				1972581719448A39002AD689 /* libPods-Karten.a */,
-				195CEA4F1936AE470044C52B /* FacebookSDK.framework */,
 				1966CD2E18DDE9FA00E85CDE /* libz.dylib */,
 				1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */,
 				1966CD2A18DDE9EC00E85CDE /* SystemConfiguration.framework */,
@@ -410,6 +486,8 @@
 				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
 				195CEA55193720130044C52B /* MainViewController.h */,
 				195CEA56193720130044C52B /* MainViewController.m */,
+				190A8F7C1960ADC700586435 /* FriendPickerDelegate.h */,
+				190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */,
 				195CEA5E19376E030044C52B /* StackListViewController.h */,
 				195CEA5F19376E030044C52B /* StackListViewController.m */,
 				19A547C3194B00C0007B0365 /* QuizListViewController.h */,
@@ -420,6 +498,12 @@
 				195CEA831938AAF60044C52B /* AddCardFormView.m */,
 				195CEA6119376E1E0044C52B /* StackListTableView.h */,
 				195CEA6219376E1E0044C52B /* StackListTableView.m */,
+				19A547C6194B0736007B0365 /* StackCollectionViewCell.h */,
+				19A547C7194B0736007B0365 /* StackCollectionViewCell.m */,
+				19A547C9194B0A33007B0365 /* StackCollectionView.h */,
+				19A547CA194B0A33007B0365 /* StackCollectionView.m */,
+				19A547CC194B16F4007B0365 /* StackActionViewController.h */,
+				19A547CD194B16F4007B0365 /* StackActionViewController.m */,
 				195CEA6E1937A0D20044C52B /* AddStackTableViewCell.h */,
 				195CEA6F1937A0D20044C52B /* AddStackTableViewCell.m */,
 				195CEA6419376E790044C52B /* StackListTableViewCell.h */,
@@ -428,6 +512,8 @@
 				19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */,
 				19C93315190316EC0075FA49 /* QuizViewController.h */,
 				19C93316190316EC0075FA49 /* QuizViewController.m */,
+				19A547D8194B2E26007B0365 /* FacebookShareController.h */,
+				19A547D9194B2E26007B0365 /* FacebookShareController.m */,
 				195CEA7F19387E020044C52B /* CardListViewController.h */,
 				195CEA8019387E020044C52B /* CardListViewController.m */,
 				198C09A118CC4A3A000C00E2 /* CardTableView.h */,
@@ -440,6 +526,8 @@
 				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
 				19C9331C190321DD0075FA49 /* FlashCardView.h */,
 				19C9331D190321DD0075FA49 /* FlashCardView.m */,
+				19A547D5194B29FC007B0365 /* FlashCardStackFinishedView.h */,
+				19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */,
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
 				198C09A818CC4A89000C00E2 /* AddCardHeader.m */,
 				195CEA741937E7260044C52B /* GraphicsUtils.h */,
@@ -528,6 +616,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				194F972419541FD200B184D6 /* PBXTargetDependency */,
 			);
 			name = Karten;
 			productName = Karten;
@@ -578,6 +667,12 @@
 			mainGroup = 198C095518CC3F5F000C00E2;
 			productRefGroup = 198C095F18CC3F5F000C00E2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 194F970F19541F6200B184D6 /* Products */;
+					ProjectRef = 194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				198C095D18CC3F5F000C00E2 /* Karten */,
@@ -585,6 +680,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		194F971A19541F6300B184D6 /* libfacebook_ios_sdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfacebook_ios_sdk.a;
+			remoteRef = 194F971919541F6300B184D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		194F971C19541F6300B184D6 /* FacebookSDKTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FacebookSDKTests.xctest;
+			remoteRef = 194F971B19541F6300B184D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		194F971E19541F6300B184D6 /* FacebookSDKIntegrationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FacebookSDKIntegrationTests.xctest;
+			remoteRef = 194F971D19541F6300B184D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		194F972019541F6300B184D6 /* FacebookSDKApplicationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FacebookSDKApplicationTests.xctest;
+			remoteRef = 194F971F19541F6300B184D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		194F972219541F6300B184D6 /* FacebookSDKTestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FacebookSDKTestHost.app;
+			remoteRef = 194F972119541F6300B184D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		198C095C18CC3F5F000C00E2 /* Resources */ = {
@@ -680,8 +813,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
-				19C500141936A31D002AABBD /* Stack.m in Sources */,
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
+				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */,
@@ -690,11 +823,14 @@
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				196603F1193EFFBA0027698E /* Card+Network.m in Sources */,
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
+				19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
+				194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */,
 				195CEA841938AAF60044C52B /* AddCardFormView.m in Sources */,
 				195CEA7E193809E20044C52B /* Stack+CouchBase.m in Sources */,
 				195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */,
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
+				19A547CE194B16F4007B0365 /* StackActionViewController.m in Sources */,
 				195CEA791937EA480044C52B /* KTAPICreateStack.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
@@ -703,6 +839,8 @@
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
+				19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */,
+				19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */,
 				195CEA8119387E020044C52B /* CardListViewController.m in Sources */,
 				195CEA731937A8450044C52B /* AddStackFormView.m in Sources */,
 				195CEA6D19378A260044C52B /* Stack+Network.m in Sources */,
@@ -713,9 +851,11 @@
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
 				1972491A19326FE600030E5E /* Card.m in Sources */,
 				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
+				190A8F851960BE5300586435 /* Stack.m in Sources */,
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
 				196021C919329569000234A3 /* User.m in Sources */,
+				190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
 				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
 				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,
@@ -738,7 +878,6 @@
 				19C5000519369413002AABBD /* StackServer.m in Sources */,
 				19C500111936A16E002AABBD /* StackServer+Helpers.m in Sources */,
 				19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */,
-				19C500151936A31D002AABBD /* Stack.m in Sources */,
 				19BC93B01935CD2900CC8725 /* TestUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,6 +885,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		194F972419541FD200B184D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "facebook-ios-sdk";
+			targetProxy = 194F972319541FD200B184D6 /* PBXContainerItemProxy */;
+		};
 		19D120EC1935CA5D00EECE71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 198C095D18CC3F5F000C00E2 /* Karten */;
@@ -858,9 +1002,24 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					/Users/akfreas/Documents/FacebookSDK,
+					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/BugSense\"",
+					"\"${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/HexColors\"",
+					"\"${PODS_ROOT}/Headers/MDCSwipeToChoose\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/RNBlurModalView\"",
+					"\"${PODS_ROOT}/Headers/UIView+AutoLayout\"",
+					"$(SDKROOT)/usr/include/libz",
+				);
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -883,9 +1042,24 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					/Users/akfreas/Documents/FacebookSDK,
+					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/BlocksKit\"",
+					"\"${PODS_ROOT}/Headers/BugSense\"",
+					"\"${PODS_ROOT}/Headers/GoogleAnalytics-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/HexColors\"",
+					"\"${PODS_ROOT}/Headers/MDCSwipeToChoose\"",
+					"\"${PODS_ROOT}/Headers/MagicalRecord\"",
+					"\"${PODS_ROOT}/Headers/RNBlurModalView\"",
+					"\"${PODS_ROOT}/Headers/UIView+AutoLayout\"",
+					"$(SDKROOT)/usr/include/libz",
+				);
 				INFOPLIST_FILE = "Karten/Karten-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

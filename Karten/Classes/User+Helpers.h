@@ -5,6 +5,7 @@
 
 @interface User (Helpers) <JSONParsable, JSONSerializable>
 
++ (User *)getOrCreateUserWithJSONDict:(NSDictionary *)JSON;
 + (User *)mainUser;
 
 @end

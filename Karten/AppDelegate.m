@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "NetworkSyncUtil.h"
+#import "FacebookSessionManager.h"
 
 @implementation AppDelegate
 
@@ -11,7 +12,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
-    [NetworkSyncUtil syncAllDataWithCompletion:NULL];
     self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[MainViewController sharedInstance]];
     self.window.rootViewController = self.mainViewController;
     return YES;
@@ -37,11 +37,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActiveWithSession:[FacebookSessionManager sharedInstance].session];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
+}
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    [FBSession.activeSession setStateChangeHandler:
+     ^(FBSession *session, FBSessionState state, NSError *error) {
+         [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:state error:error];
+     }];
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 

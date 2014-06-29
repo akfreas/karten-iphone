@@ -3,5 +3,8 @@
 @interface MainViewController : UIViewController
 + (instancetype)sharedInstance;
 + (void)goToMainView;
-+ (void)showQuizViewForStack:(Stack *)stack;
++ (void)showActionViewForStack:(Stack *)stack;
++ (void)showQuizViewForCards:(NSArray *)cards;
++ (void)showCardListForStack:(Stack *)stack;
++ (void)showShareControllerForStack:(Stack *)stack;
 @end

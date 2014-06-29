@@ -1,5 +1,5 @@
 #import "StackListViewController.h"
-#import "StackListTableView.h"
+#import "StackCollectionView.h"
 #import "KTAPIGetUserStacks.h"
 #import "KartenNetworkClient.h"
 #import "Stack.h"
@@ -7,8 +7,8 @@
 #import "CardListViewController.h"
 
 
-@interface StackListViewController () <UITableViewDelegate>
-@property (nonatomic) StackListTableView *stackTableView;
+@interface StackListViewController () <UICollectionViewDelegate>
+@property (nonatomic) StackCollectionView *stackCollectionView;
 @property (nonatomic) CardListViewController *cardView;
 @end
 
@@ -35,22 +35,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self createTableView];
+    [self createCollectionView];
     [self addLayoutConstraints];
 }
 
-- (void)createTableView
+- (void)createCollectionView
 {
-    self.stackTableView = [[StackListTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    self.stackTableView.delegate = self;
-    [self.view addSubview:self.stackTableView];
+    self.stackCollectionView = [[StackCollectionView alloc] initWithFrame:CGRectZero];
+    [self.stackCollectionView setStackSelectedAction:^(Stack *selectedStack) {
+        [MainViewController showActionViewForStack:selectedStack];
+    }];
+    [self.view addSubview:self.stackCollectionView];
 }
+
+
 
 - (void)addLayoutConstraints
 {
-    UIBind(self.stackTableView);
-    [self.view addConstraintWithVisualFormat:@"H:|[stackTableView]|" bindings:BBindings];
-    [self.view addConstraintWithVisualFormat:@"V:|[stackTableView]|" bindings:BBindings];
+    UIBind(self.stackCollectionView);
+    [self.view addConstraintWithVisualFormat:@"H:|-(15)-[stackCollectionView]-(15)-|" bindings:BBindings];
+    [self.view addConstraintWithVisualFormat:@"V:|-(15)-[stackCollectionView]-(15)-|" bindings:BBindings];
 }
 
 - (void)fetchUsersStacks
@@ -60,15 +64,5 @@
 
 
 #pragma mark UITableViewDelegate Methods
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Stack *stack = [self.stackTableView.fetchController objectAtIndexPath:indexPath];
-    if (self.cardView == nil) {
-        self.cardView = [[CardListViewController alloc] init];
-    }
-    self.cardView.stack = stack;
-    [self.navigationController pushViewController:self.cardView animated:YES];
-}
 
 @end

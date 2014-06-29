@@ -54,9 +54,6 @@ static NSInteger kNumberOfAdditionalSections = 1;
     self.actionTableViewCells = [NSMutableArray array];
     StackActionTableViewCell *quizAction = [[StackActionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kQuizActionTableViewCellID];
     quizAction.displayName = @"Quiz";
-    [quizAction setTappedAction:^{
-        [MainViewController showQuizViewForStack:nil];
-    }];
 }
 
 - (void)createFetchController

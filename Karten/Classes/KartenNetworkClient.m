@@ -1,14 +1,14 @@
 #import <AFNetworking/AFNetworking.h>
 #import "KartenNetworkClient.h"
 #import "JSONParsable.h"
+#import "NSObject+NSDictionaryRepresentation.h"
 @interface KartenNetworkClient ()
 
 @property (nonatomic) AFHTTPRequestOperationManager *manager;
 
 @end
 
-static NSString *BaseUrl = @"http://192.168.0.233";
-
+static NSString *BaseUrl = @"http://0.0.0.0:8000";
 @implementation KartenNetworkClient
 
 
@@ -40,24 +40,26 @@ static NSString *BaseUrl = @"http://192.168.0.233";
             success:(void (^)(AFHTTPRequestOperation *, id))success
             failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
 {
-    NSMutableURLRequest *URLrequest = [NSMutableURLRequest new];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
-    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    
     NSDictionary *params = nil;
+
     if ([request respondsToSelector:@selector(params)]) {
         params = request.params;
     }
+    NSError *err = nil;
+    NSMutableURLRequest *URLrequest = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString] parameters:params error:&err];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
+    [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [self.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    NSLog([URLrequest curlCommand]);
     DLog(@"Fetching from %@/%@. Params: %@", self.manager.baseURL, request.path, params);
-    [self.manager GET:request.path parameters:params success:
-        ^(AFHTTPRequestOperation *operation, id responseObject) {
-            if ([self responseHasError:responseObject]) {
-                if (failure) {
-                    failure(responseObject, [self errorFromResponse:responseObject]);
-                }
-                return;
+    void(^wrappedSuccess)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([self responseHasError:responseObject]) {
+            if (failure) {
+                failure(responseObject, [self errorFromResponse:responseObject]);
             }
-            DLog(@"Finished fetch from %@%@. Response: %@", self.manager.baseURL, request.path, responseObject);
+            return;
+        }
+        DLog(@"Finished fetch from %@/%@. Response: %@", self.manager.baseURL, request.path, responseObject);
         if (responseObject != nil) {
             id returnObject = nil;
             if ([request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
@@ -69,15 +71,15 @@ static NSString *BaseUrl = @"http://192.168.0.233";
                     }
                     returnObject = responseArray;
                 } else {
-
-                    if ([request respondsToSelector:@selector(updateOriginalObjectOnReturn)] && request.updateOriginalObjectOnReturn == YES) {
-                        NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
+                    
+                    if ([request respondsToSelector:@selector(updateOriginalObjectOnReturn)] && request.updateOriginalObjectOnReturn == YES && [request respondsToSelector:@selector(objectID)]) {
+                        NSManagedObjectContext *ctx = [NSManagedObjectContext MR_defaultContext];
                         NSManagedObject <JSONParsable> *originalObject = (NSManagedObject <JSONParsable> *)[ctx objectWithID:request.objectID];
-                        [originalObject updateWithJSONDictionary:responseObject];
+                        [originalObject updateWithJSONDictionary:responseObject inContext:ctx];
                         returnObject = originalObject;
-                } else {
-                    id<JSONParsable> newObject = [request.classToParse objectWithJSONDictionary:responseObject];
-                    returnObject = newObject;
+                    } else {
+                        id<JSONParsable> newObject = [request.classToParse objectWithJSONDictionary:responseObject];
+                        returnObject = newObject;
                     }
                     
                 }
@@ -91,18 +93,21 @@ static NSString *BaseUrl = @"http://192.168.0.233";
         if (completion) {
             completion();
         }
-
-    }
-      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    };
+    void(^wrappedFailure)(AFHTTPRequestOperation *, NSError *) = ^(AFHTTPRequestOperation *operation, NSError *error) {
         if (completion) {
             completion();
         }
-          DLog(@"Finished fetch from %@%@. Error: %@", self.manager.baseURL, request.path, error);
-
-          if (failure) {
-              failure(operation, error);
-          }
-    }];
+        DLog(@"Finished fetch from %@/%@. Error: %@", self.manager.baseURL, request.path, error);
+        
+        if (failure) {
+            failure(operation, error);
+        }
+    };
+    
+    [operation setCompletionBlockWithSuccess:wrappedSuccess failure:wrappedFailure];
+    [self.manager.operationQueue addOperation:operation];
 }
 
 - (AFHTTPRequestOperationManager *)manager

@@ -32,4 +32,14 @@
     return [User class];
 }
 
+- (NSManagedObjectID *)objectID
+{
+    return self.user.objectID;
+}
+
+- (BOOL)updateOriginalObjectOnReturn
+{
+    return YES;
+}
+
 @end

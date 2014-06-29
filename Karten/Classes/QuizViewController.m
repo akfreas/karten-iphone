@@ -2,6 +2,7 @@
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "FlashCardView.h"
 #import "Database.h"
+#import "FlashCardStackFinishedView.h"
 
 @interface QuizViewController () <MDCSwipeToChooseDelegate>
 
@@ -25,17 +26,23 @@
 
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.wordArray = [NSMutableArray arrayWithArray:[Card MR_findAllSortedBy:@"knowledgeScore" ascending:YES withPredicate:nil]];
     self.frontCardView = [self popFlashCardViewWithFrame:[self frontCardViewFrame]];
     [self.view addSubview:self.frontCardView];
     self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
 
+}
+
+- (void)setQuizCards:(NSArray *)quizCards
+{
+    _quizCards = quizCards;
+    self.wordArray = [quizCards mutableCopy];
 }
 
 // This is called when a user didn't fully swipe left or right.
@@ -74,7 +81,7 @@
     }
 }
 
-- (FlashCardView *)popFlashCardViewWithFrame:(CGRect)frame
+- (UIView *)popFlashCardViewWithFrame:(CGRect)frame
 {
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
     options.delegate = self;
@@ -88,9 +95,13 @@
                                              CGRectGetWidth(frame),
                                              CGRectGetHeight(frame));
     };
-    
-    FlashCardView *currentView = [[FlashCardView alloc] initWithFrame:frame card:self.wordArray[0] options:options];
-    [self.wordArray removeObjectAtIndex:0];
+    UIView *currentView;
+    if ([self.wordArray count] > 0) {
+        currentView = [[FlashCardView alloc] initWithFrame:frame card:self.wordArray[0] options:options];
+        [self.wordArray removeObjectAtIndex:0];
+    } else {
+        currentView = [[FlashCardStackFinishedView alloc] initWithFrame:frame];
+    }
     return currentView;
 }
 

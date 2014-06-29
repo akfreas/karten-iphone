@@ -43,9 +43,6 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 {
     self.cbDatasource = [[CBLUITableSource alloc] init];
     _stack = stack;
-    [self.stack enqueueDatabaseForSyncing];
-    [self.stack beginCouchDBSync];
-
     Database *db = [CouchManager databaseForStack:stack];
     CBLLiveQuery *query = [[[db.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
     query.descending = YES;

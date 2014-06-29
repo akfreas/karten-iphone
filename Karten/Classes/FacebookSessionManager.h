@@ -3,7 +3,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FacebookSessionManager : NSObject <FBLoginViewDelegate>
-
+@property (nonatomic) FBSession *session;
 +(FacebookSessionManager *)sharedInstance;
 
 -(void)checkToken; // Silent, on app load

@@ -33,6 +33,7 @@
 {
     self.loginButton = [[FBLoginView alloc] initForAutoLayout];
     self.loginButton.delegate = self;
+    [self.loginButton setReadPermissions:@[@"public_profile", @"user_friends"]];
     [self.view addSubview:self.loginButton];
     
 }
