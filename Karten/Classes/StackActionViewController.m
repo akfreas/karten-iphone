@@ -132,11 +132,10 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        NSArray *cards = [Card MR_findByAttribute:@"stack" withValue:self.stack];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"stack == %@", self.stack];
+        NSArray *cards = [Card MR_findAllWithPredicate:pred];
         [MainViewController showQuizViewForCards:cards];
     } else if (indexPath.row == 1) {
-        
-//        [Card mr_fetch]
         NSNumber *scoreAverage = [Card MR_aggregateOperation:@"average:" onAttribute:@"knowledgeScore" withPredicate:[NSPredicate predicateWithFormat:@"stack == %@", self.stack]];
         NSPredicate *pred = [NSPredicate predicateWithFormat:@"knowledgeScore <= %@", scoreAverage];
         NSArray *cards = [Card MR_findAllWithPredicate:pred];

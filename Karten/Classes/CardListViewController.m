@@ -1,4 +1,5 @@
 #import "CardListViewController.h"
+#import "CardEditViewController.h"
 #import "CardTableView.h"
 #import "Stack.h"
 #import "Stack+CouchBase.h"
@@ -25,8 +26,8 @@
 {
     self = [super init];
     if (self) {
-        self.tableView = [[CardTableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.addCardViewShown = NO;
+        [self createTableView];
     }
     return self;
 }
@@ -71,15 +72,23 @@
 
 - (void)viewDidLayoutSubviews
 {
-//    CGRect insetRect =
     self.plusExView.frame = CGRectInset(self.plusContainer.bounds, 12.0f, 12.0f);
-
 }
 
 - (void)setStack:(Stack *)stack
 {
     self.tableView.stack = stack;
     self.title = stack.name;
+}
+
+- (void)createTableView
+{
+    self.tableView = [[CardTableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.tableView setCardSelected:^(Card *selectedCard) {
+        CardEditViewController *editController = [[CardEditViewController alloc] init];
+        [editController setCard:selectedCard];
+        [self.navigationController pushViewController:editController animated:YES];
+    }];
 }
 
 - (Stack *)stack
@@ -108,13 +117,12 @@
 
 - (void)showAddCardFormView
 {
-    self.addCardViewShown = YES;
     [self.view addSubview:self.addCardView];
     self.animatableCardFormConstraints = [NSMutableArray array];
     [self.view removeConstraint:self.layoutGuideTableViewConstraint];
     UIBind(self.topLayoutGuide, self.addCardView, self.tableView);
     [self.animatableCardFormConstraints addObjectsFromArray:[self.view addConstraintWithVisualFormat:@"H:|[addCardView]|" bindings:BBindings]];
-    [self.view layoutIfNeeded];
+//    [self.view layoutIfNeeded];
     self.layoutGuideAddCardFormViewConstraint = [NSLayoutConstraint constraintWithItem:self.addCardView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0f constant:0.0f];
     [self.animatableCardFormConstraints addObjectsFromArray:[self.view addConstraintWithVisualFormat:@"V:[addCardView][tableView]" bindings:BBindings]];
     [self.view addConstraint:self.layoutGuideAddCardFormViewConstraint];
@@ -122,12 +130,12 @@
         [self.view layoutIfNeeded];
         self.plusExView.transform = CGAffineTransformMakeRotation((M_PI/180)*45.0f);
     } completion:^(BOOL finished) {
+        self.addCardViewShown = YES;
     }];
 }
 
 - (void)hideAddCardFormView
 {
-    self.addCardViewShown = NO;
     [self.view removeConstraint:self.layoutGuideAddCardFormViewConstraint];
     NSLayoutConstraint *animatableConstraint = [NSLayoutConstraint constraintWithItem:self.addCardView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.topLayoutGuide attribute:NSLayoutAttributeTop multiplier:1.0f constant:0.0f];
     [self.view addConstraint:animatableConstraint];
@@ -140,6 +148,7 @@
         [self.view addConstraint:self.layoutGuideTableViewConstraint];
         [self.addCardView removeFromSuperview];
         [self.view layoutIfNeeded];
+        self.addCardViewShown = NO;
     }];
     
 }

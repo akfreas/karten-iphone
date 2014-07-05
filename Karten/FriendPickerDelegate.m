@@ -1,5 +1,6 @@
 #import "FriendPickerDelegate.h"
-
+#import "KTAPIAddUserToStack.h"
+#import "KartenNetworkClient.h"
 
 static FriendPickerDelegate *sharedInstance;
 
@@ -29,4 +30,23 @@ static FriendPickerDelegate *sharedInstance;
     [[MainViewController sharedInstance] dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)facebookViewControllerDoneWasPressed:(id)sender {
+    
+    __block NSInteger operationCount = 0;
+    for (id<FBGraphUser> facebookUser in self.friendSelection) {
+        operationCount++;
+            KTAPIAddUserToStack *addUserCall = [[KTAPIAddUserToStack alloc] initWithStack:self.stack linkToUserID:facebookUser.objectID];
+        [KartenNetworkClient makeRequest:addUserCall completion:^{
+            operationCount--;
+            if (operationCount == 0) {
+                [[MainViewController sharedInstance] dismissViewControllerAnimated:YES completion:NULL];
+            }
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+           
+    }
+}
 @end

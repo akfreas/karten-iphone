@@ -19,7 +19,6 @@
     self = [super init];
     if (self) {
         self.title = @"Quiz";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.title image:[UIImage imageNamed:@"64-zap"] tag:1];
     }
     return self;
 }
@@ -114,7 +113,7 @@
 
 - (CGRect)frontCardViewFrame {
     CGFloat horizontalPadding = 20.f;
-    CGFloat topPadding = 60.f;
+    CGFloat topPadding = 80.f;
     CGFloat bottomPadding = 200.f;
     return CGRectMake(horizontalPadding,
                       topPadding,

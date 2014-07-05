@@ -55,12 +55,12 @@ static MainViewController *sharedInstance;
 
 + (void)showShareControllerForStack:(Stack *)stack
 {
-    if (FBSession.activeSession.isOpen == NO) {
-    }
     FBFriendPickerViewController *friendPicker = [[FBFriendPickerViewController alloc] init];
     friendPicker.session = [FBSession activeSession];
     friendPicker.userID = [User mainUser].externalUserID;
-    friendPicker.delegate = [FriendPickerDelegate sharedInstance];
+    FriendPickerDelegate *delegate = [FriendPickerDelegate sharedInstance];
+    delegate.stack = stack;
+    friendPicker.delegate = delegate;
     [friendPicker loadData];
     [friendPicker clearSelection];
     [[self sharedInstance] presentViewController:friendPicker animated:YES completion:NULL];
@@ -194,6 +194,8 @@ static MainViewController *sharedInstance;
     if ([FBSession activeSession].state == FBSessionStateCreatedTokenLoaded) {
         [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"] allowLoginUI:NO completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
             [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:status error:error];
+        }];
+        [NetworkSyncUtil syncAllDataWithCompletion:^{
         }];
     } else if ([FBSession activeSession].state == FBSessionStateCreated) {
         

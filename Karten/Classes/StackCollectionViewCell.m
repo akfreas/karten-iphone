@@ -69,7 +69,7 @@
     UIBind(self.stackNameAbbrLabel, self.fullStackNameLabel);
     [self addConstraintWithVisualFormat:@"H:|[stackNameAbbrLabel]|" bindings:BBindings];
     [self addConstraintWithVisualFormat:@"H:|[fullStackNameLabel]|" bindings:BBindings];
-    [self addConstraintWithVisualFormat:@"V:|[stackNameAbbrLabel][fullStackNameLabel(15)]-|" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"V:|[stackNameAbbrLabel][fullStackNameLabel(35)]-|" bindings:BBindings];
 }
 
 @end

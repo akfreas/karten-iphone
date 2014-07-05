@@ -1,4 +1,7 @@
 #import "FlashCardView.h"
+#import "FlashCardAnswerView.h"
+#import "FlashCardQuestionView.h"
+
 
 typedef enum {
     FlashCardViewShowTerm,
@@ -7,10 +10,10 @@ typedef enum {
 
 @interface FlashCardView ()
 
-@property (nonatomic) UILabel *termLabel;
-@property (nonatomic) UILabel *definitionLabel;
+@property (nonatomic) FlashCardAnswerView *answerView;
+@property (nonatomic) FlashCardQuestionView *questionView;
 @property (nonatomic) NSMutableArray *constraintArray;
-@property (nonatomic, weak) UILabel *currentLabel;
+@property (nonatomic, weak) UIView *currentFlashView;
 @property (nonatomic, assign) FlashCardViewMode currentMode;
 @end
 
@@ -33,21 +36,22 @@ typedef enum {
 - (void)flip
 {
     
-    UIView *previousLabel = self.currentLabel;
+    UIView *previousLabel = self.currentFlashView;
     self.currentMode = self.currentMode == FlashCardViewShowDefinition ? FlashCardViewShowTerm : FlashCardViewShowDefinition;
-    self.currentLabel = self.currentMode == FlashCardViewShowDefinition ? self.definitionLabel : self.termLabel;
-    if (self.currentLabel.superview == nil) {
-        [self addSubview:self.currentLabel];
+    self.currentFlashView = self.currentMode == FlashCardViewShowDefinition ? self.answerView : self.questionView;
+    if (self.currentFlashView.superview == nil) {
+        [self addSubview:self.currentFlashView];
     }
-    [UIView transitionFromView:previousLabel toView:self.currentLabel duration:0.4f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
-        [self setNeedsUpdateConstraints];
+    [self.currentFlashView layoutIfNeeded];
+    [self setNeedsUpdateConstraints];
+    [UIView transitionFromView:previousLabel toView:self.currentFlashView duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
     }];
 }
 
 - (void)updateConstraints
 {
     [self removeConstraintsFromArray];
-    [self configureLayoutConstraintsForView:self.currentLabel];
+    [self configureLayoutConstraintsForView:self.currentFlashView];
     [super updateConstraints];
 }
 
@@ -73,26 +77,22 @@ typedef enum {
 
 - (void)addDefinitionLabel
 {
-    self.definitionLabel = [[UILabel alloc] initForAutoLayout];
-    self.definitionLabel.text  = self.card.definition;
-    self.definitionLabel.font = [UIFont systemFontOfSize:26.0f];
-    self.definitionLabel.textAlignment = NSTextAlignmentCenter;
+    self.answerView = [[FlashCardAnswerView alloc] initForAutoLayout];
+    [self.answerView setCard:self.card];
 }
 
 - (void)addCardLabel
 {
-    self.termLabel = [[UILabel alloc] initForAutoLayout];
-    self.termLabel.text = [NSString stringWithFormat:@"%@ (%@)", self.card.term, self.card.knowledgeScore];
-    self.termLabel.font = [UIFont systemFontOfSize:26.0f];
-    self.termLabel.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:self.termLabel];
-    self.currentLabel = self.termLabel;
+    self.questionView = [[FlashCardQuestionView alloc] initForAutoLayout];
+    [self.questionView setCard:self.card];
+    [self addSubview:self.questionView];
+    self.currentFlashView = self.questionView;
 }
 
 - (void)setLayoutConstraints
 {
-    UIBind(self.currentLabel);
-    [self addConstraintWithVisualFormat:@"H:|-[currentLabel]-|" bindings:BBindings];
-    [self addConstraintWithVisualFormat:@"V:|[currentLabel]|" bindings:BBindings];
+    UIBind(self.currentFlashView);
+    [self addConstraintWithVisualFormat:@"H:|-[currentFlashView]-|" bindings:BBindings];
+    [self addConstraintWithVisualFormat:@"V:|[currentFlashView]|" bindings:BBindings];
 }
 @end

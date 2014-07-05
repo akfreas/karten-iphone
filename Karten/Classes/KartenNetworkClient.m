@@ -8,7 +8,7 @@
 
 @end
 
-static NSString *BaseUrl = @"http://0.0.0.0:8000";
+static NSString *BaseUrl = @"http://54.75.230.253/";
 @implementation KartenNetworkClient
 
 

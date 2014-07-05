@@ -1,10 +1,12 @@
 #import "CardTableView.h"
 #import "CardCell.h"
 #import "Card.h"
+#import "Card+Helpers.h"
 #import "Database.h"
 #import "CouchManager.h"
 #import "Stack.h"
 #import "Stack+CouchBase.h"
+#import "CardEditViewController.h"
 
 @interface CardTableView () <NSFetchedResultsControllerDelegate,  CBLUITableDelegate, UISearchBarDelegate>
 
@@ -37,6 +39,14 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 {
     [self.cbDatasource reloadFromQuery];
     [self reloadData];
+}
+
+- (void (^)(Card *))cardSelected
+{
+    if (_cardSelected == NULL) {
+        _cardSelected = ^(Card *c){};
+    }
+    return _cardSelected;
 }
 
 - (void)setStack:(Stack *)stack
@@ -74,14 +84,8 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-//    if (self.flippedIndexPath != nil) {
-//        CardCell *lastCell = (CardCell *)[tableView cellForRowAtIndexPath:self.flippedIndexPath];
-//        [lastCell flipMode];
-//    }
-//    self.flippedIndexPath = indexPath;
-//    CardCell *cell = (CardCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    [cell flipMode];
+    Card *selectedCard = [Card getOrCreateCardWithCouchDBQueryRow:[self.cbDatasource rowAtIndexPath:indexPath] inContext:self.stack.managedObjectContext];
+    self.cardSelected(selectedCard);
 }
 
 #pragma mark UITableView Datasource

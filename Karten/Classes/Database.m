@@ -89,12 +89,28 @@
     if (object == self.activeQuery) {
         [self.stack.managedObjectContext performBlock:^{
             
+            NSMutableArray *cards = [[Card MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"stack.server == %@", self.stack.server] inContext:self.stack.managedObjectContext] mutableCopy];
             for (CBLQueryRow *row in self.activeQuery.rows) {
+                NSInteger index = [cards indexOfObjectPassingTest:^BOOL(Card *filterCard, NSUInteger idx, BOOL *stop) {
+                    if ([filterCard.couchID isEqualToString:row.documentID]) {
+                        *stop = YES;
+                        return YES;
+                    }
+                    return NO;
+                }];
                 Card *aCard = [Card getOrCreateCardWithCouchDBQueryRow:row inContext:self.stack.managedObjectContext];
                 aCard.stack = self.stack;
                 if (aCard == nil) {
                     NSLog(@"Could not create card with doc %@", row);
                 }
+                if (index != NSNotFound) {
+                    [cards removeObjectAtIndex:index];
+                }
+            }
+            if ([cards count] > 0) {
+                [cards enumerateObjectsUsingBlock:^(Card *cardToDelete, NSUInteger idx, BOOL *stop) {
+                    [cardToDelete MR_deleteInContext:self.stack.managedObjectContext];
+                }];
             }
             [self.stack.managedObjectContext MR_saveOnlySelfAndWait];
         }];

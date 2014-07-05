@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardAnswerView.m */; };
+		190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858FB19653D0F003E2784 /* FlashCardQuestionView.m */; };
 		190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */; };
 		190A8F851960BE5300586435 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F841960BE5300586435 /* Stack.m */; };
+		190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F871961462A00586435 /* KTAPIAddUserToStack.m */; };
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
 		194F97301954225300B184D6 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 194F971A19541F6300B184D6 /* libfacebook_ios_sdk.a */; };
@@ -42,6 +45,7 @@
 		1966CD3218DDF29A00E85CDE /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966CD3118DDF29A00E85CDE /* Database.m */; };
 		1972491A19326FE600030E5E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972491919326FE600030E5E /* Card.m */; };
 		1972581819448A39002AD689 /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1972581719448A39002AD689 /* libPods-Karten.a */; };
+		1984C8141965D539003402CC /* CardEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1984C8131965D539003402CC /* CardEditViewController.m */; };
 		198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC361935275A00ABD428 /* NetworkSyncUtil.m */; };
 		198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC391935288A00ABD428 /* KartenNetworkClient.m */; };
 		198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */; };
@@ -147,10 +151,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190858F019653B85003E2784 /* FlashCardAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardAnswerView.h; path = Classes/FlashCardAnswerView.h; sourceTree = "<group>"; };
+		190858F119653B85003E2784 /* FlashCardAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardAnswerView.m; path = Classes/FlashCardAnswerView.m; sourceTree = "<group>"; };
+		190858FA19653D0F003E2784 /* FlashCardQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardQuestionView.h; path = Classes/FlashCardQuestionView.h; sourceTree = "<group>"; };
+		190858FB19653D0F003E2784 /* FlashCardQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardQuestionView.m; path = Classes/FlashCardQuestionView.m; sourceTree = "<group>"; };
+		190858FD19653F0A003E2784 /* FlashCardDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlashCardDisplayView.h; path = Classes/FlashCardDisplayView.h; sourceTree = "<group>"; };
 		190A8F7C1960ADC700586435 /* FriendPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerDelegate.h; sourceTree = "<group>"; };
 		190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPickerDelegate.m; sourceTree = "<group>"; };
 		190A8F831960BE5300586435 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Classes/Stack.h; sourceTree = "<group>"; };
 		190A8F841960BE5300586435 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Classes/Stack.m; sourceTree = "<group>"; };
+		190A8F861961462A00586435 /* KTAPIAddUserToStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPIAddUserToStack.h; path = Classes/KTAPIAddUserToStack.h; sourceTree = "<group>"; };
+		190A8F871961462A00586435 /* KTAPIAddUserToStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPIAddUserToStack.m; path = Classes/KTAPIAddUserToStack.m; sourceTree = "<group>"; };
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
 		194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "facebook-ios-sdk.xcodeproj"; path = "Frameworks/facebook-ios-sdk/src/facebook-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
@@ -216,6 +227,8 @@
 		1972491819326FE600030E5E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
 		1972491919326FE600030E5E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
 		1972581719448A39002AD689 /* libPods-Karten.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Karten.a"; path = "Pods/build/Release-iphoneos/libPods-Karten.a"; sourceTree = "<group>"; };
+		1984C8121965D539003402CC /* CardEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardEditViewController.h; path = Classes/CardEditViewController.h; sourceTree = "<group>"; };
+		1984C8131965D539003402CC /* CardEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardEditViewController.m; path = Classes/CardEditViewController.m; sourceTree = "<group>"; };
 		198AFC351935275A00ABD428 /* NetworkSyncUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkSyncUtil.h; path = Classes/NetworkSyncUtil.h; sourceTree = "<group>"; };
 		198AFC361935275A00ABD428 /* NetworkSyncUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkSyncUtil.m; path = Classes/NetworkSyncUtil.m; sourceTree = "<group>"; };
 		198AFC381935288A00ABD428 /* KartenNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KartenNetworkClient.h; path = Classes/KartenNetworkClient.h; sourceTree = "<group>"; };
@@ -419,6 +432,8 @@
 				198AFC3C1935292800ABD428 /* KartenAPICall.h */,
 				198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */,
 				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
+				190A8F861961462A00586435 /* KTAPIAddUserToStack.h */,
+				190A8F871961462A00586435 /* KTAPIAddUserToStack.m */,
 				195CEA771937EA480044C52B /* KTAPICreateStack.h */,
 				195CEA781937EA480044C52B /* KTAPICreateStack.m */,
 				195CEA67193781CE0044C52B /* KTAPIGetUserStacks.h */,
@@ -480,6 +495,8 @@
 				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
+				1984C8121965D539003402CC /* CardEditViewController.h */,
+				1984C8131965D539003402CC /* CardEditViewController.m */,
 				195CEA511936B2650044C52B /* FacebookLoginViewController.h */,
 				195CEA521936B2650044C52B /* FacebookLoginViewController.m */,
 				195CEA5B193731C00044C52B /* FacebookSessionManager.h */,
@@ -526,6 +543,11 @@
 				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
 				19C9331C190321DD0075FA49 /* FlashCardView.h */,
 				19C9331D190321DD0075FA49 /* FlashCardView.m */,
+				190858F019653B85003E2784 /* FlashCardAnswerView.h */,
+				190858F119653B85003E2784 /* FlashCardAnswerView.m */,
+				190858FA19653D0F003E2784 /* FlashCardQuestionView.h */,
+				190858FB19653D0F003E2784 /* FlashCardQuestionView.m */,
+				190858FD19653F0A003E2784 /* FlashCardDisplayView.h */,
 				19A547D5194B29FC007B0365 /* FlashCardStackFinishedView.h */,
 				19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */,
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
@@ -814,6 +836,8 @@
 			files = (
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
+				190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */,
+				190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */,
 				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
@@ -827,6 +851,7 @@
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
 				194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */,
 				195CEA841938AAF60044C52B /* AddCardFormView.m in Sources */,
+				190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */,
 				195CEA7E193809E20044C52B /* Stack+CouchBase.m in Sources */,
 				195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */,
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
@@ -854,6 +879,7 @@
 				190A8F851960BE5300586435 /* Stack.m in Sources */,
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
+				1984C8141965D539003402CC /* CardEditViewController.m in Sources */,
 				196021C919329569000234A3 /* User.m in Sources */,
 				190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
