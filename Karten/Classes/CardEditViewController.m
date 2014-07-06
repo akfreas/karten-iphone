@@ -1,8 +1,12 @@
 #import "CardEditViewController.h"
 #import "FlashCardAnswerView.h"
+#import "Card.h"
+#import "Card+Network.h"
+
 
 @interface CardEditViewController ()
 @property (nonatomic) FlashCardAnswerView *flashDisplay;
+@property (nonatomic) Card *card;
 @end
 
 @implementation CardEditViewController
@@ -15,7 +19,13 @@
         [self createflashDisplay];
         self.edgesForExtendedLayout = UIRectEdgeNone;
         UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"Save" style:UIBarButtonItemStyleDone handler:^(id sender) {
-            
+            [self.flashDisplay.card.managedObjectContext MR_saveToPersistentStoreAndWait];
+            NSError *err = nil;
+            [self.flashDisplay.card updateCardOnCouch:&err];
+            if (err) {
+                NSLog(@"Error updating card on couch! %@", err);
+            }
+            [self.navigationController popViewControllerAnimated:YES];
         }];
         self.navigationItem.rightBarButtonItem = rightBarItem;
     }
@@ -24,6 +34,7 @@
 
 - (void)setCard:(Card *)card
 {
+    _card = card;
     [self.flashDisplay setCard:card];
     [self.flashDisplay setNeedsUpdateConstraints];
 }

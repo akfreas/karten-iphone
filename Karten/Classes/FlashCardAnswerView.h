@@ -1,5 +1,6 @@
 #import "FlashCardDisplayView.h"
-
-@interface FlashCardAnswerView : UIView <FlashCardDisplayView>
+@class Card;
+@interface FlashCardAnswerView : UIView// <FlashCardDisplayView>
 @property (nonatomic) BOOL editing;
+@property (nonatomic, readwrite) Card *card;
 @end

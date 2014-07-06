@@ -95,6 +95,11 @@
 		19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
 		19D120E11935CA5D00EECE71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
 		19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC441935545A00ABD428 /* KartenUserTests.m */; };
+		19F7ACC7196935FE00B56B97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACC6196935FE00B56B97 /* main.m */; };
+		19F7ACCA196935FE00B56B97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACC9196935FE00B56B97 /* AppDelegate.m */; };
+		19F7ACCC196935FE00B56B97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F7ACCB196935FE00B56B97 /* Images.xcassets */; };
+		19F7ACCF196935FE00B56B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F7ACCD196935FE00B56B97 /* MainMenu.xib */; };
+		19F7ACDB196935FE00B56B97 /* KartenDeskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */; };
 		53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +152,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 198C095D18CC3F5F000C00E2;
 			remoteInfo = Karten;
+		};
+		19F7ACD5196935FE00B56B97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 198C095618CC3F5F000C00E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19F7ACC1196935FE00B56B97;
+			remoteInfo = KartenDesk;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -299,6 +311,16 @@
 		19C933251905CE8D0075FA49 /* CouchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouchManager.h; path = Classes/CouchManager.h; sourceTree = "<group>"; };
 		19C933261905CE8D0075FA49 /* CouchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouchManager.m; path = Classes/CouchManager.m; sourceTree = "<group>"; };
 		19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F7ACC2196935FE00B56B97 /* KartenDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KartenDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F7ACC5196935FE00B56B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F7ACC6196935FE00B56B97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19F7ACC8196935FE00B56B97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		19F7ACC9196935FE00B56B97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		19F7ACCB196935FE00B56B97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		19F7ACCE196935FE00B56B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenDeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F7ACD9196935FE00B56B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenDeskTests.m; sourceTree = "<group>"; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
 		924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KartenUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,6 +356,20 @@
 				19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */,
 				19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */,
 				53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F7ACBF196935FE00B56B97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F7ACD1196935FE00B56B97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +486,8 @@
 				194F970E19541F6200B184D6 /* facebook-ios-sdk.xcodeproj */,
 				198C096918CC3F5F000C00E2 /* Karten */,
 				196021DE19329CDF000234A3 /* KartenUnitTests */,
+				19F7ACC3196935FE00B56B97 /* KartenDesk */,
+				19F7ACD7196935FE00B56B97 /* KartenDeskTests */,
 				198C096018CC3F5F000C00E2 /* Frameworks */,
 				198C095F18CC3F5F000C00E2 /* Products */,
 				6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */,
@@ -462,6 +500,8 @@
 			children = (
 				198C095E18CC3F5F000C00E2 /* Karten.app */,
 				19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */,
+				19F7ACC2196935FE00B56B97 /* KartenDesk.app */,
+				19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -622,6 +662,44 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		19F7ACC3196935FE00B56B97 /* KartenDesk */ = {
+			isa = PBXGroup;
+			children = (
+				19F7ACC8196935FE00B56B97 /* AppDelegate.h */,
+				19F7ACC9196935FE00B56B97 /* AppDelegate.m */,
+				19F7ACCB196935FE00B56B97 /* Images.xcassets */,
+				19F7ACCD196935FE00B56B97 /* MainMenu.xib */,
+				19F7ACC4196935FE00B56B97 /* Supporting Files */,
+			);
+			path = KartenDesk;
+			sourceTree = "<group>";
+		};
+		19F7ACC4196935FE00B56B97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19F7ACC5196935FE00B56B97 /* Info.plist */,
+				19F7ACC6196935FE00B56B97 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19F7ACD7196935FE00B56B97 /* KartenDeskTests */ = {
+			isa = PBXGroup;
+			children = (
+				19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */,
+				19F7ACD8196935FE00B56B97 /* Supporting Files */,
+			);
+			path = KartenDeskTests;
+			sourceTree = "<group>";
+		};
+		19F7ACD8196935FE00B56B97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19F7ACD9196935FE00B56B97 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -665,6 +743,41 @@
 			productReference = 19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		19F7ACC1196935FE00B56B97 /* KartenDesk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19F7ACE4196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDesk" */;
+			buildPhases = (
+				19F7ACBE196935FE00B56B97 /* Sources */,
+				19F7ACBF196935FE00B56B97 /* Frameworks */,
+				19F7ACC0196935FE00B56B97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KartenDesk;
+			productName = KartenDesk;
+			productReference = 19F7ACC2196935FE00B56B97 /* KartenDesk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		19F7ACD3196935FE00B56B97 /* KartenDeskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19F7ACE5196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDeskTests" */;
+			buildPhases = (
+				19F7ACD0196935FE00B56B97 /* Sources */,
+				19F7ACD1196935FE00B56B97 /* Frameworks */,
+				19F7ACD2196935FE00B56B97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19F7ACD6196935FE00B56B97 /* PBXTargetDependency */,
+			);
+			name = KartenDeskTests;
+			productName = KartenDeskTests;
+			productReference = 19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -677,6 +790,13 @@
 					19D120DD1935CA5D00EECE71 = {
 						TestTargetID = 198C095D18CC3F5F000C00E2;
 					};
+					19F7ACC1196935FE00B56B97 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					19F7ACD3196935FE00B56B97 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 19F7ACC1196935FE00B56B97;
+					};
 				};
 			};
 			buildConfigurationList = 198C095918CC3F5F000C00E2 /* Build configuration list for PBXProject "Karten" */;
@@ -685,6 +805,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 198C095518CC3F5F000C00E2;
 			productRefGroup = 198C095F18CC3F5F000C00E2 /* Products */;
@@ -699,6 +820,8 @@
 			targets = (
 				198C095D18CC3F5F000C00E2 /* Karten */,
 				19D120DD1935CA5D00EECE71 /* KartenUnitTests */,
+				19F7ACC1196935FE00B56B97 /* KartenDesk */,
+				19F7ACD3196935FE00B56B97 /* KartenDeskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -761,6 +884,22 @@
 			files = (
 				19BC93B21935CD4E00CC8725 /* UserListFetch.json in Resources */,
 				19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F7ACC0196935FE00B56B97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F7ACCC196935FE00B56B97 /* Images.xcassets in Resources */,
+				19F7ACCF196935FE00B56B97 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F7ACD2196935FE00B56B97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,6 +1047,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		19F7ACBE196935FE00B56B97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F7ACCA196935FE00B56B97 /* AppDelegate.m in Sources */,
+				19F7ACC7196935FE00B56B97 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19F7ACD0196935FE00B56B97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F7ACDB196935FE00B56B97 /* KartenDeskTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -920,6 +1076,11 @@
 			isa = PBXTargetDependency;
 			target = 198C095D18CC3F5F000C00E2 /* Karten */;
 			targetProxy = 19D120EB1935CA5D00EECE71 /* PBXContainerItemProxy */;
+		};
+		19F7ACD6196935FE00B56B97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19F7ACC1196935FE00B56B97 /* KartenDesk */;
+			targetProxy = 19F7ACD5196935FE00B56B97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -938,6 +1099,14 @@
 				198C096D18CC3F5F000C00E2 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		19F7ACCD196935FE00B56B97 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19F7ACCE196935FE00B56B97 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1053,6 +1222,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
+				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1093,6 +1263,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
+				SDKROOT = iphoneos7.1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1147,6 +1318,96 @@
 			};
 			name = Release;
 		};
+		19F7ACDC196935FE00B56B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = KartenDesk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		19F7ACDD196935FE00B56B97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = KartenDesk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		19F7ACDE196935FE00B56B97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KartenDesk.app/Contents/MacOS/KartenDesk";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = KartenDeskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		19F7ACDF196935FE00B56B97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KartenDesk.app/Contents/MacOS/KartenDesk";
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = KartenDeskTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1176,6 +1437,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		19F7ACE4196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDesk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19F7ACDC196935FE00B56B97 /* Debug */,
+				19F7ACDD196935FE00B56B97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		19F7ACE5196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDeskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19F7ACDE196935FE00B56B97 /* Debug */,
+				19F7ACDF196935FE00B56B97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

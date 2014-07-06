@@ -5,7 +5,9 @@
 @property (nonatomic) UITextField *termLabel;
 @end
 
-@implementation FlashCardAnswerView
+@implementation FlashCardAnswerView {
+    Card *_card;
+}
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -32,11 +34,11 @@
 - (void)createTermLabel
 {
     UITextField *termLabel = [[UITextField alloc] initForAutoLayout];
-    termLabel.userInteractionEnabled = YES;
     [termLabel setBk_shouldReturnBlock:^BOOL(UITextField *t) {
         return [self returnBlock];
     }];
     self.termLabel = termLabel;
+    self.termLabel.enabled = NO;
     [self addSubview:self.termLabel];
 }
 
@@ -82,11 +84,20 @@
 {
     self.termLabel.userInteractionEnabled = YES;
     self.textView.editable = editing;
+    self.termLabel.enabled = YES;
 //    self.textView.scrollEnabled = editing;
+}
+
+- (Card *)card
+{
+    _card.term = self.termLabel.text;
+    _card.definition = self.textView.text;
+    return _card;
 }
 
 - (void)setCard:(Card *)card
 {
+    _card = card;
     [self setTermLabelText:card.term];
     [self setTextViewText:card.definition];
     [self layoutIfNeeded];

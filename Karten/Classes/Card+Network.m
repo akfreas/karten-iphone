@@ -14,4 +14,17 @@
         return;
     }
 }
+
+- (void)updateCardOnCouch:(NSError * __autoreleasing *)error
+{
+    NSDictionary *cardChanges = @{@"term" : self.term,
+                                   @"definition" : self.definition,
+                                   };
+    CBLDocument *existingDocument = [[[CouchManager databaseForStack:self.stack] couchDatabase] existingDocumentWithID:self.couchID];
+    [existingDocument update:^BOOL(CBLUnsavedRevision *revision) {
+        [revision.properties setValuesForKeysWithDictionary:cardChanges];
+        return YES;
+    } error:error];
+}
+
 @end

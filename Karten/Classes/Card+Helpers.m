@@ -42,6 +42,11 @@ static NSString *kCouchIDKey = @"_id";
     self.knowledgeScore = @(0);
 }
 
+- (void)updateCouchWithChanges
+{
+    
+}
+
 //+ (NSArray *)allCards {
 ////    [self
 //}
