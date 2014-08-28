@@ -98,7 +98,7 @@ static MainViewController *sharedInstance;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
         UIAlertView *addStackAlertView = [[UIAlertView alloc] bk_initWithTitle:@"Add Stack" message:@"Add Stack"];
         addStackAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ExitDeletionModeNotification object:nil];
         [addStackAlertView bk_addButtonWithTitle:@"Save" handler:^{
             UITextField *textField = [addStackAlertView textFieldAtIndex:0];
             if ([textField.text isEqualToString:@""]) {

@@ -41,7 +41,8 @@ static NSInteger numberOfCellsPerRow = 2;
 
 - (void)configureCell:(StackCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    cell.stack = [self.fetchController objectAtIndexPath:indexPath];
+    Stack *cellStack = [self.fetchController objectAtIndexPath:indexPath];
+    cell.stack = cellStack;
 }
 
 - (void)layoutSubviews
@@ -81,7 +82,6 @@ static NSInteger numberOfCellsPerRow = 2;
             }
             [self.objectChanges removeAllObjects];
         } completion:^(BOOL finished) {
-            
         }];
     }
 }
@@ -133,7 +133,6 @@ static NSInteger numberOfCellsPerRow = 2;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     if (self.stackSelectedAction) {
         Stack *selectedStack = [self.fetchController objectAtIndexPath:indexPath];
         self.stackSelectedAction(selectedStack);

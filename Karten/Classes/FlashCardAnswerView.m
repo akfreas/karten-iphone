@@ -17,7 +17,7 @@
         [self createTextView];
         [self createTermLabel];
         [self addLayoutConstraints];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }

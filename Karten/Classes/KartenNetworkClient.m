@@ -62,7 +62,7 @@ static NSString *BaseUrl = @"http://54.75.230.253/";
         DLog(@"Finished fetch from %@/%@. Response: %@", self.manager.baseURL, request.path, responseObject);
         if (responseObject != nil) {
             id returnObject = nil;
-            if ([request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
+            if ([request respondsToSelector:@selector(classToParse)] && [request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {
                 if ([responseObject conformsToProtocol:@protocol(NSFastEnumeration)] && [responseObject isKindOfClass:[NSDictionary class]] == NO) {
                     NSMutableArray *responseArray = [NSMutableArray array];
                     for (id objectData in responseObject) {

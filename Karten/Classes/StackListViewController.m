@@ -42,7 +42,9 @@
 - (void)createCollectionView
 {
     self.stackCollectionView = [[StackCollectionView alloc] initWithFrame:CGRectZero];
+    self.stackCollectionView.clipsToBounds = NO;
     [self.stackCollectionView setStackSelectedAction:^(Stack *selectedStack) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:ExitDeletionModeNotification object:nil userInfo:nil];
         [MainViewController showActionViewForStack:selectedStack];
     }];
     [self.view addSubview:self.stackCollectionView];

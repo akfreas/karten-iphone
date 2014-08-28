@@ -2,7 +2,7 @@
 #import "KTAPIGetUserStacks.h"
 #import "KTAPICreateStack.h"
 #import "KartenNetworkClient.h"
-
+#import "KTAPIRemoveStack.h"
 @implementation Stack (Network)
 + (void)syncStacksForUser:(User *)user
                      completion:(KartenNetworkCompletion)completion
@@ -43,5 +43,17 @@
     [KartenNetworkClient makeRequest:createStackCall completion:completion
                              success:success
                              failure:failure];
+}
+
+- (void)removeMyStackOnServerWithCompletion:(KartenNetworkCompletion)completion success:(KartenNetworkSuccess)success failure:(KartenNetworkFailure)failure
+{
+    KTAPIRemoveStack *removeStack = [[KTAPIRemoveStack alloc] initWithStack:self];
+    [KartenNetworkClient makeRequest:removeStack
+                          completion:completion
+                             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                 [self MR_deleteInContext:self.managedObjectContext];
+                                 [self.managedObjectContext MR_saveOnlySelfAndWait];
+                                 success(operation, responseObject);
+                             } failure:failure];
 }
 @end

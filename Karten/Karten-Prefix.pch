@@ -28,6 +28,7 @@
 #import "Card+Helpers.h"
 #import "MainViewController.h"
 #import "GraphicsUtils.h"
+#import "NotificationKeys.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "NSObject+NSDictionaryRepresentation.h"
 #endif
