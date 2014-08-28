@@ -14,6 +14,8 @@
 #import "FacebookSessionManager.h"
 #import "FriendPickerDelegate.h"
 
+#import "Karten-Swift.h"
+
 @interface MainViewController ()
 @property (nonatomic) UITabBarController *tabBarController;
 @property (nonatomic) FacebookLoginViewController *loginViewController;
@@ -64,6 +66,14 @@ static MainViewController *sharedInstance;
     [friendPicker loadData];
     [friendPicker clearSelection];
     [[self sharedInstance] presentViewController:friendPicker animated:YES completion:NULL];
+}
+
++ (void)showLoginViewController
+{
+    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    [[self sharedInstance] presentViewController:loginController animated:NO completion:^{
+        [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:NO];
+    }];
 }
 
 + (void)pushViewController:(UIViewController *)viewController
@@ -173,7 +183,7 @@ static MainViewController *sharedInstance;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self checkForFacebook];
+    [self checkForValidSession];
 }
 
 - (void)setupStackListController
@@ -188,23 +198,14 @@ static MainViewController *sharedInstance;
     [self addChildViewController:self.stackListController];
 }
 
-- (void)checkForFacebook
+- (void)checkForValidSession
 {
-    
-    if ([FBSession activeSession].state == FBSessionStateCreatedTokenLoaded) {
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile", @"user_friends"] allowLoginUI:NO completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-            [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:status error:error];
-        }];
+    if ([KartenSessionManager isSessionValid]) {
         [NetworkSyncUtil syncAllDataWithCompletion:^{
+            
         }];
-    } else if ([FBSession activeSession].state == FBSessionStateCreated) {
-        
-        self.loginViewController = [FacebookLoginViewController new];
-        [self presentViewController:self.loginViewController animated:NO completion:NULL];
     } else {
-        [NetworkSyncUtil syncAllDataWithCompletion:^{
-        }];
-        self.stackListController.userForStacks = [User mainUser];
+        [[self class] showLoginViewController];
     }
 }
 

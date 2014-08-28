@@ -20,7 +20,7 @@
 
 - (NSString *)path
 {
-    return @"stack/create";
+    return @"stacks/";
 }
 
 - (Class)classToParse
@@ -42,6 +42,11 @@
 - (NSManagedObjectID *)objectID
 {
     return self.stack.objectID;
+}
+
+- (NSString *)HTTPMethod
+{
+    return @"POST";
 }
 
 @end

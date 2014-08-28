@@ -10,4 +10,5 @@
 @property (nonatomic, readonly) NSDictionary *params;
 @property (nonatomic, readonly) BOOL updateOriginalObjectOnReturn;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic) NSString *HTTPMethod;
 @end

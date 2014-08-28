@@ -18,7 +18,12 @@
 
 -  (NSString *)path
 {
-    return [NSString stringWithFormat:@"stack/%@/user/%@/delete", self.stack.serverID, [User mainUser].serverID];
+    return [NSString stringWithFormat:@"stacks/%@/", self.stack.serverID];
+}
+
+- (NSString *)HTTPMethod
+{
+    return @"DELETE";
 }
 
 @end

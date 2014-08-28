@@ -2,6 +2,8 @@
 #import "KartenNetworkClient.h"
 #import "JSONParsable.h"
 #import "NSObject+NSDictionaryRepresentation.h"
+#import "Karten-Swift.h"
+
 @interface KartenNetworkClient ()
 
 @property (nonatomic) AFHTTPRequestOperationManager *manager;
@@ -46,7 +48,9 @@ static NSString *BaseUrl = @"http://54.75.230.253/";
         params = request.params;
     }
     NSError *err = nil;
-    NSMutableURLRequest *URLrequest = [self.manager.requestSerializer requestWithMethod:@"GET" URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString] parameters:params error:&err];
+    NSMutableURLRequest *URLrequest = [self.manager.requestSerializer requestWithMethod:request.HTTPMethod URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString] parameters:params error:&err];
+
+    [URLrequest setValue:[KartenNetworkTokenManager createAuthorizationHeaderString] forHTTPHeaderField:@"Authorization"];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
     [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [self.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];

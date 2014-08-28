@@ -19,12 +19,17 @@
 
 - (NSString *)path
 {
-    return [NSString stringWithFormat:@"user/%@/stacks/all", self.user.serverID];
+    return [NSString stringWithFormat:@"stacks/"];
 }
 
 - (Class)classToParse
 {
     return [Stack class];
+}
+
+- (NSString *)HTTPMethod
+{
+    return @"GET";
 }
 
 @end

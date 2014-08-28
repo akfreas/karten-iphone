@@ -19,7 +19,7 @@
 
 - (NSString *)path
 {
-    return @"user/create";
+    return @"users/";
 }
 
 - (NSDictionary *)params
@@ -40,6 +40,11 @@
 - (BOOL)updateOriginalObjectOnReturn
 {
     return YES;
+}
+
+- (NSString *)HTTPMethod
+{
+    return @"POST";
 }
 
 @end

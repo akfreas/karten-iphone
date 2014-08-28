@@ -44,6 +44,7 @@
 		1966CD3218DDF29A00E85CDE /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 1966CD3118DDF29A00E85CDE /* Database.m */; };
 		1972491A19326FE600030E5E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972491919326FE600030E5E /* Card.m */; };
 		1972581819448A39002AD689 /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1972581719448A39002AD689 /* libPods-Karten.a */; };
+		1975EBF619AF7E01008CD2CF /* KartenNetworkTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */; };
 		1984C8141965D539003402CC /* CardEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1984C8131965D539003402CC /* CardEditViewController.m */; };
 		198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC361935275A00ABD428 /* NetworkSyncUtil.m */; };
 		198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC391935288A00ABD428 /* KartenNetworkClient.m */; };
@@ -96,11 +97,9 @@
 		19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
 		19D120E11935CA5D00EECE71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
 		19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC441935545A00ABD428 /* KartenUserTests.m */; };
-		19F7ACC7196935FE00B56B97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACC6196935FE00B56B97 /* main.m */; };
-		19F7ACCA196935FE00B56B97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACC9196935FE00B56B97 /* AppDelegate.m */; };
-		19F7ACCC196935FE00B56B97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F7ACCB196935FE00B56B97 /* Images.xcassets */; };
-		19F7ACCF196935FE00B56B97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F7ACCD196935FE00B56B97 /* MainMenu.xib */; };
-		19F7ACDB196935FE00B56B97 /* KartenDeskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */; };
+		19E8CEB219AFB1A200C7B112 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */; };
+		19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */; };
+		19E8CEC319AFECF800C7B112 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E8CEC219AFECF800C7B112 /* LoginViewController.xib */; };
 		53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -111,13 +110,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 198C095D18CC3F5F000C00E2;
 			remoteInfo = Karten;
-		};
-		19F7ACD5196935FE00B56B97 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 198C095618CC3F5F000C00E2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19F7ACC1196935FE00B56B97;
-			remoteInfo = KartenDesk;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,6 +189,9 @@
 		1972491819326FE600030E5E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
 		1972491919326FE600030E5E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
 		1972581719448A39002AD689 /* libPods-Karten.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Karten.a"; path = "Pods/build/Release-iphoneos/libPods-Karten.a"; sourceTree = "<group>"; };
+		1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenNetworkTokenManager.swift; sourceTree = "<group>"; };
+		1975EBF519AF7E01008CD2CF /* Karten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Karten-Bridging-Header.h"; sourceTree = "<group>"; };
+		1975EBF719AF7E47008CD2CF /* KartenNetworkConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KartenNetworkConstants.h; sourceTree = "<group>"; };
 		1984C8121965D539003402CC /* CardEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardEditViewController.h; path = Classes/CardEditViewController.h; sourceTree = "<group>"; };
 		1984C8131965D539003402CC /* CardEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardEditViewController.m; path = Classes/CardEditViewController.m; sourceTree = "<group>"; };
 		198AFC351935275A00ABD428 /* NetworkSyncUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkSyncUtil.h; path = Classes/NetworkSyncUtil.h; sourceTree = "<group>"; };
@@ -274,16 +269,11 @@
 		19CE51D219785E210053CD4F /* DeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeleteButton.h; path = Classes/DeleteButton.h; sourceTree = "<group>"; };
 		19CE51D319785E210053CD4F /* DeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeleteButton.m; path = Classes/DeleteButton.m; sourceTree = "<group>"; };
 		19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19F7ACC2196935FE00B56B97 /* KartenDesk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KartenDesk.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		19F7ACC5196935FE00B56B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19F7ACC6196935FE00B56B97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		19F7ACC8196935FE00B56B97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		19F7ACC9196935FE00B56B97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		19F7ACCB196935FE00B56B97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		19F7ACCE196935FE00B56B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenDeskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19F7ACD9196935FE00B56B97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KartenDeskTests.m; sourceTree = "<group>"; };
+		19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		19E8CEB419AFBA0500C7B112 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Karten/MyPlayground.playground; sourceTree = "<group>"; };
+		19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenSessionManager.swift; sourceTree = "<group>"; };
+		19E8CEC019AFEA7900C7B112 /* VFLToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLToolbox.framework; path = "Frameworks/VFLToolbox/build/Debug-iphoneos/VFLToolbox.framework"; sourceTree = "<group>"; };
+		19E8CEC219AFECF800C7B112 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
 		924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KartenUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,20 +308,6 @@
 				19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */,
 				19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */,
 				53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19F7ACBF196935FE00B56B97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19F7ACD1196935FE00B56B97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +382,10 @@
 				198AFC3B193528F800ABD428 /* API Calls */,
 				198AFC351935275A00ABD428 /* NetworkSyncUtil.h */,
 				198AFC361935275A00ABD428 /* NetworkSyncUtil.m */,
+				1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */,
+				19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */,
+				1975EBF719AF7E47008CD2CF /* KartenNetworkConstants.h */,
+				1975EBF519AF7E01008CD2CF /* Karten-Bridging-Header.h */,
 				198AFC381935288A00ABD428 /* KartenNetworkClient.h */,
 				198AFC391935288A00ABD428 /* KartenNetworkClient.m */,
 			);
@@ -433,12 +413,11 @@
 		198C095518CC3F5F000C00E2 = {
 			isa = PBXGroup;
 			children = (
+				19E8CEB419AFBA0500C7B112 /* MyPlayground.playground */,
 				194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */,
 				194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */,
 				198C096918CC3F5F000C00E2 /* Karten */,
 				196021DE19329CDF000234A3 /* KartenUnitTests */,
-				19F7ACC3196935FE00B56B97 /* KartenDesk */,
-				19F7ACD7196935FE00B56B97 /* KartenDeskTests */,
 				198C096018CC3F5F000C00E2 /* Frameworks */,
 				198C095F18CC3F5F000C00E2 /* Products */,
 				6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */,
@@ -451,8 +430,6 @@
 			children = (
 				198C095E18CC3F5F000C00E2 /* Karten.app */,
 				19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */,
-				19F7ACC2196935FE00B56B97 /* KartenDesk.app */,
-				19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,6 +437,7 @@
 		198C096018CC3F5F000C00E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				19E8CEC019AFEA7900C7B112 /* VFLToolbox.framework */,
 				1972581719448A39002AD689 /* libPods-Karten.a */,
 				1966CD2E18DDE9FA00E85CDE /* libz.dylib */,
 				1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */,
@@ -493,6 +471,8 @@
 				19CE51D319785E210053CD4F /* DeleteButton.m */,
 				195CEA511936B2650044C52B /* FacebookLoginViewController.h */,
 				195CEA521936B2650044C52B /* FacebookLoginViewController.m */,
+				19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */,
+				19E8CEC219AFECF800C7B112 /* LoginViewController.xib */,
 				195CEA5B193731C00044C52B /* FacebookSessionManager.h */,
 				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
 				195CEA55193720130044C52B /* MainViewController.h */,
@@ -624,44 +604,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		19F7ACC3196935FE00B56B97 /* KartenDesk */ = {
-			isa = PBXGroup;
-			children = (
-				19F7ACC8196935FE00B56B97 /* AppDelegate.h */,
-				19F7ACC9196935FE00B56B97 /* AppDelegate.m */,
-				19F7ACCB196935FE00B56B97 /* Images.xcassets */,
-				19F7ACCD196935FE00B56B97 /* MainMenu.xib */,
-				19F7ACC4196935FE00B56B97 /* Supporting Files */,
-			);
-			path = KartenDesk;
-			sourceTree = "<group>";
-		};
-		19F7ACC4196935FE00B56B97 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				19F7ACC5196935FE00B56B97 /* Info.plist */,
-				19F7ACC6196935FE00B56B97 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		19F7ACD7196935FE00B56B97 /* KartenDeskTests */ = {
-			isa = PBXGroup;
-			children = (
-				19F7ACDA196935FE00B56B97 /* KartenDeskTests.m */,
-				19F7ACD8196935FE00B56B97 /* Supporting Files */,
-			);
-			path = KartenDeskTests;
-			sourceTree = "<group>";
-		};
-		19F7ACD8196935FE00B56B97 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				19F7ACD9196935FE00B56B97 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -704,59 +646,17 @@
 			productReference = 19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		19F7ACC1196935FE00B56B97 /* KartenDesk */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19F7ACE4196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDesk" */;
-			buildPhases = (
-				19F7ACBE196935FE00B56B97 /* Sources */,
-				19F7ACBF196935FE00B56B97 /* Frameworks */,
-				19F7ACC0196935FE00B56B97 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = KartenDesk;
-			productName = KartenDesk;
-			productReference = 19F7ACC2196935FE00B56B97 /* KartenDesk.app */;
-			productType = "com.apple.product-type.application";
-		};
-		19F7ACD3196935FE00B56B97 /* KartenDeskTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19F7ACE5196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDeskTests" */;
-			buildPhases = (
-				19F7ACD0196935FE00B56B97 /* Sources */,
-				19F7ACD1196935FE00B56B97 /* Frameworks */,
-				19F7ACD2196935FE00B56B97 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				19F7ACD6196935FE00B56B97 /* PBXTargetDependency */,
-			);
-			name = KartenDeskTests;
-			productName = KartenDeskTests;
-			productReference = 19F7ACD4196935FE00B56B97 /* KartenDeskTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		198C095618CC3F5F000C00E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Sashimiblade;
 				TargetAttributes = {
 					19D120DD1935CA5D00EECE71 = {
 						TestTargetID = 198C095D18CC3F5F000C00E2;
-					};
-					19F7ACC1196935FE00B56B97 = {
-						CreatedOnToolsVersion = 6.0;
-					};
-					19F7ACD3196935FE00B56B97 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 19F7ACC1196935FE00B56B97;
 					};
 				};
 			};
@@ -775,8 +675,6 @@
 			targets = (
 				198C095D18CC3F5F000C00E2 /* Karten */,
 				19D120DD1935CA5D00EECE71 /* KartenUnitTests */,
-				19F7ACC1196935FE00B56B97 /* KartenDesk */,
-				19F7ACD3196935FE00B56B97 /* KartenDeskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -791,6 +689,7 @@
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
 				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
+				19E8CEC319AFECF800C7B112 /* LoginViewController.xib in Resources */,
 				19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,22 +700,6 @@
 			files = (
 				19BC93B21935CD4E00CC8725 /* UserListFetch.json in Resources */,
 				19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19F7ACC0196935FE00B56B97 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19F7ACCC196935FE00B56B97 /* Images.xcassets in Resources */,
-				19F7ACCF196935FE00B56B97 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19F7ACD2196935FE00B56B97 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,7 +800,9 @@
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
 				198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */,
+				1975EBF619AF7E01008CD2CF /* KartenNetworkTokenManager.swift in Sources */,
 				196021D5193295F1000234A3 /* User+Helpers.m in Sources */,
+				19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
@@ -945,6 +830,7 @@
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
 				195CEA6019376E030044C52B /* StackListViewController.m in Sources */,
 				19CE51D419785E210053CD4F /* DeleteButton.m in Sources */,
+				19E8CEB219AFB1A200C7B112 /* LoginViewController.swift in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
 				195CEA6619376E790044C52B /* StackListTableViewCell.m in Sources */,
 			);
@@ -966,23 +852,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19F7ACBE196935FE00B56B97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19F7ACCA196935FE00B56B97 /* AppDelegate.m in Sources */,
-				19F7ACC7196935FE00B56B97 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19F7ACD0196935FE00B56B97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19F7ACDB196935FE00B56B97 /* KartenDeskTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -990,11 +859,6 @@
 			isa = PBXTargetDependency;
 			target = 198C095D18CC3F5F000C00E2 /* Karten */;
 			targetProxy = 19D120EB1935CA5D00EECE71 /* PBXContainerItemProxy */;
-		};
-		19F7ACD6196935FE00B56B97 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19F7ACC1196935FE00B56B97 /* KartenDesk */;
-			targetProxy = 19F7ACD5196935FE00B56B97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1015,14 +879,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		19F7ACCD196935FE00B56B97 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19F7ACCE196935FE00B56B97 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1030,7 +886,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1060,8 +915,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akfreas/github/karten-iphone/Karten/Karten-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1070,7 +926,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1095,6 +950,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akfreas/github/karten-iphone/Karten/Karten-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1104,7 +960,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1112,6 +967,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					/Users/akfreas/Documents/FacebookSDK,
 					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
+					"$(PROJECT_DIR)/Frameworks/VFLToolbox/build/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
@@ -1136,7 +992,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "A79591FA-3D8A-4022-8F95-BE5F203CDEDE";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1145,7 +1002,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alex Freas (397NMKG2NM)";
@@ -1154,6 +1010,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 					/Users/akfreas/Documents/FacebookSDK,
 					"\"$(SRCROOT)/Frameworks/facebook-ios-sdk/src\"",
+					"$(PROJECT_DIR)/Frameworks/VFLToolbox/build/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Karten/Karten-Prefix.pch";
@@ -1178,7 +1035,8 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "72C27AD6-EADC-4174-81A2-CEBBC17F916D";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1233,96 +1091,6 @@
 			};
 			name = Release;
 		};
-		19F7ACDC196935FE00B56B97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = KartenDesk/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		19F7ACDD196935FE00B56B97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = KartenDesk/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		19F7ACDE196935FE00B56B97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KartenDesk.app/Contents/MacOS/KartenDesk";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = KartenDeskTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		19F7ACDF196935FE00B56B97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KartenDesk.app/Contents/MacOS/KartenDesk";
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = KartenDeskTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1349,24 +1117,6 @@
 			buildConfigurations = (
 				19D120EE1935CA5D00EECE71 /* Debug */,
 				19D120EF1935CA5D00EECE71 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19F7ACE4196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDesk" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19F7ACDC196935FE00B56B97 /* Debug */,
-				19F7ACDD196935FE00B56B97 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19F7ACE5196935FE00B56B97 /* Build configuration list for PBXNativeTarget "KartenDeskTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19F7ACDE196935FE00B56B97 /* Debug */,
-				19F7ACDF196935FE00B56B97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

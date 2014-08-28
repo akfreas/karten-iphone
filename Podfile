@@ -12,6 +12,8 @@ target "Karten" do
     pod "BugSense"
     pod "MagicalRecord"
     pod "AFNetworking"
+    pod "Facebook-iOS-SDK"
+    pod "Masonry", '~> 0.5.0'
 end
 
 target "KartenUnitTests" do
@@ -19,3 +21,11 @@ target "KartenUnitTests" do
     pod "AFNetworking"
 end
 
+post_install do |installer_representation|
+    installer_representation.project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+            config.build_settings['SDKROOT'] = 'iphoneos8.0'
+        end
+    end
+end
