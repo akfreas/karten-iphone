@@ -33,7 +33,6 @@
 		195CEA8119387E020044C52B /* CardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA8019387E020044C52B /* CardListViewController.m */; };
 		195CEA841938AAF60044C52B /* AddCardFormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA831938AAF60044C52B /* AddCardFormView.m */; };
 		196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
-		196021C919329569000234A3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C819329569000234A3 /* User.m */; };
 		196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
 		196021D5193295F1000234A3 /* User+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D4193295F1000234A3 /* User+Helpers.m */; };
 		196603F1193EFFBA0027698E /* Card+Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 196603F0193EFFBA0027698E /* Card+Network.m */; };
@@ -85,7 +84,6 @@
 		19C500111936A16E002AABBD /* StackServer+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5000F1936A16E002AABBD /* StackServer+Helpers.m */; };
 		19C5FFF11936360A002AABBD /* NSManagedObject+JSONParsable.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */; };
 		19C5FFF21936369C002AABBD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096718CC3F5F000C00E2 /* CoreData.framework */; };
-		19C5FFF519368584002AABBD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5FFF419368584002AABBD /* User.m */; };
 		19C5FFF619368D24002AABBD /* User+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D4193295F1000234A3 /* User+Helpers.m */; };
 		19C5FFF819368EF5002AABBD /* KarenStackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C5FFF719368EF5002AABBD /* KarenStackTests.m */; };
 		19C5FFF919368F64002AABBD /* Stack+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 196021D1193295DE000234A3 /* Stack+Helpers.m */; };
@@ -99,6 +97,9 @@
 		19D120E01935CA5D00EECE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096118CC3F5F000C00E2 /* Foundation.framework */; };
 		19D120E11935CA5D00EECE71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198C096518CC3F5F000C00E2 /* UIKit.framework */; };
 		19D120F01935CC5100EECE71 /* KartenUserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC441935545A00ABD428 /* KartenUserTests.m */; };
+		19E2AE3419B077C1003EA7CB /* KartenUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3319B077C1003EA7CB /* KartenUserManager.m */; };
+		19E2AE3719B07A62003EA7CB /* KTAPIGetUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3619B07A62003EA7CB /* KTAPIGetUser.m */; };
+		19E2AE3A19B08ADE003EA7CB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3919B08ADE003EA7CB /* User.m */; };
 		19E8CEB219AFB1A200C7B112 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */; };
 		19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */; };
 		19E8CEC319AFECF800C7B112 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E8CEC219AFECF800C7B112 /* LoginViewController.xib */; };
@@ -169,8 +170,6 @@
 		196021C319329497000234A3 /* NSManagedObject+JSONParsable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSONParsable.h"; path = "Classes/NSManagedObject+JSONParsable.h"; sourceTree = "<group>"; };
 		196021C419329497000234A3 /* NSManagedObject+JSONParsable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSONParsable.m"; path = "Classes/NSManagedObject+JSONParsable.m"; sourceTree = "<group>"; };
 		196021C61932953F000234A3 /* JSONParsable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONParsable.h; path = Classes/JSONParsable.h; sourceTree = "<group>"; };
-		196021C719329569000234A3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Classes/User.h; sourceTree = "<group>"; };
-		196021C819329569000234A3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
 		196021D0193295DE000234A3 /* Stack+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Stack+Helpers.h"; path = "Classes/Stack+Helpers.h"; sourceTree = "<group>"; };
 		196021D1193295DE000234A3 /* Stack+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Stack+Helpers.m"; path = "Classes/Stack+Helpers.m"; sourceTree = "<group>"; };
 		196021D3193295F1000234A3 /* User+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helpers.h"; path = "Classes/User+Helpers.h"; sourceTree = "<group>"; };
@@ -260,8 +259,6 @@
 		19C5000319369413002AABBD /* StackServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackServer.m; path = Classes/StackServer.m; sourceTree = "<group>"; };
 		19C5000E1936A16E002AABBD /* StackServer+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "StackServer+Helpers.h"; path = "Classes/StackServer+Helpers.h"; sourceTree = "<group>"; };
 		19C5000F1936A16E002AABBD /* StackServer+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "StackServer+Helpers.m"; path = "Classes/StackServer+Helpers.m"; sourceTree = "<group>"; };
-		19C5FFF319368584002AABBD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Karten/Classes/User.h; sourceTree = SOURCE_ROOT; };
-		19C5FFF419368584002AABBD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Karten/Classes/User.m; sourceTree = SOURCE_ROOT; };
 		19C5FFF719368EF5002AABBD /* KarenStackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KarenStackTests.m; sourceTree = "<group>"; };
 		19C93315190316EC0075FA49 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = Classes/QuizViewController.h; sourceTree = "<group>"; };
 		19C93316190316EC0075FA49 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = Classes/QuizViewController.m; sourceTree = "<group>"; };
@@ -275,6 +272,12 @@
 		19CE51D219785E210053CD4F /* DeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeleteButton.h; path = Classes/DeleteButton.h; sourceTree = "<group>"; };
 		19CE51D319785E210053CD4F /* DeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeleteButton.m; path = Classes/DeleteButton.m; sourceTree = "<group>"; };
 		19D120DE1935CA5D00EECE71 /* KartenUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KartenUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E2AE3219B077C1003EA7CB /* KartenUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KartenUserManager.h; path = Classes/KartenUserManager.h; sourceTree = "<group>"; };
+		19E2AE3319B077C1003EA7CB /* KartenUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KartenUserManager.m; path = Classes/KartenUserManager.m; sourceTree = "<group>"; };
+		19E2AE3519B07A62003EA7CB /* KTAPIGetUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPIGetUser.h; sourceTree = "<group>"; };
+		19E2AE3619B07A62003EA7CB /* KTAPIGetUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPIGetUser.m; sourceTree = "<group>"; };
+		19E2AE3819B08ADE003EA7CB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Classes/User.h; sourceTree = "<group>"; };
+		19E2AE3919B08ADE003EA7CB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
 		19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		19E8CEB419AFBA0500C7B112 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Karten/MyPlayground.playground; sourceTree = "<group>"; };
 		19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenSessionManager.swift; sourceTree = "<group>"; };
@@ -353,8 +356,6 @@
 				196021E419329CDF000234A3 /* KartenUnitTests.m */,
 				198AFC441935545A00ABD428 /* KartenUserTests.m */,
 				19C5FFF719368EF5002AABBD /* KarenStackTests.m */,
-				19C5FFF319368584002AABBD /* User.h */,
-				19C5FFF419368584002AABBD /* User.m */,
 				198AFC461935C61A00ABD428 /* TestUtils.h */,
 				198AFC471935C61A00ABD428 /* TestUtils.m */,
 				196021EC19329DE3000234A3 /* TestJSONParsing.m */,
@@ -393,6 +394,8 @@
 				1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */,
 				19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */,
 				1975EBF719AF7E47008CD2CF /* KartenNetworkConstants.h */,
+				19E2AE3219B077C1003EA7CB /* KartenUserManager.h */,
+				19E2AE3319B077C1003EA7CB /* KartenUserManager.m */,
 				1975EBF519AF7E01008CD2CF /* Karten-Bridging-Header.h */,
 				198AFC381935288A00ABD428 /* KartenNetworkClient.h */,
 				198AFC391935288A00ABD428 /* KartenNetworkClient.m */,
@@ -408,6 +411,8 @@
 				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
 				1946C38819B00721007D515E /* KTAPILoginUser.h */,
 				1946C38919B00721007D515E /* KTAPILoginUser.m */,
+				19E2AE3519B07A62003EA7CB /* KTAPIGetUser.h */,
+				19E2AE3619B07A62003EA7CB /* KTAPIGetUser.m */,
 				190A8F861961462A00586435 /* KTAPIAddUserToStack.h */,
 				190A8F871961462A00586435 /* KTAPIAddUserToStack.m */,
 				195CEA771937EA480044C52B /* KTAPICreateStack.h */,
@@ -561,12 +566,11 @@
 		198C099618CC48E8000C00E2 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				19E2AE3B19B08AF0003EA7CB /* User */,
 				195CEA7B193809B00044C52B /* StackServer */,
 				195CEA7A193809680044C52B /* Stack */,
 				198C099A18CC4957000C00E2 /* Card */,
 				19C9331F1905BFF10075FA49 /* KartenModel.xcdatamodeld */,
-				196021C719329569000234A3 /* User.h */,
-				196021C819329569000234A3 /* User.m */,
 				196021D3193295F1000234A3 /* User+Helpers.h */,
 				196021D4193295F1000234A3 /* User+Helpers.m */,
 				196021C61932953F000234A3 /* JSONParsable.h */,
@@ -612,6 +616,15 @@
 				19BC3E2219788A88002FE58D /* NotificationKeys.h */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		19E2AE3B19B08AF0003EA7CB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				19E2AE3819B08ADE003EA7CB /* User.h */,
+				19E2AE3919B08ADE003EA7CB /* User.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -783,6 +796,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E2AE3A19B08ADE003EA7CB /* User.m in Sources */,
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
 				19CE51CA1978585A0053CD4F /* KTAPIRemoveStack.m in Sources */,
@@ -809,12 +823,14 @@
 				19A547CE194B16F4007B0365 /* StackActionViewController.m in Sources */,
 				195CEA791937EA480044C52B /* KTAPICreateStack.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
+				19E2AE3419B077C1003EA7CB /* KartenUserManager.m in Sources */,
 				198AFC3F19354F2100ABD428 /* KTAPICreateUser.m in Sources */,
 				198AFC431935505300ABD428 /* NSManagedObject+JSONSerializable.m in Sources */,
 				1975EBF619AF7E01008CD2CF /* KartenNetworkTokenManager.swift in Sources */,
 				196021D5193295F1000234A3 /* User+Helpers.m in Sources */,
 				19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
+				19E2AE3719B07A62003EA7CB /* KTAPIGetUser.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
 				19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */,
@@ -834,7 +850,6 @@
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
 				1984C8141965D539003402CC /* CardEditViewController.m in Sources */,
-				196021C919329569000234A3 /* User.m in Sources */,
 				190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
 				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
@@ -854,7 +869,6 @@
 			files = (
 				19C5FFF819368EF5002AABBD /* KarenStackTests.m in Sources */,
 				19C5FFF619368D24002AABBD /* User+Helpers.m in Sources */,
-				19C5FFF519368584002AABBD /* User.m in Sources */,
 				19C5FFF11936360A002AABBD /* NSManagedObject+JSONParsable.m in Sources */,
 				19C5FFF919368F64002AABBD /* Stack+Helpers.m in Sources */,
 				19C5000519369413002AABBD /* StackServer.m in Sources */,

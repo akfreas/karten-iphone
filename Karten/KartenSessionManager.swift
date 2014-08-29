@@ -11,7 +11,7 @@ struct statics {
 @objc class KartenSessionManager {
     
     class func isSessionValid()->Bool {
-        if KartenSessionManager.getToken() != nil {
+        if KartenSessionManager.getToken() != nil && KartenSessionManager.getToken() != "" {
             return true
         }
         return false

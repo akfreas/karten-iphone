@@ -13,9 +13,8 @@
 #import "FacebookShareController.h"
 #import "FacebookSessionManager.h"
 #import "FriendPickerDelegate.h"
-
-#import "KTAPICreateUser.h"
-#import "KTAPILoginUser.h"
+#import <BlocksKit/UIBarButtonItem+BlocksKit.h>
+#import "KartenUserManager.h"
 
 #import "Karten-Swift.h"
 
@@ -75,17 +74,14 @@ static MainViewController *sharedInstance;
 {
     LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
     [loginController setLoginBlock:^(NSString *username, NSString *password) {
-        
-        KTAPILoginUser *loginUserAPI = [[KTAPILoginUser alloc] initWithUsername:username password:password];
-        [KartenNetworkClient makeRequest:loginUserAPI
-                              completion:^{
-                                  
-                              } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                  [KartenSessionManager setToken:responseObject[@"token"]];
-                                  [[self sharedInstance] dismissViewControllerAnimated:YES completion:nil];
-                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                  
-                              }];
+        [KartenUserManager logUserInWithUsername:username password:password completion:^(User *user) {
+            [[self sharedInstance] dismissViewControllerAnimated:YES completion:nil];
+        } failure:^(NSError *user) {
+            UIAlertView *alert = [[UIAlertView alloc] bk_initWithTitle:@"Whoops!"
+                                                               message:@"Your username and password combination is incorrect."];
+            [alert bk_addButtonWithTitle:@"OK" handler:nil];
+            [alert show];
+        }];
     }];
     [[self sharedInstance] presentViewController:loginController animated:NO completion:^{
         [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:NO];

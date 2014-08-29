@@ -1,9 +1,9 @@
 //
 //  User.h
-//  Karten
+//  
 //
-//  Created by Alexander Freas on 28/05/14.
-//  Copyright (c) 2014 Sashimiblade. All rights reserved.
+//  Created by Alexander Freas on 29/08/14.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSNumber * mainUser;
 @property (nonatomic, retain) NSNumber * serverID;
+@property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSSet *friends;
 @end
 
