@@ -1,7 +1,9 @@
 #import "NSManagedObject+JSONSerializable.h"
 #import <objc/runtime.h>
+#import "NSDateFormatter+ServerFormatters.h"
 
 @implementation NSManagedObject (JSONSerializable)
+
 
 - (NSDictionary *)JSONDictionarySerialization
 {
@@ -10,9 +12,17 @@
     NSDictionary *attributes = self.entity.attributesByName;
     for (NSString *attribute in attributes) {
         NSAttributeDescription *description = attributes[attribute];
+        NSString *writeOnly = description.userInfo[@"write_only"];
+        if (writeOnly != nil && [writeOnly isEqualToString:@"true"]) {
+            continue;
+        }
         NSString *serverKey = description.userInfo[@"server_key"];
         if (serverKey != nil) {
             id value = [self valueForKey:description.name];
+            
+            if ([value isKindOfClass:[NSDate class]]) {
+                value = [[NSDateFormatter serverFormatter] stringFromDate:value];
+            }
             [JSONDict setValue:value forKey:serverKey];
         }
     }

@@ -48,8 +48,14 @@ static NSString *BaseUrl = @"http://54.75.230.253/";
         params = request.params;
     }
     NSError *err = nil;
-    NSMutableURLRequest *URLrequest = [self.manager.requestSerializer requestWithMethod:request.HTTPMethod URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString] parameters:params error:&err];
-
+    NSMutableURLRequest *URLrequest = [self.manager.requestSerializer requestWithMethod:request.HTTPMethod
+                                                                              URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString]
+                                                                             parameters:params
+                                                                                  error:&err];
+    if ([request.HTTPMethod isEqualToString:@"POST"]) {
+        [URLrequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:params options:0 error:NULL]];
+    }
+    [URLrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [URLrequest setValue:[KartenNetworkTokenManager createAuthorizationHeaderString] forHTTPHeaderField:@"Authorization"];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:URLrequest];
     [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];

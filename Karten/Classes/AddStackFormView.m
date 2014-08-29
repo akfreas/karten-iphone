@@ -65,7 +65,7 @@
 {
     Stack *newStack = [Stack MR_createEntity];
     newStack.name = self.nameTextField.text;
-    newStack.owner = [User mainUser];
+    newStack.ownerServerID = [[User mainUser] serverID];
     newStack.creationDate = [NSDate date];
     return newStack;
 }

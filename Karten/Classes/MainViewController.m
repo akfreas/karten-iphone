@@ -14,6 +14,9 @@
 #import "FacebookSessionManager.h"
 #import "FriendPickerDelegate.h"
 
+#import "KTAPICreateUser.h"
+#import "KTAPILoginUser.h"
+
 #import "Karten-Swift.h"
 
 @interface MainViewController ()
@@ -71,6 +74,19 @@ static MainViewController *sharedInstance;
 + (void)showLoginViewController
 {
     LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    [loginController setLoginBlock:^(NSString *username, NSString *password) {
+        
+        KTAPILoginUser *loginUserAPI = [[KTAPILoginUser alloc] initWithUsername:username password:password];
+        [KartenNetworkClient makeRequest:loginUserAPI
+                              completion:^{
+                                  
+                              } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                  [KartenSessionManager setToken:responseObject[@"token"]];
+                                  [[self sharedInstance] dismissViewControllerAnimated:YES completion:nil];
+                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                  
+                              }];
+    }];
     [[self sharedInstance] presentViewController:loginController animated:NO completion:^{
         [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:NO];
     }];
@@ -119,7 +135,7 @@ static MainViewController *sharedInstance;
             }
             Stack *newStack = [Stack MR_createEntity];
             newStack.name = textField.text;
-            newStack.owner = [User mainUser];
+            newStack.ownerServerID = [[User mainUser] serverID];
             newStack.creationDate = [NSDate date];
             [newStack createStackOnServerWithCompletion:^{
                 

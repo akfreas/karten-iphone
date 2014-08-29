@@ -1,5 +1,6 @@
 #import "NSManagedObject+JSONParsable.h"
 #import "JSONParsable.h"
+#import "NSDateFormatter+ServerFormatters.h"
 
 @implementation NSManagedObject (JSONParsable)
 
@@ -41,6 +42,9 @@ static NSString *kRemoteServerID = @"id";
         if (serverKey != nil) {
             id value = dictionary[serverKey];
             if (value != nil && [value class] != [NSNull class]) {
+                if ([description attributeType] == NSDateAttributeType) {
+                    value = [[NSDateFormatter serverFormatter] dateFromString:value];
+                }
                 [self setValue:value forKey:attribute];
             }
         }

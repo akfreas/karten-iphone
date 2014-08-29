@@ -11,9 +11,9 @@ struct statics {
 @objc class KartenSessionManager {
     
     class func isSessionValid()->Bool {
-//        if KartenSessionManager.getToken() != nil {
-//            return true
-//        }
+        if KartenSessionManager.getToken() != nil {
+            return true
+        }
         return false
     }
     
@@ -26,13 +26,17 @@ struct statics {
     
     class func getToken()->String
     {
-        var token : String = NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenTokenKey)
+        var token = NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenTokenKey)
+        if token == nil {
+            token = ""
+        }
         return token
     }
     
     class func setToken(token : String)
     {
         NSUserDefaults.standardUserDefaults().setObject(token, forKey: statics.kKartenTokenKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     class func setLastUsedUsername(username : String)

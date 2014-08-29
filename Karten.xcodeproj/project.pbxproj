@@ -10,10 +10,12 @@
 		190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardAnswerView.m */; };
 		190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858FB19653D0F003E2784 /* FlashCardQuestionView.m */; };
 		190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */; };
-		190A8F851960BE5300586435 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F841960BE5300586435 /* Stack.m */; };
 		190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F871961462A00586435 /* KTAPIAddUserToStack.m */; };
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
+		192ECC5119B019610040B9A6 /* NSDateFormatter+ServerFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */; };
+		192ECC5719B023CB0040B9A6 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5619B023CB0040B9A6 /* Stack.m */; };
+		1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1946C38919B00721007D515E /* KTAPILoginUser.m */; };
 		194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */; };
 		195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA521936B2650044C52B /* FacebookLoginViewController.m */; };
 		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
@@ -121,12 +123,16 @@
 		190858FD19653F0A003E2784 /* FlashCardDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlashCardDisplayView.h; path = Classes/FlashCardDisplayView.h; sourceTree = "<group>"; };
 		190A8F7C1960ADC700586435 /* FriendPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendPickerDelegate.h; sourceTree = "<group>"; };
 		190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendPickerDelegate.m; sourceTree = "<group>"; };
-		190A8F831960BE5300586435 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Classes/Stack.h; sourceTree = "<group>"; };
-		190A8F841960BE5300586435 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Classes/Stack.m; sourceTree = "<group>"; };
 		190A8F861961462A00586435 /* KTAPIAddUserToStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPIAddUserToStack.h; path = Classes/KTAPIAddUserToStack.h; sourceTree = "<group>"; };
 		190A8F871961462A00586435 /* KTAPIAddUserToStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPIAddUserToStack.m; path = Classes/KTAPIAddUserToStack.m; sourceTree = "<group>"; };
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
+		192ECC4F19B019610040B9A6 /* NSDateFormatter+ServerFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ServerFormatters.h"; sourceTree = "<group>"; };
+		192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ServerFormatters.m"; sourceTree = "<group>"; };
+		192ECC5519B023CB0040B9A6 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		192ECC5619B023CB0040B9A6 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		1946C38819B00721007D515E /* KTAPILoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPILoginUser.h; sourceTree = "<group>"; };
+		1946C38919B00721007D515E /* KTAPILoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPILoginUser.m; sourceTree = "<group>"; };
 		194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionaryRepresentation.m"; sourceTree = "<group>"; };
 		194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionaryRepresentation.h"; sourceTree = "<group>"; };
 		195CEA511936B2650044C52B /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = Classes/FacebookLoginViewController.h; sourceTree = "<group>"; };
@@ -317,8 +323,8 @@
 		195CEA7A193809680044C52B /* Stack */ = {
 			isa = PBXGroup;
 			children = (
-				190A8F831960BE5300586435 /* Stack.h */,
-				190A8F841960BE5300586435 /* Stack.m */,
+				192ECC5519B023CB0040B9A6 /* Stack.h */,
+				192ECC5619B023CB0040B9A6 /* Stack.m */,
 				195CEA6B19378A260044C52B /* Stack+Network.h */,
 				195CEA6C19378A260044C52B /* Stack+Network.m */,
 				196021D0193295DE000234A3 /* Stack+Helpers.h */,
@@ -382,6 +388,8 @@
 				198AFC3B193528F800ABD428 /* API Calls */,
 				198AFC351935275A00ABD428 /* NetworkSyncUtil.h */,
 				198AFC361935275A00ABD428 /* NetworkSyncUtil.m */,
+				192ECC4F19B019610040B9A6 /* NSDateFormatter+ServerFormatters.h */,
+				192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */,
 				1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */,
 				19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */,
 				1975EBF719AF7E47008CD2CF /* KartenNetworkConstants.h */,
@@ -398,6 +406,8 @@
 				198AFC3C1935292800ABD428 /* KartenAPICall.h */,
 				198AFC3D19354F2100ABD428 /* KTAPICreateUser.h */,
 				198AFC3E19354F2100ABD428 /* KTAPICreateUser.m */,
+				1946C38819B00721007D515E /* KTAPILoginUser.h */,
+				1946C38919B00721007D515E /* KTAPILoginUser.m */,
 				190A8F861961462A00586435 /* KTAPIAddUserToStack.h */,
 				190A8F871961462A00586435 /* KTAPIAddUserToStack.m */,
 				195CEA771937EA480044C52B /* KTAPICreateStack.h */,
@@ -789,6 +799,7 @@
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
 				19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
+				192ECC5719B023CB0040B9A6 /* Stack.m in Sources */,
 				194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */,
 				195CEA841938AAF60044C52B /* AddCardFormView.m in Sources */,
 				190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */,
@@ -812,13 +823,14 @@
 				195CEA731937A8450044C52B /* AddStackFormView.m in Sources */,
 				195CEA6D19378A260044C52B /* Stack+Network.m in Sources */,
 				19C5000419369413002AABBD /* StackServer.m in Sources */,
+				1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */,
 				198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */,
+				192ECC5119B019610040B9A6 /* NSDateFormatter+ServerFormatters.m in Sources */,
 				198C097018CC3F5F000C00E2 /* main.m in Sources */,
 				19C93317190316EC0075FA49 /* QuizViewController.m in Sources */,
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
 				1972491A19326FE600030E5E /* Card.m in Sources */,
 				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
-				190A8F851960BE5300586435 /* Stack.m in Sources */,
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
 				1984C8141965D539003402CC /* CardEditViewController.m in Sources */,

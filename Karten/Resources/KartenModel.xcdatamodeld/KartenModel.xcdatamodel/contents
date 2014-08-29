@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.8" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="couchID" attributeType="String" syncable="YES"/>
         <attribute name="couchRev" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,15 +9,30 @@
         <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stack" inverseName="cards" inverseEntity="Stack" syncable="YES"/>
     </entity>
     <entity name="Stack" representedClassName="Stack" syncable="YES">
-        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="allowedUserServerIDs" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="allowed_users"/>
+            </userInfo>
+        </attribute>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="creation_date"/>
+            </userInfo>
+        </attribute>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="name"/>
             </userInfo>
         </attribute>
+        <attribute name="ownerServerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="owner"/>
+            </userInfo>
+        </attribute>
         <attribute name="serverID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="id"/>
+                <entry key="write_only" value="true"/>
             </userInfo>
         </attribute>
         <attribute name="serverStackName" optional="YES" attributeType="String" syncable="YES">
@@ -30,17 +45,7 @@
                 <entry key="server_key" value="description"/>
             </userInfo>
         </attribute>
-        <relationship name="allowedUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="allowed_users"/>
-            </userInfo>
-        </relationship>
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="stack" inverseEntity="Card" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="owner"/>
-            </userInfo>
-        </relationship>
         <relationship name="server" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StackServer" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="couchdb_server"/>
@@ -86,6 +91,11 @@
                 <entry key="server_key" value="id"/>
             </userInfo>
         </attribute>
+        <attribute name="username" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="username"/>
+            </userInfo>
+        </attribute>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="friends"/>
@@ -94,8 +104,8 @@
     </entity>
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="Stack" positionX="-63" positionY="18" width="128" height="180"/>
+        <element name="Stack" positionX="-63" positionY="18" width="128" height="178"/>
         <element name="StackServer" positionX="-45" positionY="72" width="128" height="73"/>
-        <element name="User" positionX="-54" positionY="36" width="128" height="150"/>
+        <element name="User" positionX="-54" positionY="36" width="128" height="163"/>
     </elements>
 </model>

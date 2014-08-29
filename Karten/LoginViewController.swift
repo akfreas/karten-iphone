@@ -1,8 +1,11 @@
 import Foundation
 import UIKit
 
+typealias LoginViewControllerLoginActionBlock = (String!, String!) -> Void
+
 @objc class LoginViewController : UIViewController {
     
+    var loginBlock : LoginViewControllerLoginActionBlock!
     @IBOutlet var usernameField : UITextField!
     @IBOutlet var passwordField : UITextField!
     @IBOutlet var loginButton : UIButton!
@@ -47,6 +50,7 @@ import UIKit
     func createLoginButton() {
         loginButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
         loginButton.setTitle("Login", forState: UIControlState.Normal)
+        loginButton.addTarget(self, action: "loginAction", forControlEvents: UIControlEvents.TouchUpInside)
         loginButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(loginButton)
     }
@@ -55,6 +59,10 @@ import UIKit
         signUpButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
         signUpButton.setTitle("Sign Up", forState: UIControlState.Normal)
         self.view.addSubview(signUpButton)
+    }
+    
+    func loginAction() {
+        loginBlock(usernameField.text, passwordField.text)
     }
     
     func addLayoutConstraints() {
