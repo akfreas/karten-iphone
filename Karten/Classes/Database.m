@@ -79,8 +79,10 @@
 
 - (void)copyDataToAppDB
 {
-    self.activeQuery = [[[self.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
-    [self.activeQuery addObserver:self forKeyPath:@"rows" options:0 context:nil];
+    if (self.activeQuery == nil) {
+        self.activeQuery = [[[self.couchDatabase viewNamed:@"byDate"] createQuery] asLiveQuery];
+        [self.activeQuery addObserver:self forKeyPath:@"rows" options:0 context:nil];
+    }
     [self.activeQuery start];
 }
 
@@ -131,6 +133,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.activeQuery removeObserver:self forKeyPath:@"rows"];
 }
 
 @end

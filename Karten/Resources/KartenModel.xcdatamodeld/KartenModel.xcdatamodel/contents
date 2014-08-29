@@ -53,14 +53,24 @@
         </relationship>
     </entity>
     <entity name="StackServer" representedClassName="StackServer" syncable="YES">
+        <attribute name="host" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="host"/>
+            </userInfo>
+        </attribute>
+        <attribute name="port" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="port"/>
+            </userInfo>
+        </attribute>
+        <attribute name="protocol" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="protocol"/>
+            </userInfo>
+        </attribute>
         <attribute name="serverID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="id"/>
-            </userInfo>
-        </attribute>
-        <attribute name="serverURL" optional="YES" attributeType="String" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="server_url"/>
             </userInfo>
         </attribute>
     </entity>
@@ -106,7 +116,7 @@
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Stack" positionX="-63" positionY="18" width="128" height="178"/>
-        <element name="StackServer" positionX="-45" positionY="72" width="128" height="73"/>
+        <element name="StackServer" positionX="-45" positionY="72" width="128" height="105"/>
         <element name="User" positionX="-54" positionY="36" width="128" height="165"/>
     </elements>
 </model>

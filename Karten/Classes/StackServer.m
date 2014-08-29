@@ -2,7 +2,7 @@
 //  StackServer.m
 //  Karten
 //
-//  Created by Alexander Freas on 29/05/14.
+//  Created by Alexander Freas on 29/08/14.
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
@@ -12,6 +12,8 @@
 @implementation StackServer
 
 @dynamic serverID;
-@dynamic serverURL;
+@dynamic host;
+@dynamic port;
+@dynamic protocol;
 
 @end
