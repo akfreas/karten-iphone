@@ -99,9 +99,10 @@
 		19E2AE3719B07A62003EA7CB /* KTAPIGetUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3619B07A62003EA7CB /* KTAPIGetUser.m */; };
 		19E2AE3A19B08ADE003EA7CB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3919B08ADE003EA7CB /* User.m */; };
 		19E2AE3E19B09C27003EA7CB /* StackServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE3D19B09C27003EA7CB /* StackServer.m */; };
-		19E8CEB219AFB1A200C7B112 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */; };
+		19E2AE4119B0B69A003EA7CB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE4019B0B69A003EA7CB /* LoginViewController.m */; };
+		19E2AE4419B0B8A3003EA7CB /* FormEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE4319B0B8A3003EA7CB /* FormEntryTableViewCell.m */; };
+		19E2AE4719B0C051003EA7CB /* ButtonActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E2AE4619B0C051003EA7CB /* ButtonActionTableViewCell.m */; };
 		19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */; };
-		19E8CEC319AFECF800C7B112 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E8CEC219AFECF800C7B112 /* LoginViewController.xib */; };
 		53ADF44A80C44CE6B5DC1496 /* libPods-KartenUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -277,11 +278,15 @@
 		19E2AE3919B08ADE003EA7CB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
 		19E2AE3C19B09C27003EA7CB /* StackServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackServer.h; path = Classes/StackServer.h; sourceTree = "<group>"; };
 		19E2AE3D19B09C27003EA7CB /* StackServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackServer.m; path = Classes/StackServer.m; sourceTree = "<group>"; };
-		19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		19E2AE3F19B0B69A003EA7CB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Classes/LoginViewController.h; sourceTree = "<group>"; };
+		19E2AE4019B0B69A003EA7CB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Classes/LoginViewController.m; sourceTree = "<group>"; };
+		19E2AE4219B0B8A3003EA7CB /* FormEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormEntryTableViewCell.h; path = Classes/FormEntryTableViewCell.h; sourceTree = "<group>"; };
+		19E2AE4319B0B8A3003EA7CB /* FormEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormEntryTableViewCell.m; path = Classes/FormEntryTableViewCell.m; sourceTree = "<group>"; };
+		19E2AE4519B0C051003EA7CB /* ButtonActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonActionTableViewCell.h; path = Classes/ButtonActionTableViewCell.h; sourceTree = "<group>"; };
+		19E2AE4619B0C051003EA7CB /* ButtonActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonActionTableViewCell.m; path = Classes/ButtonActionTableViewCell.m; sourceTree = "<group>"; };
 		19E8CEB419AFBA0500C7B112 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = Karten/MyPlayground.playground; sourceTree = "<group>"; };
 		19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenSessionManager.swift; sourceTree = "<group>"; };
 		19E8CEC019AFEA7900C7B112 /* VFLToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLToolbox.framework; path = "Frameworks/VFLToolbox/build/Debug-iphoneos/VFLToolbox.framework"; sourceTree = "<group>"; };
-		19E8CEC219AFECF800C7B112 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.xcconfig"; path = "Pods/Pods-Karten.xcconfig"; sourceTree = "<group>"; };
 		924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KartenUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA388A941074F25BA2B035A /* libPods-Karten.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Karten.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -485,8 +490,12 @@
 				19CE51D319785E210053CD4F /* DeleteButton.m */,
 				195CEA511936B2650044C52B /* FacebookLoginViewController.h */,
 				195CEA521936B2650044C52B /* FacebookLoginViewController.m */,
-				19E8CEB119AFB1A200C7B112 /* LoginViewController.swift */,
-				19E8CEC219AFECF800C7B112 /* LoginViewController.xib */,
+				19E2AE3F19B0B69A003EA7CB /* LoginViewController.h */,
+				19E2AE4019B0B69A003EA7CB /* LoginViewController.m */,
+				19E2AE4219B0B8A3003EA7CB /* FormEntryTableViewCell.h */,
+				19E2AE4519B0C051003EA7CB /* ButtonActionTableViewCell.h */,
+				19E2AE4619B0C051003EA7CB /* ButtonActionTableViewCell.m */,
+				19E2AE4319B0B8A3003EA7CB /* FormEntryTableViewCell.m */,
 				195CEA5B193731C00044C52B /* FacebookSessionManager.h */,
 				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
 				195CEA55193720130044C52B /* MainViewController.h */,
@@ -711,7 +720,6 @@
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
 				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
-				19E8CEC319AFECF800C7B112 /* LoginViewController.xib in Resources */,
 				19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,12 +808,14 @@
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
 				19CE51CA1978585A0053CD4F /* KTAPIRemoveStack.m in Sources */,
 				190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */,
+				19E2AE4719B0C051003EA7CB /* ButtonActionTableViewCell.m in Sources */,
 				190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */,
 				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
+				19E2AE4419B0B8A3003EA7CB /* FormEntryTableViewCell.m in Sources */,
 				195CEA6319376E1E0044C52B /* StackListTableView.m in Sources */,
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				196603F1193EFFBA0027698E /* Card+Network.m in Sources */,
@@ -835,6 +845,7 @@
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
 				19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */,
 				19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */,
+				19E2AE4119B0B69A003EA7CB /* LoginViewController.m in Sources */,
 				195CEA8119387E020044C52B /* CardListViewController.m in Sources */,
 				195CEA731937A8450044C52B /* AddStackFormView.m in Sources */,
 				195CEA6D19378A260044C52B /* Stack+Network.m in Sources */,
@@ -856,7 +867,6 @@
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,
 				195CEA6019376E030044C52B /* StackListViewController.m in Sources */,
 				19CE51D419785E210053CD4F /* DeleteButton.m in Sources */,
-				19E8CEB219AFB1A200C7B112 /* LoginViewController.swift in Sources */,
 				198C09A618CC4A4A000C00E2 /* CardCell.m in Sources */,
 				195CEA6619376E790044C52B /* StackListTableViewCell.m in Sources */,
 			);

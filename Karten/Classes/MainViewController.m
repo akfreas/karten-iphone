@@ -15,6 +15,7 @@
 #import "FriendPickerDelegate.h"
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import "KartenUserManager.h"
+#import "LoginViewController.h"
 
 #import "Karten-Swift.h"
 
@@ -72,7 +73,7 @@ static MainViewController *sharedInstance;
 
 + (void)showLoginViewController
 {
-    LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    LoginViewController *loginController = [[LoginViewController alloc] init];
     [loginController setLoginBlock:^(NSString *username, NSString *password) {
         [KartenUserManager logUserInWithUsername:username password:password completion:^(User *user) {
             [[self sharedInstance] dismissViewControllerAnimated:YES completion:nil];
