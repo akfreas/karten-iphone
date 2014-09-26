@@ -10,7 +10,6 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
-#ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
@@ -31,7 +30,6 @@
 #import "NotificationKeys.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "NSObject+NSDictionaryRepresentation.h"
-#endif
 
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((fmt @" %s [Line %d]"), ##__VA_ARGS__, __PRETTY_FUNCTION__, __LINE__);
