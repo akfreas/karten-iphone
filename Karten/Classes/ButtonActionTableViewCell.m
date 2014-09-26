@@ -12,6 +12,7 @@
     if (self) {
         [self createMainLabel];
         [self addLayoutConstraints];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -21,6 +22,14 @@
     UILabel *mainLabel = [UILabel new];
     [self.contentView addSubview:mainLabel];
     self.mainLabel = mainLabel;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    NSMutableParagraphStyle *para = [NSMutableParagraphStyle new];
+    para.alignment = NSTextAlignmentCenter;
+    NSDictionary *attrs = @{NSParagraphStyleAttributeName : para};
+    self.mainLabel.attributedText = [[NSAttributedString alloc] initWithString:title attributes:attrs];
 }
 
 - (void)addLayoutConstraints
