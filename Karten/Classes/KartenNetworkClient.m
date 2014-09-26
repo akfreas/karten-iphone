@@ -10,7 +10,7 @@
 
 @end
 
-static NSString *BaseUrl = @"http://54.75.230.253/";
+static NSString *BaseUrl = @"http://54.73.59.208/";
 @implementation KartenNetworkClient
 
 
