@@ -26,9 +26,19 @@
     self.titleLabel = titleLabel;
 }
 
+- (void)dealloc
+{
+    [self.inputTextField bk_removeAllBlockObservers];
+}
+
 - (void)createInputTextField
 {
     UITextField *inputTextField = [UITextField new];
+    self.text = @"";
+    [inputTextField setBk_shouldChangeCharactersInRangeWithReplacementStringBlock:^BOOL(UITextField *textfield, NSRange range, NSString *string) {
+        self.text = [self.text stringByReplacingCharactersInRange:range withString:string];
+        return YES;
+    }];
     [self.contentView addSubview:inputTextField];
     self.inputTextField = inputTextField;
 }
@@ -50,20 +60,15 @@
 
 #pragma mark Accessors
 
+- (void)setTextFieldSecured:(BOOL)textFieldSecured
+{
+    self.inputTextField.secureTextEntry = textFieldSecured;
+}
+
 - (void)setTitleText:(NSString *)titleText
 {
     self.titleLabel.text = titleText;
     self.inputTextField.placeholder = titleText;
-}
-
-- (NSString *)text
-{
-    return self.inputTextField.text;
-}
-
-- (void)setText:(NSString *)text
-{
-    self.inputTextField.text = text;
 }
 
 @end
