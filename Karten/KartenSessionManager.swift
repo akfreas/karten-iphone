@@ -24,28 +24,28 @@ struct statics {
         return statics.instance
     }
     
-    class func getToken()->String
+    class func getToken()->String!
     {
-        var token = NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenTokenKey)
+        var token = NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenTokenKey!)
         if token == nil {
             token = ""
         }
-        return token
+        return token!
     }
     
     class func setToken(token : String)
     {
-        NSUserDefaults.standardUserDefaults().setObject(token, forKey: statics.kKartenTokenKey)
+        NSUserDefaults.standardUserDefaults().setObject(token, forKey: statics.kKartenTokenKey!)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     class func setLastUsedUsername(username : String)
     {
-        NSUserDefaults.standardUserDefaults().setObject(username, forKey: statics.kKartenLastUsernameKey)
+        NSUserDefaults.standardUserDefaults().setObject(username, forKey: statics.kKartenLastUsernameKey!)
     }
     
     class func lastUsedUsername()->String
     {
-        return NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenLastUsernameKey)
+        return NSUserDefaults.standardUserDefaults().stringForKey(statics.kKartenLastUsernameKey!)!
     }
 }
