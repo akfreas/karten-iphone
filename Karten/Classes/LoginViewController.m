@@ -1,11 +1,16 @@
 #import "LoginViewController.h"
 #import "FormEntryTableViewCell.h"
 #import "ButtonActionTableViewCell.h"
-
+#import "KTAPILoginUser.h"
+#import "KartenNetworkClient.h"
+#import "Karten-Swift.h"
+#import "KTAPIGetUser.h"
+#import "User.h"
 
 @interface LoginViewControllerHeader : UIView
 @property (nonatomic) UIImageView *logoView;
 @property (nonatomic) UILabel *teaserLabel;
+
 @end
 
 @implementation LoginViewControllerHeader
@@ -14,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        self.translatesAutoresizingMaskIntoConstraints = NO;
         [self createLogoView];
         [self createTeaserLabel];
         [self addLayoutConstraints];
@@ -59,9 +65,12 @@
 
 @interface LoginViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) UITableView *formTable;
-@property (nonatomic) NSArray *cellIDOrder;
-@property (nonatomic) NSArray *cellTitleOrder;
+@property (nonatomic) NSMutableArray *cellIDOrder;
+@property (nonatomic) NSMutableArray *cellTitleOrder;
 @property (nonatomic) LoginViewControllerHeader *headerView;
+
+@property (nonatomic) NSString *username;
+@property (nonatomic) NSString *password;
 @end
 
 static NSString *kUsernameEntryCell = @"kUsernameEntryCell";
@@ -75,9 +84,8 @@ static CGFloat cellHeight = 50.0f;
 {
     self = [super init];
     if (self) {
-        self.cellTitleOrder = @[@"Username", @"Password", @"Email"];
-        self.cellIDOrder = @[kUsernameEntryCell, kPasswordEntryCell, kEmailEntryCell, kSubmitCell];
-
+        self.cellTitleOrder = [@[@"Username", @"Password"] mutableCopy];
+        self.cellIDOrder = [@[kUsernameEntryCell, kPasswordEntryCell, kSubmitCell] mutableCopy];
     }
     return self;
 }
@@ -88,33 +96,32 @@ static CGFloat cellHeight = 50.0f;
     formTable.delegate = self;
     formTable.dataSource = self;
     formTable.scrollEnabled = YES;
-    LoginViewControllerHeader *header = [[LoginViewControllerHeader alloc] init];
-
-    formTable.tableHeaderView = header;
+//    formTable.tableHeaderView = self.headerView;
     [formTable registerClass:[FormEntryTableViewCell class] forCellReuseIdentifier:kUsernameEntryCell];
     [formTable registerClass:[FormEntryTableViewCell class] forCellReuseIdentifier:kPasswordEntryCell];
     [formTable registerClass:[FormEntryTableViewCell class] forCellReuseIdentifier:kEmailEntryCell];
     [formTable registerClass:[ButtonActionTableViewCell class] forCellReuseIdentifier:kSubmitCell];
     [self.view addSubview:formTable];
     self.formTable = formTable;
+    [self.formTable setNeedsLayout];
 }
 
-- (void)createHeaderView
+- (LoginViewControllerHeader *)headerView
 {
-    LoginViewControllerHeader *header = [[LoginViewControllerHeader alloc] init];
-    [self.view addSubview:header];
-    self.headerView = header;
+    if (_headerView == nil) {
+        LoginViewControllerHeader *header = [[LoginViewControllerHeader alloc] init];
+        self.headerView = header;
+    }
+    return _headerView;
 }
 
 - (void)addLayoutConstraints
 {
-    CGFloat tableHeight = [self.cellIDOrder count] * cellHeight + self.formTable.tableHeaderView.frame.size.height;
-    NSNumber *height = @(tableHeight);
-    UIBind(self.formTable, self.topLayoutGuide, self.headerView);
+    UIBind(self.formTable, self.topLayoutGuide);
     [self.view addConstraintWithVisualFormat:@"H:|[formTable]|" bindings:BBindings];
-//    [self.view addConstraintWithVisualFormat:@"V:[topLayoutGuide][headerView][formTable(height)]" bindings:BBindings];
+    [self.view addConstraintWithVisualFormat:@"V:|[formTable]|" bindings:BBindings];
 //    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][headerView][formTable(height)]" options:NSLayoutFormatAlignAllCenterX metrics:@{@"height" : height} views:BBindings]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][formTable(height)]" options:NSLayoutFormatAlignAllCenterX metrics:@{@"height" : height} views:BBindings]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][formTable]|" options:NSLayoutFormatAlignAllCenterX metrics:@{@"height" : height} views:BBindings]];
 
 }
 
@@ -122,19 +129,52 @@ static CGFloat cellHeight = 50.0f;
 {
     [super viewDidLoad];
     [self createFormTable];
-    [self createHeaderView];
     [self addLayoutConstraints];
     [self.formTable reloadData];
 }
 
+- (void)showInvalidUsernamePasswordComboAlert
+{
+    
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Sorry!" message:@"Your username and password are invalid! Please try again." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }];
+    [controller addAction:action];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
 #pragma mark UITableView Datasource
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section
+{
+    return 200.0f;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row <= 2) {
+    if (indexPath.row <= 1) {
         
         FormEntryTableViewCell *formEntryCell = [tableView dequeueReusableCellWithIdentifier:self.cellIDOrder[indexPath.row]];
         [formEntryCell setTitleText:self.cellTitleOrder[indexPath.row]];
+        
+        [formEntryCell bk_removeAllBlockObservers];
+        if (indexPath.row == 0) {
+            [formEntryCell bk_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew task:^(id sender, NSDictionary *change) {
+                self.username = change[NSKeyValueChangeNewKey];
+            }];
+        } else if (indexPath.row == 1) {
+            formEntryCell.textFieldSecured = YES;
+            [formEntryCell bk_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew task:^(id sender, NSDictionary *change) {
+                self.password = change[NSKeyValueChangeNewKey];
+            }];
+        }
+        
         return formEntryCell;
     }
     
@@ -160,14 +200,34 @@ static CGFloat cellHeight = 50.0f;
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return NO;
+    if (indexPath.row < 2) {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < 3) {
+    if (indexPath.row < 2) {
         return;
     }
+    KTAPILoginUser *loginUser = [[KTAPILoginUser alloc] initWithUsername:self.username password:self.password];
+    KTAPIGetUser *getUser = [KTAPIGetUser new];
+    [KartenNetworkClient makeRequest:loginUser completion:^{
+        
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [KartenSessionManager setToken:responseObject[@"token"]];
+        [KartenNetworkClient makeRequest:getUser completion:^{
+        } success:^(AFHTTPRequestOperation *operation, User *authedUser) {
+            authedUser.mainUser = @(YES);
+            [authedUser.managedObjectContext MR_saveOnlySelfAndWait];
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self showInvalidUsernamePasswordComboAlert];
+    }];
 }
 
 @end
