@@ -7,12 +7,12 @@
 {
     NSString *(^stringFromDict)(NSDictionary *dict) = ^NSString*(NSDictionary *dict){
         
-        NSMutableString *paramString = [NSMutableString stringWithString:@"{"];
+        NSMutableString *paramString = [NSMutableString stringWithString:@"{ "];
         for (NSString *key in dict) {
             NSString *param = [NSString stringWithFormat:@"\"%@\" : \"%@\", ", key, dict[key]];
             [paramString appendString:param];
         }
-        [paramString appendString:@"}"];
+        [paramString appendString:@" }"];
         return paramString;
     };
     
