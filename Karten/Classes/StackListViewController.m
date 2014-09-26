@@ -39,6 +39,11 @@
     [self addLayoutConstraints];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self fetchUsersStacks];
+}
+
 - (void)createCollectionView
 {
     self.stackCollectionView = [[StackCollectionView alloc] initWithFrame:CGRectZero];
