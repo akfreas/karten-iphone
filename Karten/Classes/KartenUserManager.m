@@ -7,6 +7,8 @@
 #import "KTAPIGetUser.h"
 
 #import "Karten-Swift.h"
+#import "NotificationKeys.h"
+#import "Stack+Helpers.h"
 
 @implementation KartenUserManager
 
@@ -17,12 +19,12 @@
                           completion:^{
                               
                           } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                              [self unmarkMainUser];
                               [KartenSessionManager setToken:responseObject[@"token"]];
                               [self getCurrentAuthenticatedUserWithCompletion:completionBlock failure:failureBlock];
                           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                               failureBlock(error);
                           }];
-
 }
 
 + (void)getCurrentAuthenticatedUserWithCompletion:(void(^)(User *))completion failure:(void(^)(NSError *))failure
@@ -38,6 +40,14 @@
                           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                               failure(error);
                           }];
+}
+
++ (void)logoutCurrentUser
+{
+    [KartenSessionManager invalidateSession];
+    [Stack removeAllStacksForUser:[User mainUser]];
+    [self unmarkMainUser];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kKartenUserDidLogoutNotification object:nil];
 }
 
 + (void)unmarkMainUser
