@@ -12,5 +12,11 @@
     return URLString;
 }
 
++ (void)removeAllStacksForUser:(User *)user
+{
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"ownerServerID == %@", user.serverID];
+    [Stack MR_deleteAllMatchingPredicate:pred];
+}
+
 
 @end
