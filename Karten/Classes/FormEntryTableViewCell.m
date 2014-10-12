@@ -39,6 +39,7 @@
         self.text = [self.text stringByReplacingCharactersInRange:range withString:string];
         return YES;
     }];
+    inputTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.contentView addSubview:inputTextField];
     self.inputTextField = inputTextField;
 }
@@ -56,6 +57,16 @@
 - (void)reset
 {
     self.inputTextField.text = @"";
+
+}
+- (BOOL)resignFirstResponder
+{
+    return [self.inputTextField resignFirstResponder];
+}
+
+- (BOOL)becomeFirstResponder
+{
+    return [self.inputTextField becomeFirstResponder];
 }
 
 #pragma mark Accessors
@@ -65,10 +76,24 @@
     self.inputTextField.secureTextEntry = textFieldSecured;
 }
 
+- (void)setCapitalizationType:(UITextAutocapitalizationType)capitalizationType
+{
+    self.inputTextField.autocapitalizationType = capitalizationType;
+}
+
 - (void)setTitleText:(NSString *)titleText
 {
     self.titleLabel.text = titleText;
     self.inputTextField.placeholder = titleText;
+}
+
+- (void)setReturnButtonBlock:(void (^)())returnButtonBlock
+{
+    _returnButtonBlock = returnButtonBlock;
+    [self.inputTextField setBk_shouldReturnBlock:^BOOL(UITextField *tf) {
+        returnButtonBlock();
+        return YES;
+    }];
 }
 
 @end
