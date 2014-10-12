@@ -14,6 +14,7 @@ target "Karten" do
     pod "AFNetworking"
     pod "Facebook-iOS-SDK"
     pod "Masonry", '~> 0.5.0'
+    pod "SWRevealViewController", '~> 2.3.0'
 end
 
 target "KartenUnitTests" do
