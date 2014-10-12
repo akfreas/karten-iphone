@@ -2,8 +2,11 @@
 #import "Karten-Swift.h"
 #import "KartenUserManager.h"
 #import "RevealControllerManager.h"
+#import "CircleImageView.h"
 
 @interface RevealActionViewController ()
+@property (nonatomic) IBOutlet UIView *circleImageView;
+@property (nonatomic) CircleImageView *imageView;
 @end
 
 @implementation RevealActionViewController
@@ -20,6 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.imageView = [[CircleImageView alloc] initWithImage:[UIImage imageNamed:@"Request"] radius:self.circleImageView.frame.size.height/2.0f];
+    [self.circleImageView addSubview:self.imageView];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -34,12 +40,21 @@
     [KartenUserManager logoutCurrentUser];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark UITableView Delegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
         case 0:
+            break;
+        case 1:
+            break;
+        case 2:
             [self logoutAction];
             break;
         default:

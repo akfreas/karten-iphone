@@ -2,6 +2,9 @@
 #import "MainViewController.h"
 #import "NetworkSyncUtil.h"
 #import "FacebookSessionManager.h"
+#import "RevealControllerManager.h"
+#import "RevealActionViewController.h"
+#import <SWRevealViewController/SWRevealViewController.h>
 
 @implementation AppDelegate
 
@@ -12,9 +15,24 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
-    self.mainViewController = [[UINavigationController alloc] initWithRootViewController:[MainViewController sharedInstance]];
+    RevealActionViewController *actionController = [RevealActionViewController new];
+    SWRevealViewController *mainController = [RevealControllerManager sharedRevealController];
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:[MainViewController sharedInstance]];
+    [self configureAppearance];
+    mainController.frontViewController = controller;
+    mainController.rearViewController = actionController;
+    self.mainViewController = mainController;
+    [controller.navigationBar setBarStyle:UIBarStyleBlack];
     self.window.rootViewController = self.mainViewController;
     return YES;
+}
+
+- (void)configureAppearance
+{
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"#40988D"]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

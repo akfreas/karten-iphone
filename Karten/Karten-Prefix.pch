@@ -20,7 +20,7 @@
     #import <BlocksKit/BlocksKit+UIKit.h>
     #import "UIView+LayoutHelpers.h"
     #import "UITextField+Valdiation.h"
-    #import <HexColors/HexColor.h>
+    #import <EDColor/EDColor.h>
     #import "CouchbaseLite/CouchbaseLite.h"
     #import "CouchbaseLite/CBLDocument.h"
 #import "Card.h"

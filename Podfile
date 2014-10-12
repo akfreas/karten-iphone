@@ -1,9 +1,10 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, "6.0"
+source 'https://github.com/CocoaPods/Specs'
 
 target "Karten" do
 
-    pod "HexColors"
+    pod "EDColor"
     pod "GoogleAnalytics-iOS-SDK"
     pod "BlocksKit", :head
     pod "UIView+AutoLayout"

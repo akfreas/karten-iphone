@@ -109,7 +109,7 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
         if (completion) {
             completion();
         }
-        DLog(@"Finished fetch from %@/%@. Error: %@", self.manager.baseURL, request.path, error);
+        DLog(@"Finished fetch from %@%@. Error: %@", self.manager.baseURL, request.path, error);
         
         if (failure) {
             failure(operation, error);

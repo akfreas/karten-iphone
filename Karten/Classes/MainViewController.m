@@ -140,7 +140,11 @@ static MainViewController *sharedInstance;
 
 - (void)setupBarButton
 {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAdd handler:^(id sender) {
+    
+    UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22.0f, 22.0f)];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"Add"] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    [rightButton bk_addEventHandler:^(id sender) {
         UIAlertView *addStackAlertView = [[UIAlertView alloc] bk_initWithTitle:@"Add Stack" message:@"Add Stack"];
         addStackAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         [[NSNotificationCenter defaultCenter] postNotificationName:ExitDeletionModeNotification object:nil];
@@ -176,11 +180,18 @@ static MainViewController *sharedInstance;
         //        } else {
         //            [self showAddStackFormView];
         //        }
-    }];
+    } forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAction handler:^(id sender) {
+    UIButton *barButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
+    [barButton setBackgroundImage:[UIImage imageNamed:@"Menu"] forState:UIControlStateNormal];
+    //    barButton.contentEdgeInsets = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f , 10.0f);
+    //    barButton.contentMode = uiviewcontentmodeac;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:barButton];
+    [barButton bk_addEventHandler:^(id sender) {
         [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
-    }];
+    } forControlEvents:UIControlEventTouchUpInside];
+    item.customView = barButton;
+    self.navigationItem.leftBarButtonItem = item;
 }
 
 - (void)createAddStackFormView

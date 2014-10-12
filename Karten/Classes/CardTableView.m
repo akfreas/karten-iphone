@@ -30,11 +30,6 @@ static NSString *kHeaderReuseID = @"HeaderCell";
     return self;
 }
 
-- (CGSize)intrinsicContentSize
-{
-    return CGSizeMake(320.0f, 100.0f);
-}
-
 - (void)startUpdating
 {
     [self.cbDatasource reloadFromQuery];
