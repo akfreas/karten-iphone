@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1901714919D6B7C500C90A50 /* RevealActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714819D6B7C500C90A50 /* RevealActionViewController.m */; };
+		1901714B19D6BABE00C90A50 /* RevealActionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */; };
+		1901714D19D6BB5800C90A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1901714C19D6BB5800C90A50 /* LaunchScreen.storyboard */; };
+		1901715019D6D6B600C90A50 /* RevealControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714F19D6D6B600C90A50 /* RevealControllerManager.m */; };
+		1901715419D6DB3B00C90A50 /* ShareStackControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901715219D6DB3B00C90A50 /* ShareStackControllerViewController.m */; };
+		1901715519D6DB3B00C90A50 /* ShareStackControllerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1901715319D6DB3B00C90A50 /* ShareStackControllerViewController.xib */; };
 		190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardAnswerView.m */; };
 		190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858FB19653D0F003E2784 /* FlashCardQuestionView.m */; };
 		190A8F7E1960ADC700586435 /* FriendPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */; };
@@ -117,6 +123,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1901714719D6B7C500C90A50 /* RevealActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealActionViewController.h; path = Classes/RevealActionViewController.h; sourceTree = "<group>"; };
+		1901714819D6B7C500C90A50 /* RevealActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealActionViewController.m; path = Classes/RevealActionViewController.m; sourceTree = "<group>"; };
+		1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevealActionViewController.storyboard; sourceTree = "<group>"; };
+		1901714C19D6BB5800C90A50 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UserInterface/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1901714E19D6D6B600C90A50 /* RevealControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealControllerManager.h; path = Classes/RevealControllerManager.h; sourceTree = "<group>"; };
+		1901714F19D6D6B600C90A50 /* RevealControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealControllerManager.m; path = Classes/RevealControllerManager.m; sourceTree = "<group>"; };
+		1901715119D6DB3B00C90A50 /* ShareStackControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareStackControllerViewController.h; path = Classes/ShareStackControllerViewController.h; sourceTree = "<group>"; };
+		1901715219D6DB3B00C90A50 /* ShareStackControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareStackControllerViewController.m; path = Classes/ShareStackControllerViewController.m; sourceTree = "<group>"; };
+		1901715319D6DB3B00C90A50 /* ShareStackControllerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareStackControllerViewController.xib; path = Classes/ShareStackControllerViewController.xib; sourceTree = "<group>"; };
 		190858F019653B85003E2784 /* FlashCardAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardAnswerView.h; path = Classes/FlashCardAnswerView.h; sourceTree = "<group>"; };
 		190858F119653B85003E2784 /* FlashCardAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardAnswerView.m; path = Classes/FlashCardAnswerView.m; sourceTree = "<group>"; };
 		190858FA19653D0F003E2784 /* FlashCardQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardQuestionView.h; path = Classes/FlashCardQuestionView.h; sourceTree = "<group>"; };
@@ -431,6 +446,7 @@
 		198C095518CC3F5F000C00E2 = {
 			isa = PBXGroup;
 			children = (
+				1901714C19D6BB5800C90A50 /* LaunchScreen.storyboard */,
 				194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */,
 				194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */,
 				198C096918CC3F5F000C00E2 /* Karten */,
@@ -482,6 +498,11 @@
 				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
+				1901714E19D6D6B600C90A50 /* RevealControllerManager.h */,
+				1901714F19D6D6B600C90A50 /* RevealControllerManager.m */,
+				1901714719D6B7C500C90A50 /* RevealActionViewController.h */,
+				1901714819D6B7C500C90A50 /* RevealActionViewController.m */,
+				1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */,
 				1984C8121965D539003402CC /* CardEditViewController.h */,
 				1984C8131965D539003402CC /* CardEditViewController.m */,
 				19CE51D219785E210053CD4F /* DeleteButton.h */,
@@ -498,6 +519,9 @@
 				195CEA5C193731C00044C52B /* FacebookSessionManager.m */,
 				195CEA55193720130044C52B /* MainViewController.h */,
 				195CEA56193720130044C52B /* MainViewController.m */,
+				1901715119D6DB3B00C90A50 /* ShareStackControllerViewController.h */,
+				1901715219D6DB3B00C90A50 /* ShareStackControllerViewController.m */,
+				1901715319D6DB3B00C90A50 /* ShareStackControllerViewController.xib */,
 				190A8F7C1960ADC700586435 /* FriendPickerDelegate.h */,
 				190A8F7D1960ADC700586435 /* FriendPickerDelegate.m */,
 				195CEA5E19376E030044C52B /* StackListViewController.h */,
@@ -717,8 +741,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				19BC93B31935CDF600CC8725 /* CreateDatabaseData.json in Resources */,
+				1901714D19D6BB5800C90A50 /* LaunchScreen.storyboard in Resources */,
 				198C096E18CC3F5F000C00E2 /* InfoPlist.strings in Resources */,
+				1901715519D6DB3B00C90A50 /* ShareStackControllerViewController.xib in Resources */,
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
+				1901714B19D6BABE00C90A50 /* RevealActionViewController.storyboard in Resources */,
 				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
 				19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */,
@@ -806,6 +833,7 @@
 			files = (
 				19E2AE3A19B08ADE003EA7CB /* User.m in Sources */,
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
+				1901715419D6DB3B00C90A50 /* ShareStackControllerViewController.m in Sources */,
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
 				19CE51CA1978585A0053CD4F /* KTAPIRemoveStack.m in Sources */,
 				190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */,
@@ -813,6 +841,7 @@
 				190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */,
 				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
+				1901714919D6B7C500C90A50 /* RevealActionViewController.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
@@ -821,6 +850,7 @@
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				196603F1193EFFBA0027698E /* Card+Network.m in Sources */,
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
+				1901715019D6D6B600C90A50 /* RevealControllerManager.m in Sources */,
 				19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
 				192ECC5719B023CB0040B9A6 /* Stack.m in Sources */,
@@ -1001,7 +1031,7 @@
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1045,7 +1075,7 @@
 			baseConfigurationReference = 6258AB6A03404D34B77A0731 /* Pods-Karten.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
