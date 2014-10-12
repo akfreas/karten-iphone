@@ -16,8 +16,11 @@
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import "KartenUserManager.h"
 #import "LoginViewController.h"
-
+#import "AppDelegate.h"
 #import "Karten-Swift.h"
+#import "NotificationKeys.h"
+#import "RevealControllerManager.h"
+
 
 @interface MainViewController ()
 @property (nonatomic) UITabBarController *tabBarController;
@@ -73,20 +76,7 @@ static MainViewController *sharedInstance;
 
 + (void)showLoginViewController
 {
-    LoginViewController *loginController = [[LoginViewController alloc] init];
-    [loginController setLoginBlock:^(NSString *username, NSString *password) {
-        [KartenUserManager logUserInWithUsername:username password:password completion:^(User *user) {
-            [[self sharedInstance] dismissViewControllerAnimated:YES completion:nil];
-        } failure:^(NSError *user) {
-            UIAlertView *alert = [[UIAlertView alloc] bk_initWithTitle:@"Whoops!"
-                                                               message:@"Your username and password combination is incorrect."];
-            [alert bk_addButtonWithTitle:@"OK" handler:nil];
-            [alert show];
-        }];
-    }];
-    [[self sharedInstance] presentViewController:loginController animated:NO completion:^{
-        [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:NO];
-    }];
+    [[self sharedInstance] showLoginViewController];
 }
 
 + (void)pushViewController:(UIViewController *)viewController
@@ -103,6 +93,8 @@ static MainViewController *sharedInstance;
     return sharedInstance;
 }
 
+#pragma mark Public
+
 - (id)init
 {
     self = [super init];
@@ -110,11 +102,41 @@ static MainViewController *sharedInstance;
         [self setupStackListController];
         [self setupTabBarController];
         self.title = @"Karten";
+        [self addNotificationObservers];
         [self setupBarButton];
     }
     return self;
 }
 
+- (void)showLoginViewController
+{
+    LoginViewController *loginController = [[LoginViewController alloc] init];
+    [loginController setLoginBlock:^(NSString *username, NSString *password) {
+        [KartenUserManager logUserInWithUsername:username password:password completion:^(User *user) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } failure:^(NSError *user) {
+            UIAlertView *alert = [[UIAlertView alloc] bk_initWithTitle:@"Whoops!"
+                                                               message:@"Your username and password combination is incorrect."];
+            [alert bk_addButtonWithTitle:@"OK" handler:nil];
+            [alert show];
+        }];
+    }];
+    [self presentViewController:loginController animated:NO completion:^{
+        [[self navigationController] popToRootViewControllerAnimated:NO];
+    }];
+}
+
+#pragma mark Private
+
+- (void)addNotificationObservers
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLoginViewController) name:kKartenUserDidLogoutNotification object:nil];
+}
+
+- (void)removeNotificationObservers
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)setupBarButton
 {
@@ -155,6 +177,10 @@ static MainViewController *sharedInstance;
         //            [self showAddStackFormView];
         //        }
     }];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] bk_initWithBarButtonSystemItem:UIBarButtonSystemItemAction handler:^(id sender) {
+        [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+    }];
 }
 
 - (void)createAddStackFormView
@@ -190,6 +216,7 @@ static MainViewController *sharedInstance;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.stackListController.view];
 }
 
@@ -220,6 +247,11 @@ static MainViewController *sharedInstance;
     } else {
         [[self class] showLoginViewController];
     }
+}
+
+- (void)dealloc
+{
+    [self removeNotificationObservers];
 }
 
 
