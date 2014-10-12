@@ -6,6 +6,7 @@
 #import "Karten-Swift.h"
 #import "KTAPIGetUser.h"
 #import "User.h"
+#import "KartenUserManager.h"
 
 @interface LoginViewControllerHeader : UIView
 @property (nonatomic) UIImageView *logoView;
@@ -30,6 +31,7 @@
 - (void)createLogoView
 {
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"karten-login"]];
+    logoView.backgroundColor = [UIColor orangeColor];
     [self addSubview:logoView];
     logoView.contentMode = UIViewContentModeScaleAspectFit;
     self.logoView = logoView;
@@ -55,10 +57,6 @@
     [self addConstraintWithVisualFormat:@"V:|[logoView][teaserLabel]|" bindings:BBindings];
 }
 
-- (CGSize)intrinsicContentSize
-{
-    return CGSizeMake(320.0f, 200.0f);
-}
 
 @end
 
@@ -117,7 +115,7 @@ static CGFloat cellHeight = 50.0f;
 
 - (void)addLayoutConstraints
 {
-    UIBind(self.formTable, self.topLayoutGuide);
+    UIBind(self.formTable);
     [self.view addConstraintWithVisualFormat:@"H:|[formTable]|" bindings:BBindings];
     [self.view addConstraintWithVisualFormat:@"V:|[formTable]|" bindings:BBindings];
 //    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topLayoutGuide][headerView][formTable(height)]" options:NSLayoutFormatAlignAllCenterX metrics:@{@"height" : height} views:BBindings]];
@@ -131,6 +129,30 @@ static CGFloat cellHeight = 50.0f;
     [self createFormTable];
     [self addLayoutConstraints];
     [self.formTable reloadData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name:UIKeyboardDidShowNotification object:nil];
+}
+
+- (void)keyboardShown:(NSNotification *)notif
+{
+    NSDictionary *userInfo = notif.userInfo;
+    CGRect rect =  [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat height = 44.0f;
+    CGRect topRect = CGRectMake(rect.origin.x, rect.origin.y + height, rect.size.width, height);
+    [self.formTable scrollRectToVisible:topRect animated:YES];
+}
+
+- (void)loginAction
+{
+    
+    if (self.username == nil || self.password == nil) {
+        [self showInvalidUsernamePasswordComboAlert];
+        return;
+    }
+    [KartenUserManager logUserInWithUsername:self.username password:self.password completion:^(User *user) {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    } failure: ^(NSError *err){
+        [self showInvalidUsernamePasswordComboAlert];
+    }];
 }
 
 - (void)showInvalidUsernamePasswordComboAlert
@@ -168,10 +190,20 @@ static CGFloat cellHeight = 50.0f;
             [formEntryCell bk_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew task:^(id sender, NSDictionary *change) {
                 self.username = change[NSKeyValueChangeNewKey];
             }];
+            [formEntryCell setReturnButtonBlock:^{
+                [formEntryCell resignFirstResponder];
+                FormEntryTableViewCell *aCell = (FormEntryTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section]];
+                [aCell becomeFirstResponder];
+                [tableView scrollRectToVisible:aCell.frame animated:YES];
+            }];
+            formEntryCell.capitalizationType = UITextAutocapitalizationTypeNone;
         } else if (indexPath.row == 1) {
             formEntryCell.textFieldSecured = YES;
             [formEntryCell bk_addObserverForKeyPath:@"text" options:NSKeyValueObservingOptionNew task:^(id sender, NSDictionary *change) {
                 self.password = change[NSKeyValueChangeNewKey];
+            }];
+            [formEntryCell setReturnButtonBlock:^{
+                [self loginAction];
             }];
         }
         
@@ -211,23 +243,7 @@ static CGFloat cellHeight = 50.0f;
     if (indexPath.row < 2) {
         return;
     }
-    KTAPILoginUser *loginUser = [[KTAPILoginUser alloc] initWithUsername:self.username password:self.password];
-    KTAPIGetUser *getUser = [KTAPIGetUser new];
-    [KartenNetworkClient makeRequest:loginUser completion:^{
-        
-    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [KartenSessionManager setToken:responseObject[@"token"]];
-        [KartenNetworkClient makeRequest:getUser completion:^{
-        } success:^(AFHTTPRequestOperation *operation, User *authedUser) {
-            authedUser.mainUser = @(YES);
-            [authedUser.managedObjectContext MR_saveOnlySelfAndWait];
-            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-        }];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self showInvalidUsernamePasswordComboAlert];
-    }];
+    [self loginAction];
 }
 
 @end
