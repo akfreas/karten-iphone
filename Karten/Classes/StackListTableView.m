@@ -94,20 +94,18 @@ static NSInteger kNumberOfAdditionalSections = 1;
 
 -(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     
-    if (anObject != nil) {
-        switch (type) {
-            case NSFetchedResultsChangeInsert:
-                [self insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-                break;
-            case NSFetchedResultsChangeUpdate:
-                [self configureCell:(StackListTableViewCell *)[self cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-                break;
-            case NSFetchedResultsChangeDelete:
-                [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
-                break;
-            default:
-                break;
-        }
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:(StackListTableViewCell *)[self cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+            break;
+        default:
+            break;
     }
     
 }
