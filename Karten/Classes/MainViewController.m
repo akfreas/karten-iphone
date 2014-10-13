@@ -20,6 +20,7 @@
 #import "Karten-Swift.h"
 #import "NotificationKeys.h"
 #import "RevealControllerManager.h"
+#import "FriendsListViewController.h"
 
 
 @interface MainViewController ()
@@ -77,6 +78,12 @@ static MainViewController *sharedInstance;
 + (void)showLoginViewController
 {
     [[self sharedInstance] showLoginViewController];
+}
+
++ (void)showFriendListController
+{
+    FriendsListViewController *controller = [[FriendsListViewController alloc] initWithUser:[User mainUser]];
+    [self pushViewController:controller];
 }
 
 + (void)pushViewController:(UIViewController *)viewController

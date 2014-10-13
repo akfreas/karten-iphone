@@ -3,6 +3,7 @@
 #import "KartenUserManager.h"
 #import "RevealControllerManager.h"
 #import "CircleImageView.h"
+#import "MainViewController.h"
 
 @interface RevealActionViewController ()
 @property (nonatomic) IBOutlet UIView *circleImageView;
@@ -40,6 +41,12 @@
     [KartenUserManager logoutCurrentUser];
 }
 
+- (void)showFriendListController
+{
+    [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+    [MainViewController showFriendListController];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -53,6 +60,7 @@
         case 0:
             break;
         case 1:
+            [self showFriendListController];
             break;
         case 2:
             [self logoutAction];
