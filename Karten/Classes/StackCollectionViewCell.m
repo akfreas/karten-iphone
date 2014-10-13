@@ -20,7 +20,9 @@ static CGFloat DeleteButtonSize = 30.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = rgb(154, 224, 157);
+        self.backgroundColor = [UIColor colorWithHexString:@"#FEFEFE"];
+        self.layer.borderColor = [UIColor colorWithHexString:@"#C7C8C2"].CGColor;
+        self.layer.borderWidth = 1.0f;
         [self createAbbrLabel];
         [self createStackNameLabel];
         [self addLayoutConstraints];

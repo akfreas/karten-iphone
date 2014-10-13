@@ -43,6 +43,7 @@ static NSInteger kNumberOfAdditionalSections = 1;
         [self registerClass:[StackListTableViewCell class] forCellReuseIdentifier:kStackTableViewCellID];
         [self createFetchController];
         self.dataSource = self;
+        self.backgroundColor = [UIColor colorWithHexString:@"#f2f2ea"];
     }
     return self;
 }

@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#f2f2ea"];
     [self createCollectionView];
     [self addLayoutConstraints];
 }
