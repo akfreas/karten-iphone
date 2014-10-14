@@ -11,6 +11,8 @@ static NSString *kFriendCellID = @"kFriendCellID";
 
 @implementation FriendsListDataSource
 
+#pragma mark - Public Methods
+
 - (instancetype)initWithUser:(User *)user
 {
     self = [super init];
@@ -20,6 +22,13 @@ static NSString *kFriendCellID = @"kFriendCellID";
     }
     return self;
 }
+
+- (User *)userAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.fetchController objectAtIndexPath:indexPath];
+}
+
+#pragma mark - Private Methods
 
 - (void)setupFetchController
 {
@@ -53,6 +62,16 @@ static NSString *kFriendCellID = @"kFriendCellID";
 }
 
 #pragma mark NSFetchedResultsController Delegate
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
+}
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
@@ -89,6 +108,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kFriendCellID];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }

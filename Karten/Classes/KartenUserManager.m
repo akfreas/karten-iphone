@@ -35,7 +35,7 @@
                               
                           } success:^(AFHTTPRequestOperation *operation, User *authedUser) {
                               authedUser.mainUser = @(YES);
-                              [[self ourContext] MR_saveToPersistentStoreAndWait];
+                              [authedUser.managedObjectContext MR_saveToPersistentStoreAndWait];
                               completion(authedUser);
                           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                               failure(error);

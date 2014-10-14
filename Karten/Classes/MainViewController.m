@@ -12,7 +12,6 @@
 #import "CardListViewController.h"
 #import "FacebookShareController.h"
 #import "FacebookSessionManager.h"
-#import "FriendPickerDelegate.h"
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import "KartenUserManager.h"
 #import "LoginViewController.h"
@@ -21,6 +20,8 @@
 #import "NotificationKeys.h"
 #import "RevealControllerManager.h"
 #import "FriendsListViewController.h"
+#import "ShareStackViewController.h"
+
 
 
 @interface MainViewController ()
@@ -39,6 +40,11 @@ static MainViewController *sharedInstance;
 + (void)goToMainView
 {
     [[[self sharedInstance] navigationController] popToRootViewControllerAnimated:YES];
+}
+
++ (void)pushViewController:(UIViewController *)viewController
+{
+    [[[self sharedInstance] navigationController] pushViewController:viewController animated:YES];
 }
 
 + (void)showActionViewForStack:(Stack *)stack
@@ -64,15 +70,9 @@ static MainViewController *sharedInstance;
 
 + (void)showShareControllerForStack:(Stack *)stack
 {
-    FBFriendPickerViewController *friendPicker = [[FBFriendPickerViewController alloc] init];
-    friendPicker.session = [FBSession activeSession];
-    friendPicker.userID = [User mainUser].externalUserID;
-    FriendPickerDelegate *delegate = [FriendPickerDelegate sharedInstance];
-    delegate.stack = stack;
-    friendPicker.delegate = delegate;
-    [friendPicker loadData];
-    [friendPicker clearSelection];
-    [[self sharedInstance] presentViewController:friendPicker animated:YES completion:NULL];
+    [self showFriendListController];
+//    ShareStackViewController *friendPicker = [ShareStackViewController new];
+//    [self pushViewController:friendPicker];
 }
 
 + (void)showLoginViewController
@@ -84,11 +84,6 @@ static MainViewController *sharedInstance;
 {
     FriendsListViewController *controller = [[FriendsListViewController alloc] initWithUser:[User mainUser]];
     [self pushViewController:controller];
-}
-
-+ (void)pushViewController:(UIViewController *)viewController
-{
-    [[[self sharedInstance] navigationController] pushViewController:viewController animated:YES];
 }
 
 + (instancetype)sharedInstance

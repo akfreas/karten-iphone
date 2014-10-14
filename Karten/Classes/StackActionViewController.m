@@ -1,7 +1,10 @@
 #import "StackActionViewController.h"
 #import "Stack.h"
 #import "Stack+CouchBase.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import "User.h"
+#import "User+Helpers.h"
+#import "FriendsListViewController.h"
+#import "ShareStackFriendControllerManager.h"
 
 @interface StackActionCollectionViewCell : UICollectionViewCell
 @property (nonatomic) NSString *actionName;
@@ -16,7 +19,9 @@
     if (self) {
         [self createActionLabel];
         [self addLayoutConstraints];
-        self.backgroundColor = rgb(246, 234, 237);
+        self.backgroundColor = [UIColor colorWithHexString:@"#FEFEFE"];
+        self.layer.borderColor = [UIColor colorWithHexString:@"#C7C8C2"].CGColor;
+        self.layer.borderWidth = 1.0f;
     }
     
     return self;
@@ -53,6 +58,7 @@
 @interface StackActionViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (nonatomic) UICollectionView *actionCollectionView;
 @property (nonatomic) NSArray *actionTitles;
+@property (nonatomic) ShareStackFriendControllerManager *shareControllerManager;
 @end
 
 static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
@@ -63,6 +69,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
 {
     self = [super init];
     if (self) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
         self.actionTitles = @[@"Quiz All Words", @"Strengthen Words", @"Word List", @"Share Stack"];
     }
     return self;
@@ -71,7 +78,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#f2f2ea"];
     [self createCollectionView];
     [self addLayoutConstraints];
     // Do any additional setup after loading the view.
@@ -106,7 +113,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
 - (void)addLayoutConstraints
 {
     UIBind(self.actionCollectionView);
-    [self.view addConstraintWithVisualFormat:@"H:|-[actionCollectionView]-|" bindings:BBindings];
+    [self.view addConstraintWithVisualFormat:@"H:|[actionCollectionView]|" bindings:BBindings];
     [self.view addConstraintWithVisualFormat:@"V:|-[actionCollectionView]-|" bindings:BBindings];
 }
 
@@ -143,14 +150,23 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
     } else if (indexPath.row == 2) {
         [MainViewController showCardListForStack:self.stack];
     } else if (indexPath.row == 3) {
-        [MainViewController showShareControllerForStack:self.stack];
+        ShareStackFriendControllerManager *controllerManager = [ShareStackFriendControllerManager new];
+        FriendsListViewController *friendController = [[FriendsListViewController alloc] initWithUser:[User mainUser]];
+        self.shareControllerManager = controllerManager;
+        [controllerManager setFriendsListViewController:friendController forSharingStack:self.stack];
+        [MainViewController pushViewController:friendController];
     }
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 1.0f;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = (self.actionCollectionView.bounds.size.width - 10.0f) / 2;
-    return CGSizeMake(width, width);
+    CGFloat width = self.actionCollectionView.bounds.size.width;
+    return CGSizeMake(width, 55.0f);
 }
 
 

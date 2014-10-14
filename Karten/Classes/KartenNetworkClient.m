@@ -11,6 +11,7 @@
 @end
 
 static NSString *BaseUrl = @"http://54.73.59.208/";
+//static NSString *BaseUrl = @"http://0.0.0.0:8000/";
 @implementation KartenNetworkClient
 
 
@@ -52,7 +53,7 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
                                                                               URLString:[[NSURL URLWithString:request.path relativeToURL:self.manager.baseURL] absoluteString]
                                                                              parameters:params
                                                                                   error:&err];
-    if ([request.HTTPMethod isEqualToString:@"POST"]) {
+    if ([request.HTTPMethod isEqualToString:@"POST"] || [request.HTTPMethod isEqualToString:@"DELETE"]) {
         [URLrequest setHTTPBody:[NSJSONSerialization dataWithJSONObject:params options:0 error:NULL]];
     }
     [URLrequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

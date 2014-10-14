@@ -4,9 +4,12 @@
 #import "RevealControllerManager.h"
 #import "CircleImageView.h"
 #import "MainViewController.h"
+#import "User.h"
+#import "User+Helpers.h"
 
 @interface RevealActionViewController ()
 @property (nonatomic) IBOutlet UIView *circleImageView;
+@property (nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic) CircleImageView *imageView;
 @end
 
@@ -28,6 +31,13 @@
     [self.circleImageView addSubview:self.imageView];
     
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSString *nameString = [NSString stringWithFormat:@"%@ %@", [User mainUser].firstName, [User mainUser].lastName];
+    self.nameLabel.text = nameString;
 }
 
 - (void)didReceiveMemoryWarning {

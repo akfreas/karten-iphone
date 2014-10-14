@@ -1,13 +1,6 @@
-//
-//  FriendListSearchViewController.h
-//  Karten
-//
-//  Created by Alexander Freas on 13/10/14.
-//  Copyright (c) 2014 Sashimiblade. All rights reserved.
-//
-
-#import <UIKit/UIKit.h>
+#import "FriendsListDelegate.h"
 
 @interface FriendListSearchViewController : UIViewController
 @property (nonatomic) NSArray *resultDisplay;
+@property (nonatomic, weak) id<FriendsListDelegate> delegate;
 @end

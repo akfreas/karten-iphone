@@ -3,6 +3,7 @@
 #import "User.h"
 #import "User+Helpers.h"
 #import "Stack+Network.h"
+#import "KartenUserManager.h"
 
 @implementation NetworkSyncUtil
 
@@ -18,6 +19,11 @@
     
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
+        }];
+        [KartenUserManager getCurrentAuthenticatedUserWithCompletion:^(User *user) {
+            
+        } failure:^(NSError *err) {
+            
         }];
      }
 }

@@ -1,0 +1,4 @@
+
+@interface SharedAccessoryView : UIView
+
+@end
