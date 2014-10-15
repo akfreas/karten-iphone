@@ -1,9 +1,9 @@
 //
 //  User.m
-//  
+//  Karten
 //
-//  Created by Alexander Freas on 29/08/14.
-//
+//  Created by Alexander Freas on 15/10/14.
+//  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
 #import "User.h"
@@ -19,6 +19,7 @@
 @dynamic mainUser;
 @dynamic serverID;
 @dynamic username;
+@dynamic emailAddress;
 @dynamic friends;
 
 @end
