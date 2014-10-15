@@ -21,9 +21,9 @@
 
 - (void)setUnShareUsers:(NSArray *)shareUsers
 {
-    NSMutableArray *shareUserIDs = [NSMutableArray new];
+    NSMutableArray *shareUserIDs = [NSMutableArray arrayWithArray:[self.stack.allowedUserServerIDs allObjects]];
     for (User *user in shareUsers) {
-        [shareUserIDs addObject:user.serverID];
+        [shareUserIDs removeObject:user.serverID];
     }
     _unShareUsers = shareUserIDs;
 }
@@ -45,6 +45,6 @@
 
 - (NSString *)HTTPMethod
 {
-    return @"DELETE";
+    return @"POST";
 }
 @end

@@ -21,7 +21,7 @@
 
 - (void)setShareUsers:(NSArray *)shareUsers
 {
-    NSMutableArray *shareUserIDs = [NSMutableArray new];
+    NSMutableArray *shareUserIDs = [NSMutableArray arrayWithArray:[self.stack.allowedUserServerIDs allObjects]];
     for (User *user in shareUsers) {
         [shareUserIDs addObject:user.serverID];
     }
@@ -35,7 +35,7 @@
 
 - (NSDictionary *)params
 {
-    return @{@"user_ids" : self.shareUsers};
+    return @{@"allowed_users" : self.shareUsers};
 }
 
 - (Class)classToParse
