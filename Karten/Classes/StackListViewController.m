@@ -67,6 +67,9 @@
 
 - (void)fetchUsersStacks
 {
+    if (self.userForStacks == nil) {
+        return;
+    }
     [Stack syncStacksForUser:self.userForStacks completion:NULL success:NULL failure:NULL];
 }
 

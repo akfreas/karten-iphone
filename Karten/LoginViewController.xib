@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09A-Hu-56t">
-                    <rect key="frame" x="50" y="210" width="500" height="30"/>
+                    <rect key="frame" x="175" y="210" width="250" height="30"/>
                     <state key="normal" title="Login">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -30,15 +31,15 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cNs-oV-ZAr">
                     <rect key="frame" x="50" y="99" width="500" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfn-0t-b8P">
                     <rect key="frame" x="50" y="154" width="500" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2i-nW-G44">
-                    <rect key="frame" x="50" y="248" width="500" height="30"/>
+                    <rect key="frame" x="175" y="248" width="250" height="30"/>
                     <state key="normal" title="Sign Up">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -69,7 +70,7 @@
                 <constraint firstItem="pfn-0t-b8P" firstAttribute="top" secondItem="iQo-Dc-hUL" secondAttribute="top" constant="154" id="fM1-39-3u8"/>
                 <constraint firstItem="09A-Hu-56t" firstAttribute="centerX" secondItem="pfn-0t-b8P" secondAttribute="centerX" id="g0l-wi-L32"/>
                 <constraint firstItem="cNs-oV-ZAr" firstAttribute="leading" secondItem="iQo-Dc-hUL" secondAttribute="leading" constant="50" id="kS0-8w-5eT"/>
-                <constraint firstItem="09A-Hu-56t" firstAttribute="width" secondItem="pfn-0t-b8P" secondAttribute="width" id="w2f-Xm-vti"/>
+                <constraint firstItem="09A-Hu-56t" firstAttribute="width" secondItem="pfn-0t-b8P" secondAttribute="width" multiplier="0.5" id="w2f-Xm-vti"/>
             </constraints>
         </view>
         <view contentMode="scaleToFill" id="nW3-Kb-BoU" customClass="SignUpViewController">

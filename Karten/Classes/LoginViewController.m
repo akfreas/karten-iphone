@@ -40,6 +40,22 @@
         [weakself.modalView hide];
     }];
     [self.signUpController setSignUpSuccessAction:[self successActionBlock]];
+    
+    [self.usernameTextField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [weakself.passwordTextField becomeFirstResponder];
+        return YES;
+    }];
+    
+    [self.passwordTextField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [textField resignFirstResponder];
+        [weakself loginAction:textField];
+        return YES;
+    }];
+    
+    [self.view bk_whenTapped:^{
+        [self.view endEditing:YES];
+    }];
+    
     [super viewDidLoad];
 }
 
