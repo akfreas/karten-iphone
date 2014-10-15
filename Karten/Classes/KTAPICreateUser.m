@@ -4,14 +4,16 @@
 
 @interface KTAPICreateUser ()
 @property (nonatomic) User *user;
+@property (nonatomic) NSString *password;
 @end
 
 @implementation KTAPICreateUser
 
-- (id)initWithUser:(User *)user
+- (id)initWithUser:(User *)user password:(NSString *)password
 {
     self = [super init];
     if (self) {
+        self.password = password;
         self.user = user;
     }
     return self;
@@ -24,7 +26,9 @@
 
 - (NSDictionary *)params
 {
-    return [self.user JSONDictionarySerialization];
+    NSMutableDictionary *ourParams = [[self.user JSONDictionarySerialization] mutableCopy];
+    ourParams[@"password"] = self.password;
+    return ourParams;
 }
 
 - (Class)classToParse

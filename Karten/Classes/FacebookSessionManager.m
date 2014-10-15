@@ -266,7 +266,7 @@ static FacebookSessionManager *sharedInstance;
                 User *currentUser = [User getOrCreateUserWithJSONDict:graphObject];
                 currentUser.mainUser = @YES;
                 [currentUser.managedObjectContext MR_saveOnlySelfAndWait];
-                KTAPICreateUser *createUserCall = [[KTAPICreateUser alloc] initWithUser:currentUser];
+                KTAPICreateUser *createUserCall;
                 [KartenNetworkClient makeRequest:createUserCall
                                       completion:^{
                                           
