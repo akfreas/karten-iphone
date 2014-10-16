@@ -16,7 +16,7 @@
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.userResults = responseObject;
         completion(self.userResults);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
         
     }];
 }

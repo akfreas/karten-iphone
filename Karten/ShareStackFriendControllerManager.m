@@ -51,7 +51,7 @@
                               
                               self.stack.allowedUserServerIDs = users;
                               [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfAndWait];
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                               
                           }];
 }
@@ -72,7 +72,7 @@
                               
                               self.stack.allowedUserServerIDs = users;
                               [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfAndWait];
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsederror) {
                               
                           }];
 }

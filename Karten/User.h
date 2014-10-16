@@ -2,7 +2,7 @@
 //  User.h
 //  Karten
 //
-//  Created by Alexander Freas on 15/10/14.
+//  Created by Alexander Freas on 16/10/14.
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 
 @interface User : NSManagedObject
 
+@property (nonatomic, retain) NSString * emailAddress;
 @property (nonatomic, retain) NSString * externalService;
 @property (nonatomic, retain) NSString * externalUserID;
 @property (nonatomic, retain) NSString * firstName;
@@ -20,7 +21,7 @@
 @property (nonatomic, retain) NSNumber * mainUser;
 @property (nonatomic, retain) NSNumber * serverID;
 @property (nonatomic, retain) NSString * username;
-@property (nonatomic, retain) NSString * emailAddress;
+@property (nonatomic, retain) NSString * profilePicURL;
 @property (nonatomic, retain) NSSet *friends;
 @end
 

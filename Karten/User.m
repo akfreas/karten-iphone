@@ -2,7 +2,7 @@
 //  User.m
 //  Karten
 //
-//  Created by Alexander Freas on 15/10/14.
+//  Created by Alexander Freas on 16/10/14.
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 
 @implementation User
 
+@dynamic emailAddress;
 @dynamic externalService;
 @dynamic externalUserID;
 @dynamic firstName;
@@ -19,7 +20,7 @@
 @dynamic mainUser;
 @dynamic serverID;
 @dynamic username;
-@dynamic emailAddress;
+@dynamic profilePicURL;
 @dynamic friends;
 
 @end

@@ -17,7 +17,7 @@
                 completion();
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
 
         }];
         [KartenUserManager getCurrentAuthenticatedUserWithCompletion:^(User *user) {

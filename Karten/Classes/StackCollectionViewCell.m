@@ -193,7 +193,7 @@ static CGFloat DeleteButtonSize = 30.0f;
 {
     [self.stack removeMyStackOnServerWithCompletion:^{
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
     }];
 }
 

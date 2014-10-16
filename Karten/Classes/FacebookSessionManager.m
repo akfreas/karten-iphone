@@ -278,7 +278,7 @@ static FacebookSessionManager *sharedInstance;
                                           if (userCreationCompletion) {
                                               userCreationCompletion(savedUser, nil);
                                           }
-                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                                           
                                       }];
                 

@@ -166,7 +166,7 @@ static MainViewController *sharedInstance;
                 
             } success:^(AFHTTPRequestOperation *operation, Stack *responseObject) {
                 [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                 NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
                 Stack *ourStack = (Stack *)[ctx objectWithID:newStack.objectID];
                 [ourStack MR_deleteInContext:ctx];
@@ -206,7 +206,7 @@ static MainViewController *sharedInstance;
             
         } success:^(AFHTTPRequestOperation *operation, Stack *responseObject) {
             [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
             NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
             Stack *ourStack = (Stack *)[ctx objectWithID:newStack.objectID];
             [ourStack MR_deleteInContext:ctx];

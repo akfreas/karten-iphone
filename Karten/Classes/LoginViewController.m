@@ -70,6 +70,15 @@
     };
 }
 
+- (BOOL)validateInput
+{
+    if (self.usernameTextField.text == nil || self.passwordTextField.text == nil) {
+        [self showInvalidUsernamePasswordComboAlert];
+        return NO;
+    }
+    return YES;
+}
+
 - (void)loginUser:(User *)user
 {
     
@@ -86,11 +95,10 @@
 
 - (IBAction)loginAction:(id)sender
 {
-    
-    if (self.usernameTextField.text == nil || self.passwordTextField.text == nil) {
-        [self showInvalidUsernamePasswordComboAlert];
+    if ([self validateInput] == NO) {
         return;
     }
+    
     [KartenUserManager logUserInWithUsername:self.usernameTextField.text password:self.passwordTextField.text completion:^(User *user) {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     } failure: ^(NSError *err){

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
+            <connections>
+                <outlet property="nameLabel" destination="8l2-JO-EMP" id="PNv-1S-9lT"/>
+                <outlet property="profilePicView" destination="BcT-ce-qKe" id="cWG-Hc-hqd"/>
+                <outlet property="usernameLabel" destination="fO6-ek-3fi" id="sSr-is-YxR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sashimiblade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO6-ek-3fi">
+                    <rect key="frame" x="27" y="177" width="547" height="29"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BcT-ce-qKe">
+                    <rect key="frame" x="229" y="34" width="143" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="143" id="Lwb-zB-TfS"/>
+                        <constraint firstAttribute="height" constant="130" id="Qfc-Ts-MtM"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alex Freas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l2-JO-EMP">
+                    <rect key="frame" x="109" y="223" width="383" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Wk3-7b-yCi"/>
+                        <constraint firstAttribute="width" constant="383" id="g9q-w1-eSg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="g9q-w1-eSg"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fO6-ek-3fi" secondAttribute="trailing" constant="26" id="1yO-Ep-b0e"/>
+                <constraint firstItem="8l2-JO-EMP" firstAttribute="top" secondItem="fO6-ek-3fi" secondAttribute="bottom" constant="17" id="B1c-2o-TsX"/>
+                <constraint firstItem="fO6-ek-3fi" firstAttribute="top" secondItem="BcT-ce-qKe" secondAttribute="bottom" constant="13" id="Dyk-vD-KOk"/>
+                <constraint firstAttribute="trailing" secondItem="BcT-ce-qKe" secondAttribute="trailing" constant="228" id="U8o-Tk-gGP"/>
+                <constraint firstItem="8l2-JO-EMP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="109" id="Xed-jA-BZP"/>
+                <constraint firstItem="BcT-ce-qKe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="kAb-VQ-JAx"/>
+                <constraint firstAttribute="bottom" secondItem="8l2-JO-EMP" secondAttribute="bottom" constant="356" id="sIO-iH-x0u"/>
+                <constraint firstItem="fO6-ek-3fi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="u7Q-cv-TQR"/>
+                <constraint firstAttribute="trailing" secondItem="8l2-JO-EMP" secondAttribute="trailing" constant="108" id="whS-Qq-BGE"/>
+                <constraint firstItem="BcT-ce-qKe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="229" id="ymm-lZ-Fc7"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

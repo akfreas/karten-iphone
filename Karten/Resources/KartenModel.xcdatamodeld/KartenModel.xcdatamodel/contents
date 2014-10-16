@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6248" systemVersion="14A388a" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A388a" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="couchID" attributeType="String" syncable="YES"/>
         <attribute name="couchRev" optional="YES" attributeType="String" syncable="YES"/>
@@ -101,6 +101,11 @@
             </userInfo>
         </attribute>
         <attribute name="mainUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="profilePicURL" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="profile_pic_url"/>
+            </userInfo>
+        </attribute>
         <attribute name="serverID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="id"/>
@@ -122,6 +127,6 @@
         <element name="Card" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Stack" positionX="-63" positionY="18" width="128" height="178"/>
         <element name="StackServer" positionX="-45" positionY="72" width="128" height="105"/>
-        <element name="User" positionX="-54" positionY="36" width="128" height="180"/>
+        <element name="User" positionX="-54" positionY="36" width="128" height="195"/>
     </elements>
 </model>

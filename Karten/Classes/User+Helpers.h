@@ -8,4 +8,6 @@
 + (User *)getOrCreateUserWithJSONDict:(NSDictionary *)JSON;
 + (User *)mainUser;
 
+- (NSString *)fullName;
+
 @end

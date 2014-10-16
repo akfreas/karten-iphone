@@ -3,6 +3,7 @@
 #import "JSONParsable.h"
 #import "NSObject+NSDictionaryRepresentation.h"
 #import "Karten-Swift.h"
+#import "KartenUserManager.h"
 
 @interface KartenNetworkClient ()
 
@@ -30,7 +31,7 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
 + (void)makeRequest:(id<KartenAPICall>)request
          completion:(void (^)())completion
             success:(void (^)(AFHTTPRequestOperation *, id))success
-            failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+            failure:(void (^)(AFHTTPRequestOperation *, NSError *, id))failure
 {
     [[self sharedClient] makeRequest:request
                           completion:completion
@@ -41,7 +42,7 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
 - (void)makeRequest:(id<KartenAPICall>)request
          completion:(void (^)())completion
             success:(void (^)(AFHTTPRequestOperation *, id))success
-            failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+            failure:(void (^)(AFHTTPRequestOperation *, NSError *, id))failure
 {
     NSDictionary *params = nil;
 
@@ -64,12 +65,6 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
     NSLog([URLrequest curlCommand]);
     DLog(@"Fetching from %@%@. Params: %@", self.manager.baseURL, request.path, params);
     void(^wrappedSuccess)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([self responseHasError:responseObject]) {
-            if (failure) {
-                failure(responseObject, [self errorFromResponse:responseObject]);
-            }
-            return;
-        }
         DLog(@"Finished fetch from %@%@. Response: %@", self.manager.baseURL, request.path, responseObject);
         if (responseObject != nil) {
             id returnObject = nil;
@@ -111,9 +106,20 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
             completion();
         }
         DLog(@"Finished fetch from %@%@. Error: %@", self.manager.baseURL, request.path, error);
-        
+        id errorData = error.userInfo[@"com.alamofire.serialization.response.error.data"];
+        id parsedError;
+        if (errorData != nil) {
+            NSError *jsonErr;
+            parsedError = [NSJSONSerialization JSONObjectWithData:errorData options:0 error:&jsonErr];
+            if (jsonErr) {
+                DLog(@"Error parsing error JSON: %@", jsonErr);
+            }
+            if ([[parsedError objectForKey:@"detail"] isEqualToString:@"Invalid token"]) {
+                [KartenUserManager logoutCurrentUser];
+            }
+        }
         if (failure) {
-            failure(operation, error);
+            failure(operation, error, parsedError);
         }
     };
     
@@ -128,15 +134,6 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
         [_manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     }
     return _manager;
-}
-
-- (BOOL)responseHasError:(NSDictionary *)responseObject
-{
-    BOOL retval = NO;
-    if ([responseObject isKindOfClass:[NSDictionary class]] && [responseObject objectForKey:@"error_code"]) {
-        retval = YES;
-    }
-    return retval;
 }
 
 - (NSError *)errorFromResponse:(NSDictionary *)responseObject

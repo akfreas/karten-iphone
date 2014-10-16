@@ -22,7 +22,7 @@
                               [self unmarkMainUser];
                               [KartenSessionManager setToken:responseObject[@"token"]];
                               [self getCurrentAuthenticatedUserWithCompletion:completionBlock failure:failureBlock];
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                               failureBlock(error);
                           }];
 }
@@ -37,7 +37,7 @@
                               authedUser.mainUser = @(YES);
                               [authedUser.managedObjectContext MR_saveToPersistentStoreAndWait];
                               completion(authedUser);
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                               failure(error);
                           }];
 }

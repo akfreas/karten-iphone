@@ -35,4 +35,16 @@
     return mainUser;
 }
 
+- (NSString *)fullName
+{
+    NSMutableString *str = [NSMutableString new];
+    if (self.firstName != nil) {
+        [str appendString:self.firstName];
+    }
+    if (self.lastName != nil) {
+        [str appendFormat:@" %@", self.lastName];;
+    }
+    return str;
+}
+
 @end

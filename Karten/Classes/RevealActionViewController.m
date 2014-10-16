@@ -4,6 +4,7 @@
 #import "RevealControllerManager.h"
 #import "CircleImageView.h"
 #import "MainViewController.h"
+#import "ProfileViewController.h"
 #import "User.h"
 #import "User+Helpers.h"
 
@@ -57,6 +58,15 @@
     [MainViewController showFriendListController];
 }
 
+- (void)showProfileViewController
+{
+    [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+
+    ProfileViewController *profileView = [ProfileViewController new];
+    profileView.user = [User mainUser];
+    [MainViewController pushViewController:profileView];
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -68,6 +78,7 @@
 {
     switch (indexPath.row) {
         case 0:
+            [self showProfileViewController];
             break;
         case 1:
             [self showFriendListController];

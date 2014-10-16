@@ -14,6 +14,32 @@
 
 @implementation SignUpViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    typeof(&*self) weakself = self;
+    [self.usernameField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [weakself.passwordField becomeFirstResponder];
+        return YES;
+    }];
+    [self.passwordField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [weakself.emailField becomeFirstResponder];
+        return YES;
+    }];
+    [self.emailField setBk_shouldReturnBlock:^BOOL(UITextField *textField) {
+        [weakself signUpAction:textField];
+        return YES;
+    }];
+}
+
 - (void)reset
 {
     self.usernameField.text = nil;
@@ -21,9 +47,24 @@
     self.emailField.text = nil;
 }
 
-- (void)showAlertForInvalidEntry
+- (void)showAlertForInvalidEntryWithError:(NSDictionary *)err
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hey!" message:@"All fields are required."  preferredStyle:UIAlertControllerStyleAlert];
+    
+    NSMutableString *errorString = [NSMutableString new];
+    NSArray *keys = [err allKeys];
+    NSInteger last = [keys count] - 1;
+    for (int i=0; i<[keys count]; i++) {
+        NSString *key = keys[i];
+        [errorString appendFormat:@"%@:", [key capitalizedString]];
+        NSArray *errors = err[key];
+        for (NSString *error in errors) {
+            [errorString appendFormat:@" %@ ", error];
+        }
+        if (i != last)
+            [errorString appendFormat:@"\n"];
+    }
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Hey!" message:errorString  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     }];
     [alert addAction:action];
@@ -47,8 +88,8 @@
                             
                           } success:^(AFHTTPRequestOperation *operation, User *responseObject) {
                               self.signUpSuccessAction(responseObject, self.passwordField.text);
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                              [self showAlertForInvalidEntry];
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
+                              [self showAlertForInvalidEntryWithError:parsedError];
                           }];
 }
 

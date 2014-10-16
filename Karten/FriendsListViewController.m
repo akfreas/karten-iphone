@@ -207,7 +207,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
                           } success:^(AFHTTPRequestOperation *operation, NSArray *friends) {
                               self.user.friends = [NSSet setWithArray:friends];
                               [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfAndWait];
-                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                          } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                               
                           }];
 }

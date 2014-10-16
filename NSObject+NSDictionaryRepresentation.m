@@ -8,9 +8,15 @@
     NSString *(^stringFromDict)(NSDictionary *dict) = ^NSString*(NSDictionary *dict){
         
         NSMutableString *paramString = [NSMutableString stringWithString:@"{ "];
-        for (NSString *key in dict) {
-            NSString *param = [NSString stringWithFormat:@"\"%@\" : \"%@\", ", key, dict[key]];
+        NSArray *keys = [dict allKeys];
+        NSInteger last = [keys count] - 1;
+        for (int i=0; i<[dict count]; i++) {
+            NSString *key = keys[i];
+            NSString *param = [NSString stringWithFormat:@"\"%@\" : \"%@\"", key, dict[key]];
             [paramString appendString:param];
+            if (i != last) {
+                [paramString appendString:@", "];
+            }
         }
         [paramString appendString:@" }"];
         return paramString;
