@@ -7,7 +7,8 @@
     static NSDateFormatter *formatter;
     if (formatter == nil) {
         formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSz"];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     }
     return formatter;
 }

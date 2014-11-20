@@ -13,7 +13,7 @@
 		1901715019D6D6B600C90A50 /* RevealControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714F19D6D6B600C90A50 /* RevealControllerManager.m */; };
 		1901715419D6DB3B00C90A50 /* ShareStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901715219D6DB3B00C90A50 /* ShareStackViewController.m */; };
 		1901715519D6DB3B00C90A50 /* ShareStackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1901715319D6DB3B00C90A50 /* ShareStackViewController.xib */; };
-		190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardAnswerView.m */; };
+		190858F219653B85003E2784 /* FlashCardDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardDisplayView.m */; };
 		190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858FB19653D0F003E2784 /* FlashCardQuestionView.m */; };
 		190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F871961462A00586435 /* KTAPIAddUserToStack.m */; };
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
@@ -30,6 +30,7 @@
 		19295C8919EB4DA5003E2C81 /* FriendsListSearchUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C8819EB4DA5003E2C81 /* FriendsListSearchUpdater.m */; };
 		192ECC5119B019610040B9A6 /* NSDateFormatter+ServerFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */; };
 		192ECC5719B023CB0040B9A6 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5619B023CB0040B9A6 /* Stack.m */; };
+		19427D2819F07A95005804E2 /* QuizTypeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */; };
 		1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1946C38919B00721007D515E /* KTAPILoginUser.m */; };
 		194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */; };
 		1959B5A819EBE072001D4EBF /* AccessoryViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1959B5A719EBE072001D4EBF /* AccessoryViews.m */; };
@@ -150,11 +151,11 @@
 		1901715119D6DB3B00C90A50 /* ShareStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareStackViewController.h; path = Classes/ShareStackViewController.h; sourceTree = "<group>"; };
 		1901715219D6DB3B00C90A50 /* ShareStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareStackViewController.m; path = Classes/ShareStackViewController.m; sourceTree = "<group>"; };
 		1901715319D6DB3B00C90A50 /* ShareStackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareStackViewController.xib; path = Classes/ShareStackViewController.xib; sourceTree = "<group>"; };
-		190858F019653B85003E2784 /* FlashCardAnswerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardAnswerView.h; path = Classes/FlashCardAnswerView.h; sourceTree = "<group>"; };
-		190858F119653B85003E2784 /* FlashCardAnswerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardAnswerView.m; path = Classes/FlashCardAnswerView.m; sourceTree = "<group>"; };
+		190858F019653B85003E2784 /* FlashCardDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardDisplayView.h; path = Classes/FlashCardDisplayView.h; sourceTree = "<group>"; };
+		190858F119653B85003E2784 /* FlashCardDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardDisplayView.m; path = Classes/FlashCardDisplayView.m; sourceTree = "<group>"; };
 		190858FA19653D0F003E2784 /* FlashCardQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardQuestionView.h; path = Classes/FlashCardQuestionView.h; sourceTree = "<group>"; };
 		190858FB19653D0F003E2784 /* FlashCardQuestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardQuestionView.m; path = Classes/FlashCardQuestionView.m; sourceTree = "<group>"; };
-		190858FD19653F0A003E2784 /* FlashCardDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlashCardDisplayView.h; path = Classes/FlashCardDisplayView.h; sourceTree = "<group>"; };
+		190858FD19653F0A003E2784 /* FlashCardDisplayViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlashCardDisplayViewProtocol.h; path = Classes/FlashCardDisplayViewProtocol.h; sourceTree = "<group>"; };
 		190A8F861961462A00586435 /* KTAPIAddUserToStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTAPIAddUserToStack.h; path = Classes/KTAPIAddUserToStack.h; sourceTree = "<group>"; };
 		190A8F871961462A00586435 /* KTAPIAddUserToStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPIAddUserToStack.m; path = Classes/KTAPIAddUserToStack.m; sourceTree = "<group>"; };
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
@@ -183,6 +184,8 @@
 		192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ServerFormatters.m"; sourceTree = "<group>"; };
 		192ECC5519B023CB0040B9A6 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		192ECC5619B023CB0040B9A6 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		19427D2619F07A95005804E2 /* QuizTypeSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizTypeSelectionView.h; path = Classes/QuizTypeSelectionView.h; sourceTree = "<group>"; };
+		19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizTypeSelectionView.m; path = Classes/QuizTypeSelectionView.m; sourceTree = "<group>"; };
 		1946C38819B00721007D515E /* KTAPILoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPILoginUser.h; sourceTree = "<group>"; };
 		1946C38919B00721007D515E /* KTAPILoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPILoginUser.m; sourceTree = "<group>"; };
 		194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionaryRepresentation.m"; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 				195CEA5F19376E030044C52B /* StackListViewController.m */,
 				19A547C3194B00C0007B0365 /* QuizListViewController.h */,
 				19A547C4194B00C0007B0365 /* QuizListViewController.m */,
+				19427D2619F07A95005804E2 /* QuizTypeSelectionView.h */,
+				19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */,
 				195CEA711937A8450044C52B /* AddStackFormView.h */,
 				195CEA721937A8450044C52B /* AddStackFormView.m */,
 				195CEA821938AAF60044C52B /* AddCardFormView.h */,
@@ -653,11 +658,11 @@
 				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
 				19C9331C190321DD0075FA49 /* FlashCardView.h */,
 				19C9331D190321DD0075FA49 /* FlashCardView.m */,
-				190858F019653B85003E2784 /* FlashCardAnswerView.h */,
-				190858F119653B85003E2784 /* FlashCardAnswerView.m */,
+				190858F019653B85003E2784 /* FlashCardDisplayView.h */,
+				190858F119653B85003E2784 /* FlashCardDisplayView.m */,
 				190858FA19653D0F003E2784 /* FlashCardQuestionView.h */,
 				190858FB19653D0F003E2784 /* FlashCardQuestionView.m */,
-				190858FD19653F0A003E2784 /* FlashCardDisplayView.h */,
+				190858FD19653F0A003E2784 /* FlashCardDisplayViewProtocol.h */,
 				19A547D5194B29FC007B0365 /* FlashCardStackFinishedView.h */,
 				19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */,
 				198C09A718CC4A89000C00E2 /* AddCardHeader.h */,
@@ -955,7 +960,7 @@
 				190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */,
 				19295C7D19EB2D96003E2C81 /* KTAPIGetUserFriends.m in Sources */,
 				19E2AE4719B0C051003EA7CB /* ButtonActionTableViewCell.m in Sources */,
-				190858F219653B85003E2784 /* FlashCardAnswerView.m in Sources */,
+				190858F219653B85003E2784 /* FlashCardDisplayView.m in Sources */,
 				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				1969373D19EC830B0052FC00 /* ShareStackFriendControllerManager.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
@@ -997,6 +1002,7 @@
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
 				19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */,
 				192101CA19EBB63F007BE6B4 /* ShareStackDelegate.m in Sources */,
+				19427D2819F07A95005804E2 /* QuizTypeSelectionView.m in Sources */,
 				19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */,
 				19E2AE4119B0B69A003EA7CB /* LoginViewController.m in Sources */,
 				195CEA8119387E020044C52B /* CardListViewController.m in Sources */,

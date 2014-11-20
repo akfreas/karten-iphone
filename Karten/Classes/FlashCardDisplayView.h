@@ -1,4 +1,7 @@
+#import "FlashCardDisplayView.h"
 @class Card;
-@protocol FlashCardDisplayView <NSObject>
-- (void)setCard:(Card *)card;
+
+@interface FlashCardDisplayView : UIView
+@property (nonatomic) BOOL editing;
+@property (nonatomic) NSAttributedString *mainText;
 @end

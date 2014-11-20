@@ -43,7 +43,7 @@ static NSString *kRemoteServerID = @"id";
             id value = dictionary[serverKey];
             if (value != nil && [value class] != [NSNull class]) {
                 if ([description attributeType] == NSDateAttributeType) {
-                    value = [[NSDateFormatter serverFormatter] dateFromString:value];
+                    value = [[NSDateFormatter serverFormatter] dateFromString:[NSString stringWithString:value]];
                 }
                 [self setValue:value forKey:attribute];
             }

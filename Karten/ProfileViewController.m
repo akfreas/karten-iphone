@@ -8,13 +8,14 @@
 @property (nonatomic) IBOutlet UILabel *usernameLabel;
 @property (nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic) IBOutlet UIImageView *profilePicView;
-
+@property (nonatomic) IBOutlet UIButton *addFriendButton;
 @end
 
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.addFriendButton.hidden = self.showAddFriendButton == NO;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -33,4 +34,9 @@
     }
 }
 
+
+- (IBAction)addFriendButtonAction:(id)sender
+{
+    
+}
 @end

@@ -1,29 +1,24 @@
 #import "FlashCardView.h"
-#import "FlashCardAnswerView.h"
+#import "FlashCardDisplayView.h"
 #import "FlashCardQuestionView.h"
 
 
-typedef enum {
-    FlashCardViewShowTerm,
-    FlashCardViewShowDefinition,
-} FlashCardViewMode;
-
 @interface FlashCardView ()
 
-@property (nonatomic) FlashCardAnswerView *answerView;
-@property (nonatomic) FlashCardQuestionView *questionView;
+@property (nonatomic) FlashCardDisplayView *answerView;
+@property (nonatomic) FlashCardDisplayView *questionView;
 @property (nonatomic) NSMutableArray *constraintArray;
 @property (nonatomic, weak) UIView *currentFlashView;
-@property (nonatomic, assign) FlashCardViewMode currentMode;
 @end
 
 @implementation FlashCardView
 
-- (id)initWithFrame:(CGRect)frame card:(Card *)card options:(MDCSwipeToChooseViewOptions *)options
+- (id)initWithFrame:(CGRect)frame card:(Card *)card options:(MDCSwipeToChooseViewOptions *)options mode:(FlashCardViewMode)mode
 {
     self = [super initWithFrame:frame options:options];
     if (self) {
         self.card = card;
+        self.currentMode = mode;
         self.constraintArray = [NSMutableArray array];
         self.backgroundColor = [UIColor whiteColor];
         UITapGestureRecognizer *re = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(flip)];
@@ -70,23 +65,29 @@ typedef enum {
 
 - (void)configureUIComponents
 {
-    [self addCardLabel];
-    [self addDefinitionLabel];
+    [self createQuestionView];
+    [self createAnswerView];
+    if (self.currentMode == FlashCardViewShowDefinition) {
+        self.currentFlashView = self.answerView;
+    } else {
+        self.currentFlashView = self.questionView;
+    }
+    [self addSubview:self.currentFlashView];
     [self setLayoutConstraints];
 }
 
-- (void)addDefinitionLabel
+- (void)createAnswerView
 {
-    self.answerView = [[FlashCardAnswerView alloc] initForAutoLayout];
-    [self.answerView setCard:self.card];
+    self.answerView = [[FlashCardDisplayView alloc] initForAutoLayout];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.card.definition attributes:@{}];
+    [self.answerView setMainText:str];
 }
 
-- (void)addCardLabel
+- (void)createQuestionView
 {
-    self.questionView = [[FlashCardQuestionView alloc] initForAutoLayout];
-    [self.questionView setCard:self.card];
-    [self addSubview:self.questionView];
-    self.currentFlashView = self.questionView;
+    self.questionView = [[FlashCardDisplayView alloc] initForAutoLayout];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.card.term attributes:@{}];
+    [self.questionView setMainText:str];
 }
 
 - (void)setLayoutConstraints

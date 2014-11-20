@@ -1,11 +1,11 @@
-#import "FlashCardAnswerView.h"
+#import "FlashCardDisplayView.h"
 
-@interface FlashCardAnswerView () <UITextViewDelegate>
+@interface FlashCardDisplayView () <UITextViewDelegate>
 @property (nonatomic) UITextView *textView;
 @property (nonatomic) UITextField *termLabel;
 @end
 
-@implementation FlashCardAnswerView {
+@implementation FlashCardDisplayView {
     Card *_card;
 }
 
@@ -17,7 +17,7 @@
         [self createTextView];
         [self createTermLabel];
         [self addLayoutConstraints];
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

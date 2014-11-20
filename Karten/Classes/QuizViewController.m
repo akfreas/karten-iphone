@@ -1,6 +1,5 @@
 #import "QuizViewController.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
-#import "FlashCardView.h"
 #import "Database.h"
 #import "FlashCardStackFinishedView.h"
 
@@ -31,9 +30,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.frontCardView = [self popFlashCardViewWithFrame:[self frontCardViewFrame]];
+    self.frontCardView = (FlashCardView *)[self popFlashCardViewWithFrame:[self frontCardViewFrame]];
     [self.view addSubview:self.frontCardView];
-    self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]];
+    self.backCardView = (FlashCardView *)[self popFlashCardViewWithFrame:[self backCardViewFrame]];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
 
 }
@@ -67,7 +66,7 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveOnlySelfAndWait];
     
     self.frontCardView = self.backCardView;
-    if ((self.backCardView = [self popFlashCardViewWithFrame:[self backCardViewFrame]])) {
+    if ((self.backCardView = (FlashCardView *)[self popFlashCardViewWithFrame:[self backCardViewFrame]])) {
         // Fade the back card into view.
         self.backCardView.alpha = 0.f;
         [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
@@ -96,7 +95,7 @@
     };
     UIView *currentView;
     if ([self.wordArray count] > 0) {
-        currentView = [[FlashCardView alloc] initWithFrame:frame card:self.wordArray[0] options:options];
+        currentView = [[FlashCardView alloc] initWithFrame:frame card:self.wordArray[0] options:options mode:FlashCardViewShowDefinition];
         [self.wordArray removeObjectAtIndex:0];
     } else {
         currentView = [[FlashCardStackFinishedView alloc] initWithFrame:frame];
