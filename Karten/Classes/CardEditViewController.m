@@ -19,9 +19,10 @@
         [self createflashDisplay];
         self.edgesForExtendedLayout = UIRectEdgeNone;
         UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] bk_initWithTitle:@"Save" style:UIBarButtonItemStyleDone handler:^(id sender) {
-            [self.card.managedObjectContext MR_saveToPersistentStoreAndWait];
+            Card *editedCard = self.flashDisplay.card;
+            [editedCard.managedObjectContext MR_saveToPersistentStoreAndWait];
             NSError *err = nil;
-            [self.card updateCardOnCouch:&err];
+            [editedCard updateCardOnCouch:&err];
             if (err) {
                 NSLog(@"Error updating card on couch! %@", err);
             }
@@ -35,8 +36,7 @@
 - (void)setCard:(Card *)card
 {
     _card = card;
-    [self.flashDisplay setMainText:[[NSAttributedString alloc] initWithString:card.term attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15.0f]}]];
-    [self.flashDisplay setNeedsUpdateConstraints];
+    [self.flashDisplay setCard:card];
 }
 
 - (void)createflashDisplay

@@ -24,7 +24,7 @@
 
 - (void)createTextView
 {
-    self.textView = [[UITextView alloc] initForAutoLayout];
+    self.textView = [UITextView new];
     self.textView.editable = NO;
     self.textView.scrollEnabled = NO;
 //    self.textView.delegate = self;
@@ -33,7 +33,7 @@
 
 - (void)createTermLabel
 {
-    UITextField *termLabel = [[UITextField alloc] initForAutoLayout];
+    UITextField *termLabel = [UITextField new];
     [termLabel setBk_shouldReturnBlock:^BOOL(UITextField *t) {
         return [self returnBlock];
     }];
