@@ -33,7 +33,7 @@
 
 - (void)createTermLabel
 {
-    self.termLabel = [[UILabel alloc] initForAutoLayout];
+    self.termLabel = [UILabel new];
     [self addSubview:self.termLabel];
 }
 

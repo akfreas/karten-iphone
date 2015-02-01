@@ -162,7 +162,9 @@ static NSString *kFriendCellID = @"kFriendCellID";
     UITableViewCell *cell = [self.friendTableView cellForRowAtIndexPath:[self globalIndexPathForFetchControllerIndexPath:fetchedIndexPath]];
     cell.accessoryView.hidden = YES;
     [self setPinnedFriend:friend selected:NO];
-    [self.delegate friendsList:self didDeselectFriend:friend];
+    if ([self.delegate respondsToSelector:@selector(friendsList:didDeselectFriend:)]) {
+        [self.delegate friendsList:self didDeselectFriend:friend];
+    }
 }
 
 - (void)setPinnedFriend:(KTUser *)friend selected:(BOOL)isSelected

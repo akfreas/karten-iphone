@@ -7,7 +7,6 @@ target "Karten" do
     pod "EDColor"
     pod "GoogleAnalytics-iOS-SDK"
     pod "BlocksKit", :head
-    pod "UIView+AutoLayout"
     pod 'MDCSwipeToChoose', '~> 0.2.0'
     pod "BugSense"
     pod "MagicalRecord"
@@ -16,6 +15,7 @@ target "Karten" do
     pod "Masonry", '~> 0.5.0'
     pod "SWRevealViewController", '~> 2.3.0'
     pod 'RNBlurModalView', '~> 0.1.0'
+    pod 'PureLayout'
 end
 
 target "KartenUnitTests" do

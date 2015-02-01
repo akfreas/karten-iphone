@@ -15,7 +15,6 @@
     #import <CoreData/CoreData.h>
     #import <AFNetworking/AFNetworking.h>
     #import <MagicalRecord/CoreData+MagicalRecord.h>
-    #import <UIView+AutoLayout/UIView+AutoLayout.h>
     #import <BlocksKit/BlocksKit.h>
     #import <BlocksKit/BlocksKit+UIKit.h>
     #import "UIView+LayoutHelpers.h"

@@ -27,7 +27,7 @@
 
 - (void)createFinishedButton
 {
-    self.finishedButton = [[UIButton alloc] initForAutoLayout];
+    self.finishedButton = [UIButton new];
     [self.finishedButton bk_addEventHandler:^(id sender) {
         [MainViewController goToMainView];
     } forControlEvents:UIControlEventTouchUpInside];

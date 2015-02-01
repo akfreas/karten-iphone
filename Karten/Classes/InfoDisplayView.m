@@ -13,7 +13,7 @@
 @implementation InfoDisplayView
 
 -(void)addDisplayTextLabel1 {
-    self.displayTextLabel1 = [UILabel newAutoLayoutView];
+    self.displayTextLabel1 = [UILabel new];
     [self addSubview:self.displayTextLabel1];
     self.displayTextLabel1.font = [UIFont systemFontOfSize:20];
     self.displayTextLabel1.textAlignment = NSTextAlignmentLeft;

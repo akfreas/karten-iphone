@@ -29,7 +29,7 @@
 }
 
 -(void)addDisplayViews {
-    self.termView = [[InfoDisplayView alloc] initForAutoLayout];
+    self.termView = [InfoDisplayView new];
     [self.contentView addSubview:self.termView];
 
 }

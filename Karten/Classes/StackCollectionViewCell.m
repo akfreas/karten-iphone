@@ -124,13 +124,13 @@ static CGFloat DeleteButtonSize = 30.0f;
 
 - (void)createAbbrLabel
 {
-    self.stackNameAbbrLabel = [[UILabel alloc] initForAutoLayout];
+    self.stackNameAbbrLabel = [UILabel new];
     [self addSubview:self.stackNameAbbrLabel];
 }
 
 - (void)createStackNameLabel
 {
-    self.fullStackNameLabel = [[UILabel alloc] initForAutoLayout];
+    self.fullStackNameLabel = [UILabel new];
     [self addSubview:self.fullStackNameLabel];
 }
 

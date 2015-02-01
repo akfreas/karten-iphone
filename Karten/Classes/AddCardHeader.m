@@ -44,7 +44,7 @@
 }
 
 -(void)addTermTextField {
-    self.termTextField = [UITextField newAutoLayoutView];
+    self.termTextField = [UITextField new];
     self.termTextField.placeholder = @"Term";
     [self.termTextField setValidationRule:^BOOL(UITextField *sender) {
         if([sender.text isEqualToString:@""] || sender.text == nil) {
@@ -57,7 +57,7 @@
 }
 
 -(void)addDefinitionTextField {
-    self.definitionTextField = [UITextField newAutoLayoutView];
+    self.definitionTextField = [UITextField new];
     self.definitionTextField.placeholder = @"Definition";
     [self.definitionTextField setValidationRule:^BOOL(UITextField *sender) {
         if (sender.text == nil || [sender.text isEqualToString:@""]) {
@@ -70,13 +70,13 @@
 }
 
 - (void)addSearchBar {
-    self.wordSearchBar = [[UISearchBar alloc] initForAutoLayout];
+    self.wordSearchBar = [UISearchBar new];
     self.wordSearchBar.placeholder = @"Search";
     [self.contentView addSubview:self.wordSearchBar];
 }
 
 -(void)addSubmitButton {
-    self.submitButton = [[UIButton alloc] initForAutoLayout];
+    self.submitButton = [UIButton new];
     [self.submitButton setTitle:@"+" forState:UIControlStateNormal];
     self.submitButton.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.submitButton];

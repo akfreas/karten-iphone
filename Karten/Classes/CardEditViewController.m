@@ -41,7 +41,7 @@
 
 - (void)createflashDisplay
 {
-    self.flashDisplay = [[FlashCardDisplayView alloc] initForAutoLayout];
+    self.flashDisplay = [FlashCardDisplayView new];
     self.flashDisplay.editing = YES;
     [self.view addSubview:self.flashDisplay];
 }

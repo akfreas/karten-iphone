@@ -35,6 +35,7 @@ import UIKit
     func configureSelectionController() {
         self.addChildViewController(selectionController)
         self.view.addSubview(selectionController.view)
+        self.view.autoCenterInSuperview()
         selectionController.showSearchBar = false
         selectionController.delegate = self
     }

@@ -101,7 +101,7 @@
     if (self.addCardView != nil) {
         return;
     }
-    AddCardFormView *addCardView = [[AddCardFormView alloc] initForAutoLayout];
+    AddCardFormView *addCardView = [AddCardFormView new];
     [addCardView setCancelButtonAction:^(id sender) {
         [self hideAddCardFormView];
     }];

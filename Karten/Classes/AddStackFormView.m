@@ -77,7 +77,7 @@
 
 - (void)createNameTextField
 {
-    self.nameTextField = [[UITextField alloc] initForAutoLayout];
+    self.nameTextField = [UITextField new];
     self.nameTextField.placeholder = @"Stack Name";
     [self.nameTextField setTextColor:[UIColor whiteColor]];
     [self.nameTextField setTintColor:[UIColor whiteColor]];
@@ -90,14 +90,14 @@
 
 - (void)createAddButton
 {
-    self.addButton = [[UIButton alloc] initForAutoLayout];
+    self.addButton = [UIButton new];
     [self.addButton setTitle:@"Save" forState:UIControlStateNormal];
     [self addSubview:self.addButton];
 }
 
 - (void)createCancelButton
 {
-    self.cancelButton = [[UIButton alloc] initForAutoLayout];
+    self.cancelButton = [UIButton new];
     [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [self addSubview:self.cancelButton];
 }

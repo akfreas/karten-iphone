@@ -199,7 +199,7 @@ static MainViewController *sharedInstance;
 - (void)createAddStackFormView
 {
     if (self.addStackForm == nil) {
-        self.addStackForm = [[AddStackFormView alloc] initForAutoLayout];;
+        self.addStackForm = [AddStackFormView new];;
     }
     [self.addStackForm setSaveButtonAction:^(id sender, Stack *newStack) {
         [newStack createStackOnServerWithCompletion:^{

@@ -40,7 +40,7 @@
 
 - (void)createActionLabel
 {
-    self.actionLabel = [[UILabel alloc] initForAutoLayout];
+    self.actionLabel = [UILabel new];
     [self addSubview:self.actionLabel];
 }
 

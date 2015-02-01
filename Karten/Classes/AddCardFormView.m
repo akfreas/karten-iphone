@@ -79,7 +79,7 @@
 
 - (void)createTermTextField
 {
-    UITextField *termTextField = [[UITextField alloc] initForAutoLayout];
+    UITextField *termTextField = [UITextField new];
     termTextField.placeholder = @"Term";
     [termTextField setTextColor:[UIColor blackColor]];
     [termTextField setTintColor:[UIColor blackColor]];
@@ -93,7 +93,7 @@
 
 - (void)createDefinitionTextField
 {
-    UITextField *definitionTextField = [[UITextField alloc] initForAutoLayout];
+    UITextField *definitionTextField = [UITextField new];
     definitionTextField.placeholder = @"Definition";
     [definitionTextField setTextColor:[UIColor blackColor]];
     [definitionTextField setTintColor:[UIColor blackColor]];
@@ -107,7 +107,7 @@
 
 - (void)createAddButton
 {
-    self.addButton = [[UIButton alloc] initForAutoLayout];
+    self.addButton = [UIButton new];
     [self.addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.addButton setTitle:@"Save" forState:UIControlStateNormal];
     [self addSubview:self.addButton];
@@ -115,7 +115,7 @@
 
 - (void)createCancelButton
 {
-    self.cancelButton = [[UIButton alloc] initForAutoLayout];
+    self.cancelButton = [UIButton new];
     [self.cancelButton setTitle:@"Close" forState:UIControlStateNormal];
     [self.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:self.cancelButton];
