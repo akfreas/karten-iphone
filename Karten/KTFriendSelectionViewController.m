@@ -1,6 +1,5 @@
 #import "KTFriendSelectionViewController.h"
 #import "KartenNetworkClient.h"
-#import "FriendSelectionDataSource.h"
 #import "FriendListSearchViewController.h"
 #import "AccessoryViews.h"
 
@@ -49,6 +48,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.friendTableView.dataSource = self;
+    self.friendTableView.delegate = self;
     self.searchController.searchBar.frame = CGRectMake(0, 0, self.friendTableView.frame.size.width, 44.0f);
     self.searchController.searchBar.delegate = self;
     self.friendTableView.tableHeaderView = self.searchController.searchBar;

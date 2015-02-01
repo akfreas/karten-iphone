@@ -1,6 +1,7 @@
 @class KTUser;
+@import UIKit;
 
-@interface ProfileViewController : UIViewController
+@interface KTProfileViewController : UIViewController
 
 @property (nonatomic) KTUser *user;
 @property (nonatomic) BOOL showAddFriendButton;

@@ -1,4 +1,3 @@
-#import "FriendSelectionDelegate.h"
 @class KTFriendSelectionViewController;
 @class Stack;
 

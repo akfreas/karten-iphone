@@ -9,7 +9,7 @@
 #import "KTUser.h"
 #import "User+Helpers.h"
 
-@interface ShareStackFriendControllerManager () <FriendSelectionDataSource, FriendSelectionDelegate>
+@interface ShareStackFriendControllerManager () <KTFriendSelectionDataSource, KTFriendSelectionDelegate>
 @property (nonatomic) NSArray *initialSelection;
 @end
 
@@ -24,7 +24,7 @@
     friendsList.dataSource = self;
 }
 
-#pragma mark FriendSelectionDataSource
+#pragma mark KTFriendSelectionDataSource
 
 - (NSString *)friendsList:(KTFriendSelectionViewController *)friendsList titleForHeaderInSection:(NSInteger)section
 {
@@ -34,7 +34,7 @@
     return @"All Friends";
 }
 
-#pragma mark FriendSelectionDelegate
+#pragma mark KTFriendSelectionDelegate
 
 - (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(KTUser *)selectedFriend
 {

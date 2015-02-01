@@ -1,9 +1,9 @@
-#import "ProfileViewController.h"
+#import "KTProfileViewController.h"
 #import "User+Helpers.h"
 #import "KTUser.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
-@interface ProfileViewController ()
+@interface KTProfileViewController ()
 
 @property (nonatomic) IBOutlet UILabel *usernameLabel;
 @property (nonatomic) IBOutlet UILabel *nameLabel;
@@ -11,11 +11,12 @@
 @property (nonatomic) IBOutlet UIButton *addFriendButton;
 @end
 
-@implementation ProfileViewController
+@implementation KTProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.addFriendButton.hidden = self.showAddFriendButton == NO;
+    [self configureForUser];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -27,10 +28,15 @@
 - (void)setUser:(KTUser *)user
 {
     _user = user;
-    self.usernameLabel.text = user.username;
-    self.nameLabel.text = [user fullName];
-    if (user.profilePicURL != nil) {
-        [self.profilePicView setImageWithURL:[NSURL URLWithString:user.profilePicURL]];
+    [self configureForUser];
+}
+
+- (void)configureForUser
+{
+    self.usernameLabel.text = self.user.username;
+    self.nameLabel.text = [self.user fullName];
+    if (self.user.profilePicURL != nil) {
+        [self.profilePicView setImageWithURL:[NSURL URLWithString:self.user.profilePicURL]];
     }
 }
 

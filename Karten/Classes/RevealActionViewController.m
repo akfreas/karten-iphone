@@ -4,7 +4,7 @@
 #import "RevealControllerManager.h"
 #import "CircleImageView.h"
 #import "MainViewController.h"
-#import "ProfileViewController.h"
+#import "KTProfileViewController.h"
 #import "KTUser.h"
 #import "User+Helpers.h"
 
@@ -62,7 +62,7 @@
 {
     [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
 
-    ProfileViewController *profileView = [ProfileViewController new];
+    KTProfileViewController *profileView = [KTProfileViewController new];
     profileView.user = [KTUser mainUser];
     [MainViewController pushViewController:profileView];
 }

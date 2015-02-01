@@ -21,7 +21,7 @@
 #import "RevealControllerManager.h"
 #import "KTFriendSelectionViewController.h"
 #import "ShareStackViewController.h"
-
+#import "Karten-swift.h"
 
 
 @interface MainViewController ()
@@ -82,7 +82,7 @@ static MainViewController *sharedInstance;
 
 + (void)showFriendListController
 {
-    KTFriendSelectionViewController *controller = [[KTFriendSelectionViewController alloc] initWithUser:[KTUser mainUser]];
+    KTViewFriendsViewController *controller = [[KTViewFriendsViewController alloc] initWithUser:[KTUser mainUser]];
     [self pushViewController:controller];
 }
 
