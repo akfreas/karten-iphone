@@ -79,15 +79,14 @@
 - (void)createAnswerView
 {
     self.answerView = [[FlashCardDisplayView alloc] initForAutoLayout];
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.card.definition attributes:@{}];
-    [self.answerView setMainText:str];
+    [self.answerView setCard:self.card];
 }
 
 - (void)createQuestionView
 {
     self.questionView = [[FlashCardDisplayView alloc] initForAutoLayout];
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.card.term attributes:@{}];
-    [self.questionView setMainText:str];
+    [self.questionView setCard:self.card];
 }
 
 - (void)setLayoutConstraints

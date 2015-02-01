@@ -3,7 +3,7 @@
 #import "Stack+CouchBase.h"
 #import "User.h"
 #import "User+Helpers.h"
-#import "FriendsListViewController.h"
+#import "KTFriendSelectionViewController.h"
 #import "ShareStackFriendControllerManager.h"
 
 @interface StackActionCollectionViewCell : UICollectionViewCell
@@ -151,7 +151,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
         [MainViewController showCardListForStack:self.stack];
     } else if (indexPath.row == 3) {
         ShareStackFriendControllerManager *controllerManager = [ShareStackFriendControllerManager new];
-        FriendsListViewController *friendController = [[FriendsListViewController alloc] initWithUser:[User mainUser]];
+        KTFriendSelectionViewController *friendController = [[KTFriendSelectionViewController alloc] initWithUser:[User mainUser]];
         self.shareControllerManager = controllerManager;
         [controllerManager setFriendsListViewController:friendController forSharingStack:self.stack];
         [MainViewController pushViewController:friendController];

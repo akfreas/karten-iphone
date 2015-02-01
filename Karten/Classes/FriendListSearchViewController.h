@@ -1,6 +1,6 @@
-#import "FriendsListDelegate.h"
+#import "FriendSelectionDelegate.h"
 
 @interface FriendListSearchViewController : UIViewController
 @property (nonatomic) NSArray *resultDisplay;
-@property (nonatomic, weak) id<FriendsListDelegate> delegate;
+@property (nonatomic, weak) id<FriendSelectionDelegate> delegate;
 @end

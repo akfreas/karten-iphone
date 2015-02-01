@@ -34,7 +34,7 @@ static NSInteger numberOfCellsPerRow = 2;
 
 - (void)createFetchController
 {
-    self.fetchController = [Stack MR_fetchAllSortedBy:@"creationDate" ascending:YES withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
+    self.fetchController = [Stack MR_fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
     
     [self.fetchController performFetch:NULL];
 }
@@ -56,7 +56,7 @@ static NSInteger numberOfCellsPerRow = 2;
 
 
 -(void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    
+    [self.objectChanges removeAllObjects];
 }
 
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
@@ -74,7 +74,11 @@ static NSInteger numberOfCellsPerRow = 2;
                             [self deleteItemsAtIndexPaths:@[obj]];
                             break;
                         case NSFetchedResultsChangeUpdate:
-                            [self configureCell:(StackCollectionViewCell *)[self cellForItemAtIndexPath:obj] atIndexPath:obj];
+                            [self reloadItemsAtIndexPaths:@[obj]];
+                            break;
+                        case NSFetchedResultsChangeMove:
+                            [self moveItemAtIndexPath:obj[0] toIndexPath:obj[1]];
+                            break;
                         default:
                             break;
                     }
@@ -101,7 +105,7 @@ static NSInteger numberOfCellsPerRow = 2;
                 change[@(type)] = indexPath;
                 break;
             case NSFetchedResultsChangeMove:
-                change[@(type)] = indexPath;
+                change[@(type)] = @[indexPath, newIndexPath];
                 break;
             default:
                 break;

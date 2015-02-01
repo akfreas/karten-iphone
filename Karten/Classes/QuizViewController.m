@@ -2,12 +2,16 @@
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "Database.h"
 #import "FlashCardStackFinishedView.h"
+#import "Karten-Swift.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface QuizViewController () <MDCSwipeToChooseDelegate>
 
 @property (nonatomic) FlashCardView *frontCardView;
 @property (nonatomic) FlashCardView *backCardView;
+@property (nonatomic) UIButton *speakButton;
 @property (nonatomic) NSMutableArray *wordArray;
+@property (nonatomic) KTSpeechSynth *speechSynth;
 
 @end
 
@@ -18,14 +22,16 @@
     self = [super init];
     if (self) {
         self.title = @"Quiz";
+        self.speechSynth = [[KTSpeechSynth alloc] init];
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self setupSpeakButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -35,6 +41,26 @@
     self.backCardView = (FlashCardView *)[self popFlashCardViewWithFrame:[self backCardViewFrame]];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
 
+}
+
+- (void)setupSpeakButton
+{
+    UIButton *button = [[UIButton alloc] init];
+    button.backgroundColor = [UIColor clearColor];
+    [button setTitle:@"🔊" forState:UIControlStateNormal];
+    [button bk_addEventHandler:^(id sender) {
+        [self speakCard];
+    } forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    UIBind(button);
+    [self.view addConstraintWithVisualFormat:@"H:|-[button(45)]" bindings:BBindings];
+    [self.view addConstraintWithVisualFormat:@"V:[button(45)]-|" bindings:BBindings];
+    self.speakButton = button;
+}
+
+- (void)speakCard
+{
+    [self.speechSynth speak:self.frontCardView.card.term];
 }
 
 - (void)setQuizCards:(NSArray *)quizCards
@@ -128,5 +154,37 @@
                       CGRectGetHeight(frontFrame));
 }
 
+
+#pragma mark AVSpeechSynth Delegate
+//
+//
+//- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance
+//{
+//    if ([self.synthVoice isSpeaking]) {
+//        return;
+//    }
+//}
+//
+//- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance
+//{
+//}
+//
+//- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance *)utterance
+//{
+//    DLog(@"didCancelSpeechUtterance %@", utterance.speechString);
+//    
+//    //[self updateAudioSession];
+//}
+//
+//- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance *)utterance
+//{
+//    DLog(@"didPauseSpeechUtterance %@", utterance.speechString);
+//}
+//
+//- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance *)utterance
+//{
+//    DLog(@"didContinueSpeechUtterance %@", utterance.speechString);
+//}
+//
 
 @end

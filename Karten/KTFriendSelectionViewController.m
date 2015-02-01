@@ -1,6 +1,6 @@
-#import "FriendsListViewController.h"
+#import "KTFriendSelectionViewController.h"
 #import "KartenNetworkClient.h"
-#import "FriendsListDataSource.h"
+#import "FriendSelectionDataSource.h"
 #import "FriendListSearchViewController.h"
 #import "AccessoryViews.h"
 
@@ -13,7 +13,7 @@
 
 static NSString *kFriendCellID = @"kFriendCellID";
 
-@interface FriendsListViewController () <UITableViewDelegate,
+@interface KTFriendSelectionViewController () <UITableViewDelegate,
                                         UISearchBarDelegate,
                                         UITableViewDataSource,
                                         UISearchResultsUpdating,
@@ -29,7 +29,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 @property (nonatomic) NSMutableDictionary *friendSelection;
 @end
 
-@implementation FriendsListViewController
+@implementation KTFriendSelectionViewController
 
 - (instancetype)initWithUser:(User *)user
 {
@@ -115,16 +115,16 @@ static NSString *kFriendCellID = @"kFriendCellID";
 }
 
 #pragma mark UITableViewDelegate
-//
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if ([self.delegate respondsToSelector:@selector(friendsList:didDeselectFriend:)]) {
-//        User *friend = [self userAtIndexPath:indexPath];
-//        [self.delegate friendsList:self didDeselectFriend:friend];
-//    }
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    cell.accessoryView = nil;
-//}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.delegate respondsToSelector:@selector(friendsList:didDeselectFriend:)]) {
+        User *friend = [self userAtIndexPath:indexPath];
+        [self.delegate friendsList:self didDeselectFriend:friend];
+    }
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryView = nil;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

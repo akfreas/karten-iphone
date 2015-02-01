@@ -12,4 +12,15 @@
     }
     return formatter;
 }
+
++ (NSDateFormatter *)alternateFormatter
+{
+    static NSDateFormatter *formatter;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    }
+    return formatter;
+}
 @end

@@ -109,14 +109,14 @@
 {
     self.addButton = [[UIButton alloc] initForAutoLayout];
     [self.addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.addButton setTitle:@"Add Another" forState:UIControlStateNormal];
+    [self.addButton setTitle:@"Save" forState:UIControlStateNormal];
     [self addSubview:self.addButton];
 }
 
 - (void)createCancelButton
 {
     self.cancelButton = [[UIButton alloc] initForAutoLayout];
-    [self.cancelButton setTitle:@"Done" forState:UIControlStateNormal];
+    [self.cancelButton setTitle:@"Close" forState:UIControlStateNormal];
     [self.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:self.cancelButton];
 }

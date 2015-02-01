@@ -18,12 +18,13 @@
 		190A8F881961462A00586435 /* KTAPIAddUserToStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 190A8F871961462A00586435 /* KTAPIAddUserToStack.m */; };
 		19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4119005B3600F822C6 /* 33-cabinet.png */; };
 		19169F4419005B3600F822C6 /* 33-cabinet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19169F4219005B3600F822C6 /* 33-cabinet@2x.png */; };
+		1919F9BB1A62C4EF003197AC /* KTAttributedStringFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1919F9BA1A62C4EF003197AC /* KTAttributedStringFormats.swift */; };
 		192101CA19EBB63F007BE6B4 /* ShareStackDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 192101C919EBB63F007BE6B4 /* ShareStackDelegate.m */; };
 		19295C6219EB1E67003E2C81 /* CircleImageLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C5F19EB1E67003E2C81 /* CircleImageLayer.m */; };
 		19295C6319EB1E67003E2C81 /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C6119EB1E67003E2C81 /* CircleImageView.m */; };
 		19295C6619EB1F0F003E2C81 /* CGRectUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C6419EB1F0F003E2C81 /* CGRectUtils.m */; };
-		19295C7919EB2C3B003E2C81 /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C7719EB2C3B003E2C81 /* FriendsListViewController.m */; };
-		19295C7A19EB2C3B003E2C81 /* FriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19295C7819EB2C3B003E2C81 /* FriendsListViewController.xib */; };
+		19295C7919EB2C3B003E2C81 /* KTFriendSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C7719EB2C3B003E2C81 /* KTFriendSelectionViewController.m */; };
+		19295C7A19EB2C3B003E2C81 /* KTFriendSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19295C7819EB2C3B003E2C81 /* KTFriendSelectionViewController.xib */; };
 		19295C7D19EB2D96003E2C81 /* KTAPIGetUserFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C7C19EB2D96003E2C81 /* KTAPIGetUserFriends.m */; };
 		19295C8519EB4A94003E2C81 /* FriendListSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C8319EB4A94003E2C81 /* FriendListSearchViewController.m */; };
 		19295C8619EB4A94003E2C81 /* FriendListSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19295C8419EB4A94003E2C81 /* FriendListSearchViewController.xib */; };
@@ -96,6 +97,8 @@
 		19A59F5A19EF476300385704 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59F5819EF476300385704 /* ProfileViewController.m */; };
 		19A59F5B19EF476300385704 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A59F5919EF476300385704 /* ProfileViewController.xib */; };
 		19A59F5E19EF498600385704 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59F5D19EF498600385704 /* User.m */; };
+		19B74E941A7004E20092868D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B74E931A7004E20092868D /* AVFoundation.framework */; };
+		19B74E961A7005D20092868D /* KTSpeechSynth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B74E951A7005D20092868D /* KTSpeechSynth.swift */; };
 		19B88CD619EB4F3C005CB198 /* KTAPIUserSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B88CD519EB4F3C005CB198 /* KTAPIUserSearch.m */; };
 		19BC93B01935CD2900CC8725 /* TestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 198AFC471935C61A00ABD428 /* TestUtils.m */; };
 		19BC93B11935CD4E00CC8725 /* CreateDatabaseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 196021EF1932A88D000234A3 /* CreateDatabaseData.json */; };
@@ -160,18 +163,19 @@
 		190A8F871961462A00586435 /* KTAPIAddUserToStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTAPIAddUserToStack.m; path = Classes/KTAPIAddUserToStack.m; sourceTree = "<group>"; };
 		19169F4119005B3600F822C6 /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		19169F4219005B3600F822C6 /* 33-cabinet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet@2x.png"; sourceTree = "<group>"; };
+		1919F9BA1A62C4EF003197AC /* KTAttributedStringFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KTAttributedStringFormats.swift; path = Classes/KTAttributedStringFormats.swift; sourceTree = "<group>"; };
 		192101C819EBB63F007BE6B4 /* ShareStackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareStackDelegate.h; sourceTree = "<group>"; };
 		192101C919EBB63F007BE6B4 /* ShareStackDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareStackDelegate.m; sourceTree = "<group>"; };
-		192101CB19EBB763007BE6B4 /* FriendsListDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsListDelegate.h; sourceTree = "<group>"; };
+		192101CB19EBB763007BE6B4 /* FriendSelectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendSelectionDelegate.h; sourceTree = "<group>"; };
 		19295C5E19EB1E67003E2C81 /* CircleImageLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleImageLayer.h; sourceTree = "<group>"; };
 		19295C5F19EB1E67003E2C81 /* CircleImageLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleImageLayer.m; sourceTree = "<group>"; };
 		19295C6019EB1E67003E2C81 /* CircleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleImageView.h; sourceTree = "<group>"; };
 		19295C6119EB1E67003E2C81 /* CircleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleImageView.m; sourceTree = "<group>"; };
 		19295C6419EB1F0F003E2C81 /* CGRectUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGRectUtils.m; sourceTree = "<group>"; };
 		19295C6519EB1F0F003E2C81 /* CGRectUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGRectUtils.h; sourceTree = "<group>"; };
-		19295C7619EB2C3B003E2C81 /* FriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListViewController.h; sourceTree = "<group>"; };
-		19295C7719EB2C3B003E2C81 /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
-		19295C7819EB2C3B003E2C81 /* FriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListViewController.xib; sourceTree = "<group>"; };
+		19295C7619EB2C3B003E2C81 /* KTFriendSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFriendSelectionViewController.h; sourceTree = "<group>"; };
+		19295C7719EB2C3B003E2C81 /* KTFriendSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFriendSelectionViewController.m; sourceTree = "<group>"; };
+		19295C7819EB2C3B003E2C81 /* KTFriendSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTFriendSelectionViewController.xib; sourceTree = "<group>"; };
 		19295C7B19EB2D96003E2C81 /* KTAPIGetUserFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPIGetUserFriends.h; sourceTree = "<group>"; };
 		19295C7C19EB2D96003E2C81 /* KTAPIGetUserFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPIGetUserFriends.m; sourceTree = "<group>"; };
 		19295C8019EB2FF5003E2C81 /* FriendsListDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListDataSource.m; sourceTree = "<group>"; };
@@ -192,7 +196,7 @@
 		194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionaryRepresentation.h"; sourceTree = "<group>"; };
 		1959B5A619EBE072001D4EBF /* AccessoryViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryViews.h; sourceTree = "<group>"; };
 		1959B5A719EBE072001D4EBF /* AccessoryViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryViews.m; sourceTree = "<group>"; };
-		1959B5A919EBE3D5001D4EBF /* FriendsListDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsListDataSource.h; sourceTree = "<group>"; };
+		1959B5A919EBE3D5001D4EBF /* FriendSelectionDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendSelectionDataSource.h; sourceTree = "<group>"; };
 		195CEA511936B2650044C52B /* FacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookLoginViewController.h; path = Classes/FacebookLoginViewController.h; sourceTree = "<group>"; };
 		195CEA521936B2650044C52B /* FacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookLoginViewController.m; path = Classes/FacebookLoginViewController.m; sourceTree = "<group>"; };
 		195CEA55193720130044C52B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
@@ -322,6 +326,8 @@
 		19A59F5919EF476300385704 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		19A59F5C19EF498600385704 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		19A59F5D19EF498600385704 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		19B74E931A7004E20092868D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		19B74E951A7005D20092868D /* KTSpeechSynth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTSpeechSynth.swift; sourceTree = "<group>"; };
 		19B88CD419EB4F3C005CB198 /* KTAPIUserSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPIUserSearch.h; sourceTree = "<group>"; };
 		19B88CD519EB4F3C005CB198 /* KTAPIUserSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPIUserSearch.m; sourceTree = "<group>"; };
 		19BC3E2219788A88002FE58D /* NotificationKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationKeys.h; sourceTree = "<group>"; };
@@ -357,7 +363,6 @@
 		19E2AE4519B0C051003EA7CB /* ButtonActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonActionTableViewCell.h; path = Classes/ButtonActionTableViewCell.h; sourceTree = "<group>"; };
 		19E2AE4619B0C051003EA7CB /* ButtonActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonActionTableViewCell.m; path = Classes/ButtonActionTableViewCell.m; sourceTree = "<group>"; };
 		19E8CEB519AFBABC00C7B112 /* KartenSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenSessionManager.swift; sourceTree = "<group>"; };
-		19E8CEC019AFEA7900C7B112 /* VFLToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLToolbox.framework; path = "Frameworks/VFLToolbox/build/Debug-iphoneos/VFLToolbox.framework"; sourceTree = "<group>"; };
 		5129F3CEF4EE19414B8AA95D /* Pods-Karten.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Karten.release.xcconfig"; path = "Pods/Target Support Files/Pods-Karten/Pods-Karten.release.xcconfig"; sourceTree = "<group>"; };
 		924ADDD39200493B92BD599D /* libPods-KartenUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KartenUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A918DF17BE808C5D01BD6D4B /* Pods-KartenUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KartenUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KartenUnitTests/Pods-KartenUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -370,6 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B74E941A7004E20092868D /* AVFoundation.framework in Frameworks */,
 				1972581819448A39002AD689 /* libPods-Karten.a in Frameworks */,
 				1966CD2F18DDE9FA00E85CDE /* libz.dylib in Frameworks */,
 				1966CD2D18DDE9F300E85CDE /* libsqlite3.dylib in Frameworks */,
@@ -402,11 +408,11 @@
 		19295C7E19EB2FCC003E2C81 /* Friends List & Search */ = {
 			isa = PBXGroup;
 			children = (
-				192101CB19EBB763007BE6B4 /* FriendsListDelegate.h */,
-				19295C7619EB2C3B003E2C81 /* FriendsListViewController.h */,
-				19295C7719EB2C3B003E2C81 /* FriendsListViewController.m */,
-				19295C7819EB2C3B003E2C81 /* FriendsListViewController.xib */,
-				1959B5A919EBE3D5001D4EBF /* FriendsListDataSource.h */,
+				192101CB19EBB763007BE6B4 /* FriendSelectionDelegate.h */,
+				19295C7619EB2C3B003E2C81 /* KTFriendSelectionViewController.h */,
+				19295C7719EB2C3B003E2C81 /* KTFriendSelectionViewController.m */,
+				19295C7819EB2C3B003E2C81 /* KTFriendSelectionViewController.xib */,
+				1959B5A919EBE3D5001D4EBF /* FriendSelectionDataSource.h */,
 				19295C8019EB2FF5003E2C81 /* FriendsListDataSource.m */,
 				19295C8219EB4A94003E2C81 /* FriendListSearchViewController.h */,
 				19295C8319EB4A94003E2C81 /* FriendListSearchViewController.m */,
@@ -553,7 +559,7 @@
 		198C096018CC3F5F000C00E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				19E8CEC019AFEA7900C7B112 /* VFLToolbox.framework */,
+				19B74E931A7004E20092868D /* AVFoundation.framework */,
 				1972581719448A39002AD689 /* libPods-Karten.a */,
 				1966CD2E18DDE9FA00E85CDE /* libz.dylib */,
 				1966CD2C18DDE9F300E85CDE /* libsqlite3.dylib */,
@@ -644,6 +650,7 @@
 				19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */,
 				19C93315190316EC0075FA49 /* QuizViewController.h */,
 				19C93316190316EC0075FA49 /* QuizViewController.m */,
+				19B74E951A7005D20092868D /* KTSpeechSynth.swift */,
 				19A547D8194B2E26007B0365 /* FacebookShareController.h */,
 				19A547D9194B2E26007B0365 /* FacebookShareController.m */,
 				195CEA7F19387E020044C52B /* CardListViewController.h */,
@@ -738,6 +745,7 @@
 				198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */,
 				198C09B218CC6796000C00E2 /* UITextField+Valdiation.h */,
 				198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */,
+				1919F9BA1A62C4EF003197AC /* KTAttributedStringFormats.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -861,7 +869,7 @@
 				1901715519D6DB3B00C90A50 /* ShareStackViewController.xib in Resources */,
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
 				1901714B19D6BABE00C90A50 /* RevealActionViewController.storyboard in Resources */,
-				19295C7A19EB2C3B003E2C81 /* FriendsListViewController.xib in Resources */,
+				19295C7A19EB2C3B003E2C81 /* KTFriendSelectionViewController.xib in Resources */,
 				19CC49C419EED61E00E207B7 /* LoginViewController.xib in Resources */,
 				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
 				198C097918CC3F5F000C00E2 /* Images.xcassets in Resources */,
@@ -951,7 +959,7 @@
 				19295C6219EB1E67003E2C81 /* CircleImageLayer.m in Sources */,
 				195CEA701937A0D20044C52B /* AddStackTableViewCell.m in Sources */,
 				1901715419D6DB3B00C90A50 /* ShareStackViewController.m in Sources */,
-				19295C7919EB2C3B003E2C81 /* FriendsListViewController.m in Sources */,
+				19295C7919EB2C3B003E2C81 /* KTFriendSelectionViewController.m in Sources */,
 				1959B5A819EBE072001D4EBF /* AccessoryViews.m in Sources */,
 				19295C6319EB1E67003E2C81 /* CircleImageView.m in Sources */,
 				195CEA761937E7260044C52B /* GraphicsUtils.m in Sources */,
@@ -1022,8 +1030,10 @@
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
 				19295C8519EB4A94003E2C81 /* FriendListSearchViewController.m in Sources */,
+				1919F9BB1A62C4EF003197AC /* KTAttributedStringFormats.swift in Sources */,
 				1984C8141965D539003402CC /* CardEditViewController.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
+				19B74E961A7005D20092868D /* KTSpeechSynth.swift in Sources */,
 				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
 				19295C6619EB1F0F003E2C81 /* CGRectUtils.m in Sources */,
 				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,

@@ -19,7 +19,7 @@
 #import "Karten-Swift.h"
 #import "NotificationKeys.h"
 #import "RevealControllerManager.h"
-#import "FriendsListViewController.h"
+#import "KTFriendSelectionViewController.h"
 #import "ShareStackViewController.h"
 
 
@@ -82,7 +82,7 @@ static MainViewController *sharedInstance;
 
 + (void)showFriendListController
 {
-    FriendsListViewController *controller = [[FriendsListViewController alloc] initWithUser:[User mainUser]];
+    KTFriendSelectionViewController *controller = [[KTFriendSelectionViewController alloc] initWithUser:[User mainUser]];
     [self pushViewController:controller];
 }
 

@@ -43,7 +43,11 @@ static NSString *kRemoteServerID = @"id";
             id value = dictionary[serverKey];
             if (value != nil && [value class] != [NSNull class]) {
                 if ([description attributeType] == NSDateAttributeType) {
-                    value = [[NSDateFormatter serverFormatter] dateFromString:[NSString stringWithString:value]];
+                    value = [[NSDateFormatter serverFormatter] dateFromString:value];
+                    if (value == nil) {
+                        value = [[NSDateFormatter alternateFormatter] dateFromString:dictionary[serverKey]];
+                    }
+                    NSAssert(value != nil, @"Should not be nil for date %@", dictionary[serverKey]);
                 }
                 [self setValue:value forKey:attribute];
             }

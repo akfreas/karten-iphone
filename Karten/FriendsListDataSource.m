@@ -1,15 +1,15 @@
-#import "FriendsListDataSource.h"
+#import "FriendSelectionDataSource.h"
 #import "User.h"
 #import "KTAPIGetUserFriends.h"
 #import "KartenNetworkClient.h"
 static NSString *kFriendCellID = @"kFriendCellID";
 
-@interface FriendsListDataSource () <NSFetchedResultsControllerDelegate>
+@interface FriendSelectionDataSource () <NSFetchedResultsControllerDelegate>
 @property (nonatomic) User *user;
 @property (nonatomic) NSFetchedResultsController *fetchController;
 @end
 
-@implementation FriendsListDataSource
+@implementation FriendSelectionDataSource
 
 #pragma mark - Public Methods
 

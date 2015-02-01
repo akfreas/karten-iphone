@@ -53,8 +53,14 @@
 
 - (void)setTermLabelText:(NSString *)string
 {
+    NSMutableParagraphStyle *par = [[NSMutableParagraphStyle alloc] init];
+    par.alignment = NSTextAlignmentCenter;
 
-    NSDictionary *attrs = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0f]};
+    NSDictionary *attrs = @{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:30.0f],
+                            NSParagraphStyleAttributeName : par};
+    if (string==nil) {
+        return;
+    }
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:string attributes:attrs];
     self.termLabel.attributedText = str;
 }
@@ -64,12 +70,22 @@
     NSMutableParagraphStyle *par = [[NSMutableParagraphStyle alloc] init];
     par.alignment = NSTextAlignmentCenter;
     NSDictionary *attrs = @{
-                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:25.0f],
+                            NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:25.0f],
                             NSParagraphStyleAttributeName : par
                             };
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:string attributes:attrs];
     self.textView.attributedText = str;
     [self.textView sizeToFit];
+}
+
+- (void)setMainText:(NSAttributedString *)mainText
+{
+    self.textView.attributedText = mainText;
+}
+
+- (void)setSupplementaryText:(NSAttributedString *)supplementaryText
+{
+    self.termLabel.attributedText = supplementaryText;
 }
 
 #pragma mark Accessors
@@ -82,10 +98,9 @@
 
 - (void)setEditing:(BOOL)editing
 {
-    self.termLabel.userInteractionEnabled = YES;
+    self.termLabel.userInteractionEnabled = editing;
     self.textView.editable = editing;
-    self.termLabel.enabled = YES;
-//    self.textView.scrollEnabled = editing;
+    self.termLabel.enabled = editing;
 }
 
 - (Card *)card

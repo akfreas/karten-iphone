@@ -63,9 +63,9 @@ static NSString *BaseUrl = @"http://54.73.59.208/";
     [operation setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [self.manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
     NSLog([URLrequest curlCommand]);
-    DLog(@"Fetching from %@%@. Params: %@", self.manager.baseURL, request.path, params);
+//    DLog(@"Fetching from %@%@. Params: %@", self.manager.baseURL, request.path, params);
     void(^wrappedSuccess)(AFHTTPRequestOperation *, id) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-        DLog(@"Finished fetch from %@%@. Response: %@", self.manager.baseURL, request.path, responseObject);
+//        DLog(@"Finished fetch from %@%@. Response: %@", self.manager.baseURL, request.path, responseObject);
         if (responseObject != nil) {
             id returnObject = nil;
             if ([request respondsToSelector:@selector(classToParse)] && [request.classToParse conformsToProtocol:@protocol(JSONParsable)]) {

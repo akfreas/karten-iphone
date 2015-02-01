@@ -1,5 +1,5 @@
 #import "ShareStackFriendControllerManager.h"
-#import "FriendsListViewController.h"
+#import "KTFriendSelectionViewController.h"
 #import "KartenNetworkClient.h"
 
 #import "KTAPIShareStack.h"
@@ -9,13 +9,13 @@
 #import "User.h"
 #import "User+Helpers.h"
 
-@interface ShareStackFriendControllerManager () <FriendsListDataSource, FriendsListDelegate>
+@interface ShareStackFriendControllerManager () <FriendSelectionDataSource, FriendSelectionDelegate>
 @property (nonatomic) NSArray *initialSelection;
 @end
 
 @implementation ShareStackFriendControllerManager
 
-- (void)setFriendsListViewController:(FriendsListViewController *)friendsList forSharingStack:(Stack *)stack
+- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(Stack *)stack
 {
     self.stack = stack;
     friendsList.pinInitialSelectionToTop = YES;
@@ -24,9 +24,9 @@
     friendsList.dataSource = self;
 }
 
-#pragma mark FriendsListDataSource
+#pragma mark FriendSelectionDataSource
 
-- (NSString *)friendsList:(FriendsListViewController *)friendsList titleForHeaderInSection:(NSInteger)section
+- (NSString *)friendsList:(KTFriendSelectionViewController *)friendsList titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0 && [self.initialSelection count] > 0) {
         return @"Shared Users";
@@ -34,9 +34,9 @@
     return @"All Friends";
 }
 
-#pragma mark FriendsListDelegate
+#pragma mark FriendSelectionDelegate
 
-- (void)friendsList:(FriendsListViewController *)friendsList didSelectFriend:(User *)selectedFriend
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(User *)selectedFriend
 {
     KTAPIShareStack *shareStack = [[KTAPIShareStack alloc] initWithStack:self.stack shareUsers:@[selectedFriend]];
     [KartenNetworkClient makeRequest:shareStack
@@ -56,7 +56,7 @@
                           }];
 }
 
-- (void)friendsList:(FriendsListViewController *)friendsList didDeselectFriend:(User *)deselectedFriend
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didDeselectFriend:(User *)deselectedFriend
 {
     
     KTAPIUnShareStack *shareStack = [[KTAPIUnShareStack alloc] initWithStack:self.stack unShareUsers:@[deselectedFriend]];

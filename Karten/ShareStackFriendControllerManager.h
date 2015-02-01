@@ -1,9 +1,9 @@
-#import "FriendsListDelegate.h"
-@class FriendsListViewController;
+#import "FriendSelectionDelegate.h"
+@class KTFriendSelectionViewController;
 @class Stack;
 
 @interface ShareStackFriendControllerManager : NSObject
 @property (nonatomic) Stack *stack;
-- (void)setFriendsListViewController:(FriendsListViewController *)friendsList forSharingStack:(Stack *)stack;
+- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(Stack *)stack;
 
 @end
