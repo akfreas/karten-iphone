@@ -1,4 +1,4 @@
-@class User;
+@class KTUser;
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -8,5 +8,5 @@
 
 -(void)checkToken; // Silent, on app load
 -(void)sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error;
-- (void)createUserFromFacebookSession:(void(^)(User *user, NSError *error))completion;
+- (void)createUserFromFacebookSession:(void(^)(KTUser *user, NSError *error))completion;
 @end

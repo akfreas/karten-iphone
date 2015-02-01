@@ -1,6 +1,6 @@
 #import "ProfileViewController.h"
 #import "User+Helpers.h"
-#import "User.h"
+#import "KTUser.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface ProfileViewController ()
@@ -24,7 +24,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setUser:(User *)user
+- (void)setUser:(KTUser *)user
 {
     _user = user;
     self.usernameLabel.text = user.username;

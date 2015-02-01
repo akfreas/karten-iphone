@@ -1,17 +1,17 @@
 @class KTFriendSelectionViewController;
-@class User;
+@class KTUser;
 
 @protocol FriendSelectionDelegate <NSObject>
 
 @optional
-- (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(User *)selectedFriend;
-- (void)friendsList:(KTFriendSelectionViewController *)friendsList didDeselectFriend:(User *)deselectedFriend;
-- (BOOL)friendsList:(KTFriendSelectionViewController *)friendsList shouldSelectFriend:(User *)user;
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(KTUser *)selectedFriend;
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didDeselectFriend:(KTUser *)deselectedFriend;
+- (BOOL)friendsList:(KTFriendSelectionViewController *)friendsList shouldSelectFriend:(KTUser *)user;
 @end
 
 @protocol FriendSelectionDataSource <NSObject>
 @optional
-- (UIView *)friendsList:(KTFriendSelectionViewController *)friendsList accessoryViewForUser:(User *)user;
+- (UIView *)friendsList:(KTFriendSelectionViewController *)friendsList accessoryViewForUser:(KTUser *)user;
 - (NSString *)friendsList:(KTFriendSelectionViewController *)friendsList titleForHeaderInSection:(NSInteger)section;
 
 @end

@@ -1,13 +1,13 @@
 #import "KTAPIGetUserFriends.h"
-#import "User.h"
+#import "KTUser.h"
 
 @interface KTAPIGetUserFriends ()
-@property (nonatomic) User *user;
+@property (nonatomic) KTUser *user;
 @end
 
 @implementation KTAPIGetUserFriends
 
-- (instancetype)initWithUser:(User *)user
+- (instancetype)initWithUser:(KTUser *)user
 {
     self = [super init];
     if (self) {
@@ -23,7 +23,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 - (NSString *)HTTPMethod

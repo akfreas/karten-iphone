@@ -82,7 +82,7 @@ static MainViewController *sharedInstance;
 
 + (void)showFriendListController
 {
-    KTFriendSelectionViewController *controller = [[KTFriendSelectionViewController alloc] initWithUser:[User mainUser]];
+    KTFriendSelectionViewController *controller = [[KTFriendSelectionViewController alloc] initWithUser:[KTUser mainUser]];
     [self pushViewController:controller];
 }
 
@@ -114,7 +114,7 @@ static MainViewController *sharedInstance;
 {
     LoginViewController *loginController = [[LoginViewController alloc] init];
     [loginController setLoginBlock:^(NSString *username, NSString *password) {
-        [KartenUserManager logUserInWithUsername:username password:password completion:^(User *user) {
+        [KartenUserManager logUserInWithUsername:username password:password completion:^(KTUser *user) {
             [self dismissViewControllerAnimated:YES completion:nil];
         } failure:^(NSError *user) {
             UIAlertView *alert = [[UIAlertView alloc] bk_initWithTitle:@"Whoops!"
@@ -160,7 +160,7 @@ static MainViewController *sharedInstance;
             }
             Stack *newStack = [Stack MR_createEntity];
             newStack.name = textField.text;
-            newStack.ownerServerID = [[User mainUser] serverID];
+            newStack.ownerServerID = [[KTUser mainUser] serverID];
             newStack.creationDate = [NSDate date];
             [newStack createStackOnServerWithCompletion:^{
                 

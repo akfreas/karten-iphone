@@ -1,5 +1,5 @@
 #import "KTAPIUserSearch.h"
-#import "User.h"
+#import "KTUser.h"
 
 @interface KTAPIUserSearch ()
 @property (nonatomic) NSString *queryString;
@@ -33,7 +33,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 @end

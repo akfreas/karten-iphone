@@ -2,7 +2,7 @@
 #import "KTAPICreateUser.h"
 #import "KartenNetworkClient.h"
 
-#import "User.h"
+#import "KTUser.h"
 
 @interface SignUpViewController ()
 
@@ -78,7 +78,7 @@
 
 - (IBAction)signUpAction:(id)sender
 {
-    User *newUser = [User MR_createEntity];
+    KTUser *newUser = [KTUser MR_createEntity];
     newUser.username = self.usernameField.text;
     newUser.emailAddress = self.emailField.text;
     KTAPICreateUser *createUser = [[KTAPICreateUser alloc] initWithUser:newUser password:self.passwordField.text];
@@ -86,7 +86,7 @@
     [KartenNetworkClient makeRequest:createUser
                           completion:^{
                             
-                          } success:^(AFHTTPRequestOperation *operation, User *responseObject) {
+                          } success:^(AFHTTPRequestOperation *operation, KTUser *responseObject) {
                               self.signUpSuccessAction(responseObject, self.passwordField.text);
                           } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                               [self showAlertForInvalidEntryWithError:parsedError];

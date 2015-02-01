@@ -2,7 +2,7 @@
 #import "KTAPICreateUser.h"
 #import "KartenNetworkClient.h"
 #import "User+Helpers.h"
-#import "User.h"
+#import "KTUser.h"
 
 @interface FacebookSessionManager ()
 
@@ -249,7 +249,7 @@ static FacebookSessionManager *sharedInstance;
     return _session;
 }
 
-- (void)createUserFromFacebookSession:(void(^)(User *user, NSError *error))userCreationCompletion
+- (void)createUserFromFacebookSession:(void(^)(KTUser *user, NSError *error))userCreationCompletion
 {
     NSLog(@"getUserInfo...");
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -263,16 +263,16 @@ static FacebookSessionManager *sharedInstance;
                 [graphObject setObject:@"facebook" forKey:@"external_service"];
                 [graphObject removeObjectForKey:@"id"];
                 [graphObject setObject:@YES forKey:@"registered"];
-                User *currentUser = [User getOrCreateUserWithJSONDict:graphObject];
+                KTUser *currentUser = [KTUser getOrCreateUserWithJSONDict:graphObject];
                 currentUser.mainUser = @YES;
                 [currentUser.managedObjectContext MR_saveOnlySelfAndWait];
                 KTAPICreateUser *createUserCall;
                 [KartenNetworkClient makeRequest:createUserCall
                                       completion:^{
                                           
-                                      } success:^(AFHTTPRequestOperation *operation, User *responseObject) {
+                                      } success:^(AFHTTPRequestOperation *operation, KTUser *responseObject) {
                                           NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
-                                          User *savedUser = (User *)[ctx objectWithID:currentUser.objectID];
+                                          KTUser *savedUser = (KTUser *)[ctx objectWithID:currentUser.objectID];
                                           savedUser.serverID = responseObject.serverID;
                                           [ctx MR_saveOnlySelfAndWait];
                                           if (userCreationCompletion) {

@@ -1,5 +1,5 @@
 #import "KartenAPICall.h"
-@class User;
+@class KTUser;
 @interface KTAPIGetUserStacks : NSObject <KartenAPICall>
-- (id)initWithUser:(User *)user;
+- (id)initWithUser:(KTUser *)user;
 @end

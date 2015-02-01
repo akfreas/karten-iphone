@@ -1,12 +1,12 @@
-#import "User.h"
+#import "KTUser.h"
 #import "JSONParsable.h"
 #import "JSONSerializable.h"
 #import "NSManagedObject+JSONSerializable.h"
 
-@interface User (Helpers) <JSONParsable, JSONSerializable>
+@interface KTUser (Helpers) <JSONParsable, JSONSerializable>
 
-+ (User *)getOrCreateUserWithJSONDict:(NSDictionary *)JSON;
-+ (User *)mainUser;
++ (KTUser *)getOrCreateUserWithJSONDict:(NSDictionary *)JSON;
++ (KTUser *)mainUser;
 
 - (NSString *)fullName;
 

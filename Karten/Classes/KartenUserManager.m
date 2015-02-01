@@ -1,5 +1,5 @@
 #import "KartenUserManager.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 #import "KartenNetworkClient.h"
 
@@ -12,7 +12,7 @@
 
 @implementation KartenUserManager
 
-+ (void)logUserInWithUsername:(NSString *)username password:(NSString *)password completion:(void(^)(User *))completionBlock failure:(void(^)(NSError *))failureBlock
++ (void)logUserInWithUsername:(NSString *)username password:(NSString *)password completion:(void(^)(KTUser *))completionBlock failure:(void(^)(NSError *))failureBlock
 {
     KTAPILoginUser *loginUserAPI = [[KTAPILoginUser alloc] initWithUsername:username password:password];
     [KartenNetworkClient makeRequest:loginUserAPI
@@ -27,13 +27,13 @@
                           }];
 }
 
-+ (void)getCurrentAuthenticatedUserWithCompletion:(void(^)(User *))completion failure:(void(^)(NSError *))failure
++ (void)getCurrentAuthenticatedUserWithCompletion:(void(^)(KTUser *))completion failure:(void(^)(NSError *))failure
 {
     KTAPIGetUser *getUserCall = [KTAPIGetUser new];
     [KartenNetworkClient makeRequest:getUserCall
                           completion:^{
                               
-                          } success:^(AFHTTPRequestOperation *operation, User *authedUser) {
+                          } success:^(AFHTTPRequestOperation *operation, KTUser *authedUser) {
                               authedUser.mainUser = @(YES);
                               [authedUser.managedObjectContext MR_saveToPersistentStoreAndWait];
                               completion(authedUser);
@@ -45,15 +45,15 @@
 + (void)logoutCurrentUser
 {
     [KartenSessionManager invalidateSession];
-    [Stack removeAllStacksForUser:[User mainUser]];
+    [Stack removeAllStacksForUser:[KTUser mainUser]];
     [self unmarkMainUser];
     [[NSNotificationCenter defaultCenter] postNotificationName:kKartenUserDidLogoutNotification object:nil];
 }
 
 + (void)unmarkMainUser
 {
-    NSArray *mainUsers = [User MR_findByAttribute:@"mainUser" withValue:@(YES) inContext:[self ourContext]];
-    [mainUsers enumerateObjectsUsingBlock:^(User *user, NSUInteger idx, BOOL *stop) {
+    NSArray *mainUsers = [KTUser MR_findByAttribute:@"mainUser" withValue:@(YES) inContext:[self ourContext]];
+    [mainUsers enumerateObjectsUsingBlock:^(KTUser *user, NSUInteger idx, BOOL *stop) {
         user.mainUser = @(NO);
     }];
     [[self ourContext] MR_saveToPersistentStoreAndWait];

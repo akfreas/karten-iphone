@@ -1,5 +1,5 @@
 #import "KTAPIUnShareStack.h"
-#import "User.h"
+#import "KTUser.h"
 #import "Stack.h"
 
 @interface KTAPIUnShareStack ()
@@ -22,7 +22,7 @@
 - (void)setUnShareUsers:(NSArray *)shareUsers
 {
     NSMutableArray *shareUserIDs = [NSMutableArray arrayWithArray:[self.stack.allowedUserServerIDs allObjects]];
-    for (User *user in shareUsers) {
+    for (KTUser *user in shareUsers) {
         [shareUserIDs removeObject:user.serverID];
     }
     _unShareUsers = shareUserIDs;
@@ -40,7 +40,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 - (NSString *)HTTPMethod

@@ -1,9 +1,9 @@
 #import "Stack.h"
 #import "JSONParsable.h"
 #import "JSONSerializable.h"
-@class User;
+@class KTUser;
 @interface Stack (Helpers) <JSONParsable, JSONSerializable>
 
 - (NSString *)fullServerURL;
-+ (void)removeAllStacksForUser:(User *)user;
++ (void)removeAllStacksForUser:(KTUser *)user;
 @end

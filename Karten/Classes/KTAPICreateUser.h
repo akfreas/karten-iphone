@@ -1,6 +1,6 @@
 #import "KartenAPICall.h"
-@class User;
+@class KTUser;
 @interface KTAPICreateUser : NSObject <KartenAPICall>
 
-- (id)initWithUser:(User *)user password:(NSString *)password;
+- (id)initWithUser:(KTUser *)user password:(NSString *)password;
 @end

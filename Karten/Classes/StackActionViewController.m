@@ -1,7 +1,7 @@
 #import "StackActionViewController.h"
 #import "Stack.h"
 #import "Stack+CouchBase.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 #import "KTFriendSelectionViewController.h"
 #import "ShareStackFriendControllerManager.h"
@@ -151,7 +151,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
         [MainViewController showCardListForStack:self.stack];
     } else if (indexPath.row == 3) {
         ShareStackFriendControllerManager *controllerManager = [ShareStackFriendControllerManager new];
-        KTFriendSelectionViewController *friendController = [[KTFriendSelectionViewController alloc] initWithUser:[User mainUser]];
+        KTFriendSelectionViewController *friendController = [[KTFriendSelectionViewController alloc] initWithUser:[KTUser mainUser]];
         self.shareControllerManager = controllerManager;
         [controllerManager setFriendsListViewController:friendController forSharingStack:self.stack];
         [MainViewController pushViewController:friendController];

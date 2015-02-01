@@ -1,6 +1,6 @@
 #import "NetworkSyncUtil.h"
 #import "Stack.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 #import "Stack+Network.h"
 #import "KartenUserManager.h"
@@ -10,7 +10,7 @@
 
 + (void)syncAllDataWithCompletion:(void (^)())completion
 {
-    User *mainUser = [User mainUser];
+    KTUser *mainUser = [KTUser mainUser];
     if (mainUser != nil) {
         [Stack syncStacksForUser:mainUser completion:^{
             if (completion)
@@ -20,7 +20,7 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
 
         }];
-        [KartenUserManager getCurrentAuthenticatedUserWithCompletion:^(User *user) {
+        [KartenUserManager getCurrentAuthenticatedUserWithCompletion:^(KTUser *user) {
             
         } failure:^(NSError *err) {
             

@@ -6,7 +6,7 @@
 #import "KTAPIUnShareStack.h"
 
 #import "Stack.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 
 @interface ShareStackFriendControllerManager () <FriendSelectionDataSource, FriendSelectionDelegate>
@@ -19,7 +19,7 @@
 {
     self.stack = stack;
     friendsList.pinInitialSelectionToTop = YES;
-    self.initialSelection = friendsList.initialSelection = [User MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"(serverID IN %@) AND (SELF <> %@)", self.stack.allowedUserServerIDs, [User mainUser]]];
+    self.initialSelection = friendsList.initialSelection = [KTUser MR_findAllWithPredicate:[NSPredicate predicateWithFormat:@"(serverID IN %@) AND (SELF <> %@)", self.stack.allowedUserServerIDs, [KTUser mainUser]]];
     friendsList.delegate = self;
     friendsList.dataSource = self;
 }
@@ -36,7 +36,7 @@
 
 #pragma mark FriendSelectionDelegate
 
-- (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(User *)selectedFriend
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didSelectFriend:(KTUser *)selectedFriend
 {
     KTAPIShareStack *shareStack = [[KTAPIShareStack alloc] initWithStack:self.stack shareUsers:@[selectedFriend]];
     [KartenNetworkClient makeRequest:shareStack
@@ -45,7 +45,7 @@
                           } success:^(AFHTTPRequestOperation *operation, NSArray *allowedUsers) {
                               
                               NSMutableSet *users = [NSMutableSet set];
-                              for (User *allowedUser in allowedUsers) {
+                              for (KTUser *allowedUser in allowedUsers) {
                                   [users addObject:allowedUser.serverID];
                               }
                               
@@ -56,7 +56,7 @@
                           }];
 }
 
-- (void)friendsList:(KTFriendSelectionViewController *)friendsList didDeselectFriend:(User *)deselectedFriend
+- (void)friendsList:(KTFriendSelectionViewController *)friendsList didDeselectFriend:(KTUser *)deselectedFriend
 {
     
     KTAPIUnShareStack *shareStack = [[KTAPIUnShareStack alloc] initWithStack:self.stack unShareUsers:@[deselectedFriend]];
@@ -66,7 +66,7 @@
                           } success:^(AFHTTPRequestOperation *operation, NSArray *allowedUsers) {
                               
                               NSMutableSet *users = [NSMutableSet set];
-                              for (User *allowedUser in allowedUsers) {
+                              for (KTUser *allowedUser in allowedUsers) {
                                   [users addObject:allowedUser.serverID];
                               }
                               

@@ -1,14 +1,14 @@
 #import "KTAPIGetUserStacks.h"
-#import "User.h"
+#import "KTUser.h"
 #import "Stack.h"
 
 @interface KTAPIGetUserStacks ()
-@property (nonatomic) User *user;
+@property (nonatomic) KTUser *user;
 @end
 
 @implementation KTAPIGetUserStacks
 
-- (id)initWithUser:(User *)user
+- (id)initWithUser:(KTUser *)user
 {
     self = [super init];
     if (self) {

@@ -5,7 +5,7 @@
 #import "CircleImageView.h"
 #import "MainViewController.h"
 #import "ProfileViewController.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 
 @interface RevealActionViewController ()
@@ -37,7 +37,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSString *nameString = [NSString stringWithFormat:@"%@ %@", [User mainUser].firstName, [User mainUser].lastName];
+    NSString *nameString = [NSString stringWithFormat:@"%@ %@", [KTUser mainUser].firstName, [KTUser mainUser].lastName];
     self.nameLabel.text = nameString;
 }
 
@@ -63,7 +63,7 @@
     [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
 
     ProfileViewController *profileView = [ProfileViewController new];
-    profileView.user = [User mainUser];
+    profileView.user = [KTUser mainUser];
     [MainViewController pushViewController:profileView];
 }
 

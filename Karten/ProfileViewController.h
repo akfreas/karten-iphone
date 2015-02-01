@@ -1,8 +1,8 @@
-@class User;
+@class KTUser;
 
 @interface ProfileViewController : UIViewController
 
-@property (nonatomic) User *user;
+@property (nonatomic) KTUser *user;
 @property (nonatomic) BOOL showAddFriendButton;
 
 @end

@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 #import "KTAPICreateUser.h"
 
@@ -25,7 +25,7 @@
 - (void)testCreateUserFromJSON
 {
     NSDictionary *userDict = JSONFromFile(@"UserListFetch")[10];
-    User *newUser = [User objectWithJSONDictionary:userDict];
+    KTUser *newUser = [KTUser objectWithJSONDictionary:userDict];
     XCTAssertTrue([newUser.serverID isEqualToNumber:userDict[@"id"]]);
     XCTAssertTrue([newUser.firstName isEqualToString:userDict[@"first_name"]], @"First name is not correct! %@ != %@", newUser.firstName, userDict[@"first_name"]);
     XCTAssertTrue([newUser.lastName isEqualToString:userDict[@"last_name"]], @"Last name is not correct!");
@@ -45,19 +45,19 @@
     NSArray *friends = [JSONFromFile(@"UserListFetch") subarrayWithRange:NSMakeRange(0, numberOfUsers)];
     NSMutableArray *friendArray = [NSMutableArray array];
     for (NSDictionary *friend in friends) {
-        User *newUser = [User objectWithJSONDictionary:friend];
+        KTUser *newUser = [KTUser objectWithJSONDictionary:friend];
         [newUser.managedObjectContext MR_saveOnlySelfAndWait];
         [friendArray addObject:newUser];
     }
     NSString *mainID = [[friends firstObject] objectForKey:@"id"];
-    User *mainUser = [friendArray firstObject];
+    KTUser *mainUser = [friendArray firstObject];
     [friendArray removeObjectAtIndex:0];
-    for (User *friend in friendArray) {
+    for (KTUser *friend in friendArray) {
         [mainUser addFriendsObject:friend];
     }
     [mainUser.managedObjectContext MR_saveOnlySelfAndWait];
     
-    User *userFromDB = [User MR_findFirstByAttribute:@"serverID" withValue:mainID];
+    KTUser *userFromDB = [KTUser MR_findFirstByAttribute:@"serverID" withValue:mainID];
     XCTAssertNotNil(userFromDB, @"User from db was nil!");
     NSSet *friendsFromDB = userFromDB.friends;
     XCTAssertEqual([friendsFromDB count], numberOfUsers - 1);

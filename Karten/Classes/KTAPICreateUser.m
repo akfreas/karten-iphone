@@ -1,15 +1,15 @@
 #import "KTAPICreateUser.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 
 @interface KTAPICreateUser ()
-@property (nonatomic) User *user;
+@property (nonatomic) KTUser *user;
 @property (nonatomic) NSString *password;
 @end
 
 @implementation KTAPICreateUser
 
-- (id)initWithUser:(User *)user password:(NSString *)password
+- (id)initWithUser:(KTUser *)user password:(NSString *)password
 {
     self = [super init];
     if (self) {
@@ -33,7 +33,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 - (NSManagedObjectID *)objectID

@@ -4,7 +4,7 @@
 #import "KartenNetworkClient.h"
 #import "KTAPIRemoveStack.h"
 @implementation Stack (Network)
-+ (void)syncStacksForUser:(User *)user
++ (void)syncStacksForUser:(KTUser *)user
                      completion:(KartenNetworkCompletion)completion
                         success:(KartenNetworkSuccess)success
                         failure:(KartenNetworkFailure)failure

@@ -1,5 +1,5 @@
 #import "KTAPIGetUser.h"
-#import "User.h"
+#import "KTUser.h"
 
 @implementation KTAPIGetUser
 
@@ -10,7 +10,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 - (NSString *)HTTPMethod

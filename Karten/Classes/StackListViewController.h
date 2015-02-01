@@ -1,6 +1,6 @@
-@class User;
+@class KTUser;
 
 @interface StackListViewController : UIViewController
-@property (nonatomic) User *userForStacks;
+@property (nonatomic) KTUser *userForStacks;
 
 @end

@@ -1,5 +1,5 @@
 #import "FriendListSearchViewController.h"
-#import "User.h"
+#import "KTUser.h"
 
 @interface FriendListSearchViewController () <UITableViewDataSource>
 @property (nonatomic) IBOutlet UITableView *results;
@@ -41,7 +41,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"kSearchCell"];
     }
-    User *user = self.resultDisplay[indexPath.row];
+    KTUser *user = self.resultDisplay[indexPath.row];
     cell.textLabel.text = user.username;
     return cell;
 }

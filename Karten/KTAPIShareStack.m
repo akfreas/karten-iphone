@@ -1,6 +1,6 @@
 #import "KTAPIShareStack.h"
 #import "Stack.h"
-#import "User.h"
+#import "KTUser.h"
 
 @interface KTAPIShareStack ()
 @property (nonatomic) Stack *stack;
@@ -22,7 +22,7 @@
 - (void)setShareUsers:(NSArray *)shareUsers
 {
     NSMutableArray *shareUserIDs = [NSMutableArray arrayWithArray:[self.stack.allowedUserServerIDs allObjects]];
-    for (User *user in shareUsers) {
+    for (KTUser *user in shareUsers) {
         [shareUserIDs addObject:user.serverID];
     }
     _shareUsers = shareUserIDs;
@@ -40,7 +40,7 @@
 
 - (Class)classToParse
 {
-    return [User class];
+    return [KTUser class];
 }
 
 - (NSString *)HTTPMethod

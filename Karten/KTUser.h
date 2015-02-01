@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class User;
+@class KTUser;
 
-@interface User : NSManagedObject
+@interface KTUser : NSManagedObject
 
 @property (nonatomic, retain) NSString * emailAddress;
 @property (nonatomic, retain) NSString * externalService;
@@ -25,10 +25,10 @@
 @property (nonatomic, retain) NSSet *friends;
 @end
 
-@interface User (CoreDataGeneratedAccessors)
+@interface KTUser (CoreDataGeneratedAccessors)
 
-- (void)addFriendsObject:(User *)value;
-- (void)removeFriendsObject:(User *)value;
+- (void)addFriendsObject:(KTUser *)value;
+- (void)removeFriendsObject:(KTUser *)value;
 - (void)addFriends:(NSSet *)values;
 - (void)removeFriends:(NSSet *)values;
 

@@ -8,7 +8,7 @@
 #import "KartenNetworkClient.h"
 
 #import "User+Helpers.h"
-#import "User.h"
+#import "KTUser.h"
 #import "FriendsListSearchUpdater.h"
 
 static NSString *kFriendCellID = @"kFriendCellID";
@@ -21,7 +21,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 
 @property (nonatomic) IBOutlet UITableView *friendTableView;
 @property (nonatomic) IBOutlet UISearchController *searchController;
-@property (nonatomic) User *user;
+@property (nonatomic) KTUser *user;
 @property (nonatomic) FriendListSearchViewController *searchDisplayViewController;
 @property (nonatomic) FriendsListSearchUpdater *searchUpdater;
 @property (nonatomic) NSFetchedResultsController *fetchController;
@@ -31,7 +31,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 
 @implementation KTFriendSelectionViewController
 
-- (instancetype)initWithUser:(User *)user
+- (instancetype)initWithUser:(KTUser *)user
 {
     self = [super init];
     if (self) {
@@ -70,7 +70,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 - (void)setInitialSelection:(NSArray *)initialSelection
 {
     _initialSelection = initialSelection;
-    [initialSelection enumerateObjectsUsingBlock:^(User *selectedUser, NSUInteger idx, BOOL *stop) {
+    [initialSelection enumerateObjectsUsingBlock:^(KTUser *selectedUser, NSUInteger idx, BOOL *stop) {
         self.friendSelection[selectedUser.serverID] = @(YES);
     }];
 }
@@ -119,7 +119,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(friendsList:didDeselectFriend:)]) {
-        User *friend = [self userAtIndexPath:indexPath];
+        KTUser *friend = [self userAtIndexPath:indexPath];
         [self.delegate friendsList:self didDeselectFriend:friend];
     }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -128,7 +128,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    User *friend;
+    KTUser *friend;
     if (indexPath.section == 0 && self.pinInitialSelectionToTop) {
         friend = self.initialSelection[indexPath.row];
     } else {
@@ -142,7 +142,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
     }
 }
 
-- (void)selectFriend:(User *)friend
+- (void)selectFriend:(KTUser *)friend
 {
     self.friendSelection[friend.serverID] = @(YES);
     [self setPinnedFriend:friend selected:YES];
@@ -155,7 +155,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
     [self.delegate friendsList:self didSelectFriend:friend];
 }
 
-- (void)deselectFriend:(User *)friend
+- (void)deselectFriend:(KTUser *)friend
 {
     [self.friendSelection removeObjectForKey:friend.serverID];
     NSIndexPath *fetchedIndexPath = [self.fetchController indexPathForObject:friend];
@@ -165,7 +165,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
     [self.delegate friendsList:self didDeselectFriend:friend];
 }
 
-- (void)setPinnedFriend:(User *)friend selected:(BOOL)isSelected
+- (void)setPinnedFriend:(KTUser *)friend selected:(BOOL)isSelected
 {
     if (self.pinInitialSelectionToTop) {
         NSInteger initialSelectionIndex = [self.initialSelection indexOfObject:friend];
@@ -185,10 +185,10 @@ static NSString *kFriendCellID = @"kFriendCellID";
     } else {
         pred = [NSPredicate predicateWithFormat:@"ANY friends == %@", self.user];
     }
-    self.fetchController = [User MR_fetchAllSortedBy:@"serverID" ascending:YES withPredicate:pred groupBy:nil delegate:self];
+    self.fetchController = [KTUser MR_fetchAllSortedBy:@"serverID" ascending:YES withPredicate:pred groupBy:nil delegate:self];
 }
 
-- (User *)userAtIndexPath:(NSIndexPath *)indexPath
+- (KTUser *)userAtIndexPath:(NSIndexPath *)indexPath
 {
     return [self.fetchController objectAtIndexPath:indexPath];
 }
@@ -219,7 +219,7 @@ static NSString *kFriendCellID = @"kFriendCellID";
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    User *friend;
+    KTUser *friend;
     if (indexPath.section == 0 && self.pinInitialSelectionToTop) {
         friend = self.initialSelection[indexPath.row];
     } else {

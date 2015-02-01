@@ -24,7 +24,7 @@
 
 #pragma mark Accessors
 
-- (void)setUserForStacks:(User *)userForStacks
+- (void)setUserForStacks:(KTUser *)userForStacks
 {
     _userForStacks = userForStacks;
     [self fetchUsersStacks];

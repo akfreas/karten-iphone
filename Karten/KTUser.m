@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
-#import "User.h"
-#import "User.h"
+#import "KTUser.h"
+#import "KTUser.h"
 
 
-@implementation User
+@implementation KTUser
 
 @dynamic emailAddress;
 @dynamic externalService;

@@ -3,7 +3,7 @@
 #import "Stack+Helpers.h"
 #import "StackServer+Helpers.h"
 #import "StackServer.h"
-#import "User.h"
+#import "KTUser.h"
 #import "User+Helpers.h"
 @interface KarenStackTests : XCTestCase
 

@@ -5,7 +5,7 @@
 #import "KartenNetworkClient.h"
 #import "Karten-Swift.h"
 #import "KTAPIGetUser.h"
-#import "User.h"
+#import "KTUser.h"
 #import "KartenUserManager.h"
 #import "SignUpViewController.h"
 #import <RNBlurModalView/RNBlurModalView.h>
@@ -59,10 +59,10 @@
     [super viewDidLoad];
 }
 
-- (void(^)(User *, NSString *))successActionBlock
+- (void(^)(KTUser *, NSString *))successActionBlock
 {
-    return ^(User *newUser, NSString *password) {
-        [KartenUserManager logUserInWithUsername:newUser.username password:password completion:^(User *user) {
+    return ^(KTUser *newUser, NSString *password) {
+        [KartenUserManager logUserInWithUsername:newUser.username password:password completion:^(KTUser *user) {
               [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
         } failure:^(NSError *err) {
             
@@ -79,7 +79,7 @@
     return YES;
 }
 
-- (void)loginUser:(User *)user
+- (void)loginUser:(KTUser *)user
 {
     
 }
@@ -99,7 +99,7 @@
         return;
     }
     
-    [KartenUserManager logUserInWithUsername:self.usernameTextField.text password:self.passwordTextField.text completion:^(User *user) {
+    [KartenUserManager logUserInWithUsername:self.usernameTextField.text password:self.passwordTextField.text completion:^(KTUser *user) {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     } failure: ^(NSError *err){
         [self showInvalidUsernamePasswordComboAlert];
