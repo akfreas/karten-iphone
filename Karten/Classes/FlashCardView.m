@@ -1,12 +1,12 @@
 #import "FlashCardView.h"
-#import "FlashCardDisplayView.h"
+#import "KTFlashCardDisplayView.h"
 #import "FlashCardQuestionView.h"
 
 
 @interface FlashCardView ()
 
-@property (nonatomic) FlashCardDisplayView *answerView;
-@property (nonatomic) FlashCardDisplayView *questionView;
+@property (nonatomic) KTFlashCardDisplayView *answerView;
+@property (nonatomic) KTFlashCardDisplayView *questionView;
 @property (nonatomic) NSMutableArray *constraintArray;
 @property (nonatomic, weak) UIView *currentFlashView;
 @end
@@ -78,13 +78,13 @@
 
 - (void)createAnswerView
 {
-    self.answerView = [FlashCardDisplayView new];
+    self.answerView = [KTFlashCardDisplayView new];
     [self.answerView setCard:self.card];
 }
 
 - (void)createQuestionView
 {
-    self.questionView = [FlashCardDisplayView new];
+    self.questionView = [KTFlashCardDisplayView new];
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:self.card.term attributes:@{}];
     [self.questionView setCard:self.card];
 }

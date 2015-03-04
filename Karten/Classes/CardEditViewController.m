@@ -1,11 +1,11 @@
 #import "CardEditViewController.h"
-#import "FlashCardDisplayView.h"
+#import "KTFlashCardDisplayView.h"
 #import "Card.h"
 #import "Card+Network.h"
 
 
 @interface CardEditViewController ()
-@property (nonatomic) FlashCardDisplayView *flashDisplay;
+@property (nonatomic) KTFlashCardDisplayView *flashDisplay;
 @property (nonatomic) Card *card;
 @end
 
@@ -41,7 +41,7 @@
 
 - (void)createflashDisplay
 {
-    self.flashDisplay = [FlashCardDisplayView new];
+    self.flashDisplay = [KTFlashCardDisplayView new];
     self.flashDisplay.editing = YES;
     [self.view addSubview:self.flashDisplay];
 }

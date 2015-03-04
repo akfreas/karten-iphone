@@ -1,11 +1,11 @@
-#import "FlashCardDisplayView.h"
+#import "KTFlashCardDisplayView.h"
 
-@interface FlashCardDisplayView () <UITextViewDelegate>
+@interface KTFlashCardDisplayView () <UITextViewDelegate>
 @property (nonatomic) UITextView *textView;
 @property (nonatomic) UITextField *termLabel;
 @end
 
-@implementation FlashCardDisplayView {
+@implementation KTFlashCardDisplayView {
     Card *_card;
 }
 
