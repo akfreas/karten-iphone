@@ -31,7 +31,7 @@
 -(void)addDisplayViews {
     self.termView = [InfoDisplayView new];
     [self.contentView addSubview:self.termView];
-
+    [self updateConstraints];
 }
 
 

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1901714919D6B7C500C90A50 /* RevealActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714819D6B7C500C90A50 /* RevealActionViewController.m */; };
-		1901714B19D6BABE00C90A50 /* RevealActionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */; };
+		1901714919D6B7C500C90A50 /* KTRevealActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714819D6B7C500C90A50 /* KTRevealActionViewController.m */; };
+		1901714B19D6BABE00C90A50 /* KTRevealActionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1901714A19D6BABE00C90A50 /* KTRevealActionViewController.storyboard */; };
 		1901714D19D6BB5800C90A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1901714C19D6BB5800C90A50 /* LaunchScreen.storyboard */; };
-		1901715019D6D6B600C90A50 /* RevealControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714F19D6D6B600C90A50 /* RevealControllerManager.m */; };
+		1901715019D6D6B600C90A50 /* KTRevealControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901714F19D6D6B600C90A50 /* KTRevealControllerManager.m */; };
 		1901715419D6DB3B00C90A50 /* ShareStackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1901715219D6DB3B00C90A50 /* ShareStackViewController.m */; };
 		1901715519D6DB3B00C90A50 /* ShareStackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1901715319D6DB3B00C90A50 /* ShareStackViewController.xib */; };
 		190858F219653B85003E2784 /* FlashCardDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 190858F119653B85003E2784 /* FlashCardDisplayView.m */; };
@@ -35,6 +35,8 @@
 		19427D2819F07A95005804E2 /* QuizTypeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */; };
 		1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1946C38919B00721007D515E /* KTAPILoginUser.m */; };
 		194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */; };
+		1950F2FA1A81099E0077D2B9 /* KTProfileAggregateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950F2F91A81099E0077D2B9 /* KTProfileAggregateDataSource.swift */; };
+		1951A6951A7E97B9008032FE /* KTNewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951A6941A7E97B9008032FE /* KTNewProfileViewController.swift */; };
 		1959B5A819EBE072001D4EBF /* AccessoryViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1959B5A719EBE072001D4EBF /* AccessoryViews.m */; };
 		195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA521936B2650044C52B /* FacebookLoginViewController.m */; };
 		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
@@ -146,12 +148,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1901714719D6B7C500C90A50 /* RevealActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealActionViewController.h; path = Classes/RevealActionViewController.h; sourceTree = "<group>"; };
-		1901714819D6B7C500C90A50 /* RevealActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealActionViewController.m; path = Classes/RevealActionViewController.m; sourceTree = "<group>"; };
-		1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RevealActionViewController.storyboard; sourceTree = "<group>"; };
+		1901714719D6B7C500C90A50 /* KTRevealActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTRevealActionViewController.h; path = Classes/KTRevealActionViewController.h; sourceTree = "<group>"; };
+		1901714819D6B7C500C90A50 /* KTRevealActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTRevealActionViewController.m; path = Classes/KTRevealActionViewController.m; sourceTree = "<group>"; };
+		1901714A19D6BABE00C90A50 /* KTRevealActionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KTRevealActionViewController.storyboard; sourceTree = "<group>"; };
 		1901714C19D6BB5800C90A50 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UserInterface/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1901714E19D6D6B600C90A50 /* RevealControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RevealControllerManager.h; path = Classes/RevealControllerManager.h; sourceTree = "<group>"; };
-		1901714F19D6D6B600C90A50 /* RevealControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RevealControllerManager.m; path = Classes/RevealControllerManager.m; sourceTree = "<group>"; };
+		1901714E19D6D6B600C90A50 /* KTRevealControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTRevealControllerManager.h; path = Classes/KTRevealControllerManager.h; sourceTree = "<group>"; };
+		1901714F19D6D6B600C90A50 /* KTRevealControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTRevealControllerManager.m; path = Classes/KTRevealControllerManager.m; sourceTree = "<group>"; };
 		1901715119D6DB3B00C90A50 /* ShareStackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareStackViewController.h; path = Classes/ShareStackViewController.h; sourceTree = "<group>"; };
 		1901715219D6DB3B00C90A50 /* ShareStackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareStackViewController.m; path = Classes/ShareStackViewController.m; sourceTree = "<group>"; };
 		1901715319D6DB3B00C90A50 /* ShareStackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareStackViewController.xib; path = Classes/ShareStackViewController.xib; sourceTree = "<group>"; };
@@ -195,6 +197,8 @@
 		1946C38919B00721007D515E /* KTAPILoginUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPILoginUser.m; sourceTree = "<group>"; };
 		194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionaryRepresentation.m"; sourceTree = "<group>"; };
 		194F97321954237C00B184D6 /* NSObject+NSDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionaryRepresentation.h"; sourceTree = "<group>"; };
+		1950F2F91A81099E0077D2B9 /* KTProfileAggregateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTProfileAggregateDataSource.swift; sourceTree = "<group>"; };
+		1951A6941A7E97B9008032FE /* KTNewProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTNewProfileViewController.swift; sourceTree = "<group>"; };
 		1959B5A619EBE072001D4EBF /* AccessoryViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryViews.h; sourceTree = "<group>"; };
 		1959B5A719EBE072001D4EBF /* AccessoryViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryViews.m; sourceTree = "<group>"; };
 		1959B5A919EBE3D5001D4EBF /* FriendSelectionDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendSelectionDataSource.h; sourceTree = "<group>"; };
@@ -587,11 +591,11 @@
 				198C099618CC48E8000C00E2 /* DB */,
 				198C097218CC3F5F000C00E2 /* AppDelegate.h */,
 				198C097318CC3F5F000C00E2 /* AppDelegate.m */,
-				1901714E19D6D6B600C90A50 /* RevealControllerManager.h */,
-				1901714F19D6D6B600C90A50 /* RevealControllerManager.m */,
-				1901714719D6B7C500C90A50 /* RevealActionViewController.h */,
-				1901714819D6B7C500C90A50 /* RevealActionViewController.m */,
-				1901714A19D6BABE00C90A50 /* RevealActionViewController.storyboard */,
+				1901714E19D6D6B600C90A50 /* KTRevealControllerManager.h */,
+				1901714F19D6D6B600C90A50 /* KTRevealControllerManager.m */,
+				1901714719D6B7C500C90A50 /* KTRevealActionViewController.h */,
+				1901714819D6B7C500C90A50 /* KTRevealActionViewController.m */,
+				1901714A19D6BABE00C90A50 /* KTRevealActionViewController.storyboard */,
 				192101C819EBB63F007BE6B4 /* ShareStackDelegate.h */,
 				192101C919EBB63F007BE6B4 /* ShareStackDelegate.m */,
 				1959B5A619EBE072001D4EBF /* AccessoryViews.h */,
@@ -602,6 +606,8 @@
 				19A59F5719EF476300385704 /* KTProfileViewController.h */,
 				19A59F5819EF476300385704 /* KTProfileViewController.m */,
 				19A59F5919EF476300385704 /* KTProfileViewController.xib */,
+				1951A6941A7E97B9008032FE /* KTNewProfileViewController.swift */,
+				1950F2F91A81099E0077D2B9 /* KTProfileAggregateDataSource.swift */,
 				19CE51D219785E210053CD4F /* DeleteButton.h */,
 				19CE51D319785E210053CD4F /* DeleteButton.m */,
 				195CEA511936B2650044C52B /* FacebookLoginViewController.h */,
@@ -827,7 +833,7 @@
 		198C095618CC3F5F000C00E2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Sashimiblade;
 				TargetAttributes = {
 					198C095D18CC3F5F000C00E2 = {
@@ -869,7 +875,7 @@
 				19295C8619EB4A94003E2C81 /* FriendListSearchViewController.xib in Resources */,
 				1901715519D6DB3B00C90A50 /* ShareStackViewController.xib in Resources */,
 				19169F4319005B3600F822C6 /* 33-cabinet.png in Resources */,
-				1901714B19D6BABE00C90A50 /* RevealActionViewController.storyboard in Resources */,
+				1901714B19D6BABE00C90A50 /* KTRevealActionViewController.storyboard in Resources */,
 				19295C7A19EB2C3B003E2C81 /* KTFriendSelectionViewController.xib in Resources */,
 				19CC49C419EED61E00E207B7 /* LoginViewController.xib in Resources */,
 				19BC93B41935CDF600CC8725 /* UserListFetch.json in Resources */,
@@ -973,7 +979,7 @@
 				19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */,
 				1969373D19EC830B0052FC00 /* ShareStackFriendControllerManager.m in Sources */,
 				198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */,
-				1901714919D6B7C500C90A50 /* RevealActionViewController.m in Sources */,
+				1901714919D6B7C500C90A50 /* KTRevealActionViewController.m in Sources */,
 				1966CD3218DDF29A00E85CDE /* Database.m in Sources */,
 				19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */,
 				198C097418CC3F5F000C00E2 /* AppDelegate.m in Sources */,
@@ -982,7 +988,7 @@
 				19C933211905BFF10075FA49 /* KartenModel.xcdatamodeld in Sources */,
 				196603F1193EFFBA0027698E /* Card+Network.m in Sources */,
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
-				1901715019D6D6B600C90A50 /* RevealControllerManager.m in Sources */,
+				1901715019D6D6B600C90A50 /* KTRevealControllerManager.m in Sources */,
 				19CC49C719EF1A3C00E207B7 /* SignUpViewController.m in Sources */,
 				19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */,
 				1924F7A31A7E8A3100DC6520 /* KTViewFriendsViewController.swift in Sources */,
@@ -997,6 +1003,7 @@
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
 				19A547CE194B16F4007B0365 /* StackActionViewController.m in Sources */,
 				19A59F5A19EF476300385704 /* KTProfileViewController.m in Sources */,
+				1951A6951A7E97B9008032FE /* KTNewProfileViewController.swift in Sources */,
 				195CEA791937EA480044C52B /* KTAPICreateStack.m in Sources */,
 				19C933271905CE8D0075FA49 /* CouchManager.m in Sources */,
 				19E2AE3419B077C1003EA7CB /* KartenUserManager.m in Sources */,
@@ -1006,6 +1013,7 @@
 				196021D5193295F1000234A3 /* User+Helpers.m in Sources */,
 				19E8CEB619AFBABC00C7B112 /* KartenSessionManager.swift in Sources */,
 				1969374319ECB0EE0052FC00 /* KTAPIUnShareStack.m in Sources */,
+				1950F2FA1A81099E0077D2B9 /* KTProfileAggregateDataSource.swift in Sources */,
 				198C099D18CC4976000C00E2 /* Card+Helpers.m in Sources */,
 				19E2AE3719B07A62003EA7CB /* KTAPIGetUser.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
@@ -1126,7 +1134,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/akfreas/github/karten-iphone/Karten/Karten-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";

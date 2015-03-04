@@ -18,7 +18,7 @@
 #import "AppDelegate.h"
 #import "Karten-Swift.h"
 #import "NotificationKeys.h"
-#import "RevealControllerManager.h"
+#import "KTRevealControllerManager.h"
 #import "KTFriendSelectionViewController.h"
 #import "ShareStackViewController.h"
 #import "Karten-swift.h"
@@ -190,7 +190,7 @@ static MainViewController *sharedInstance;
     //    barButton.contentMode = uiviewcontentmodeac;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     [barButton bk_addEventHandler:^(id sender) {
-        [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+        [[KTRevealControllerManager sharedRevealController] revealToggleAnimated:YES];
     } forControlEvents:UIControlEventTouchUpInside];
     item.customView = barButton;
     self.navigationItem.leftBarButtonItem = item;

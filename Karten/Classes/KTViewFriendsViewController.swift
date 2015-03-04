@@ -10,12 +10,6 @@ import UIKit
         super.init(nibName: nil, bundle: nil)
         self.user = user
     }
-//    
-//    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-//        self.selectionController = KTFriendSelectionViewController(user: user)
-//
-//        super.init(nibName: nil, bundle: nil)
-//    }
 
     public required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -35,7 +29,7 @@ import UIKit
     func configureSelectionController() {
         self.addChildViewController(selectionController)
         self.view.addSubview(selectionController.view)
-        self.view.autoCenterInSuperview()
+        self.selectionController.view.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero)
         selectionController.showSearchBar = false
         selectionController.delegate = self
     }

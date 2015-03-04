@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <SWRevealViewController/SWRevealViewController.h>
 
-@interface RevealControllerManager : NSObject
+@interface KTRevealControllerManager : NSObject
 
 + (SWRevealViewController *)sharedRevealController;
 

@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
-#import "RevealControllerManager.h"
+#import "KTRevealControllerManager.h"
 #import <SWRevealViewController/SWRevealViewController.h>
 
-@implementation RevealControllerManager
+@implementation KTRevealControllerManager
 
 + (SWRevealViewController *)sharedRevealController
 {

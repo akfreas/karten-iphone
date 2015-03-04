@@ -1,20 +1,20 @@
-#import "RevealActionViewController.h"
+#import "KTRevealActionViewController.h"
 #import "Karten-Swift.h"
 #import "KartenUserManager.h"
-#import "RevealControllerManager.h"
+#import "KTRevealControllerManager.h"
 #import "CircleImageView.h"
 #import "MainViewController.h"
 #import "KTProfileViewController.h"
 #import "KTUser.h"
 #import "User+Helpers.h"
 
-@interface RevealActionViewController ()
+@interface KTRevealActionViewController ()
 @property (nonatomic) IBOutlet UIView *circleImageView;
 @property (nonatomic) IBOutlet UILabel *nameLabel;
 @property (nonatomic) CircleImageView *imageView;
 @end
 
-@implementation RevealActionViewController
+@implementation KTRevealActionViewController
 
 - (instancetype)init
 {
@@ -48,19 +48,19 @@
 
 - (void)logoutAction
 {
-    [[RevealControllerManager sharedRevealController] revealToggleAnimated:NO];
+    [[KTRevealControllerManager sharedRevealController] revealToggleAnimated:NO];
     [KartenUserManager logoutCurrentUser];
 }
 
 - (void)showFriendListController
 {
-    [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+    [[KTRevealControllerManager sharedRevealController] revealToggleAnimated:YES];
     [MainViewController showFriendListController];
 }
 
 - (void)showProfileViewController
 {
-    [[RevealControllerManager sharedRevealController] revealToggleAnimated:YES];
+    [[KTRevealControllerManager sharedRevealController] revealToggleAnimated:YES];
 
     KTProfileViewController *profileView = [KTProfileViewController new];
     profileView.user = [KTUser mainUser];

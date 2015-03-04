@@ -4,6 +4,8 @@ source 'https://github.com/CocoaPods/Specs'
 
 target "Karten" do
 
+
+    pod "KMCollectionView", :path => '~/github/KMCollectionView'
     pod "EDColor"
     pod "GoogleAnalytics-iOS-SDK"
     pod "BlocksKit", :head
