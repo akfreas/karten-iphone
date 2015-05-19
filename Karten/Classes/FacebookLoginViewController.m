@@ -1,5 +1,4 @@
 #import "FacebookLoginViewController.h"
-#import "FacebookSessionManager.h"
 #import "NetworkSyncUtil.h"
 
 @interface FacebookLoginViewController () <FBLoginViewDelegate>

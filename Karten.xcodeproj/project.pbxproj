@@ -41,9 +41,7 @@
 		1950F2FA1A81099E0077D2B9 /* KTProfileAggregateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1950F2F91A81099E0077D2B9 /* KTProfileAggregateDataSource.swift */; };
 		1951A6951A7E97B9008032FE /* KTNewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951A6941A7E97B9008032FE /* KTNewProfileViewController.swift */; };
 		1959B5A819EBE072001D4EBF /* AccessoryViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1959B5A719EBE072001D4EBF /* AccessoryViews.m */; };
-		195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA521936B2650044C52B /* FacebookLoginViewController.m */; };
 		195CEA57193720130044C52B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA56193720130044C52B /* MainViewController.m */; };
-		195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5C193731C00044C52B /* FacebookSessionManager.m */; };
 		195CEA6019376E030044C52B /* StackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA5F19376E030044C52B /* StackListViewController.m */; };
 		195CEA6319376E1E0044C52B /* StackListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6219376E1E0044C52B /* StackListTableView.m */; };
 		195CEA6619376E790044C52B /* StackListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195CEA6519376E790044C52B /* StackListTableViewCell.m */; };
@@ -100,7 +98,6 @@
 		19A547CB194B0A33007B0365 /* StackCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547CA194B0A33007B0365 /* StackCollectionView.m */; };
 		19A547CE194B16F4007B0365 /* StackActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547CD194B16F4007B0365 /* StackActionViewController.m */; };
 		19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547D6194B29FC007B0365 /* FlashCardStackFinishedView.m */; };
-		19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547D9194B2E26007B0365 /* FacebookShareController.m */; };
 		19A59F5A19EF476300385704 /* KTProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59F5819EF476300385704 /* KTProfileViewController.m */; };
 		19A59F5B19EF476300385704 /* KTProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19A59F5919EF476300385704 /* KTProfileViewController.xib */; };
 		19A59F5E19EF498600385704 /* KTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A59F5D19EF498600385704 /* KTUser.m */; };
@@ -1033,7 +1030,6 @@
 				19E2AE3719B07A62003EA7CB /* KTAPIGetUser.m in Sources */,
 				195CEA57193720130044C52B /* MainViewController.m in Sources */,
 				196021D2193295DE000234A3 /* Stack+Helpers.m in Sources */,
-				19A547DA194B2E26007B0365 /* FacebookShareController.m in Sources */,
 				192101CA19EBB63F007BE6B4 /* ShareStackDelegate.m in Sources */,
 				19427D2819F07A95005804E2 /* QuizTypeSelectionView.m in Sources */,
 				19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */,
@@ -1053,14 +1049,12 @@
 				1972491A19326FE600030E5E /* KTCard.m in Sources */,
 				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
 				19295C8919EB4DA5003E2C81 /* FriendsListSearchUpdater.m in Sources */,
-				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,
 				19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */,
 				19295C8519EB4A94003E2C81 /* FriendListSearchViewController.m in Sources */,
 				1919F9BB1A62C4EF003197AC /* KTAttributedStringFormats.swift in Sources */,
 				1984C8141965D539003402CC /* CardEditViewController.m in Sources */,
 				198C09A318CC4A3A000C00E2 /* CardTableView.m in Sources */,
 				19B74E961A7005D20092868D /* KTSpeechSynth.swift in Sources */,
-				195CEA5D193731C00044C52B /* FacebookSessionManager.m in Sources */,
 				19295C6619EB1F0F003E2C81 /* CGRectUtils.m in Sources */,
 				19C500101936A16E002AABBD /* StackServer+Helpers.m in Sources */,
 				198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */,

@@ -11,7 +11,6 @@
 #import "StackActionViewController.h"
 #import "CardListViewController.h"
 #import "FacebookShareController.h"
-#import "FacebookSessionManager.h"
 #import <BlocksKit/UIBarButtonItem+BlocksKit.h>
 #import "KartenUserManager.h"
 #import "LoginViewController.h"

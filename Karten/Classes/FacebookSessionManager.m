@@ -1,4 +1,3 @@
-#import "FacebookSessionManager.h"
 #import "KTAPICreateUser.h"
 #import "KartenNetworkClient.h"
 #import "User+Helpers.h"

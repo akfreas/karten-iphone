@@ -13,7 +13,6 @@ target "Karten" do
     pod "BugSense"
     pod "MagicalRecord"
     pod "AFNetworking"
-    pod "Facebook-iOS-SDK"
     pod "Masonry", '~> 0.5.0'
     pod "SWRevealViewController", '~> 2.3.0'
     pod 'RNBlurModalView', '~> 0.1.0'

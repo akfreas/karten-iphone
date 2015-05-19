@@ -1,5 +1,4 @@
 #import "FacebookShareController.h"
-#import "FacebookSessionManager.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FacebookShareController () <FBFriendPickerDelegate>

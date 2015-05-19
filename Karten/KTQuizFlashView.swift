@@ -11,8 +11,8 @@ import UIKit
     var centerLabel                         = UILabel()
     var config                              = KTUIConfigurationUtil.utilWithPrefix("QuizFlashView")
     
-    public override init() {
-        super.init()
+    public init() {
+        super.init(frame: CGRectZero)
         addCenterLabel()
         addLayoutConstraints()
     }
@@ -34,7 +34,7 @@ import UIKit
     }
     
     func configureLabelForCard() {
-        centerLabel.attributedText = NSAttributedString(string: displayText, attributes: config.fontAttributesForKey("CenterFontAttributes"))
+        centerLabel.attributedText = NSAttributedString(string: displayText, attributes: config.fontAttributesForKey("CenterFontAttributes") as [NSObject : AnyObject])
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
     {
         let token : String = KartenSessionManager.getToken()
         var formattedHeaderString : String
-        if countElements(token) > 0 {
+        if count(token) > 0 {
             formattedHeaderString = String(format: "Token %@", token)
         } else {
             formattedHeaderString = ""

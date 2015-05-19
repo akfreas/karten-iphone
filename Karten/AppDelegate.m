@@ -1,7 +1,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "NetworkSyncUtil.h"
-#import "FacebookSessionManager.h"
 #import "KTRevealControllerManager.h"
 #import "KTRevealActionViewController.h"
 #import <SWRevealViewController/SWRevealViewController.h>
@@ -62,21 +61,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [FBAppEvents activateApp];
-    [FBAppCall handleDidBecomeActiveWithSession:[FacebookSessionManager sharedInstance].session];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
-}
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    [FBSession.activeSession setStateChangeHandler:
-     ^(FBSession *session, FBSessionState state, NSError *error) {
-         [[FacebookSessionManager sharedInstance] sessionStateChanged:session state:state error:error];
-     }];
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 

@@ -22,7 +22,7 @@ extension UIColor {
         alpha = CGFloat((alphaString as NSString).floatValue)
         var hexValue: CUnsignedLongLong = 0
         if scanner.scanHexLongLong(&hexValue) {
-            switch (countElements(rgba)) {
+            switch (count(rgba)) {
             case 3:
                 red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                 green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0

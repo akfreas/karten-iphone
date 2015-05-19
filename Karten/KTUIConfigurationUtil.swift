@@ -11,18 +11,18 @@ private let textAlignmentMap = [
 
 extension NSDictionary {
     class func attributesDictionaryWithJSONAttributes(attributes: NSDictionary) -> NSDictionary {
-        let fontName = attributes["font"] as NSString
-        let fontSize = attributes["size"] as NSNumber
-        let colorString = attributes["color"] as NSString
-        let color = UIColor(rgb_a: colorString)
-        let font = UIFont(name: fontName, size: CGFloat(fontSize.floatValue))!
+        let fontName = attributes["font"] as! NSString
+        let fontSize = attributes["size"] as! NSNumber
+        let colorString = attributes["color"] as! NSString
+        let color = UIColor(rgb_a: colorString as String)
+        let font = UIFont(name: fontName as String, size: CGFloat(fontSize.floatValue))!
         var dict = [
                     NSFontAttributeName : font,
                     NSForegroundColorAttributeName : color
         ]
         if let alignmentString = attributes["alignment"] as? NSString {
             var paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = textAlignmentMap[alignmentString]!
+            paragraph.alignment = textAlignmentMap[alignmentString as String]!
             dict[NSParagraphStyleAttributeName] = paragraph
         }
         if let kerning = attributes["kerning"] as? NSNumber {
@@ -81,7 +81,7 @@ public class KTUIConfigurationUtil {
     class func valueForKey(object: AnyObject, key: String) -> NSObject {
         var tokenized = split(key) {$0 == ":"} as [String]
         if tokenized.count == 0 {
-            return object as    NSObject
+            return object as!    NSObject
         }
         var currentKey = tokenized[0]
         tokenized.removeAtIndex(0)
@@ -89,7 +89,7 @@ public class KTUIConfigurationUtil {
             var remaining = ":".join(tokenized)
             return valueForKey(v, key: remaining)
         } else {
-            return object[currentKey] as NSObject
+            return object[currentKey] as! NSObject
         }
     }
 
@@ -98,19 +98,19 @@ public class KTUIConfigurationUtil {
     }
     
     class func colorForKey(key: String) -> UIColor {
-        var colorDescription = valueForKey(key) as String
+        var colorDescription = valueForKey(key) as! String
         var color = UIColor(rgb_a: colorDescription)
         return color
     }
     
     class func fontAttributesForKey(key: String) -> NSDictionary {
-        let attributesDict = valueForKey(key) as NSDictionary
+        let attributesDict = valueForKey(key) as! NSDictionary
         let parsedDict = NSDictionary.attributesDictionaryWithJSONAttributes(attributesDict)
         return parsedDict
     }
     
     class func URLForKey(key: String) -> NSURL {
-        let URLString = valueForKey(key) as String
+        let URLString = valueForKey(key) as! String
         let url = NSURL(string: URLString)!
         return url
     }
