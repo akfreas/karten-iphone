@@ -1,4 +1,4 @@
-#import "Card.h"
+#import "KTCard.h"
 
 @interface CardCell : UITableViewCell
 

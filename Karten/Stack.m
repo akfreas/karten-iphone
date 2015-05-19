@@ -7,7 +7,7 @@
 //
 
 #import "Stack.h"
-#import "Card.h"
+#import "KTCard.h"
 #import "StackServer.h"
 
 

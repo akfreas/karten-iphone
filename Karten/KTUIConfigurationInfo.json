@@ -1,0 +1,11 @@
+{
+    "QuizFlashView" : {
+        "BackgroundColor" : "F5F5F5;1.0",
+        "CenterFontAttributes" : {
+            "font" : "SourceSansPro-Light",
+            "size" : 15,
+            "color" : "000000;1.0",
+            "kerning" : 2.0
+        }
+    },
+}

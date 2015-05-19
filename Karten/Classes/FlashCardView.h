@@ -1,4 +1,4 @@
-#import "Card.h"
+#import "KTCard.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 
 
@@ -9,9 +9,9 @@ typedef enum {
 
 @interface FlashCardView : MDCSwipeToChooseView
 
-@property (nonatomic) Card *card;
+@property (nonatomic) KTCard *card;
 @property (nonatomic, assign) FlashCardViewMode currentMode;
 
-- (id)initWithFrame:(CGRect)frame card:(Card *)card options:(MDCSwipeToChooseViewOptions *)options mode:(FlashCardViewMode)mode;
+- (id)initWithFrame:(CGRect)frame card:(KTCard *)card options:(MDCSwipeToChooseViewOptions *)options mode:(FlashCardViewMode)mode;
 
 @end

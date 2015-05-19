@@ -7,28 +7,28 @@ static NSString *kCouchTermKey = @"term";
 static NSString *kCouchIDKey = @"_id";
 //static NSString *kCouchRevKey = @"_re
 
-@implementation Card (Helpers)
+@implementation KTCard (Helpers)
 + (instancetype)getOrCreateCardWithCouchDBQueryRow:(CBLQueryRow *)row inContext:(NSManagedObjectContext *)context
 {
     
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"couchID == %@", row.document.documentID];
     
-    NSArray *cardArray = [Card MR_findAllWithPredicate:pred inContext:context];
-    Card *card;
+    NSArray *cardArray = [KTCard MR_findAllWithPredicate:pred inContext:context];
+    KTCard *card;
     if ([cardArray count] == 1) {
         card = [cardArray firstObject];
         if ([card.couchRev isEqualToString:row.documentRevisionID] == NO) {
             [card updateWithRow:row];
         }
     } else if ([cardArray count] == 0) {
-        card = [Card newCardWithQueryRow:row inContext:context];
+        card = [KTCard newCardWithQueryRow:row inContext:context];
     }
     return card;
 }
 
 + (instancetype)newCardWithQueryRow:(CBLQueryRow *)row inContext:(NSManagedObjectContext *)context
 {
-    Card *newCard = [Card MR_createInContext:context];
+    KTCard *newCard = [KTCard MR_createInContext:context];
     [newCard updateWithRow:row];
     return newCard;
 }

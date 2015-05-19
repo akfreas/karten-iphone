@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Card, StackServer;
+@class KTCard, StackServer;
 
 @interface Stack : NSManagedObject
 
@@ -26,8 +26,8 @@
 
 @interface Stack (CoreDataGeneratedAccessors)
 
-- (void)addCardsObject:(Card *)value;
-- (void)removeCardsObject:(Card *)value;
+- (void)addCardsObject:(KTCard *)value;
+- (void)removeCardsObject:(KTCard *)value;
 - (void)addCards:(NSSet *)values;
 - (void)removeCards:(NSSet *)values;
 

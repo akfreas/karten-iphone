@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
-#import "Card.h"
+#import "KTCard.h"
 #import "Stack.h"
 
 
-@implementation Card
+@implementation KTCard
 
 @dynamic couchID;
 @dynamic couchRev;

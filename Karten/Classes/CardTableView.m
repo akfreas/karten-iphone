@@ -1,6 +1,6 @@
 #import "CardTableView.h"
 #import "CardCell.h"
-#import "Card.h"
+#import "KTCard.h"
 #import "Card+Helpers.h"
 #import "Database.h"
 #import "CouchManager.h"
@@ -36,10 +36,10 @@ static NSString *kHeaderReuseID = @"HeaderCell";
     [self reloadData];
 }
 
-- (void (^)(Card *))cardSelected
+- (void (^)(KTCard *))cardSelected
 {
     if (_cardSelected == NULL) {
-        _cardSelected = ^(Card *c){};
+        _cardSelected = ^(KTCard *c){};
     }
     return _cardSelected;
 }
@@ -79,7 +79,7 @@ static NSString *kHeaderReuseID = @"HeaderCell";
 
 #pragma mark UITableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Card *selectedCard = [Card getOrCreateCardWithCouchDBQueryRow:[self.cbDatasource rowAtIndexPath:indexPath] inContext:self.stack.managedObjectContext];
+    KTCard *selectedCard = [KTCard getOrCreateCardWithCouchDBQueryRow:[self.cbDatasource rowAtIndexPath:indexPath] inContext:self.stack.managedObjectContext];
     self.cardSelected(selectedCard);
 }
 

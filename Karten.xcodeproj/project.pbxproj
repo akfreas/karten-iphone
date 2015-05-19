@@ -32,6 +32,9 @@
 		19295C8919EB4DA5003E2C81 /* FriendsListSearchUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295C8819EB4DA5003E2C81 /* FriendsListSearchUpdater.m */; };
 		192ECC5119B019610040B9A6 /* NSDateFormatter+ServerFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */; };
 		192ECC5719B023CB0040B9A6 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 192ECC5619B023CB0040B9A6 /* Stack.m */; };
+		192FE9F01AC6E873006603DC /* KTQuizFlashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FE9EF1AC6E873006603DC /* KTQuizFlashView.swift */; };
+		192FE9F21AC6EBB1006603DC /* KTUIConfigurationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FE9F11AC6EBB1006603DC /* KTUIConfigurationUtil.swift */; };
+		192FE9F41AC6EBE2006603DC /* KTUIConfigurationInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 192FE9F31AC6EBE2006603DC /* KTUIConfigurationInfo.json */; };
 		19427D2819F07A95005804E2 /* QuizTypeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */; };
 		1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1946C38919B00721007D515E /* KTAPILoginUser.m */; };
 		194F97331954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 194F97311954237C00B184D6 /* NSObject+NSDictionaryRepresentation.m */; };
@@ -67,7 +70,7 @@
 		1969373D19EC830B0052FC00 /* ShareStackFriendControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1969373C19EC830B0052FC00 /* ShareStackFriendControllerManager.m */; };
 		1969374019EC94690052FC00 /* KTAPIShareStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1969373F19EC94690052FC00 /* KTAPIShareStack.m */; };
 		1969374319ECB0EE0052FC00 /* KTAPIUnShareStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1969374219ECB0EE0052FC00 /* KTAPIUnShareStack.m */; };
-		1972491A19326FE600030E5E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972491919326FE600030E5E /* Card.m */; };
+		1972491A19326FE600030E5E /* KTCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1972491919326FE600030E5E /* KTCard.m */; };
 		1972581819448A39002AD689 /* libPods-Karten.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1972581719448A39002AD689 /* libPods-Karten.a */; };
 		1975EBF619AF7E01008CD2CF /* KartenNetworkTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */; };
 		1984C8141965D539003402CC /* CardEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1984C8131965D539003402CC /* CardEditViewController.m */; };
@@ -90,6 +93,7 @@
 		198C09AC18CC4F10000C00E2 /* UIView+LayoutHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09AB18CC4F10000C00E2 /* UIView+LayoutHelpers.m */; };
 		198C09B418CC6796000C00E2 /* UITextField+Valdiation.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */; };
 		198C09B718CCA1DF000C00E2 /* InfoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */; };
+		19A0A2861ACFD80200AA8E79 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A0A2851ACFD80200AA8E79 /* UIColorExtension.swift */; };
 		19A547C2194AFA16007B0365 /* StackActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */; };
 		19A547C5194B00C0007B0365 /* QuizListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C4194B00C0007B0365 /* QuizListViewController.m */; };
 		19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A547C7194B0736007B0365 /* StackCollectionViewCell.m */; };
@@ -191,6 +195,9 @@
 		192ECC5019B019610040B9A6 /* NSDateFormatter+ServerFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ServerFormatters.m"; sourceTree = "<group>"; };
 		192ECC5519B023CB0040B9A6 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		192ECC5619B023CB0040B9A6 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		192FE9EF1AC6E873006603DC /* KTQuizFlashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTQuizFlashView.swift; sourceTree = "<group>"; };
+		192FE9F11AC6EBB1006603DC /* KTUIConfigurationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KTUIConfigurationUtil.swift; sourceTree = "<group>"; };
+		192FE9F31AC6EBE2006603DC /* KTUIConfigurationInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KTUIConfigurationInfo.json; sourceTree = "<group>"; };
 		19427D2619F07A95005804E2 /* QuizTypeSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizTypeSelectionView.h; path = Classes/QuizTypeSelectionView.h; sourceTree = "<group>"; };
 		19427D2719F07A95005804E2 /* QuizTypeSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizTypeSelectionView.m; path = Classes/QuizTypeSelectionView.m; sourceTree = "<group>"; };
 		1946C38819B00721007D515E /* KTAPILoginUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPILoginUser.h; sourceTree = "<group>"; };
@@ -263,8 +270,8 @@
 		1969373F19EC94690052FC00 /* KTAPIShareStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPIShareStack.m; sourceTree = "<group>"; };
 		1969374119ECB0EE0052FC00 /* KTAPIUnShareStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAPIUnShareStack.h; sourceTree = "<group>"; };
 		1969374219ECB0EE0052FC00 /* KTAPIUnShareStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAPIUnShareStack.m; sourceTree = "<group>"; };
-		1972491819326FE600030E5E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = Classes/Card.h; sourceTree = "<group>"; };
-		1972491919326FE600030E5E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Card.m; path = Classes/Card.m; sourceTree = "<group>"; };
+		1972491819326FE600030E5E /* KTCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTCard.h; path = Classes/KTCard.h; sourceTree = "<group>"; };
+		1972491919326FE600030E5E /* KTCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTCard.m; path = Classes/KTCard.m; sourceTree = "<group>"; };
 		1972581719448A39002AD689 /* libPods-Karten.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Karten.a"; path = "Pods/build/Release-iphoneos/libPods-Karten.a"; sourceTree = "<group>"; };
 		1975EBF419AF7E01008CD2CF /* KartenNetworkTokenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KartenNetworkTokenManager.swift; sourceTree = "<group>"; };
 		1975EBF519AF7E01008CD2CF /* Karten-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Karten-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -312,6 +319,7 @@
 		198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Valdiation.m"; path = "Classes/UITextField+Valdiation.m"; sourceTree = "<group>"; };
 		198C09B518CCA1DF000C00E2 /* InfoDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoDisplayView.h; path = Classes/InfoDisplayView.h; sourceTree = "<group>"; };
 		198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoDisplayView.m; path = Classes/InfoDisplayView.m; sourceTree = "<group>"; };
+		19A0A2851ACFD80200AA8E79 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		19A547C0194AFA16007B0365 /* StackActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StackActionTableViewCell.h; path = Classes/StackActionTableViewCell.h; sourceTree = "<group>"; };
 		19A547C1194AFA16007B0365 /* StackActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StackActionTableViewCell.m; path = Classes/StackActionTableViewCell.m; sourceTree = "<group>"; };
 		19A547C3194B00C0007B0365 /* QuizListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizListViewController.h; path = Classes/QuizListViewController.h; sourceTree = "<group>"; };
@@ -672,6 +680,7 @@
 				198C09B618CCA1DF000C00E2 /* InfoDisplayView.m */,
 				19C9331C190321DD0075FA49 /* FlashCardView.h */,
 				19C9331D190321DD0075FA49 /* FlashCardView.m */,
+				192FE9EF1AC6E873006603DC /* KTQuizFlashView.swift */,
 				190858F019653B85003E2784 /* KTFlashCardDisplayView.h */,
 				190858F119653B85003E2784 /* KTFlashCardDisplayView.m */,
 				190858FA19653D0F003E2784 /* FlashCardQuestionView.h */,
@@ -733,8 +742,8 @@
 		198C099A18CC4957000C00E2 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				1972491819326FE600030E5E /* Card.h */,
-				1972491919326FE600030E5E /* Card.m */,
+				1972491819326FE600030E5E /* KTCard.h */,
+				1972491919326FE600030E5E /* KTCard.m */,
 				198C099B18CC4976000C00E2 /* Card+Helpers.h */,
 				198C099C18CC4976000C00E2 /* Card+Helpers.m */,
 				196603EF193EFFBA0027698E /* Card+Network.h */,
@@ -753,6 +762,9 @@
 				198C09B218CC6796000C00E2 /* UITextField+Valdiation.h */,
 				198C09B318CC6796000C00E2 /* UITextField+Valdiation.m */,
 				1919F9BA1A62C4EF003197AC /* KTAttributedStringFormats.swift */,
+				192FE9F11AC6EBB1006603DC /* KTUIConfigurationUtil.swift */,
+				19A0A2851ACFD80200AA8E79 /* UIColorExtension.swift */,
+				192FE9F31AC6EBE2006603DC /* KTUIConfigurationInfo.json */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -869,6 +881,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19BC93B31935CDF600CC8725 /* CreateDatabaseData.json in Resources */,
+				192FE9F41AC6EBE2006603DC /* KTUIConfigurationInfo.json in Resources */,
 				1901714D19D6BB5800C90A50 /* LaunchScreen.storyboard in Resources */,
 				198C096E18CC3F5F000C00E2 /* InfoPlist.strings in Resources */,
 				19A59F5B19EF476300385704 /* KTProfileViewController.xib in Resources */,
@@ -990,6 +1003,7 @@
 				198AFC3A1935288A00ABD428 /* KartenNetworkClient.m in Sources */,
 				1901715019D6D6B600C90A50 /* KTRevealControllerManager.m in Sources */,
 				19CC49C719EF1A3C00E207B7 /* SignUpViewController.m in Sources */,
+				19A0A2861ACFD80200AA8E79 /* UIColorExtension.swift in Sources */,
 				19A547C8194B0736007B0365 /* StackCollectionViewCell.m in Sources */,
 				1924F7A31A7E8A3100DC6520 /* KTViewFriendsViewController.swift in Sources */,
 				19C9331E190321DD0075FA49 /* FlashCardView.m in Sources */,
@@ -998,6 +1012,7 @@
 				195CEA841938AAF60044C52B /* AddCardFormView.m in Sources */,
 				190858FC19653D0F003E2784 /* FlashCardQuestionView.m in Sources */,
 				19E2AE3E19B09C27003EA7CB /* StackServer.m in Sources */,
+				192FE9F21AC6EBB1006603DC /* KTUIConfigurationUtil.swift in Sources */,
 				195CEA7E193809E20044C52B /* Stack+CouchBase.m in Sources */,
 				195CEA69193781CE0044C52B /* KTAPIGetUserStacks.m in Sources */,
 				196021C519329497000234A3 /* NSManagedObject+JSONParsable.m in Sources */,
@@ -1024,6 +1039,7 @@
 				19A547D7194B29FC007B0365 /* FlashCardStackFinishedView.m in Sources */,
 				19E2AE4119B0B69A003EA7CB /* LoginViewController.m in Sources */,
 				195CEA8119387E020044C52B /* CardListViewController.m in Sources */,
+				192FE9F01AC6E873006603DC /* KTQuizFlashView.swift in Sources */,
 				195CEA731937A8450044C52B /* AddStackFormView.m in Sources */,
 				195CEA6D19378A260044C52B /* Stack+Network.m in Sources */,
 				1946C38A19B00721007D515E /* KTAPILoginUser.m in Sources */,
@@ -1034,7 +1050,7 @@
 				19C93317190316EC0075FA49 /* QuizViewController.m in Sources */,
 				1969374019EC94690052FC00 /* KTAPIShareStack.m in Sources */,
 				198C09A918CC4A89000C00E2 /* AddCardHeader.m in Sources */,
-				1972491A19326FE600030E5E /* Card.m in Sources */,
+				1972491A19326FE600030E5E /* KTCard.m in Sources */,
 				198AFC371935275A00ABD428 /* NetworkSyncUtil.m in Sources */,
 				19295C8919EB4DA5003E2C81 /* FriendsListSearchUpdater.m in Sources */,
 				195CEA531936B2650044C52B /* FacebookLoginViewController.m in Sources */,

@@ -11,7 +11,7 @@
 
 @class Stack;
 
-@interface Card : NSManagedObject
+@interface KTCard : NSManagedObject
 
 @property (nonatomic, retain) NSString * couchID;
 @property (nonatomic, retain) NSString * couchRev;

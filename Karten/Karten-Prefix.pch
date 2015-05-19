@@ -22,7 +22,7 @@
     #import <EDColor/EDColor.h>
     #import "CouchbaseLite/CouchbaseLite.h"
     #import "CouchbaseLite/CBLDocument.h"
-#import "Card.h"
+#import "KTCard.h"
 #import "Card+Helpers.h"
 #import "MainViewController.h"
 #import "GraphicsUtils.h"

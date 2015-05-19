@@ -16,7 +16,7 @@
     return self;
 }
 
-- (void)setCard:(Card *)card
+- (void)setCard:(KTCard *)card
 {
     [self updateTermLabelText:card.term];
 }

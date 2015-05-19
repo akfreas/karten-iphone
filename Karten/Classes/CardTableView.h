@@ -1,9 +1,9 @@
 @class Stack;
-@class Card;
+@class KTCard;
 
 @interface CardTableView : UITableView
 
-@property (nonatomic, copy) void(^cardSelected)(Card *);
+@property (nonatomic, copy) void(^cardSelected)(KTCard *);
 @property (nonatomic) Stack *stack;
 - (void)startUpdating;
 @end

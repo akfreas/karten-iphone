@@ -1,5 +1,5 @@
 #import "AddCardHeader.h"
-#import "Card.h"
+#import "KTCard.h"
 #import "KartenModelHelpers.h"
 #import "Database.h"
 #import "CouchManager.h"

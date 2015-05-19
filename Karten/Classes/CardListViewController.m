@@ -6,7 +6,7 @@
 #import "AddCardFormView.h"
 #import <RNBlurModalView/RNBlurModalView.h>
 #import "Card+Network.h"
-#import "Card.h"
+#import "KTCard.h"
 
 @interface CardListViewController ()
 @property (nonatomic) CardTableView *tableView;
@@ -84,7 +84,7 @@
 - (void)createTableView
 {
     self.tableView = [[CardTableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.tableView setCardSelected:^(Card *selectedCard) {
+    [self.tableView setCardSelected:^(KTCard *selectedCard) {
         CardEditViewController *editController = [[CardEditViewController alloc] init];
         [editController setCard:selectedCard];
         [self.navigationController pushViewController:editController animated:YES];
@@ -105,7 +105,7 @@
     [addCardView setCancelButtonAction:^(id sender) {
         [self hideAddCardFormView];
     }];
-    [addCardView setSaveButtonAction:^(id sender, Card *newCard) {
+    [addCardView setSaveButtonAction:^(id sender, KTCard *newCard) {
         NSError *err = nil;
         [newCard addCardToStackOnServer:self.stack error:&err];
         if (err != nil) {

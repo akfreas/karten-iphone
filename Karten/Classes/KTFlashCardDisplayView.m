@@ -6,7 +6,7 @@
 @end
 
 @implementation KTFlashCardDisplayView {
-    Card *_card;
+    KTCard *_card;
 }
 
 
@@ -103,14 +103,14 @@
     self.termLabel.enabled = editing;
 }
 
-- (Card *)card
+- (KTCard *)card
 {
     _card.term = self.termLabel.text;
     _card.definition = self.textView.text;
     return _card;
 }
 
-- (void)setCard:(Card *)card
+- (void)setCard:(KTCard *)card
 {
     _card = card;
     [self setTermLabelText:card.term];

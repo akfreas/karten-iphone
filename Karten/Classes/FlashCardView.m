@@ -13,7 +13,7 @@
 
 @implementation FlashCardView
 
-- (id)initWithFrame:(CGRect)frame card:(Card *)card options:(MDCSwipeToChooseViewOptions *)options mode:(FlashCardViewMode)mode
+- (id)initWithFrame:(CGRect)frame card:(KTCard *)card options:(MDCSwipeToChooseViewOptions *)options mode:(FlashCardViewMode)mode
 {
     self = [super initWithFrame:frame options:options];
     if (self) {

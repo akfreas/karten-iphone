@@ -1,4 +1,4 @@
-@class Card;
+@class KTCard;
 @protocol FlashCardDisplayView <NSObject>
-- (void)setCard:(Card *)card;
+- (void)setCard:(KTCard *)card;
 @end

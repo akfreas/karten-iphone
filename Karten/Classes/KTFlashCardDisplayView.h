@@ -1,9 +1,9 @@
 #import "KTFlashCardDisplayView.h"
-@class Card;
+@class KTCard;
 
 @interface KTFlashCardDisplayView : UIView
 @property (nonatomic) BOOL editing;
 @property (nonatomic) NSAttributedString *mainText;
 @property (nonatomic) NSAttributedString *supplementaryText;
-@property (nonatomic) Card *card;
+@property (nonatomic) KTCard *card;
 @end

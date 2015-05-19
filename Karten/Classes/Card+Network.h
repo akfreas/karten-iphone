@@ -1,8 +1,8 @@
 @class Stack;
-#import "Card.h"
+#import "KTCard.h"
 
 
-@interface Card (Network)
+@interface KTCard (Network)
 - (void)addCardToStackOnServer:(Stack *)stack error:(NSError **)error;
 - (void)updateCardOnCouch:(NSError **)error;
 @end

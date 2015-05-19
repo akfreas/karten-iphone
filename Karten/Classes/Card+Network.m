@@ -3,7 +3,7 @@
 #import "Database.h"
 #import "Stack.h"
 
-@implementation Card (Network)
+@implementation KTCard (Network)
 - (void)addCardToStackOnServer:(Stack *)stack error:(NSError *__autoreleasing *)error
 {
     NSDictionary *cardDocument = @{@"term": self.term,

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@class Card;
+@class KTCard;
 @interface CardEditViewController : UIViewController
-- (void)setCard:(Card *)card;
+- (void)setCard:(KTCard *)card;
 @end

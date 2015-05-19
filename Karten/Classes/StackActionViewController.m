@@ -140,12 +140,12 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
 {
     if (indexPath.row == 0) {
         NSPredicate *pred = [NSPredicate predicateWithFormat:@"stack == %@", self.stack];
-        NSArray *cards = [Card MR_findAllWithPredicate:pred];
+        NSArray *cards = [KTCard MR_findAllWithPredicate:pred];
         [MainViewController showQuizViewForCards:cards];
     } else if (indexPath.row == 1) {
-        NSNumber *scoreAverage = [Card MR_aggregateOperation:@"average:" onAttribute:@"knowledgeScore" withPredicate:[NSPredicate predicateWithFormat:@"stack == %@", self.stack]];
+        NSNumber *scoreAverage = [KTCard MR_aggregateOperation:@"average:" onAttribute:@"knowledgeScore" withPredicate:[NSPredicate predicateWithFormat:@"stack == %@", self.stack]];
         NSPredicate *pred = [NSPredicate predicateWithFormat:@"knowledgeScore <= %@", scoreAverage];
-        NSArray *cards = [Card MR_findAllWithPredicate:pred];
+        NSArray *cards = [KTCard MR_findAllWithPredicate:pred];
         [MainViewController showQuizViewForCards:cards];
     } else if (indexPath.row == 2) {
         [MainViewController showCardListForStack:self.stack];

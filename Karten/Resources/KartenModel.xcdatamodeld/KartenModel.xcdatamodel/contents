@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C81f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Card" representedClassName="Card" syncable="YES">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14D87h" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="KTCard" representedClassName="KTCard" syncable="YES">
         <attribute name="couchID" attributeType="String" syncable="YES"/>
         <attribute name="couchRev" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="definition" optional="YES" attributeType="String" syncable="YES"/>
@@ -94,7 +94,7 @@
                 <entry key="server_key" value="description"/>
             </userInfo>
         </attribute>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Card" inverseName="stack" inverseEntity="Card" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KTCard" inverseName="stack" inverseEntity="KTCard" syncable="YES"/>
         <relationship name="server" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StackServer" syncable="YES">
             <userInfo>
                 <entry key="server_key" value="couchdb_server"/>
@@ -127,9 +127,9 @@
         </attribute>
     </entity>
     <elements>
-        <element name="Card" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="KTCard" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="KTUser" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Stack" positionX="0" positionY="0" width="0" height="0"/>
         <element name="StackServer" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="KTUser" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

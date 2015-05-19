@@ -1,6 +1,6 @@
 #import "AddCardFormView.h"
 #import "GraphicsUtils.h"
-#import "Card.h"
+#import "KTCard.h"
 #import "Card+Helpers.h"
 #import "User+Helpers.h"
 
@@ -34,7 +34,7 @@
     [self.cancelButton bk_addEventHandler:self.cancelButtonAction forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setSaveButtonAction:(void (^)(id, Card *))saveButtonAction
+- (void)setSaveButtonAction:(void (^)(id, KTCard *))saveButtonAction
 {
     _saveButtonAction = saveButtonAction;
     [self.addButton bk_addEventHandler:^(id sender) {
@@ -64,9 +64,9 @@
     return isValid;
 }
 
-- (Card *)buildCardFromForm
+- (KTCard *)buildCardFromForm
 {
-    Card *newCard = [Card MR_createEntity];
+    KTCard *newCard = [KTCard MR_createEntity];
     newCard.term = self.termTextField.text;
     newCard.definition = self.definitionTextField.text;
     return newCard;
