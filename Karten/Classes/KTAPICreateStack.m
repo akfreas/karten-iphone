@@ -1,15 +1,15 @@
 #import "KTAPICreateStack.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+Helpers.h"
 #import "NSManagedObject+JSONSerializable.h"
 
 @interface KTAPICreateStack ()
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end
 
 @implementation KTAPICreateStack
 
-- (id)initWithStack:(Stack *)stack
+- (id)initWithStack:(KTStack *)stack
 {
     self = [super init];
     if (self) {
@@ -25,7 +25,7 @@
 
 - (Class)classToParse
 {
-    return [Stack class];
+    return [KTStack class];
 }
 
 - (NSDictionary *)params

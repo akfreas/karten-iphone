@@ -32,7 +32,7 @@
     [self.cancelButton bk_addEventHandler:self.cancelButtonAction forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setSaveButtonAction:(void (^)(id, Stack *))saveButtonAction
+- (void)setSaveButtonAction:(void (^)(id, KTStack *))saveButtonAction
 {
     _saveButtonAction = saveButtonAction;
     [self.addButton bk_addEventHandler:^(id sender) {
@@ -61,9 +61,9 @@
     return isValid;
 }
 
-- (Stack *)buildStackFromForm
+- (KTStack *)buildStackFromForm
 {
-    Stack *newStack = [Stack MR_createEntity];
+    KTStack *newStack = [KTStack MR_createEntity];
     newStack.name = self.nameTextField.text;
     newStack.ownerServerID = [[KTUser mainUser] serverID];
     newStack.creationDate = [NSDate date];

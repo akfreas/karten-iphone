@@ -1,13 +1,13 @@
 #import "KTAPIRemoveStack.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "User+Helpers.h"
 @interface KTAPIRemoveStack ()
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end
 
 @implementation KTAPIRemoveStack
 
-- (id)initWithStack:(Stack *)stack
+- (id)initWithStack:(KTStack *)stack
 {
     self = [super init];
     if (self) {

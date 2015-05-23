@@ -1,8 +1,8 @@
 @class KTFriendSelectionViewController;
-@class Stack;
+@class KTStack;
 
 @interface ShareStackFriendControllerManager : NSObject
-@property (nonatomic) Stack *stack;
-- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(Stack *)stack;
+@property (nonatomic) KTStack *stack;
+- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(KTStack *)stack;
 
 @end

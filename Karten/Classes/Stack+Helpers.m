@@ -4,7 +4,7 @@
 #import "User+Helpers.h"
 #import "Karten-Swift.h"
 
-@implementation Stack (Helpers)
+@implementation KTStack (Helpers)
 
 - (NSString *)fullServerURL
 {
@@ -15,7 +15,7 @@
 + (void)removeAllStacksForUser:(KTUser *)user
 {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"ownerServerID == %@", user.serverID];
-    [Stack MR_deleteAllMatchingPredicate:pred];
+    [KTStack MR_deleteAllMatchingPredicate:pred];
 }
 
 

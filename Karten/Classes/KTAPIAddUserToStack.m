@@ -1,13 +1,13 @@
 #import "KTAPIAddUserToStack.h"
-#import "Stack.h"
+#import "KTStack.h"
 @interface KTAPIAddUserToStack ()
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @property (nonatomic) NSString *userID;
 @end
 
 @implementation KTAPIAddUserToStack
 
-- (id)initWithStack:(Stack *)stack linkToUserID:(NSString *)userID
+- (id)initWithStack:(KTStack *)stack linkToUserID:(NSString *)userID
 {
     self = [super init];
     if (self) {
@@ -24,7 +24,7 @@
 
 - (Class)classToParse
 {
-    return [Stack class];
+    return [KTStack class];
 }
 
 @end

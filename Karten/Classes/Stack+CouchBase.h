@@ -1,8 +1,8 @@
-#import "Stack.h"
+#import "KTStack.h"
 @class Database;
 @class CouchManager;
 
-@interface Stack (CouchBase)
+@interface KTStack (CouchBase)
 
 - (void)enqueueDatabaseForSyncing;
 - (void)beginCouchDBSync;

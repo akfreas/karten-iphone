@@ -1,5 +1,5 @@
-@class Stack;
+@class KTStack;
 
 @interface CardListViewController : UIViewController
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end

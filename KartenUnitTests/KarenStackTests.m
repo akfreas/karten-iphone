@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+Helpers.h"
 #import "StackServer+Helpers.h"
 #import "StackServer.h"
@@ -26,7 +26,7 @@
 - (void)testAddStackFromJSON
 {
     NSDictionary *stackDict = JSONFromFile(@"CreateDatabaseData");
-    Stack *newStack = [Stack objectWithJSONDictionary:stackDict];
+    KTStack *newStack = [KTStack objectWithJSONDictionary:stackDict];
     XCTAssertNotNil(newStack, @"New stack is nil!");
     XCTAssertTrue([newStack.name isEqualToString:stackDict[@"name"]], @"");
     XCTAssertTrue([newStack.stackDescription isEqualToString:stackDict[@"description"]], @"%@ != %@", newStack.stackDescription, stackDict[@"description"]);

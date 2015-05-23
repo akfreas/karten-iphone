@@ -4,7 +4,7 @@
 #import "KTRevealControllerManager.h"
 #import "KTRevealActionViewController.h"
 #import <SWRevealViewController/SWRevealViewController.h>
-
+#import "Karten-Swift.h"
 #import "CardCell.h"
 
 @implementation AppDelegate
@@ -15,11 +15,11 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-//    CardCell *cell = [[CardCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"nil"];
-//    [cell setCardData:@{@"term" : @"Testing one cell", @"definition": @"Definition field"}];
-//    cell.frame = CGRectMake(0, 0, self.window.frame.size.width, 44.0f);
-//    [self.window addSubview:cell];
+    
+//    KTQuizViewController *c = [KTQuizViewController new];
+//    self.window.rootViewController = c;
 //    return YES;
+    
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Karten.sqlite"];
     KTRevealActionViewController *actionController = [KTRevealActionViewController new];
     SWRevealViewController *mainController = [KTRevealControllerManager sharedRevealController];

@@ -4,7 +4,7 @@
 #import "Card+Helpers.h"
 #import "Database.h"
 #import "CouchManager.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+CouchBase.h"
 #import "CardEditViewController.h"
 
@@ -44,7 +44,7 @@ static NSString *kHeaderReuseID = @"HeaderCell";
     return _cardSelected;
 }
 
-- (void)setStack:(Stack *)stack
+- (void)setStack:(KTStack *)stack
 {
     self.cbDatasource = [[CBLUITableSource alloc] init];
     _stack = stack;

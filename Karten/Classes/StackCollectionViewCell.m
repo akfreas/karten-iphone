@@ -1,4 +1,4 @@
-#import "Stack.h"
+#import "KTStack.h"
 #import "StackCollectionViewCell.h"
 #import "Stack+Network.h"
 #import "DeleteButton.h"
@@ -91,7 +91,7 @@ static CGFloat DeleteButtonSize = 30.0f;
     }];
 }
 
-- (void)setStack:(Stack *)stack
+- (void)setStack:(KTStack *)stack
 {
     _stack = stack;
     [self configureAbbrLabel];

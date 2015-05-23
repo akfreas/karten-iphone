@@ -1,6 +1,6 @@
 #import "CouchManager.h"
 #import "Database.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 @interface CouchManager ()
 @property (nonatomic) NSMutableDictionary *databases;
@@ -29,12 +29,12 @@
     [[self sharedInstance] beginSyncingAllDatabases];
 }
 
-+ (void)beginSyncingDatabaseForStack:(Stack *)stack
++ (void)beginSyncingDatabaseForStack:(KTStack *)stack
 {
     [[self sharedInstance] beginSyncingDatabaseForStack:stack];
 }
 
-+ (Database *)databaseForStack:(Stack *)stack
++ (Database *)databaseForStack:(KTStack *)stack
 {
     Database *db = [[[self sharedInstance] databases] objectForKey:stack.serverID];
     return db;
@@ -55,7 +55,7 @@
     [self.databases setObject:database forKey:database.stack.serverID];
 }
 
-- (void)beginSyncingDatabaseForStack:(Stack *)stack
+- (void)beginSyncingDatabaseForStack:(KTStack *)stack
 {
     Database *db = [self.databases objectForKey:stack.serverID];
     [db startSyncing];

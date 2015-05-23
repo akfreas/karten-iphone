@@ -1,10 +1,10 @@
 #import "Card+Network.h"
 #import "CouchManager.h"
 #import "Database.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 @implementation KTCard (Network)
-- (void)addCardToStackOnServer:(Stack *)stack error:(NSError *__autoreleasing *)error
+- (void)addCardToStackOnServer:(KTStack *)stack error:(NSError *__autoreleasing *)error
 {
     NSDictionary *cardDocument = @{@"term": self.term,
                                    @"definition": self.definition,

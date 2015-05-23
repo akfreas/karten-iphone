@@ -34,7 +34,7 @@ extension NSDictionary {
 }
 
 private func readConfigurationFromFile() -> NSDictionary {
-    let filePath = NSBundle.mainBundle().pathForResource("KTAppConfigurationInfo", ofType: "json")!
+    let filePath = NSBundle.mainBundle().pathForResource("KTUIConfigurationInfo", ofType: "json")!
     let jsonData = NSData(contentsOfFile: filePath)!
     var err : NSError?
     var dict = NSJSONSerialization.JSONObjectWithData(jsonData, options:NSJSONReadingOptions.AllowFragments, error: &err) as? NSDictionary

@@ -1,8 +1,8 @@
-@class Stack;
+@class KTStack;
 
 @interface AddCardHeader : UITableViewHeaderFooterView
 
 @property (nonatomic, weak) id<UISearchBarDelegate> delegate;
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 
 @end

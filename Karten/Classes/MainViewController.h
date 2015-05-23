@@ -1,12 +1,12 @@
-@class Stack;
+@class KTStack;
 
 @interface MainViewController : UIViewController
 + (instancetype)sharedInstance;
 + (void)goToMainView;
 + (void)pushViewController:(UIViewController *)viewController;
-+ (void)showActionViewForStack:(Stack *)stack;
++ (void)showActionViewForStack:(KTStack *)stack;
 + (void)showQuizViewForCards:(NSArray *)cards;
-+ (void)showCardListForStack:(Stack *)stack;
-+ (void)showShareControllerForStack:(Stack *)stack;
++ (void)showCardListForStack:(KTStack *)stack;
++ (void)showShareControllerForStack:(KTStack *)stack;
 + (void)showFriendListController;
 @end

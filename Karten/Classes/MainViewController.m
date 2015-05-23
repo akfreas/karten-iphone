@@ -4,7 +4,7 @@
 #import "FacebookLoginViewController.h"
 #import "User+Helpers.h"
 #import "AddStackFormView.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+Network.h"
 #import "NetworkSyncUtil.h"
 #import "QuizViewController.h"
@@ -46,7 +46,7 @@ static MainViewController *sharedInstance;
     [[[self sharedInstance] navigationController] pushViewController:viewController animated:YES];
 }
 
-+ (void)showActionViewForStack:(Stack *)stack
++ (void)showActionViewForStack:(KTStack *)stack
 {
     StackActionViewController *actionViewController = [[StackActionViewController alloc] init];
     actionViewController.stack = stack;
@@ -55,19 +55,19 @@ static MainViewController *sharedInstance;
 
 + (void)showQuizViewForCards:(NSArray *)cards
 {
-    QuizViewController *quizListView = [[QuizViewController alloc] init];
+    KTQuizViewController *quizListView = [[KTQuizViewController alloc] init];
     quizListView.quizCards = cards;
     [self pushViewController:quizListView];
 }
 
-+ (void)showCardListForStack:(Stack *)stack
++ (void)showCardListForStack:(KTStack *)stack
 {
     CardListViewController *cardList = [CardListViewController new];
     cardList.stack = stack;
     [self pushViewController:cardList];
 }
 
-+ (void)showShareControllerForStack:(Stack *)stack
++ (void)showShareControllerForStack:(KTStack *)stack
 {
     [self showFriendListController];
 //    ShareStackViewController *friendPicker = [ShareStackViewController new];
@@ -157,17 +157,17 @@ static MainViewController *sharedInstance;
                 [alert show];
                 return;
             }
-            Stack *newStack = [Stack MR_createEntity];
+            KTStack *newStack = [KTStack MR_createEntity];
             newStack.name = textField.text;
             newStack.ownerServerID = [[KTUser mainUser] serverID];
             newStack.creationDate = [NSDate date];
             [newStack createStackOnServerWithCompletion:^{
                 
-            } success:^(AFHTTPRequestOperation *operation, Stack *responseObject) {
+            } success:^(AFHTTPRequestOperation *operation, KTStack *responseObject) {
                 [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
                 NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
-                Stack *ourStack = (Stack *)[ctx objectWithID:newStack.objectID];
+                KTStack *ourStack = (KTStack *)[ctx objectWithID:newStack.objectID];
                 [ourStack MR_deleteInContext:ctx];
                 [ctx MR_saveOnlySelfAndWait];
             }];
@@ -200,14 +200,14 @@ static MainViewController *sharedInstance;
     if (self.addStackForm == nil) {
         self.addStackForm = [AddStackFormView new];;
     }
-    [self.addStackForm setSaveButtonAction:^(id sender, Stack *newStack) {
+    [self.addStackForm setSaveButtonAction:^(id sender, KTStack *newStack) {
         [newStack createStackOnServerWithCompletion:^{
             
-        } success:^(AFHTTPRequestOperation *operation, Stack *responseObject) {
+        } success:^(AFHTTPRequestOperation *operation, KTStack *responseObject) {
             [responseObject.managedObjectContext MR_saveOnlySelfAndWait];
         } failure:^(AFHTTPRequestOperation *operation, NSError *error, id parsedError) {
             NSManagedObjectContext *ctx = [NSManagedObjectContext MR_contextForCurrentThread];
-            Stack *ourStack = (Stack *)[ctx objectWithID:newStack.objectID];
+            KTStack *ourStack = (KTStack *)[ctx objectWithID:newStack.objectID];
             [ourStack MR_deleteInContext:ctx];
             [ctx MR_saveOnlySelfAndWait];
         }];

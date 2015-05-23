@@ -1,7 +1,7 @@
 #import "KartenAPICall.h"
 
-@class Stack;
+@class KTStack;
 
 @interface KTAPIUnShareStack : NSObject <KartenAPICall>
-- (instancetype)initWithStack:(Stack *)stack unShareUsers:(NSArray *)users;
+- (instancetype)initWithStack:(KTStack *)stack unShareUsers:(NSArray *)users;
 @end

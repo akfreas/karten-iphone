@@ -8,4 +8,7 @@
             "kerning" : 2.0
         }
     },
+    "QuizViewController" : {
+        "BackgroundColor" : "F2F2EA;1.0",
+    }
 }

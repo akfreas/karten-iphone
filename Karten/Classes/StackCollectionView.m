@@ -1,6 +1,6 @@
 #import "StackCollectionView.h"
 #import "StackCollectionViewCell.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 
 
@@ -26,6 +26,7 @@ static NSInteger numberOfCellsPerRow = 2;
         self.objectChanges = [NSMutableArray array];
         self.dataSource = self;
         self.delegate = self;
+        self.showsVerticalScrollIndicator = NO;
         [self registerClass:[StackCollectionViewCell class] forCellWithReuseIdentifier:kStackCollectionCell];
         [self createFetchController];
     }
@@ -34,14 +35,14 @@ static NSInteger numberOfCellsPerRow = 2;
 
 - (void)createFetchController
 {
-    self.fetchController = [Stack MR_fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
+    self.fetchController = [KTStack MR_fetchAllSortedBy:@"creationDate" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
     
     [self.fetchController performFetch:NULL];
 }
 
 - (void)configureCell:(StackCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Stack *cellStack = [self.fetchController objectAtIndexPath:indexPath];
+    KTStack *cellStack = [self.fetchController objectAtIndexPath:indexPath];
     cell.stack = cellStack;
 }
 
@@ -138,7 +139,7 @@ static NSInteger numberOfCellsPerRow = 2;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.stackSelectedAction) {
-        Stack *selectedStack = [self.fetchController objectAtIndexPath:indexPath];
+        KTStack *selectedStack = [self.fetchController objectAtIndexPath:indexPath];
         self.stackSelectedAction(selectedStack);
     }
 }

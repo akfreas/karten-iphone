@@ -1,11 +1,11 @@
 @class Database;
-@class Stack;
+@class KTStack;
 
 @interface CouchManager : NSObject
 
 + (void)addDatabaseForSyncing:(Database *)database;
 + (void)beginSyncingAllDatabases;
-+ (void)beginSyncingDatabaseForStack:(Stack *)stack;
-+ (Database *)databaseForStack:(Stack *)stack;
++ (void)beginSyncingDatabaseForStack:(KTStack *)stack;
++ (Database *)databaseForStack:(KTStack *)stack;
 
 @end

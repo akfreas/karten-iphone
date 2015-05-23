@@ -3,7 +3,7 @@
 #import "KTAPICreateStack.h"
 #import "KartenNetworkClient.h"
 #import "KTAPIRemoveStack.h"
-@implementation Stack (Network)
+@implementation KTStack (Network)
 + (void)syncStacksForUser:(KTUser *)user
                      completion:(KartenNetworkCompletion)completion
                         success:(KartenNetworkSuccess)success
@@ -13,7 +13,7 @@
     [KartenNetworkClient makeRequest:userStackCall completion:completion success:^(AFHTTPRequestOperation *operation, NSArray *stacks) {
         NSManagedObjectContext *ctx = [NSManagedObjectContext MR_defaultContext];
         [ctx performBlockAndWait:^{
-            NSMutableArray *allStacks = [NSMutableArray arrayWithArray:[Stack MR_findAllInContext:ctx]];
+            NSMutableArray *allStacks = [NSMutableArray arrayWithArray:[KTStack MR_findAllInContext:ctx]];
             if ([allStacks count] == 0) {
                 if (success == NULL) {
                     return;
@@ -21,10 +21,10 @@
                 success(operation, nil);
                 return;
             }
-            for (Stack *stack in stacks) {
+            for (KTStack *stack in stacks) {
                 [allStacks removeObject:stack];
             }
-            for (Stack *deletedStack in allStacks) {
+            for (KTStack *deletedStack in allStacks) {
                 [deletedStack MR_deleteInContext:ctx];
             }
             if ([allStacks count] > 0) {

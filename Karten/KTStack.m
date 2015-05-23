@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Sashimiblade. All rights reserved.
 //
 
-#import "Stack.h"
+#import "KTStack.h"
 #import "KTCard.h"
 #import "StackServer.h"
 
 
-@implementation Stack
+@implementation KTStack
 
 @dynamic creationDate;
 @dynamic name;

@@ -1,5 +1,5 @@
 #import "Database.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+Helpers.h"
 #import "StackServer.h"
 
@@ -13,7 +13,7 @@
 
 @implementation Database
 
-- (id)initWithStack:(Stack *)stack
+- (id)initWithStack:(KTStack *)stack
 {
     self = [super init];
     if (self) {

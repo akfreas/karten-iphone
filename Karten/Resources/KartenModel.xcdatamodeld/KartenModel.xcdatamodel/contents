@@ -1,12 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14D87h" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E7f" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="KTCard" representedClassName="KTCard" syncable="YES">
         <attribute name="couchID" attributeType="String" syncable="YES"/>
         <attribute name="couchRev" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="definition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="knowledgeScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="term" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stack" inverseName="cards" inverseEntity="Stack" syncable="YES"/>
+        <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KTStack" inverseName="cards" inverseEntity="KTStack" syncable="YES"/>
+    </entity>
+    <entity name="KTStack" representedClassName="KTStack" syncable="YES">
+        <attribute name="allowedUserServerIDs" optional="YES" attributeType="Transformable" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="allowed_users"/>
+            </userInfo>
+        </attribute>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="creation_date"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="ownerServerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="owner"/>
+            </userInfo>
+        </attribute>
+        <attribute name="serverID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="id"/>
+                <entry key="write_only" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="serverStackName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="couchdb_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="stackDescription" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="description"/>
+            </userInfo>
+        </attribute>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KTCard" inverseName="stack" inverseEntity="KTCard" syncable="YES"/>
+        <relationship name="server" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StackServer" syncable="YES">
+            <userInfo>
+                <entry key="server_key" value="couchdb_server"/>
+            </userInfo>
+        </relationship>
+        <userInfo>
+            <entry key="key" value="value"/>
+        </userInfo>
     </entity>
     <entity name="KTUser" representedClassName="KTUser" syncable="YES">
         <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES">
@@ -57,53 +104,6 @@
             </userInfo>
         </relationship>
     </entity>
-    <entity name="Stack" representedClassName="Stack" syncable="YES">
-        <attribute name="allowedUserServerIDs" optional="YES" attributeType="Transformable" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="allowed_users"/>
-            </userInfo>
-        </attribute>
-        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="creation_date"/>
-            </userInfo>
-        </attribute>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="name"/>
-            </userInfo>
-        </attribute>
-        <attribute name="ownerServerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="owner"/>
-            </userInfo>
-        </attribute>
-        <attribute name="serverID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="id"/>
-                <entry key="write_only" value="true"/>
-            </userInfo>
-        </attribute>
-        <attribute name="serverStackName" optional="YES" attributeType="String" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="couchdb_name"/>
-            </userInfo>
-        </attribute>
-        <attribute name="stackDescription" optional="YES" attributeType="String" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="description"/>
-            </userInfo>
-        </attribute>
-        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="KTCard" inverseName="stack" inverseEntity="KTCard" syncable="YES"/>
-        <relationship name="server" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StackServer" syncable="YES">
-            <userInfo>
-                <entry key="server_key" value="couchdb_server"/>
-            </userInfo>
-        </relationship>
-        <userInfo>
-            <entry key="key" value="value"/>
-        </userInfo>
-    </entity>
     <entity name="StackServer" representedClassName="StackServer" syncable="YES">
         <attribute name="host" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -129,7 +129,7 @@
     <elements>
         <element name="KTCard" positionX="0" positionY="0" width="0" height="0"/>
         <element name="KTUser" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Stack" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="KTStack" positionX="0" positionY="0" width="0" height="0"/>
         <element name="StackServer" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -11,7 +11,7 @@
 
 @class KTCard, StackServer;
 
-@interface Stack : NSManagedObject
+@interface KTStack : NSManagedObject
 
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * name;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) StackServer *server;
 @end
 
-@interface Stack (CoreDataGeneratedAccessors)
+@interface KTStack (CoreDataGeneratedAccessors)
 
 - (void)addCardsObject:(KTCard *)value;
 - (void)removeCardsObject:(KTCard *)value;

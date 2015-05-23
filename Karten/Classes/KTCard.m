@@ -7,7 +7,7 @@
 //
 
 #import "KTCard.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 
 @implementation KTCard

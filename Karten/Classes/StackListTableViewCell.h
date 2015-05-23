@@ -1,5 +1,5 @@
-@class Stack;
+@class KTStack;
 
 @interface StackListTableViewCell : UITableViewCell
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end

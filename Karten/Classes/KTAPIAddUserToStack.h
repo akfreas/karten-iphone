@@ -1,7 +1,7 @@
 #import "KartenAPICall.h"
-@class Stack;
+@class KTStack;
 @interface KTAPIAddUserToStack : NSObject <KartenAPICall>
 
-- (id)initWithStack:(Stack *)stack linkToUserID:(NSString *)userID;
+- (id)initWithStack:(KTStack *)stack linkToUserID:(NSString *)userID;
 
 @end

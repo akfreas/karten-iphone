@@ -1,12 +1,12 @@
-@class Stack;
+@class KTStack;
 
 @interface Database : NSObject
 
-- (id)initWithStack:(Stack *)stack;
+- (id)initWithStack:(KTStack *)stack;
 - (void)startSyncing;
 @property (nonatomic) CBLReplication *pullReplication;
 @property (nonatomic) CBLReplication *pushReplication;
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @property (nonatomic) CBLDatabase *couchDatabase;
 
 @end

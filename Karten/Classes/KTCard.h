@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Stack;
+@class KTStack;
 
 @interface KTCard : NSManagedObject
 
@@ -18,6 +18,6 @@
 @property (nonatomic, retain) NSString * definition;
 @property (nonatomic, retain) NSNumber * knowledgeScore;
 @property (nonatomic, retain) NSString * term;
-@property (nonatomic, retain) Stack *stack;
+@property (nonatomic, retain) KTStack *stack;
 
 @end

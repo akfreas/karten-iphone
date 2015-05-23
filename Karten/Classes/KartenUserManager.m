@@ -45,7 +45,7 @@
 + (void)logoutCurrentUser
 {
     [KartenSessionManager invalidateSession];
-    [Stack removeAllStacksForUser:[KTUser mainUser]];
+    [KTStack removeAllStacksForUser:[KTUser mainUser]];
     [self unmarkMainUser];
     [[NSNotificationCenter defaultCenter] postNotificationName:kKartenUserDidLogoutNotification object:nil];
 }

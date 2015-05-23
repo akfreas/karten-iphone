@@ -1,4 +1,4 @@
-@class Stack;
+@class KTStack;
 @interface StackCollectionViewCell : UICollectionViewCell
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end

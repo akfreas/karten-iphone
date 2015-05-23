@@ -1,5 +1,5 @@
 #import "StackActionViewController.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+CouchBase.h"
 #import "KTUser.h"
 #import "User+Helpers.h"
@@ -84,7 +84,7 @@ static NSString *kStackActionViewCellID = @"kStackActionViewCellID";
     // Do any additional setup after loading the view.
 }
 
-- (void)setStack:(Stack *)stack
+- (void)setStack:(KTStack *)stack
 {
     _stack = stack;
     self.title = stack.name;

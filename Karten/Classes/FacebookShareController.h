@@ -1,4 +1,4 @@
-@class Stack;
+@class KTStack;
 @interface FacebookShareController : UIViewController
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end

@@ -1,5 +1,5 @@
 #import "StackListTableViewCell.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 @implementation StackListTableViewCell
 
@@ -12,7 +12,7 @@
     return self;
 }
 
-- (void)setStack:(Stack *)stack
+- (void)setStack:(KTStack *)stack
 {
     _stack = stack;
     self.textLabel.text = stack.name;

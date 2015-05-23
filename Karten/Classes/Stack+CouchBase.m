@@ -2,7 +2,7 @@
 #import "Database.h"
 #import "CouchManager.h"
 
-@implementation Stack (CouchBase)
+@implementation KTStack (CouchBase)
 
 - (void)enqueueDatabaseForSyncing
 {

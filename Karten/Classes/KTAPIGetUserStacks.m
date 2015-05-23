@@ -1,6 +1,6 @@
 #import "KTAPIGetUserStacks.h"
 #import "KTUser.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 @interface KTAPIGetUserStacks ()
 @property (nonatomic) KTUser *user;
@@ -24,7 +24,7 @@
 
 - (Class)classToParse
 {
-    return [Stack class];
+    return [KTStack class];
 }
 
 - (NSString *)HTTPMethod

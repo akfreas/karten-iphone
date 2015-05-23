@@ -1,5 +1,5 @@
 #import "KartenAPICall.h"
-@class Stack;
+@class KTStack;
 @interface KTAPICreateStack : NSObject <KartenAPICall>
-- (id)initWithStack:(Stack *)stack;
+- (id)initWithStack:(KTStack *)stack;
 @end

@@ -1,5 +1,5 @@
 #import "NetworkSyncUtil.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "KTUser.h"
 #import "User+Helpers.h"
 #import "Stack+Network.h"
@@ -12,7 +12,7 @@
 {
     KTUser *mainUser = [KTUser mainUser];
     if (mainUser != nil) {
-        [Stack syncStacksForUser:mainUser completion:^{
+        [KTStack syncStacksForUser:mainUser completion:^{
             if (completion)
                 completion();
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {

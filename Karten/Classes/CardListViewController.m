@@ -1,7 +1,7 @@
 #import "CardListViewController.h"
 #import "CardEditViewController.h"
 #import "CardTableView.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+CouchBase.h"
 #import "AddCardFormView.h"
 #import <RNBlurModalView/RNBlurModalView.h>
@@ -75,7 +75,7 @@
     self.plusExView.frame = CGRectInset(self.plusContainer.bounds, 12.0f, 12.0f);
 }
 
-- (void)setStack:(Stack *)stack
+- (void)setStack:(KTStack *)stack
 {
     self.tableView.stack = stack;
     self.title = stack.name;
@@ -91,7 +91,7 @@
     }];
 }
 
-- (Stack *)stack
+- (KTStack *)stack
 {
     return self.tableView.stack;
 }

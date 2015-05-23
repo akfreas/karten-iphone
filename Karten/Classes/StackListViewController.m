@@ -2,7 +2,7 @@
 #import "StackCollectionView.h"
 #import "KTAPIGetUserStacks.h"
 #import "KartenNetworkClient.h"
-#import "Stack.h"
+#import "KTStack.h"
 #import "Stack+Network.h"
 #import "CardListViewController.h"
 
@@ -49,7 +49,7 @@
 {
     self.stackCollectionView = [[StackCollectionView alloc] initWithFrame:CGRectZero];
     self.stackCollectionView.clipsToBounds = NO;
-    [self.stackCollectionView setStackSelectedAction:^(Stack *selectedStack) {
+    [self.stackCollectionView setStackSelectedAction:^(KTStack *selectedStack) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ExitDeletionModeNotification object:nil userInfo:nil];
         [MainViewController showActionViewForStack:selectedStack];
     }];
@@ -70,7 +70,7 @@
     if (self.userForStacks == nil) {
         return;
     }
-    [Stack syncStacksForUser:self.userForStacks completion:NULL success:NULL failure:NULL];
+    [KTStack syncStacksForUser:self.userForStacks completion:NULL success:NULL failure:NULL];
 }
 
 

@@ -5,7 +5,7 @@
 #import "KTAPIShareStack.h"
 #import "KTAPIUnShareStack.h"
 
-#import "Stack.h"
+#import "KTStack.h"
 #import "KTUser.h"
 #import "User+Helpers.h"
 
@@ -15,7 +15,7 @@
 
 @implementation ShareStackFriendControllerManager
 
-- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(Stack *)stack
+- (void)setFriendsListViewController:(KTFriendSelectionViewController *)friendsList forSharingStack:(KTStack *)stack
 {
     self.stack = stack;
     friendsList.pinInitialSelectionToTop = YES;

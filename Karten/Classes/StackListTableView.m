@@ -2,7 +2,7 @@
 #import "StackListTableViewCell.h"
 #import "StackActionTableViewCell.h"
 #import "Stack+Helpers.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 static NSString *kStackTableViewCellID = @"kStackTableViewCellID";
 static NSString *kQuizActionTableViewCellID = @"kQuizActionTableViewCellID";
@@ -59,7 +59,7 @@ static NSInteger kNumberOfAdditionalSections = 1;
 
 - (void)createFetchController
 {
-    self.fetchController = [Stack MR_fetchAllSortedBy:@"serverID" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
+    self.fetchController = [KTStack MR_fetchAllSortedBy:@"serverID" ascending:NO withPredicate:nil groupBy:nil delegate:self inContext:[NSManagedObjectContext MR_defaultContext]];
 }
 
 #pragma mark UITableView Datasource
@@ -68,7 +68,7 @@ static NSInteger kNumberOfAdditionalSections = 1;
 {
     if (indexPath.section == kStackSection) {
         StackListTableViewCell *ourCell = (StackListTableViewCell *)cell;
-        Stack *stackForCell = [self.fetchController objectAtIndexPath:indexPath];
+        KTStack *stackForCell = [self.fetchController objectAtIndexPath:indexPath];
         ourCell.stack = stackForCell;
     } else if (indexPath.section == kActionSection) {
         

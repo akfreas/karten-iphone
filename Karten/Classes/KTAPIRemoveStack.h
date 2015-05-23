@@ -1,5 +1,5 @@
 #import "KartenAPICall.h"
 
 @interface KTAPIRemoveStack : NSObject <KartenAPICall>
-- (id)initWithStack:(Stack *)stack;
+- (id)initWithStack:(KTStack *)stack;
 @end

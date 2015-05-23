@@ -1,4 +1,4 @@
-@class Stack;
+@class KTStack;
 @interface StackActionViewController : UIViewController
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @end

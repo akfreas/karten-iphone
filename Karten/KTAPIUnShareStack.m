@@ -1,15 +1,15 @@
 #import "KTAPIUnShareStack.h"
 #import "KTUser.h"
-#import "Stack.h"
+#import "KTStack.h"
 
 @interface KTAPIUnShareStack ()
-@property (nonatomic) Stack *stack;
+@property (nonatomic) KTStack *stack;
 @property (nonatomic) NSArray *unShareUsers;
 @end
 
 @implementation KTAPIUnShareStack
 
-- (instancetype)initWithStack:(Stack *)stack unShareUsers:(NSArray *)users
+- (instancetype)initWithStack:(KTStack *)stack unShareUsers:(NSArray *)users
 {
     self = [super init];
     if (self) {

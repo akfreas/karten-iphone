@@ -2,5 +2,8 @@
 #import "KTProfileViewController.h"
 #import "KTFriendSelectionViewController.h"
 #import "KTCard.h"
+#import "Stack.h"
 #import <PureLayout/PureLayout.h>
 #import <KMCollectionView/KMCollectionViewFramework.h>
+#import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import <MagicalRecord/CoreData+MagicalRecord.h>

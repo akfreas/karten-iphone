@@ -9,7 +9,7 @@ target "Karten" do
     pod "EDColor"
     pod "GoogleAnalytics-iOS-SDK"
     pod "BlocksKit", :head
-    pod 'MDCSwipeToChoose', '~> 0.2.0'
+    pod 'MDCSwipeToChoose', '~> 0.2.2'
     pod "BugSense"
     pod "MagicalRecord"
     pod "AFNetworking"
