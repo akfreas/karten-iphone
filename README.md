@@ -19,6 +19,14 @@ I'm not saying this project fixes *any* of the problems above in a way that is 1
  - Tinder-style left/right swipe to indicate your knowledge of a word
  - Quiz yourself on words you don't know well or all words in your stack
 
+####Screenshots
+
+![screen1](https://s3.amazonaws.com/sashimiblade-github-assets/screen1.png)
+
+![screen2](https://s3.amazonaws.com/sashimiblade-github-assets/screen2.png)
+
+![screen3](https://s3.amazonaws.com/sashimiblade-github-assets/screen3.png)
+
 
 ####Tech
 
